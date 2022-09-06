@@ -1,0 +1,37 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="10.3 Cascade-Control Analysis"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch10lev1sec2.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch10lev1sec4.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch10lev1sec3"></A><H3 class="docSection1Title">10.3 Cascade-Control Analysis</H3>
+<P class="docText">There are two common ways to represent a cascade-control system in transfer function form: <span class="docEmphasis">series</span> cascade and <span class="docEmphasis">parallel</span> cascade. The series cascade representation shown in <A class="docLink" HREF="#ch10fig08">Figure 10-8</A> is the most common, so it will be used in the analysis performed in this section. Students interested in analysis using the parallel structure can work Exercise 11.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch10fig08"></A>Figure 10-8. Series cascade structure.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="245" src="FILES/10fig08.gif" ALT="graphics/10fig08.gif"></p></CENTER>
+<P class="docText">We use the following algebraic manipulations to understand the effect of the secondary (inner-loop) on the primary (or outer) loop. Notice that the secondary output can be written</P>
+<P><B><A NAME="ch10equ01"></A>Equation 10.1 </B></P><p class="docText"><IMG BORDER="0" WIDTH="293" HEIGHT="40" src="FILES/10equ01.gif" ALT="graphics/10equ01.gif"></p><br>
+<P class="docText">The secondary closed-loop transfer function can be defined as</P>
+<P><B><A NAME="ch10equ02"></A>Equation 10.2 </B></P><p class="docText"><IMG BORDER="0" WIDTH="147" HEIGHT="38" src="FILES/10equ02.gif" ALT="graphics/10equ02.gif"></p><br>
+<P class="docText">Further analysis yields</P>
+<P><B><A NAME="ch10equ03"></A>Equation 10.3 </B></P><p class="docText"><IMG BORDER="0" WIDTH="361" HEIGHT="40" src="FILES/10equ03.gif" ALT="graphics/10equ03.gif"></p><br>
+<P class="docText">After tuning the inner loop, we can use the following transfer function to design the outer-loop controller.</P>
+<P><B><A NAME="ch10equ04"></A>Equation 10.4 </B></P><p class="docText"><IMG BORDER="0" WIDTH="259" HEIGHT="39" src="FILES/10equ04.gif" ALT="graphics/10equ04.gif"></p><br>
+<P class="docText">and the closed-loop relationship for a primary setpoint change is</P>
+<P><B><A NAME="ch10equ05"></A>Equation 10.5 </B></P><p class="docText"><IMG BORDER="0" WIDTH="340" HEIGHT="40" src="FILES/10equ05.gif" ALT="graphics/10equ05.gif"></p><br>
+<P class="docText">where it is clear that the secondary closed-loop transfer function affects the primary control loop. Notice that if the secondary control loop is much faster than the primary loop, so that g<SUB>c2CL</SUB> = 1 (on a relative time scale to the primary control loop), then the closed-loop transfer function for the primary loop is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="156" HEIGHT="40" src="FILES/10equ05a.gif" ALT="graphics/10equ05a.gif"></p><br>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch10lev1sec2.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch10lev1sec4.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

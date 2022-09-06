@@ -1,0 +1,54 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="8.10 Improved Disturbance Rejection Design"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch08lev1sec9.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch08lev1sec11.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch08lev1sec10"></A><H3 class="docSection1Title">8.10 Improved Disturbance Rejection Design</H3>
+<P class="docText">We can achieve improved disturbance rejection by specifying a different IMC filter design procedure. We perform the same factorization of the process model as before. The difference is in the selection of the IMC filter transfer function. Here, rather than using a filter of the form</P>
+<p class="docText"><IMG BORDER="0" WIDTH="92" HEIGHT="39" src="FILES/08equ47c.gif" ALT="graphics/08equ47c.gif"></p><br>
+<P class="docText">we use a filter with the form</P>
+<P><B><A NAME="ch08equ48"></A>Equation 8.48 </B></P><p class="docText"><IMG BORDER="0" WIDTH="93" HEIGHT="39" src="FILES/08equ48.gif" ALT="graphics/08equ48.gif"></p><br>
+<P class="docText">where <font face="symbol">g</font> is selected to achieve good disturbance rejection. In practice, <font face="symbol">g</font> will be selected to cancel a slow disturbance time constant. Consider the closed-loop transfer function for disturbance rejection</P>
+<P><B><A NAME="ch08equ49"></A>Equation 8.49 </B></P><p class="docText"><IMG BORDER="0" WIDTH="209" HEIGHT="52" src="FILES/08equ49.gif" ALT="graphics/08equ49.gif"></p><br>
+<P class="docText">In the case of a perfect model, this results in</P>
+<P><B><A NAME="ch08equ50"></A>Equation 8.50 </B></P><p class="docText"><IMG BORDER="0" WIDTH="157" HEIGHT="18" src="FILES/08equ50.gif" ALT="graphics/08equ50.gif"></p><br>
+<P class="docText">The controller, using the new filter form, is</P>
+<P><B><A NAME="ch08equ51"></A>Equation 8.51 </B></P><p class="docText"><IMG BORDER="0" WIDTH="205" HEIGHT="37" src="FILES/08equ51.gif" ALT="graphics/08equ51.gif"></p><br>
+<P class="docText">so the output response is</P>
+<P><B><A NAME="ch08equ52"></A>Equation 8.52 </B></P><p class="docText"><IMG BORDER="0" WIDTH="244" HEIGHT="148" src="FILES/08equ52.gif" ALT="graphics/08equ52.gif"></p><br>
+<P class="docText">Although it is hard to tell from this general expression, <font face="symbol">g</font> should be selected to cancel the slow time constant associated with <span class="docEmphasis">g<SUB>d</SUB></span>(<span class="docEmphasis">s</span>). This is shown by way of an example for a first-order process.</P>
+<A NAME="ch08lev2sec19"></A><H4 class="docSection2Title"> Example 8.8: First-Order Process, Improved Disturbance Rejection Design</H4>
+<P class="docText">For a first-order process model,</P>
+<p class="docText"><IMG BORDER="0" WIDTH="96" HEIGHT="47" src="FILES/08equ53.gif" ALT="graphics/08equ53.gif"></p><br>
+<P class="docText">The IMC controller, using the proposed filter design, is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="135" HEIGHT="44" src="FILES/08equ54.gif" ALT="graphics/08equ54.gif"></p><br>
+<P class="docText">Assuming a perfect model and load disturbance transfer function equal to the process transfer function, Equation (<A class="docLink" HREF="#ch08equ52">8.52)</A> becomes</P>
+<p class="docText"><IMG BORDER="0" WIDTH="256" HEIGHT="215" src="FILES/08equ55.gif" ALT="graphics/08equ55.gif"></p><br>
+<P class="docText">If we select <font face="symbol">l</font><SUP>2</SUP>/(2<font face="symbol">l</font> - <font face="symbol">g</font>) to cancel the process model time constant, <IMG BORDER="0" WIDTH="13" HEIGHT="17" src="FILES/08inequ20.gif" ALT="graphics/08inequ20.gif">,we find</P>
+<p class="docText"><IMG BORDER="0" WIDTH="86" HEIGHT="45" src="FILES/08equ56.gif" ALT="graphics/08equ56.gif"></p><br>
+<A NAME="ch08lev3sec3"></A><H5 class="docSection3Title"> Numerical Example</H5>
+<P class="docText">Here we consider again the first-order process model transfer function from <A class="docLink" HREF="0133536408_ch08lev1sec9.html#ch08lev2sec18">Example 8.7</A>,</P>
+<p class="docText"><IMG BORDER="0" WIDTH="99" HEIGHT="37" src="FILES/08equ57.gif" ALT="graphics/08equ57.gif"></p><br>
+<P class="docText">and assume that the disturbance transfer function is equal to the process transfer function (this is equivalent to assuming that the load disturbance occurs at the process input).</P>
+<p class="docText"><IMG BORDER="0" WIDTH="77" HEIGHT="36" src="FILES/08equ58.gif" ALT="graphics/08equ58.gif"></p><br>
+<P class="docText">which leads to the closed-loop results for a unit step disturbance, shown in <A class="docLink" HREF="#ch08fig18">Figure 8-18</A>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch08fig18"></A>Figure 8-18. Improved disturbance response for <A class="docLink" HREF="#ch08lev2sec19">Example 8.8</A>, with <font face="symbol">l</font> = 2 min. A comparison with the standard IMC filter design.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="382" src="FILES/08fig18.gif" ALT="graphics/08fig18.gif"></p></CENTER>
+<P class="docText">It should be noted that the improved disturbance rejection design does not lead to detrimental performance for setpoint changes. In <A class="docLink" HREF="#ch08fig19">Figure 8-19</A>, the new filter design also leads to faster performing setpoint responses. The major disadvantage is the increased manipulated variable action. In practice, the <font face="symbol">l</font> value should be detuned for improved robustness.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch08fig19"></A>Figure 8-19. Setpoint response for <A class="docLink" HREF="#ch08lev2sec19">Example 8.8</A>, with <font face="symbol">l</font> = 2 min. A comparison of design for improved disturbance rejection with the standard IMC filter design.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="382" src="FILES/08fig19.gif" ALT="graphics/08fig19.gif"></p></CENTER>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch08lev1sec9.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch08lev1sec11.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

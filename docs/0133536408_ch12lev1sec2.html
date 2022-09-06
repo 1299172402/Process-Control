@@ -1,0 +1,40 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="12.2 Ratio Control"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch12lev1sec1.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch12lev1sec3.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch12lev1sec2"></A><H3 class="docSection1Title">12.2 Ratio Control</H3>
+<P class="docText">Ratio control is similar to feed-forward control, since both typically involve the measurement of a stream flow rate. Ratio control is often used in component blending problems. Consider the control strategies shown in <A class="docLink" HREF="#ch12fig01">Figure 12-1</A>, where stream <span class="docEmphasis">A</span> is a "wild stream" (disturbance) and it is desirable to maintain the flow rate of stream <span class="docEmphasis">B</span> at a constant ratio to stream <span class="docEmphasis">A</span>. In <A class="docLink" HREF="#ch12fig01">Figure 12-1a</A> the <span class="docEmphasis">F</span><SUB>B</SUB>/<span class="docEmphasis">F</span><SUB>A</SUB> ratio is calculated and sent to a ratio controller. In <A class="docLink" HREF="#ch12fig01">Figure 12-1b</A> the flow rate of stream <span class="docEmphasis">A</span> is measured and multiplied by desired ratio to determine the setpoint for the stream <span class="docEmphasis">B</span> flow rate.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch12fig01"></A>Figure 12-1. Ratio control. Comparison of two alternatives.</H5><p class="docText"><IMG BORDER="0" WIDTH="400" HEIGHT="614" src="FILES/12fig01.gif" ALT="graphics/12fig01.gif"></p></CENTER>
+<P class="docText">Alternative 12–1b is favored over 12–1a since it results in a linear input-output relationship. In <A class="docLink" HREF="#ch12fig01">Figure 12-1a</A> the steady-state relationship between the manipulated input (valve position, related to <span class="docEmphasis">F</span><SUB>B</SUB>) and the measured output (the ratio, <span class="docEmphasis">F<SUB>B</SUB></span>/<span class="docEmphasis">F<SUB>A</SUB></span>) is</P>
+<P><B><A NAME="ch12equ01"></A>Equation 12.1 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="151" HEIGHT="16" src="FILES/12equ01.gif" ALT="graphics/12equ01.gif"></p><br>
+<P class="docText">and the steady-state process gain is</P>
+<P><B><A NAME="ch12equ02"></A>Equation 12.2 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="103" HEIGHT="17" src="FILES/12equ02.gif" ALT="graphics/12equ02.gif"></p><br>
+<P class="docText">Clearly, the process gain varies as a function of the flow rate of stream <span class="docEmphasis">A</span>. This means the ratio controller would need to be tuned differently depending the stream <span class="docEmphasis">A</span> flow rate. In contrast, the relationship between the manipulated input (valve position, related to <span class="docEmphasis">F</span><SUB>B</SUB>) and the measured output (<span class="docEmphasis">F</span><SUB>B</SUB>) for the flow controller in <A class="docLink" HREF="#ch12fig01">Figure 12-1b</A> is</P>
+<P><B><A NAME="ch12equ03"></A>Equation 12.3 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="65" HEIGHT="14" src="FILES/12equ03.gif" ALT="graphics/12equ03.gif"></p><br>
+<P class="docText">so the gain is</P>
+<P><B><A NAME="ch12equ04"></A>Equation 12.4 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="85" HEIGHT="17" src="FILES/12equ04.gif" ALT="graphics/12equ04.gif"></p><br>
+<P class="docText">which is constant.</P>
+<P class="docText">The ratio could be specified to maintain an excess of component <span class="docEmphasis">B</span> in a reaction, for example. A common use of this would be the supply of combustion air to a furnace. Stream <span class="docEmphasis">A</span> could represent the fuel gas, for example, and stream <span class="docEmphasis">B</span> would represent the combustion air.</P>
+<P class="docText">The blend stream could also have a composition or product property measurement and controller; the output of this controller would be cascaded to the desired ratio of stream <span class="docEmphasis">B</span> flow to stream <span class="docEmphasis">A</span> flow. In Exercise 1 you have the opportunity to sketch this control strategy.</P>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch12lev1sec1.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch12lev1sec3.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

@@ -1,0 +1,83 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="3.5 First-Order Behavior"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch03lev1sec4.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch03lev1sec6.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch03lev1sec5"></A><H3 class="docSection1Title">3.5 First-Order Behavior</H3>
+<P class="docText">Many chemical processes can be modeled as first-order systems. The differential equation for a linear first-order process is often written in the following form:</P>
+<P><B><A NAME="ch03equ27"></A>Equation 3.25 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="90" HEIGHT="33" src="FILES/03equ25.gif" ALT="graphics/03equ25.gif"></p><br>
+<P class="docText">This can also be written as</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="111" HEIGHT="42" src="FILES/03equ25a.gif" ALT="graphics/03equ25a.gif"></p><br>
+<P class="docText">where the parameters (<font face="symbol">t</font><span class="docEmphasis"><SUB>p</SUB></span> and <span class="docEmphasis">k<SUB>p</SUB></span>) and variables (<span class="docEmphasis">y</span> and <span class="docEmphasis">u</span>) have the following names: <font face="symbol">t</font><span class="docEmphasis"><SUB>p</SUB></span> is the process time constant (units of time), <span class="docEmphasis">k<SUB>p</SUB></span> the process gain (units of output/input), <span class="docEmphasis">y</span> the output variable, and <span class="docEmphasis">u</span> the input variable. Taking the Laplace transform of each term (<span class="docEmphasis">notice that we are now using lower-case variables to represent the Laplace domain input and output</span>), and assuming that the initial condition is <span class="docEmphasis">y</span>(0) = 0,</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="289" HEIGHT="92" src="FILES/03equ25b.gif" ALT="graphics/03equ25b.gif"></p><br>
+<P class="docText">So the Laplace transform of Equation (<A class="docLink" HREF="0133536408_ch03lev1sec4.html#ch03equ25">3.25</A>) can be written</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="125" HEIGHT="18" src="FILES/03equ25c.gif" ALT="graphics/03equ25c.gif"></p>
+<br>
+<P class="docText">or solving for <span class="docEmphasis">y</span>(<span class="docEmphasis">s</span>) we find a first-order transfer function</P>
+<P><B><A NAME="ch03equ28"></A>Equation 3.26 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="107" HEIGHT="39" src="FILES/03equ26.gif" ALT="graphics/03equ26.gif"></p><br>
+<A NAME="ch03lev2sec16"></A><H4 class="docSection2Title"> Step Response</H4>
+<P class="docText">Consider the case where the output is initially zero (steady state in deviation variable form), and the input is suddenly step changed by an amount <font face="symbol">D</font><span class="docEmphasis">u</span>. The Laplace transform of the input is</P>
+<P><B><A NAME="ch03equ29"></A>Equation 3.27 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="63" HEIGHT="40" src="FILES/03equ27.gif" ALT="graphics/03equ27.gif"></p><br>
+<P class="docText">So Equation (<A class="docLink" HREF="0133536408_ch03lev1sec4.html#ch03equ26">3.26</A>) can be written</P>
+<P><B><A NAME="ch03equ30"></A>Equation 3.28 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="107" HEIGHT="41" src="FILES/03equ28.gif" ALT="graphics/03equ28.gif"></p><br>
+<P class="docText">Using a partial fraction expansion and inverting to the time domain, you should find (see Exercise 1)</P>
+<P><B><A NAME="ch03equ31"></A>Equation 3.29 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="126" HEIGHT="28" src="FILES/03equ29.gif" ALT="graphics/03equ29.gif"></p><br>
+<P class="docText">Here the notion of a process gain is clear. After a substantial amount of time (<span class="docEmphasis">t</span> &gt;&gt; <font face="symbol">t</font><span class="docEmphasis"><SUB>p</SUB></span>), we find, from Equation (<A class="docLink" HREF="#ch03equ29">3.29</A>),</P>
+<P><B><A NAME="ch03equ32"></A>Equation 3.30 </B></P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="98" HEIGHT="19" src="FILES/03equ30.gif" ALT="graphics/03equ30.gif"></p><br>
+<P class="docText">That is,</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="89" HEIGHT="38" src="FILES/03equ30a.gif" ALT="graphics/03equ30a.gif"></p><br>
+<P class="docText">and, since <span class="docEmphasis">y</span>(0) = 0, we can think of <span class="docEmphasis">y</span>(<span class="docEmphasis">t</span> <img src="FILES/U2192.GIF" border=0> <img src="FILES/U221E.GIF" border=0>) as <font face="symbol">D</font><span class="docEmphasis">y</span>, so</P>
+<P><B><A NAME="ch03equ33"></A>Equation 3.31 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="206" HEIGHT="39" src="FILES/03equ31.gif" ALT="graphics/03equ31.gif"></p><br>
+<P class="docText">We can think of the process time constant as the amount of time it takes for 63.2% of the ultimate output change to occur, since when <span class="docEmphasis">t</span> = <font face="symbol">t</font><span class="docEmphasis"><SUB>p</SUB></span>,</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="37" src="FILES/03equ31a.gif" ALT="graphics/03equ31a.gif"></p><br>
+<P class="docText">Remember that this holds true only for first-order systems.</P>
+<A NAME="ch03lev2sec17"></A><H4 class="docSection2Title"> Impulse Response</H4>
+<P class="docText">Consider now an impulse input of magnitude <span class="docEmphasis">P</span>, which has units of the input*time; if the input is a volumetric flow rate (volume/time), then the impulse input is a volume. The output response is</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="98" HEIGHT="42" src="FILES/03equ31b.gif" ALT="graphics/03equ31b.gif"></p><br>
+<P class="docText">You should find that the time domain solution is</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="98" HEIGHT="43" src="FILES/03equ31c.gif" ALT="graphics/03equ31c.gif"></p><br>
+<P class="docText">which has an immediate response of <span class="docEmphasis">Pk<SUB>p</SUB></span>/<font face="symbol">t</font><span class="docEmphasis"><SUB>p</SUB></span> followed by a first-order decay with time.</P>
+<A NAME="ch03lev2sec18"></A><H4 class="docSection2Title"> Example 3.4: Stirred-Tank Heater</H4>
+<P class="docText">Recall that an energy balance on a constant-volume stirred-tank heater (<A class="docLink" HREF="0133536408_ch02lev1sec5.html#ch02lev2sec15">Example 2.3</A>) yielded</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="149" HEIGHT="38" src="FILES/03equ31d.gif" ALT="graphics/03equ31d.gif"></p><br>
+<P class="docText">where the subscript <span class="docEmphasis">s</span> is used to indicate that a particular variable remains at its steady-state value. Defining the following deviation variables</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="67" HEIGHT="41" src="FILES/03equ31e.gif" ALT="graphics/03equ31e.gif"></p><br>
+<P class="docText">The equation can be written in the form</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="131" HEIGHT="40" src="FILES/03equ31f.gif" ALT="graphics/03equ31f.gif"></p><br>
+<P class="docText">or</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="103" HEIGHT="37" src="FILES/03equ31g.gif" ALT="graphics/03equ31g.gif"></p><br>
+<P class="docText">where the parameters of this first-order model are</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="165" HEIGHT="79" src="FILES/03equ31h.gif" ALT="graphics/03equ31h.gif"></p><br>
+<P class="docText">The gain and time constant are clearly a function of scale. A process with a large steady-state flow rate will have a low gain, compared to a process with a small steady-state flow rate. This makes physical sense, since a given heat power input will have a larger effect on the small process than the large process. Similarly, a process with a large volume-to-flow rate ratio is expected to have a slow response compared to a process with a small volume-to-flow rate ratio.</P>
+<P class="docText">Consider a heater with a constant liquid volume of <span class="docEmphasis">V<SUB>s</SUB></span> = 50 liters and a constant volumetric flow rate of <span class="docEmphasis">F<SUB>s</SUB></span> = 10 liters/minute. For liquid water, the other parameters are <font face="symbol">r</font><span class="docEmphasis">c<SUB>p</SUB></span> = 1 kcal/ liter&#176;C. The process gain and time constant are then</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="148" HEIGHT="83" src="FILES/03equ31i.gif" ALT="graphics/03equ31i.gif"></p><br>
+<A NAME="ch03lev3sec1"></A><H5 class="docSection3Title"> Step Response</H5>
+<P class="docText">If a step input change of 10 kW is made, the resulting output change is [from Equation (<A class="docLink" HREF="#ch03equ29">3.29</A>)]</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="346" HEIGHT="31" src="FILES/03equ31j.gif" ALT="graphics/03equ31j.gif"></p><br>
+<P class="docText">A plot of the step input and the resulting output are shown in <A class="docLink" HREF="#ch03fig06">Figure 3-6</A>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch03fig06"></A>Figure 3-6. Step response of a stirred-tank heater, characteristic of a first-order system. Deviation variables.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="395" src="FILES/03fig06.gif" ALT="graphics/03fig06.gif"></p></CENTER>
+<P class="docText">Remember that the inputs and outputs in this expression are in deviation variable form. If the steady-state values are (for an inlet temperature of 20&#176;C)</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="65" HEIGHT="36" src="FILES/03equ31k.gif" ALT="graphics/03equ31k.gif"></p><br>
+<P class="docText">Then, the physical temperature response is</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="196" HEIGHT="21" src="FILES/03equ31l.gif" ALT="graphics/03equ31l.gif"></p>
+<br>
+<A NAME="ch03lev3sec2"></A><H5 class="docSection3Title"> Impulse Response</H5>
+<P class="docText">If an impulse input of 30 kJ is made, you should be able to show that the temperature changes immediately by 0.143&#176;C (see Exercise 15).</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch03lev1sec4.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch03lev1sec6.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

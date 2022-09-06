@@ -1,0 +1,200 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="Appendix 16.3"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch16lev1sec11.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch17.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch16lev1sec12"></A><H3 class="docSection1Title"> Appendix 16.3</H3>
+<P class="docText">Use the following files to reproduce the van de Vusse simulations shown in <A class="docLink" HREF="0133536408_ch16lev1sec3.html#ch16fig09">Figure 16-9</A>. These are based on an unconstrained DMC strategy. Files for the constrained formulation, involving <TT>qp</TT> and <TT>quadprog</TT> from the <TT>optimization toolbox</TT>, are available on the book web page.</P>
+<P class="docText"><span class="docEmphStrong">dmcsim.m</span></P>
+<pre>
+
+</pre><pre>
+% dmcsim
+%
+% 26 Oct 00 - revised 4/5 Aug 01 for Chapter 16 - MPC
+% b.w. bequette
+% unconstrained DMC simulation, calls: smatgen.m and dmccalc.m
+% currently contains van de vusse reactor model and plant
+%
+% MPC tuning and simulation parameters
+  n = 50;        % model length
+  p = 10;        % prediction horizon
+  m =  1;        % control horizon
+  weight = 0.0;  % weighting factor
+  ysp = 1;       % setpoint change (from 0)
+  timesp = 1;    % time of setpoint change
+  delt =   0.1;  % sample time
+  tfinal = 6;    % final simulation time
+  noise  = 0;    % noise added to response coefficients
+%
+  t = 0:delt:tfinal;  % time vector
+  kfinal = length(t); % number of time intervals
+  ksp = fix(timesp/delt);
+  r = [zeros(ksp,1);ones(kfinal-ksp,1)*ysp]; % setpoint vector
+%
+% ----- insert continuous model here -----------
+% model (continuous state space form)
+%
+  a = [-2.4048 0;0.8333 -2.2381]; % a matrix – van de vusse
+  b = [7; -1.117];                % b matrix – van de vusse
+  c = [0 1];                      % c matrix – van de vusse
+  d = 0;                          % d matrix – van de vusse
+  sysc_mod = ss(a,b,c,d); % create LTI "object"
+%
+% ----- insert plant here -----------
+% perfect model assumption (plant = model)
+  ap = a;
+  bp = b;
+  cp = c;
+  dp = d;
+  sysc_plant = ss(ap,bp,cp,dp);
+%
+% discretize the plant with a sample time, delt
+%
+  sysd_plant = c2d(sysc_plant,delt)
+  [phi,gamma,cd,dd] = ssdata(sysd_plant)
+%
+% evaluate discrete model step response coefficients
+%
+  [s] = step(sysc_mod,[delt:delt:n*delt]);
+%
+% generate dynamic matrices (both past and future)
+%
+  [Sf,Sp,Kmat] = smatgen(s,p,m,n,weight);
+%
+% plant initial conditions
+  xinit = zeros(size(a,1),1);
+  uinit = 0;
+  yinit = 0;
+% initialize input vector
+  u     = ones(min(p,kfinal),1)*uinit;
+%
+  dup   = zeros(n-2,1);
+  sn    = s(n);       % last step response coefficient
+  x(:,1)= xinit;
+  y(1)  = yinit;
+  dist(1) = 0;
+%
+% set-up is done, start simulations
+%
+ for k = 1:kfinal;
+%
+ du(k) = dmccalc(Sp,Kmat,sn,dup,dist(k),r(k),u,k,n);
+% perform control calculation
+  if k &gt; 1;
+ u(k) = u(k-1)+du(k); % control input
+  else
+ u(k) = uinit + du(k);
+  end
+% plant equations
+ x(:,k+1) = phi*x(:,k)+gamma*u(k);
+ y(k+1) = cd*x(:,k+1);
+% model prediction
+  if k-n+1&gt;0;
+   ymod(k+1) = s(1)*du(k) + Sp(1,:)*dup + sn*u(k-n+1);
+  else
+   ymod(k+1) = s(1)*du(k) + Sp(1,:)*dup;
+  end
+% disturbance compensation
+%
+ dist(k+1) = y(k+1) - ymod(k+1);
+% additive disturbance assumption
+% put input change into vector of past control moves
+ dup = [du(k);dup(1:n-3)];
+ end
+%
+% stairs plotting for input (zero-order hold) and setpoint
+%
+  [tt,uu] = stairs(t,u);
+  [ttr,rr] = stairs(t,r);
+%
+  figure(1)
+  subplot(2,1,1)
+  plot(ttr,rr,'--',t,y(1:length(t)))
+  ylabel('y')
+  xlabel('time')
+  title('plant output')
+  subplot(2,1,2)
+  plot(tt,uu)
+  ylabel('u')
+  xlabel('time')
+</pre>
+<P class="docText"><span class="docEmphStrong">smatgen.m</span></P>
+<pre>
+
+</pre><pre>
+function [Sf,Sp,Kmat] = smatgen(s,p,m,n,w)
+%
+% b.w. bequette
+% 28 Sept 00, revised 2 Oct 00
+% generates dynamic matrix and feedback gain matrix
+% assumes s = step response column vector
+% Sf   = Dynamic Matrix for future control moves (forced)
+% Sp   = Matrix for past control moves (free)
+% Kmat = DMC feedback gain matrix
+% s    = step response coefficient vector
+% p    = prediction horizon
+% m    = control horizon
+% n    = model horizon
+% w    = weight on control input
+%
+% first, find the dynamic matrix
+  for j = 1:m;
+         Sf(:,j) = [zeros(j-1,1);s(1:p-j+1)];
+  end
+%
+% now, find the matrix for past moves
+%
+  for i = 1:p;
+         Sp(i,:) = [s(i+1:n-1)' zeros(1,i-1)];
+  end
+%
+% find the feedback gain matrix, Kmat
+%
+  Kmat = inv(Sf'*Sf + w*eye(m))*Sf';
+</pre>
+<P class="docText"><span class="docEmphStrong">dmccalc.m</span></P>
+<pre>
+
+</pre><pre>
+function [delu] = dmccalc(Sp,Kmat,sn,delup,d,r,u,k,n)
+%
+% for use with dmcsim.m
+% b.w. bequette
+% 2 oct 00
+% calculate the optimum control move
+%
+% first, calculate uold = u(k-n+1)...u(k-n+p)
+%
+  [m,p] = size(Kmat);
+    uold = zeros(p,1);
+  for i = 1:p;
+       if k-n+i&gt;0;
+       uold(i) = u(k-n+i);
+       else
+       uold(i) = 0;
+       end
+  end
+  dvec  = d*ones(p,1);
+  rvec   = r*ones(p,1);
+  y_free = Sp*delup + sn*uold + dvec;
+  e_free = rvec-y_free;
+  delu = Kmat(1,:)*e_free;
+</pre>
+<a href="0133536408_10971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch16lev1sec11.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch17.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

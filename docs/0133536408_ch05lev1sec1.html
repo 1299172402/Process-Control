@@ -1,0 +1,65 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="5.1 Motivation"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch05.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch05lev1sec2.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch05lev1sec1"></A><H3 class="docSection1Title">5.1 Motivation</H3>
+<P class="docText">Consider the level control problem first described in <A class="docLink" HREF="0133536408_ch01.html#ch01">Chapter 1</A> and shown in <A class="docLink" HREF="#ch05fig01">Figure 5-1</A>. A level measurement device (usually a differential pressure cell) senses the level and sends a signal to the controller. Notice that the controller is comparing the tank height with the desired setpoint and sending a controller output (pressure signal) to the valve, which changes the valve position and therefore the volumetric flow rate of stream 1, <span class="docEmphasis">F</span><SUB>1</SUB>. These signals are shown as dashed lines on the figure.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch05fig01"></A>Figure 5-1. Level control, inlet flow rate manipulated. The instrumentation signals are shown as dashed lines. The level transmitter sends a signal to the level control, which sends a signal to the control valve.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="209" src="FILES/05fig01.gif" ALT="graphics/05fig01.gif"></p></CENTER>
+<P class="docText"><span class="docEmphasis">The question is,</span> what is the control <span class="docEmphasis">algorithm</span>? How does the controller change the flow rate to the process? You can probably think of a number of possible algorithms.</P>
+<A NAME="ch05lev2sec1"></A><H4 class="docSection2Title"> On-Off Control</H4>
+<P class="docText">An <span class="docEmphasis">on/off controller</span> is similar to a controller used in a typical home heating unit. If the liquid level is too high (higher than the desired setpoint), the valve is closed and if the level is too low (lower than the desired setpoint) the valve is fully opened. The problem with an on-off strategy is that the valve will constantly be opening and closing, as shown in <A class="docLink" HREF="#ch05fig02">Figure 5-2</A>, causing wear and tear on the valve.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch05fig02"></A>Figure 5-2. On-off control of tank height.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="171" src="FILES/05fig02.gif" ALT="graphics/05fig02.gif"></p></CENTER>
+<P class="docText">Notice that an on-off controller is based on the error between the setpoint (desired height, h<SUB>sp</SUB>) and the measured output (measured height). If the error (<span class="docEmphasis">h</span><SUB>sp</SUB> – <span class="docEmphasis">h</span><SUB>m</SUB>) is greater than a certain positive value (<font face="symbol">d</font>, 1/2 the <span class="docEmphasis">dead band</span>), the valve is turned off; if the error is less than a certain negative value (–1/2 the dead band), the valve is turned on. Assume that an increase in valve top pressure increases the flow through the valve [this is known as an <span class="docEmphasis">air-to-open</span> (or <span class="docEmphasis">fail-closed</span>) valve]. A fail-closed valve is used to make certain that the tank does not overflow in the event of a control valve failure. The algorithm could be stated</P>
+<P><B><A NAME="ch05equ01"></A>Equation 5.1 </B></P><p class="docText"><IMG BORDER="0" WIDTH="351" HEIGHT="57" src="FILES/05equ01.gif" ALT="graphics/05equ01.gif"></p><br>
+<P class="docText">We see that the controller behavior is periodic, as shown in <A class="docLink" HREF="#ch05fig02">Figure 5-2</A>.</P>
+<P class="docText">The next option is to make the signal to the valve <span class="docEmphasis">proportional</span> to the difference between the desired level and the actual level. This is known as a <span class="docEmphasis">proportional controller</span> (or P-controller) and is discussed below.</P>
+<A NAME="ch05lev2sec2"></A><H4 class="docSection2Title"> Proportional Control</H4>
+<P class="docText">The following equation suggests a control action that is proportional to the error (difference between setpoint and measurement),</P>
+<P><B><A NAME="ch05equ02"></A>Equation 5.2 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="137" HEIGHT="21" src="FILES/05equ02.gif" ALT="graphics/05equ02.gif"></p><br>
+<P class="docText">where <span class="docEmphasis">b</span> is the bias term, <span class="docEmphasis">k</span><SUB>c</SUB> is the <span class="docEmphasis">proportional gain</span> (a tuning parameter), and the difference between the setpoint and the measured output is the <span class="docEmphasis">error</span></P>
+<P><B><A NAME="ch05equ03"></A>Equation 5.3 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="74" HEIGHT="17" src="FILES/05equ03.gif" ALT="graphics/05equ03.gif"></p><br>
+<P class="docText">If the error is 0 at steady state, notice that the bias term is equal to the steady-state valve-top pressure.</P>
+<P class="docText">Now we discuss the adjustment of the tuning parameter (proportional gain, <span class="docEmphasis">k</span><SUB>c</SUB>). Consider the case where the error is positive (setpoint is greater than the measured output). This indicates that the flow rate entering the tank should be higher and therefore the valve-top pressure should increase. The proportional gain, <span class="docEmphasis">k</span><SUB>c</SUB>, must then be positive, for the control strategy shown in <A class="docLink" HREF="#ch05fig01">Figure 5-1</A>. As <span class="docEmphasis">k</span><SUB>c</SUB> is increased, more control action is requested for a given amount of error.</P>
+<P class="docText">Now consider the control strategy shown in <A class="docLink" HREF="#ch05fig03">Figure 5-3</A>. A similar proportional control algorithm is</P>
+<P><B><A NAME="ch05equ04"></A>Equation 5.4 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="130" HEIGHT="20" src="FILES/05equ04.gif" ALT="graphics/05equ04.gif"></p><br>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch05fig03"></A>Figure 5-3. Level control with outlet flow rate manipulated.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="183" src="FILES/05fig03.gif" ALT="graphics/05fig03.gif"></p></CENTER>
+<P class="docText">In this case we assume that the valve is <span class="docEmphasis">fail-open</span> (or <span class="docEmphasis">air-to-close</span>), since we desire that the tank not overflow in the event of a control valve (or instrument air) failure. Now we rationalize the adjustment of the tuning parameter. Consider the case where the error is positive (height setpoint is greater than the measured height). This indicates that the flow rate leaving the tank should be lower and that the pressure to the valve should increase. The proportional gain, <span class="docEmphasis">k<SUB>c</SUB></span>, must also be positive for the system in <A class="docLink" HREF="#ch05fig03">Figure 5-3</A>.</P>
+<A NAME="ch05lev3sec1"></A><H5 class="docSection3Title"> Relationship between k<SUB>p</SUB>k<SUB>v</SUB> and k<SUB>c</SUB></H5>
+<P class="docText">Recall that the process gain is simply the steady-state change in output for a steady-state change in process input.</P>
+<p class="docText"><IMG BORDER="0" WIDTH="53" HEIGHT="36" src="FILES/05equ04a.gif" ALT="graphics/05equ04a.gif"></p><br>
+<P class="docText">For the <span class="docEmphasis">first strategy,</span> the process gain is positive; that is, an increase in F<SUB>1</SUB> causes an increase in h.</P>
+<p class="docText"><IMG BORDER="0" WIDTH="154" HEIGHT="39" src="FILES/05equ04b.gif" ALT="graphics/05equ04b.gif"></p><br>
+<P class="docText">Since the input to the valve is the valve-top pressure (<span class="docEmphasis">P</span><SUB>v1</SUB>) and the output of the valve is flow rate, the valve gain is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="157" HEIGHT="39" src="FILES/05equ04c.gif" ALT="graphics/05equ04c.gif"></p><br>
+<P class="docText">The overall gain between valve-top pressure and tank height is then</P>
+<p class="docText"><IMG BORDER="0" WIDTH="210" HEIGHT="42" src="FILES/05equ04d.gif" ALT="graphics/05equ04d.gif"></p><br>
+<P class="docText">For the <span class="docEmphasis">second strategy,</span> the process gain is negative (an increase in <span class="docEmphasis">F</span><SUB>2</SUB> causes a decrease in <span class="docEmphasis">h</span>),</P>
+<p class="docText"><IMG BORDER="0" WIDTH="159" HEIGHT="40" src="FILES/05equ04e.gif" ALT="graphics/05equ04e.gif"></p><br>
+<P class="docText">and the valve gain is also negative. The gain between valve-top pressure and tank height is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="216" HEIGHT="41" src="FILES/05equ04f.gif" ALT="graphics/05equ04f.gif"></p><br>
+<P class="docText">Notice that a process with a positive gain (<span class="docEmphasis">k<SUB>p</SUB></span><SUB>1</SUB><span class="docEmphasis">k<SUB>v</SUB></span><SUB>1</SUB> or <span class="docEmphasis">k<SUB>p</SUB></span><SUB>2</SUB><span class="docEmphasis">k<SUB>v</SUB></span><SUB>2</SUB>) requires a controller proportional gain that is also positive. Similarly, a process with a negative gain would require a controller proportional gain that is also negative.</P>
+<A NAME="ch05lev2sec3"></A><H4 class="docSection2Title"> Valve Gains</H4>
+<P class="docText">Most control valves are designed to operate with signals between 3 and 15 psig. A <span class="docEmphasis">fail-closed</span> valve will be fully closed at 3 psig and fully open at 15 psig. For example, if the maximum flow rate through the valve is 120 gallons per minute (gpm), then the average valve gain is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="315" HEIGHT="38" src="FILES/05equ04g.gif" ALT="graphics/05equ04g.gif"></p><br>
+<P class="docText">Similarly, a <span class="docEmphasis">fail-open</span> valve of the same size would have a negative gain (-10 gpm/psig).</P>
+<a href="0133536408_10971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch05.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch05lev1sec2.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

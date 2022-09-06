@@ -1,0 +1,55 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="16.2 Optimization Problem"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch16lev1sec1.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch16lev1sec3.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch16lev1sec2"></A><H3 class="docSection1Title" id="225793-971">16.2 Optimization Problem</H3>
+<P class="docText">The term optimization implies a best value for some type of performance criterion. This performance criterion is known as an objective function. Here, we first discuss possible objective functions, then possible process models that can be used for MPC.</P>
+<A NAME="ch16lev2sec2"></A><H4 class="docSection2Title"> Objective Functions</H4>
+<P class="docText">Here, there are several different choices for objective functions. The first one that comes to mind is a standard <span class="docEmphasis">least-squares</span> or "quadratic" objective function. The objective function is a "sum of squares" of the predicted errors (differences between the setpoints and the model-predicted outputs) and the control moves (changes in control action from step to step).</P>
+<P class="docText">A quadratic objective function for a prediction horizon of 3 and a control horizon of 2 can be written</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="399" HEIGHT="22" src="FILES/16equ01a.gif" ALT="graphics/16equ01a.gif"></p>
+<br>
+<P class="docText">where <span class="docEmphasis"><img src="FILES/U0177.GIF" border=0></span> represents the model predicted output, <span class="docEmphasis">r</span> is the setpoint, <font face="symbol">D</font><span class="docEmphasis">u</span> is the change in manipulated input from one sample time to the next, <span class="docEmphasis">w</span> is a weight for the changes in the manipulated input, and the subscripts indicate the sample time (<span class="docEmphasis">k</span> is the current sample time). For a prediction horizon of <span class="docEmphasis">P</span> and a control horizon of <span class="docEmphasis">M</span>, the least-squares objective function is written</P>
+<P><B><A NAME="ch16equ01"></A>Equation 16.1 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="196" HEIGHT="43" src="FILES/16equ01.gif" ALT="graphics/16equ01.gif"></p><br>
+<P class="docText">Another possible objective function is to simply take a sum of the <span class="docEmphasis">absolute values</span> of the predicted errors and control moves.</P>
+<P class="docText">For a prediction horizon of 3 and a control horizon of 2, the absolute value objective function is</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="373" HEIGHT="22" src="FILES/16equ01b.gif" ALT="graphics/16equ01b.gif"></p><br>
+<P class="docText">which has the following general form for a prediction horizon of <span class="docEmphasis">P</span> and a control horizon of <span class="docEmphasis">M</span>:</P>
+<P><B><A NAME="ch16equ02"></A>Equation 16.2 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="187" HEIGHT="43" src="FILES/16equ02.gif" ALT="graphics/16equ02.gif"></p><br>
+<P class="docText">The optimization problem solved is usually stated as a minimization of the objective function, obtained by adjusting the M control moves, subject to modeling equations (equality constraints), and constraints on the inputs and outputs.</P>
+<P><B><A NAME="ch16equ03"></A>Equation 16.3 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="222" HEIGHT="47" src="FILES/16equ03.gif" ALT="graphics/16equ03.gif"></p><br>
+<P class="docText">Least-squares formulations are by far the most common objective functions in MPC. Least squares yields analytical solutions for unconstrained problems and penalizes larger errors (relatively) more than smaller errors. The absolute value objective function has been used in a few algorithms because a linear programming (LP) problem results. LPs are routinely solved in large-scale scheduling and allocation problems. For example, an oil company often uses an LP to decide how to distribute oil to various refineries and to decide how much and what product to produce at each plant. This topic was discussed in <A class="docLink" HREF="0133536408_ch15.html#ch15">Chapter 15</A>. The LP approach is not useful for model predictive control, because the manipulated variable moves often "hop" from one extreme constraint to another. For the rest of this chapter we use a quadratic (least squares) formulation for the objective function.</P>
+<A NAME="ch16lev2sec3"></A><H4 class="docSection2Title"> Models</H4>
+<P class="docText">Many different types of models are possible for calculating the predicted values of the process outputs, which are used in evaluating the objective function. Since the outputs are evaluated at discrete-time steps, it makes sense to use discrete models for the output prediction. Here, we review step and impulse response models (introduced in <A class="docLink" HREF="0133536408_ch04.html#ch04">Chapter 4</A>), both of which are used in common MPC algorithms.</P>
+<A NAME="ch16lev3sec1"></A><H5 class="docSection3Title"> Finite Step Response</H5>
+<P class="docText">FSR models are obtained by making a unit step input change to a process operating at steady state. The model coefficients are simply the output values at each time step, as shown in <A class="docLink" HREF="#ch16fig02">Figure 16-2</A>. Here, <span class="docEmphasis">s</span><SUB>i</SUB> represents the step response coefficient for the <span class="docEmphasis">i</span>th sample time after the unit step input change. If a non-unit step change is made, the output is scaled accordingly.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch16fig02"></A>Figure 16-2. Illustration of step response parameter identification.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="359" src="FILES/16fig02.gif" ALT="graphics/16fig02.gif"></p></CENTER>
+<P class="docText">The step response model is the vector of step response coefficients,</P>
+<P><B><A NAME="ch16equ04"></A>Equation 16.4 </B></P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="153" HEIGHT="19" src="FILES/16equ04.gif" ALT="graphics/16equ04.gif"></p><br>
+<P class="docText">where the model length <span class="docEmphasis">N</span> is long enough so that the coefficient values are relatively constant (i.e., the process is close to a new steady state).</P>
+<A NAME="ch16lev3sec2"></A><H5 class="docSection3Title"> Finite Impulse Response</H5>
+<P class="docText">Another common form of model is a finite impulse response (FIR). Here, a unit pulse is applied to the manipulated input, and the model coefficients are simply the values of the outputs at each time step after the pulse input is applied. As shown in <A class="docLink" HREF="#ch16fig03">Figure 16-3</A>, <span class="docEmphasis">h</span><SUB>i</SUB> represents the <span class="docEmphasis">i</span>th impulse response coefficient.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch16fig03"></A>Figure 16-3. Illustration of impulse response parameter identification.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="371" src="FILES/16fig03.gif" ALT="graphics/16fig03.gif"></p></CENTER>
+<P class="docText">There is a direct relationship between step and impulse response models:</P>
+<P><B><A NAME="ch16equ05"></A>Equation 16.5 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="71" HEIGHT="65" src="FILES/16equ05.gif" ALT="graphics/16equ05.gif"></p><br>
+<P class="docText"><A class="docLink" HREF="#ch16fig04">Figure 16-4</A> illustrates how impulse response coefficients can be obtained from step responses. The impulse response coefficients are simply the changes in the step response coefficient at each time step. Similarly, step response coefficients can be found from impulse responses; a step response coefficient is the sum of the impulse response coefficients to that point. It should be noted that there are two major limitations to step and impulse response models. They can only be used to represent open-loop stable processes, and they require a large number of parameters (model coefficients) compared to state space and transfer function models.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch16fig04"></A>Figure 16-4. Obtaining impulse response models from step response data.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="362" src="FILES/16fig04.gif" ALT="graphics/16fig04.gif"></p></CENTER>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch16lev1sec1.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch16lev1sec3.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

@@ -1,0 +1,45 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="16.5 Other MPC Methods"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch16lev1sec4.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch16lev1sec6.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch16lev1sec5"></A><H3 class="docSection1Title">16.5 Other MPC Methods</H3>
+<P class="docText">MPC is a basic concept or idea that can be implemented in many ways, depending on models used and assumptions made (about disturbances and so on). With DMC, future output predictions were composed of two effects: the unforced (or free) response (effect of past control moves) and the forced response (effect of current and future control moves). Virtually all other model-based procedures use the same idea. For example, if state space models are used, the free response can be obtained simply by iteration from the current state values, assuming no input changes. Here we discuss a number of industrial techniques and current MPC research.</P>
+<A NAME="ch16lev2sec8"></A><H4 class="docSection2Title"> MPC with Industrial Applications</H4>
+<P class="docText">The previous section covered the most widely applied (in industry) MPC technique, DMC. There are a wide variety of other MPC techniques that have been used in industrial applications; only a few are discussed here. A nice overview of these approaches is provided by <A class="docLink" HREF="0133536408_ch16lev1sec8.html#ch16biblio02entry10">Qin and Badgwell (1997)</A>.</P>
+<P class="docText"><span class="docEmphasis">Model predictive heuristic control</span> (MPHC) was developed in France and received initial applications in the French petroleum refining industry. The software was called IDCOM for "identification and command." This work is summarized by <A class="docLink" HREF="0133536408_ch16lev1sec8.html#ch16biblio02entry11">Richalet et al. (1978)</A>. A finite impulse response model is used, and the desired setpoint trajectory over the prediction horizon is first order.</P>
+<P class="docText"><span class="docEmphasis">IDCOM-M</span>, developed by Setpoint, Inc. (now part of ASPEN Technology), differs from IDCOM in a number of ways. In addition to handling multivariable processes, it includes constraint handling, where hard constraints can be ranked in terms of priority. Also, rather than considering outputs over an entire prediction horizon, each output is controlled at a specific point in the future (termed the coincidence point).</P>
+<P class="docText"><span class="docEmphasis">Generalized predictive control</span> (GPC) arose from adaptive control research, where model parameters are continuously updated to account for changing process dynamics. It is geared toward SISO processes and has had few major industrial applications. <A class="docLink" HREF="0133536408_ch16lev1sec8.html#ch16biblio02entry02">Clarke (1988)</A> provides an overview of some applications.</P>
+<A NAME="ch16lev2sec9"></A><H4 class="docSection2Title"> MPC Research</H4>
+<A NAME="ch16lev3sec5"></A><H5 class="docSection3Title"> Problems with Existing Techniques</H5>
+<P class="docText">Many of the "classical" MPC approaches used in industry have performance limitations, which we summarize here.</P>
+<UL><LI><p class="docText">
+<span class="docEmphasis">Model structure</span>. 
+The finite step and impulse response models limit applications to open-loop stable processes and require many model coefficients to describe the response (indeed, even a first-order system with two parameters may require 50 or more step response coefficients). Integrating systems have been handled by formulating the derivative of an integrating output as the controlled output.</p></LI><LI><p class="docText">
+<span class="docEmphasis">Disturbance assumption</span>. 
+In <A class="docLink" HREF="0133536408_ch08.html#ch08">Chapter 8</A> we found that the standard IMC design may not handle input disturbances very well, since it is formulated for output disturbances. Similarly, DMC uses a "constant output disturbance" assumption. This may not yield good performance if the real disturbance occurs at the plant input.</p></LI><LI><p class="docText">
+<span class="docEmphasis">Finite horizons</span>. 
+We found in the examples presented in <A class="docLink" HREF="0133536408_ch16lev1sec3.html#ch16lev1sec3">Section 16.3</A> that control performance could deteriorate if the prediction or control horizons were not formulated correctly, even if the model was perfect.</p></LI><LI><p class="docText">
+<span class="docEmphasis">Model type</span>. 
+The step and impulse response models are all linear. For some processes (exothermic reactors) where the process operating conditions are changed frequently (different product specifications for each consumer, for example), a single linear model may not describe the dynamic behavior of the process over the wide range of conditions. Batch processes also operate over a wide range of conditions. For these systems, better control performance may be achieved if nonlinear models are used.</p></LI></UL>
+<A NAME="ch16lev3sec6"></A><H5 class="docSection3Title"> Solutions Being Developed</H5>
+<P class="docText">Much academic research has gone into developing approaches to solving these problems. It is now recognized that there are many advantages to using discrete <span class="docEmphasis">state space</span> models. State space models require fewer model parameters than step and impulse response models to describe process behavior. State space models also provide more flexibility for disturbance estimation. <span class="docEmphasis">State estimation</span> techniques can be easily formulated to handle input disturbances, for example. State estimation also allows unstable systems to be controlled. This is discussed by <A class="docLink" HREF="0133536408_ch16lev1sec8.html#ch16biblio02entry09">Muske and Rawlings (1993)</A>, for example.</P>
+<P class="docText"><span class="docEmphasis">Infinite horizon</span> approaches can be used to guarantee closed-loop stability. Although it may seem impossible to solve an optimization problem over an infinite horizon, linear models have analytical solutions, allowing rapid computations to be performed. This topic is covered by <A class="docLink" HREF="0133536408_ch16lev1sec8.html#ch16biblio02entry09">Muske and Rawlings (1993)</A>.</P>
+<P class="docText"><span class="docEmphasis">Nonlinear models</span> can be used to improve performance, compared with linear models. Reviews of these approaches are provided by <A class="docLink" HREF="0133536408_ch16lev1sec8.html#ch16biblio02entry15">Bequette (1991)</A> and <A class="docLink" HREF="0133536408_ch16lev1sec8.html#ch16biblio02entry16">Henson (1998)</A>. An alternative is to include several linear models to approximate the nonlinear system over a range of operating conditions. The linear models can then be "scheduled" or "interpolated" so that the best linear model approximation to the nonlinear process is used at a particular operating condition. An application to drug infusion during surgery is discussed by <A class="docLink" HREF="0133536408_ch16lev1sec8.html#ch16biblio02entry21">Rao et al. (2001)</A>.</P>
+<a href="0133536408_10971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch16lev1sec4.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch16lev1sec6.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

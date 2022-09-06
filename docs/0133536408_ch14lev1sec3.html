@@ -1,0 +1,78 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="14.3 Scaling Considerations"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch14lev1sec2.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch14lev1sec4.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch14lev1sec3"></A><H3 class="docSection1Title">14.3 Scaling Considerations</H3>
+<P class="docText">To properly use the SVD method presented in <A class="docLink" HREF="0133536408_ch14lev1sec4.html#ch14lev1sec4">Section 14.4</A>, it is necessary to scale the process transfer function matrix such that expected ranges of all scaled inputs and outputs are approximately the same.</P>
+<P class="docText">An output scaling matrix can be found to assure that the scaled outputs cover the same range. Let (*) represent the scaled variables. A diagonal scaling matrix for the output variable is</P>
+<P><B><A NAME="ch14equ04"></A>Equation 14.4 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="49" HEIGHT="18" src="FILES/14equ04.gif" ALT="graphics/14equ04.gif"></p><br>
+<P class="docText">Similarly, a diagonal scaling matrix for the input variable is</P>
+<P><B><A NAME="ch14equ05"></A>Equation 14.5 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="51" HEIGHT="20" src="FILES/14equ05.gif" ALT="graphics/14equ05.gif"></p><br>
+<P class="docText">Since the input-output relationship is</P>
+<P><B><A NAME="ch14equ06"></A>Equation 14.6 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="92" HEIGHT="19" src="FILES/14equ06.gif" ALT="graphics/14equ06.gif"></p><br>
+<P class="docText">we find</P>
+<P><B><A NAME="ch14equ07"></A>Equation 14.7 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="163" HEIGHT="24" src="FILES/14equ07.gif" ALT="graphics/14equ07.gif"></p><br>
+<P class="docText">Also,</P>
+<P><B><A NAME="ch14equ08"></A>Equation 14.8 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="88" HEIGHT="26" src="FILES/14equ08.gif" ALT="graphics/14equ08.gif"></p><br>
+<P class="docText">so the scaled input-output relationship is</P>
+<P><B><A NAME="ch14equ09"></A>Equation 14.9 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="206" HEIGHT="22" src="FILES/14equ09.gif" ALT="graphics/14equ09.gif"></p><br>
+<P class="docText">yielding the scaled transfer function matrix</P>
+<P><B><A NAME="ch14equ10"></A>Equation 14.10 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="103" HEIGHT="19" src="FILES/14equ10.gif" ALT="graphics/14equ10.gif"></p><br>
+<P class="docText">This is illustrated by the following example.</P>
+<A NAME="ch14lev2sec5"></A><H4 class="docSection2Title"> Example 14.3: Mixing Tank</H4>
+<P class="docText">The mixing tank shown in <A class="docLink" HREF="#ch14fig02">Figure 14-2</A> mixes two streams together (plus a possible disturbance stream). It is desirable to control both the level (<span class="docEmphasis">y</span><SUB>1</SUB>) and the temperature (<span class="docEmphasis">y</span><SUB>2</SUB>) in the tank. The flow rates of the hot (<span class="docEmphasis">u</span><SUB>1</SUB>) and cold (<span class="docEmphasis">u</span><SUB>2</SUB>) streams can be manipulated. The flow rate out of the tank is proportional to the square root of the height of liquid in the tank (<IMG BORDER="0" WIDTH="50" HEIGHT="18" src="FILES/14inequ02.gif" ALT="graphics/14inequ02.gif">). The residence time at steady state is 10 minutes. The steady-state flow rates and temperatures are as follows:</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch14fig02"></A>Figure 14-2. Mixing tank.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="279" src="FILES/14fig02.gif" ALT="graphics/14fig02.gif"></p></CENTER>
+<P><TABLE CELLSPACING="0" FRAME="hsides" RULES="none" CELLPADDING="5" WIDTH="100%"><COLGROUP align="left" span="3"><THEAD><TR><TH class="docTableHeader" valign="top"><P class="docText"><span class="docEmphBoldItalic">Stream</span></P></TH><TH class="docTableHeader" valign="top"><P class="docText"><span class="docEmphBoldItalic">Temperature</span></P></TH><TH class="docTableHeader" valign="top"><P class="docText"><span class="docEmphBoldItalic">Flow, liters/minute</span></P></TH></TR></THEAD><TR><TD class="docTableCell" valign="top"><P class="docText">Hot (manipulated)</P></TD><TD class="docTableCell" valign="top"><P class="docText">60&#176;C</P></TD><TD class="docTableCell" valign="top"><P class="docText">25</P></TD></TR><TR><TD class="docTableCell" valign="top"><P class="docText">Cold (manipulated)</P></TD><TD class="docTableCell" valign="top"><P class="docText">10&#176;C</P></TD><TD class="docTableCell" valign="top"><P class="docText">25</P></TD></TR><TR><TD class="docTableCell" valign="top"><P class="docText">Cold (disturbance)</P></TD><TD class="docTableCell" valign="top"><P class="docText">10&#176;C</P></TD><TD class="docTableCell" valign="top"><P class="docText">0</P></TD></TR><TR><TD class="docTableCell" valign="top"><P class="docText">Outlet</P></TD><TD class="docTableCell" valign="top"><P class="docText">35&#176;C</P></TD><TD class="docTableCell" valign="top"><P class="docText">50</P></TD></TR></COLGROUP></TABLE></P>
+<P class="docText">The cross-sectional area of the tank is 0.581 m<SUP>2</SUP>. The steady-state tank height is then 0.86 m, with a steady-state volume of 0.5 m<SUP>3</SUP> or 500 liters (assume that the tank is half full at steady state). The input-output transfer function relationship is (see Exercise 3).</P>
+<P><B><A NAME="ch14equ11"></A>Equation 14.11 </B></P><p class="docText"><IMG BORDER="0" WIDTH="218" HEIGHT="66" src="FILES/14equ11.gif" ALT="graphics/14equ11.gif"></p><br>
+<P class="docText">The time constant unit is minutes, and the units of the gains are</P>
+<p class="docText"><IMG BORDER="0" WIDTH="264" HEIGHT="36" src="FILES/14equ11a.gif" ALT="graphics/14equ11a.gif"></p><br>
+<P class="docText">It is interesting that the height time constant is twice the temperature time constant. Notice that if the height unit was centimeters and the temperature unit was degrees Celsius, the transfer function matrix would be</P>
+<P><B><A NAME="ch14equ12"></A>Equation 14.12 </B></P><p class="docText"><IMG BORDER="0" WIDTH="206" HEIGHT="70" src="FILES/14equ12.gif" ALT="graphics/14equ12.gif"></p><br>
+<P class="docText">If, in addition, the time units were seconds, the input-output relationship would be</P>
+<P><B><A NAME="ch14equ13"></A>Equation 14.13 </B></P><p class="docText"><IMG BORDER="0" WIDTH="230" HEIGHT="68" src="FILES/14equ13.gif" ALT="graphics/14equ13.gif"></p><br>
+<P class="docText">The point of this is that it is very important to understand the units of the variables you are dealing with, and that the parameters can vary (numerically) by orders of magnitudes depending on those units.</P>
+<P class="docText">In this example, the expected range of the manipulated variables is roughly the same, since we assume that the control valves are designed to handled flows roughly twice the nominal steady-state values. That is, we expect the manipulated inputs to be bounded between 0 and 50 liters/minute.</P>
+<P class="docText">Notice that the outputs do not cover the same range. For one thing, the units are different (m for height, and &#176;C for temperature).</P>
+<P class="docText">The steady-state value of the tank height is 0.86 m, with a minimum value of 0 m and a maximum height of 1.72 m. We desire, however, for the height to stay between 20 and 80% of the full tank level. That is, the height should range from 0.344 to 1.376 m. Since we work in deviation variables, and it is convenient to cover a range of -1 to 1, then it is natural to scale by 0.516 m (this is found from 0.86 to 0.344). We can then define a scaled <span class="docEmphasis">y</span><SUB>1</SUB> variable as <span class="docEmphasis">y</span><SUP>*</SUP><SUB>1</SUB>, where</P>
+<p class="docText"><IMG BORDER="0" WIDTH="85" HEIGHT="24" src="FILES/14equ13a.gif" ALT="graphics/14equ13a.gif"></p><br>
+<P class="docText">Similarly, it is convenient to scale the second output. The approximate range of temperatures is from 10&#176; to 60&#176;C, with a steady-state value of 35&#176;C. Again, since we are working with deviation variables and it is natural to consider variations of -1 to 1 in the scaled second output, we use 25&#176;C (obtained from 35&#176;C - 10<SUP>o</SUP>C) as the scaling factor. The second scaled output is then</P>
+<p class="docText"><IMG BORDER="0" WIDTH="65" HEIGHT="22" src="FILES/14equ13b.gif" ALT="graphics/14equ13b.gif"></p><br>
+<P class="docText">And the scaled output vector is related to the dimensional output vector as</P>
+<P><B><A NAME="ch14equ14"></A>Equation 14.14 </B></P><p class="docText"><IMG BORDER="0" WIDTH="156" HEIGHT="48" src="FILES/14equ14.gif" ALT="graphics/14equ14.gif"></p><br>
+<P class="docText">Then from Equation (<A class="docLink" HREF="#ch14equ11">14.11</A>),</P>
+<P><B><A NAME="ch14equ15"></A>Equation 14.15 </B></P><p class="docText"><IMG BORDER="0" WIDTH="307" HEIGHT="141" src="FILES/14equ15.gif" ALT="graphics/14equ15.gif"></p><br>
+<P class="docText">The gains indicate that the outputs will vary approximately the same order of magnitude (there is roughly a factor of 3 difference in the gains).</P>
+<P class="docText">Although not important in this particular example, the inputs can be scaled as well. Since the steady-state manipulated input flow rates are each 25 liters/minute, and we can assume that the flows each range from 0 to 50 liters/minute, it is convenient to scale each input by a factor of 25 liters/minute.</P>
+<P><B><A NAME="ch14equ16"></A>Equation 14.16 </B></P><p class="docText"><IMG BORDER="0" WIDTH="136" HEIGHT="46" src="FILES/14equ16.gif" ALT="graphics/14equ16.gif"></p><br>
+<P class="docText">or</P>
+<P><B><A NAME="ch14equ17"></A>Equation 14.17 </B></P><p class="docText"><IMG BORDER="0" WIDTH="120" HEIGHT="45" src="FILES/14equ17.gif" ALT="graphics/14equ17.gif"></p><br>
+<P class="docText">and we can write [combining Equations (<A class="docLink" HREF="#ch14equ15">14.15</A>) and (<A class="docLink" HREF="#ch14equ17">14.17</A>)]</P>
+<P><B><A NAME="ch14equ18"></A>Equation 14.18 </B></P><p class="docText"><IMG BORDER="0" WIDTH="258" HEIGHT="141" src="FILES/14equ18.gif" ALT="graphics/14equ18.gif"></p><br>
+<P class="docText">Now it is clear from the gain matrix that a full manipulated variable move will cause the desired tank height range to be violated, while the temperature range will be satisfied.</P>
+<P class="docText">When dealing with dynamic systems, it is always important to know the units of all parameters and variables, and to understand expected operating ranges for all inputs and outputs. It is convenient to scale the inputs and outputs such that the expected operating range is -1 to +1; for one reason, it is easier to compare responses on the same set of plots. Also, some analysis tools (such as the SVD presented in <A class="docLink" HREF="0133536408_ch14lev1sec4.html#ch14lev1sec4">Section 14.4</A>) can be interpreted only on properly scaled systems.</P>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch14lev1sec2.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch14lev1sec4.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

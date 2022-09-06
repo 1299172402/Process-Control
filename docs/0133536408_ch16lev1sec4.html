@@ -1,0 +1,65 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="16.4 Constraints and Multivariable Systems"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch16lev1sec3.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch16lev1sec5.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch16lev1sec4"></A><H3 class="docSection1Title">16.4 Constraints and Multivariable Systems</H3>
+<P class="docText">The dynamic matrix control technique presented in the previous section is based on an unconstrained optimization of current and future control moves. The combination of a linear model and a quadratic objective function lead to an analytical solution for the control moves. In practice, constraints on manipulated inputs (control moves) can be very important. If Equation (<A class="docLink" HREF="0133536408_ch16lev1sec3.html#ch16equ24">16.23</A>), which is the analytical solution to Equation (<A class="docLink" HREF="0133536408_ch16lev1sec3.html#ch16equ23">16.22</A>), results in an infeasible control action (e.g., a violation of constraints, such as a flow rate greater than the maximum possible flow), then obviously the control moves must be "truncated" at the maximum or minimum values. Since the resulting truncated solutions may not be optimal if the control horizon is greater than 1, it is important to use a constrained optimization formulation for these problems. Fortunately, dynamic matrix control is easily formulated to explicitly handle constraints by using quadratic programming (QP); the method is known as Quadratic Dynamic Matrix Control (QDMC).</P>
+<A NAME="ch16lev2sec6"></A><H4 class="docSection2Title"> Quadratic DMC (QDMC)</H4>
+<P class="docText">QDMC considers constraints on the manipulated inputs. The input constraints can be of the following form</P>
+<P><B><A NAME="ch16equ26"></A>Equation 16.25 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="105" HEIGHT="14" src="FILES/16equ25.gif" ALT="graphics/16equ25.gif"></p><br>
+<P class="docText">which is suitable for minimum and maximum flowrates, for example. In addition, velocity constraints that limit the magnitude of the control moves at each sample time have the following form</P>
+<P><B><A NAME="ch16equ27"></A>Equation 16.26 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="135" HEIGHT="18" src="FILES/16equ26.gif" ALT="graphics/16equ26.gif"></p><br>
+<P class="docText">where ordinarily, <font face="symbol">D</font><span class="docEmphasis">u</span><SUB>min</SUB> = –<font face="symbol">D</font><span class="docEmphasis">u</span><SUB>max</SUB>. To use a standard quadratic program (QP), the constraints in (16.25) need to be written in terms of the control moves, <font face="symbol">D</font><span class="docEmphasis">u<SUB>k+i</SUB></span>. Since the previously implemented control action (<span class="docEmphasis">u<SUB>k–1</SUB></span>) is known, we can write</P>
+<P><B><A NAME="ch16equ28"></A>Equation 16.27 </B></P><p class="docText"><IMG BORDER="0" WIDTH="151" HEIGHT="36" src="FILES/16equ27.gif" ALT="graphics/16equ27.gif"></p><br>
+<P class="docText">and so on. Since the manipulated input constraints are enforced over the control horizon of <span class="docEmphasis">M</span> steps, (16.25) and (16.27) yield</P>
+<P><B><A NAME="ch16equ29"></A>Equation 16.28 </B></P><p class="docText"><IMG BORDER="0" WIDTH="316" HEIGHT="85" src="FILES/16equ28.gif" ALT="graphics/16equ28.gif"></p><br>
+<P class="docText">Most standard QP codes use a "one-sided" form</P>
+<P><B><A NAME="ch16equ30"></A>Equation 16.29a </B></P><p class="docText"><IMG BORDER="0" WIDTH="253" HEIGHT="82" src="FILES/16equ29a.gif" ALT="graphics/16equ29a.gif"></p><br>
+<P class="docText">and</P>
+<P><B><A NAME="ch16equ31"></A>Equation 16.29b </B></P><p class="docText"><IMG BORDER="0" WIDTH="263" HEIGHT="84" src="FILES/16equ29b.gif" ALT="graphics/16equ29b.gif"></p><br>
+<P class="docText">which have the form <span class="docEmphasis">A</span><font face="symbol">D</font><span class="docEmphasis">u</span><SUB>f</SUB> <img src="FILES/U2265.GIF" border=0> <span class="docEmphasis">b</span>.</P>
+<P class="docText">The velocity constraints are implemented as bounds on the control moves</P>
+<P><B><A NAME="ch16equ32"></A>Equation 16.30 </B></P><p class="docText"><IMG BORDER="0" WIDTH="181" HEIGHT="82" src="FILES/16equ30.gif" ALT="graphics/16equ30.gif"></p><br>
+<P class="docText">The majority of constrained MPC problems can be solved based on the input constraints considered above. For completeness, however, we also show how constraints on the process outputs can be included.</P>
+<P class="docText">It may be desirable to force the predicted process outputs to be within a range of minimum and maximum values</P>
+<P><B><A NAME="ch16equ33"></A>Equation 16.31 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="107" HEIGHT="19" src="FILES/16equ31.gif" ALT="graphics/16equ31.gif"></p><br>
+<P class="docText">Here we first rewrite Equation (<A class="docLink" HREF="0133536408_ch16lev1sec3.html#ch16equ15">16.15</A>) in the following form</P>
+<P><B><A NAME="ch16equ34"></A>Equation 16.32 </B></P><p class="docText"><IMG BORDER="0" WIDTH="285" HEIGHT="90" src="FILES/16equ32.gif" ALT="graphics/16equ32.gif"></p><br>
+<P class="docText">where <span class="docEmphasis">f</span>, the free response of the "corrected-predicted output" (if no current and future control moves are made) is</P>
+<P><B><A NAME="ch16equ35"></A>Equation 16.33 </B></P><p class="docText"><IMG BORDER="0" WIDTH="141" HEIGHT="26" src="FILES/16equ33.gif" ALT="graphics/16equ33.gif"></p><br>
+<P class="docText">so that (<A class="docLink" HREF="#ch16equ33">16.31</A>) can be written</P>
+<P><B><A NAME="ch16equ36"></A>Equation 16.34 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="149" HEIGHT="16" src="FILES/16equ34.gif" ALT="graphics/16equ34.gif"></p><br>
+<P class="docText">or, in terms of one-sided inequalities</P>
+<P><B><A NAME="ch16equ37"></A>Equation 16.35 </B></P><p class="docText"><IMG BORDER="0" WIDTH="111" HEIGHT="35" src="FILES/16equ35.gif" ALT="graphics/16equ35.gif"></p><br>
+<P class="docText">Using shorthand matrix-vector notation, the quadratic programming problem is stated as</P>
+<P><B><A NAME="ch16equ38"></A>Equation 16.36 </B></P><p class="docText"><IMG BORDER="0" WIDTH="186" HEIGHT="37" src="FILES/16equ36.gif" ALT="graphics/16equ36.gif"></p><br>
+<P><B><A NAME="ch16equ39"></A>Equation 16.37 </B></P><p class="docText"><IMG BORDER="0" WIDTH="154" HEIGHT="36" src="FILES/16equ37.gif" ALT="graphics/16equ37.gif"></p><br>
+<P class="docText">where the matrices and vectors in the objective function are</P>
+<P><B><A NAME="ch16equ40"></A>Equation 16.38 </B></P><p class="docText"><IMG BORDER="0" WIDTH="78" HEIGHT="38" src="FILES/16equ38.gif" ALT="graphics/16equ38.gif"></p><br>
+<P class="docText">and the inequality matrices, <span class="docEmphasis">A</span> and <span class="docEmphasis">b</span>, in (16.37) incorporate the matrices in (16.29) and (16.35), with appropriate dimensionality. For example, if there are no output constraints, then <span class="docEmphasis">A</span> and <span class="docEmphasis">b</span> are</P>
+<P><B><A NAME="ch16equ41"></A>Equation 16.39 </B></P><p class="docText"><IMG BORDER="0" WIDTH="162" HEIGHT="334" src="FILES/16equ39.gif" ALT="graphics/16equ39.gif"></p><br>
+<P class="docText">Futher presentation is beyond the scope of this text. Example m-files for the study of constrained systems will be placed on the book web page.</P>
+<A NAME="ch16lev2sec7"></A><H4 class="docSection2Title"> Multivariable Systems</H4>
+<P class="docText">In this chapter we have focused on single input–single output processes. One reason that MPC has been so widely applied is that it naturally handles multivariable systems. The same basic ideas presented in this chapter hold for the multivariable case, but the formulation for step response models in a DMC framework is somewhat tedious. We recommend that you use the Model Predictive Control Toolbox to perform multivariable studies.</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch16lev1sec3.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch16lev1sec5.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

@@ -1,0 +1,53 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="8.7 The IMC Structure"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch08lev1sec6.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch08lev1sec8.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch08lev1sec7"></A><H3 class="docSection1Title" id="225793-905">8.7 The IMC Structure</H3>
+<P class="docText">The IMC structure is shown in <A class="docLink" HREF="#ch08fig12">Figure 8-12</A>. The distinguishing characteristic of this structure is the process model, which is in parallel with the actual process (plant). Note that (~) is generally used to represent signals associated with the model. Other literature sources may use a subscript (such as <span class="docEmphasis">m</span>) to represent the model. <A class="docLink" HREF="#ch08fig13">Figure 8-13</A> illustrates that both the controller and model exist as computer computations; it is convenient to treat them separately for design and analysis.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch08fig12"></A>Figure 8-12. The internal model control structure.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="201" src="FILES/08fig12.gif" ALT="graphics/08fig12.gif"></p></CENTER>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch08fig13"></A>Figure 8-13. The IMC strategy. The dotted line indicates the calculations performed by the model-based controller.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="251" src="FILES/08fig13.gif" ALT="graphics/08fig13.gif"></p></CENTER>
+<P class="docText">A list of transfer function variables shown in the IMC block diagram are given below.</P>
+<P><TABLE CELLSPACING="0" FRAME="void" RULES="none" CELLPADDING="5" WIDTH="100%"><COLGROUP align="left" span="2"><THEAD></THEAD><TR><TD class="docTableCell" valign="top"><P class="docText"><span class="docEmphasis">d</span>(<span class="docEmphasis">s</span>)=</P></TD><TD class="docTableCell" valign="top"><P class="docText">disturbance</P></TD></TR><TR><TD class="docTableCell" valign="top"><P class="docText"><IMG BORDER="0" id="129022115118" WIDTH="27" HEIGHT="20" src="FILES/dtildes.gif" ALT="graphics/dtildes.gif">=</P></TD><TD class="docTableCell" valign="top"><P class="docText">estimated disturbance</P></TD></TR><TR><TD class="docTableCell" valign="top"><P class="docText"><span class="docEmphasis">g</span><SUB>p</SUB>(<span class="docEmphasis">s</span>)=</P></TD><TD class="docTableCell" valign="top"><P class="docText">process</P></TD></TR><TR><TD class="docTableCell" valign="top"><P class="docText"><IMG BORDER="0" id="129022115118" WIDTH="31" HEIGHT="20" src="FILES/gtildes.gif" ALT="graphics/gtildes.gif">=</P></TD><TD class="docTableCell" valign="top"><P class="docText">process model</P></TD></TR><TR><TD class="docTableCell" valign="top"><P class="docText"><span class="docEmphasis">q</span>(<span class="docEmphasis">s</span>)=</P></TD><TD class="docTableCell" valign="top"><P class="docText">internal model controller</P></TD></TR><TR><TD class="docTableCell" valign="top"><P class="docText"><span class="docEmphasis">r</span>(<span class="docEmphasis">s</span>)=</P></TD><TD class="docTableCell" valign="top"><P class="docText">setpoint</P></TD></TR><TR><TD class="docTableCell" valign="top"><P class="docText"><IMG BORDER="0" id="129022115118" WIDTH="25" HEIGHT="18" src="FILES/rtildes.gif" ALT="graphics/rtildes.gif">=</P></TD><TD class="docTableCell" valign="top"><P class="docText">modified setpoint (corrects for model error and disturbances)</P></TD></TR><TR><TD class="docTableCell" valign="top"><P class="docText"><span class="docEmphasis">u</span>(<span class="docEmphasis">s</span>)=</P></TD><TD class="docTableCell" valign="top"><P class="docText">manipulated input (controller output)</P></TD></TR><TR><TD class="docTableCell" valign="top"><P class="docText"><span class="docEmphasis">y</span>(<span class="docEmphasis">s</span>)=</P></TD><TD class="docTableCell" valign="top"><P class="docText">measured process output</P></TD></TR><TR><TD class="docTableCell" valign="top"><P class="docText"><IMG BORDER="0" id="129022115118" WIDTH="24" HEIGHT="18" src="FILES/ytildes1.gif" ALT="graphics/ytildes1.gif">=</P></TD><TD class="docTableCell" valign="top"><P class="docText">model output</P></TD></TR></COLGROUP></TABLE></P>
+<P class="docText">Notice that the feedback signal is</P>
+<P><B><A NAME="ch08equ36"></A>Equation 8.36 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="187" HEIGHT="20" src="FILES/08equ36.gif" ALT="graphics/08equ36.gif"></p><br>
+<P class="docText">The signal to the controller is</P>
+<P><B><A NAME="ch08equ37"></A>Equation 8.37 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="305" HEIGHT="21" src="FILES/08equ37.gif" ALT="graphics/08equ37.gif"></p><br>
+<P class="docText">Consider now some limiting cases.</P>
+<A NAME="ch08lev2sec11"></A><H4 class="docSection2Title"> Perfect Model, No Disturbances</H4>
+<P class="docText">If the model is perfect <IMG BORDER="0" id="129022115118" WIDTH="85" HEIGHT="18" src="FILES/08inequ07.gif" ALT="graphics/08inequ07.gif"> and there are no disturbances (<span class="docEmphasis">d</span>(<span class="docEmphasis">s</span>) = 0), then the feedback signal is zero. The relationship between <span class="docEmphasis">r</span>(<span class="docEmphasis">s</span>) and <span class="docEmphasis">y</span>(<span class="docEmphasis">s</span>) is then</P>
+<P><B><A NAME="ch08equ38"></A>Equation 8.38 </B></P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="109" HEIGHT="18" src="FILES/08equ38.gif" ALT="graphics/08equ38.gif"></p><br>
+<P class="docText">Notice that this is the same relationship that we get for an open-loop control system design.</P>
+<P class="docText">Why is this nice? If the controller, <span class="docEmphasis">q</span>(<span class="docEmphasis">s</span>), is stable and the process, <span class="docEmphasis">g</span><SUB>p</SUB>(<span class="docEmphasis">s</span>), is stable, then the closed-loop system is stable. We developed a design procedure that yields a stable, physically realizable controller in <A class="docLink" HREF="0133536408_ch08lev1sec3.html#ch08lev1sec3">Section 8.3</A>.</P>
+<P class="docText">Recall that a standard feedback controller could actually destabilize a process if we did not correctly choose the tuning parameters. An analysis of the poles of the closed-loop transfer function must be performed to determine the stability of standard feedback controllers.</P>
+<A NAME="ch08lev2sec12"></A><H4 class="docSection2Title"> Perfect Model, Disturbance Effect</H4>
+<P class="docText">If the model is perfect <IMG BORDER="0" id="129022115118" WIDTH="85" HEIGHT="18" src="FILES/08inequ07.gif" ALT="graphics/08inequ07.gif"> and there is a disturbance, then the feedback signal is</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="68" HEIGHT="20" src="FILES/08equ38a.gif" ALT="graphics/08equ38a.gif"></p><br>
+<P class="docText">This illustrates that feedback is needed because of unmeasured disturbances entering a process.</P>
+<A NAME="ch08lev2sec13"></A><H4 class="docSection2Title"> Model Uncertainty, No Disturbances</H4>
+<P class="docText">If there are no disturbances [<span class="docEmphasis">d</span>(<span class="docEmphasis">s</span>) = 0] but there is model uncertainty <IMG BORDER="0" id="129022115118" WIDTH="78" HEIGHT="16" src="FILES/08inequ17.gif" ALT="graphics/08inequ17.gif">, which is always the case in the real world, then the feedback signal is</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="150" HEIGHT="23" src="FILES/08equ38b.gif" ALT="graphics/08equ38b.gif"></p><br>
+<P class="docText">This illustrates that feedback is needed because of model uncertainty.</P>
+<P class="docText">The closed-loop relationship is</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="362" HEIGHT="54" src="FILES/08equ38c.gif" ALT="graphics/08equ38c.gif"></p><br>
+<P class="docText">Recapitulating, the reasons for feedback control include the following:</P>
+<UL><LI><P class="docList">Unmeasured disturbances</P></LI><LI><P class="docList">Model uncertainty</P></LI><LI><P class="docList">Faster response than the open-loop system (with a static controller)</P></LI><LI><P class="docList">Closed-loop stability of open-loop unstable system</P></LI></UL>
+<P class="docText">The primary disadvantage of IMC is that it does not guarantee stability of open-loop unstable systems. The procedure detailed in <A class="docLink" HREF="0133536408_ch09.html#ch09">Chapter 9</A> handles these systems.</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch08lev1sec6.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch08lev1sec8.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

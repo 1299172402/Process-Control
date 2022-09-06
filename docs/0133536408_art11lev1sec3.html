@@ -1,0 +1,50 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="M11.3 Batch Model 2: Jacket Inlet Temperature Manipulated"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_art11lev1sec2.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_art11lev1sec4.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="art11lev1sec3"></A><H3 class="docSection1Title">M11.3 Batch Model 2: Jacket Inlet Temperature Manipulated</H3>
+<P class="docText">In this section we focus on the development of a mathematical model for the reactor and jacket; we will assume that the jacket inlet temperature is manipulated, and the jacket flowrate is constant. This model is appropriate for the strategy shown in <A class="docLink" HREF="0133536408_art11lev1sec1.html#art11m11fig03">Figure M11-3</A>. A number of other assumptions will be made in the development of a mathematical model to describe the dynamic batch reactor behavior. First of all, we will assume that the reactor is perfectly mixed. Also, for simplicity we lump all reaction heat effects into a single heat- generation term, <span class="docEmphasis">q</span><SUB>gen</SUB>. Similarly, the jacket is perfectly mixed; often, agitation nozzles are used to create a high "swirl velocity" in the jacket, so this assumption will be fine on the time scale of interest. Physical parameters, such as density and the heat transfer coefficient, are assumed to be constant. The dynamics of the recirculation heat-transfer system are neglected in this model. Energy balances on the reactor and jacket yield the following equations:</P>
+<P><B><A NAME="art11equ07"></A>Equation M11.6 </B></P><p class="docText"><IMG BORDER="0" WIDTH="242" HEIGHT="72" src="FILES/m11equ06.gif" ALT="graphics/m11equ06.gif"></p><br>
+<P class="docText">where the accumulation terms include the effect of any "thermal mass" of the reactor and jacket walls. For example, the reactor energy balance includes the term</P>
+<p class="docText"><IMG BORDER="0" WIDTH="142" HEIGHT="17" src="FILES/m11equ06a.gif" ALT="graphics/m11equ06a.gif"></p>
+<br>
+<P class="docText">where (<span class="docEmphasis">mc<SUB>p</SUB></span>)<span class="docEmphasis"><SUB>m</SUB></span> is the "thermal mass" (mass * heat capacity, including the metal as well as the glass lining) of the reactor wall and any other inert components (agitator, baffles, etc.). Also, (<span class="docEmphasis">mc<SUB>p</SUB></span>)<span class="docEmphasis"><SUB>f</SUB></span> = <span class="docEmphasis">V</span><font face="symbol">r</font><span class="docEmphasis">c<SUB>pf</SUB></span> is the contribution of the reactor fluid. The term <IMG BORDER="0" WIDTH="16" HEIGHT="16" src="FILES/mdotj.gif" ALT="graphics/mdotj.gif"> represents the mass flow rate of the jacket fluid. </P>
+<P class="docText">Equation (<A class="docLink" HREF="0133536408_art11lev1sec2.html#art11equ06">M11.6</A>) can be rewritten</P>
+<P><B><A NAME="art11equ08"></A>Equation M11.7 </B></P><p class="docText"><IMG BORDER="0" WIDTH="256" HEIGHT="71" src="FILES/m11equ07.gif" ALT="graphics/m11equ07.gif"></p><br>
+<P class="docText">The linear state space model is</P>
+<P><B><A NAME="art11equ09"></A>Equation M11.8 </B></P><p class="docText"><IMG BORDER="0" WIDTH="420" HEIGHT="141" src="FILES/m11equ08.gif" ALT="graphics/m11equ08.gif"></p><br>
+<P class="docText">The resulting input-output transfer function models relating the manipulated and disturbance inputs to the measured reactor output are (see Additional Exercise 2)</P>
+<P><B><A NAME="art11equ10"></A>Equation M11.9 </B></P><p class="docText"><IMG BORDER="0" WIDTH="298" HEIGHT="180" src="FILES/m11equ09.gif" ALT="graphics/m11equ09.gif"></p><br>
+<P class="docText"><span class="docEmphStrong">Problem M11.6</span> Effect of Reactor Scale on Process Parameters</P>
+<P class="docText">For each scale of reactor (<A class="docLink" HREF="0133536408_art11lev1sec2.html#art11table01">Table M11-1</A>), find the process parameters assuming that the process and jacket fluid is water and neglecting the thermal effect of the non-fluid components of the reactor and jacket. Assume that the jacket volume is 1/4 of the reactor volume.</P>
+<A NAME="art11lev2sec4"></A><H4 class="docSection2Title"> IMC-Based PID Tuning Parameters</H4>
+<P class="docText">Using the IMC-based PID tuning rules, with a desired first-order closed-loop response with a time constant of <font face="symbol">l</font>, we find</P>
+<P><B><A NAME="art11equ11"></A>Equation M11.10 </B></P><p class="docText"><IMG BORDER="0" WIDTH="55" HEIGHT="102" src="FILES/m11equ10.gif" ALT="graphics/m11equ10.gif"></p><br>
+<P class="docText">We can also use the following order of magnitude analysis to reduce the expressions</P>
+<p class="docText"><IMG BORDER="0" WIDTH="147" HEIGHT="26" src="FILES/m11equ10a.gif" ALT="graphics/m11equ10a.gif"></p><br>
+<P class="docText">so</P>
+<P><B><A NAME="art11equ12"></A>Equation M11.11 </B></P><p class="docText"><IMG BORDER="0" WIDTH="165" HEIGHT="147" src="FILES/m11equ11.gif" ALT="graphics/m11equ11.gif"></p><br>
+<P class="docText">Also, as in <A class="docLink" HREF="0133536408_art11lev1sec2.html#art11lev1sec2">Section M11.2</A>, let the closed-loop time constant be roughly 1/4 of the open-loop time constant, so the resulting controller proportional gain is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="38" HEIGHT="15" src="FILES/m11equ11a.gif" ALT="graphics/m11equ11a.gif"></p>
+<br>
+<P class="docText">and the proportional band is then 25%. For a PI controller, we can start with the same parameter values, but set the derivative time constant to 0.</P>
+<P class="docText"><span class="docEmphStrong">Problem M11.7</span> IMC-Based PI Control: Step Setpoint Tracking</P>
+<P class="docText">Here we require that the reactor temperature setpoint be changed from 20&#176;C to 50&#176;C. Compare responses to step setpoint changes, for each size reactor. Discuss the practical limitations to the expected dynamic performance for each size reactor, especially considering the constraints on jacket inlet temperature (–10 to 150&#176;C).</P>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_art11lev1sec2.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_art11lev1sec4.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

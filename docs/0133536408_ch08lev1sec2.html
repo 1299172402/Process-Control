@@ -1,0 +1,89 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="8.2 Practical Open-Loop Controller Design"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch08lev1sec1.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch08lev1sec3.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch08lev1sec2"></A><H3 class="docSection1Title">8.2 Practical Open-Loop Controller Design</H3>
+<P class="docText">In order to design a physically realizable controller for the first-order process, there must be a denominator polynomial in the controller. Define a first-order filter as the following transfer function,</P>
+<P><B><A NAME="ch08equ05"></A>Equation 8.5 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="78" HEIGHT="37" src="FILES/08equ05.gif" ALT="graphics/08equ05.gif"></p><br>
+<P class="docText">where <font face="symbol">l</font> is a filter tuning parameter that has units of time. We see shortly that we can think of <font face="symbol">l</font> as a desired time constant for the output response; if a faster response is desired, then <font face="symbol">l</font> is decreased. Now, let the controller be designed in the following fashion to make <span class="docEmphasis">q</span>(<span class="docEmphasis">s</span>) proper.</P>
+<P><B><A NAME="ch08equ06"></A>Equation 8.6 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="148" HEIGHT="43" src="FILES/08equ06.gif" ALT="graphics/08equ06.gif"></p><br>
+<P class="docText">which yields the following controller for a first-order process,</P>
+<P><B><A NAME="ch08equ07"></A>Equation 8.7 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="212" HEIGHT="49" src="FILES/08equ07.gif" ALT="graphics/08equ07.gif"></p><br>
+<P class="docText">Equation (<A class="docLink" HREF="#ch08equ07">8.7)</A> is a lead/lag controller. Since the order of the denominator is at least as great as the order of the numerator, the design is physically realizable. The response of the output variable, <span class="docEmphasis">y</span>, is</P>
+<P><B><A NAME="ch08equ08"></A>Equation 8.8 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="285" HEIGHT="22" src="FILES/08equ08.gif" ALT="graphics/08equ08.gif"></p><br>
+<P class="docText">in this case,</P>
+<P><B><A NAME="ch08equ09"></A>Equation 8.9 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="101" HEIGHT="35" src="FILES/08equ09.gif" ALT="graphics/08equ09.gif"></p><br>
+<P class="docText">That is, there will be a first-order response with a time constant of <font face="symbol">l</font>. Contrast this with the static control law [<span class="docEmphasis">q</span>(<span class="docEmphasis">s</span>) = <span class="docEmphasis">k</span><SUB>q</SUB> = 1/<span class="docEmphasis">k</span><SUB>p</SUB>], which will yield a first-order response with a time constant of <font face="symbol">t</font><SUB>p</SUB>. As long as <font face="symbol">l</font> &lt; <font face="symbol">t</font><SUB>p</SUB>, the dynamic controller will have a faster response than the static controller.</P>
+<A NAME="ch08lev2sec3"></A><H4 class="docSection2Title"> Response of Manipulated and Output Variables to Step Setpoint Changes</H4>
+<P class="docText">We have already seen that the output response to a setpoint change is first order [e.g., Equation (<A class="docLink" HREF="#ch08equ09">8.9)</A>]. We can also find the manipulated variable response to a setpoint change. Here we consider the dynamic controller [<span class="docEmphasis">q</span>(<span class="docEmphasis">s</span>) = <span class="docEmphasis">f</span>(<span class="docEmphasis">s</span>)/<span class="docEmphasis">g</span><SUB>p</SUB>(<span class="docEmphasis">s</span>)]</P>
+<P><B><A NAME="ch08equ10"></A>Equation 8.10 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="137" HEIGHT="48" src="FILES/08equ10.gif" ALT="graphics/08equ10.gif"></p><br>
+<P class="docText">Notice that this is a lead/lag controller. For a step setpoint change of magnitude <span class="docEmphasis">R</span>,</P>
+<P><B><A NAME="ch08equ11"></A>Equation 8.11 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="130" HEIGHT="50" src="FILES/08equ11.gif" ALT="graphics/08equ11.gif"></p><br>
+<P class="docText">The time-domain response for the manipulated input is</P>
+<P><B><A NAME="ch08equ12"></A>Equation 8.12 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="174" HEIGHT="45" src="FILES/08equ12.gif" ALT="graphics/08equ12.gif"></p><br>
+<P class="docText">The output response is</P>
+<P><B><A NAME="ch08equ13"></A>Equation 8.13 </B></P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="105" HEIGHT="20" src="FILES/08equ13.gif" ALT="graphics/08equ13.gif"></p><br>
+<P class="docText"><A class="docLink" HREF="#ch08fig04">Figure 8-4</A> is a plot of <span class="docEmphasis">y</span>(<span class="docEmphasis">t</span>) and <span class="docEmphasis">u</span>(<span class="docEmphasis">t</span>), as a function of as a function of <font face="symbol">l</font>, for a process with <font face="symbol">t</font><SUB>p</SUB> = 10 minutes and <span class="docEmphasis">k</span><SUB>p</SUB> = 1 %/%. Notice that the manipulated input action occurs immediately at the time of the setpoint change. You should show that the magnitude is consistent with the time-domain solution [Equation (<A class="docLink" HREF="#ch08equ12">8.12)</A>], and with the Laplace domain solution [Equation (<A class="docLink" HREF="#ch08equ11">8.11)</A>] using the initial value theorem.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch08fig04"></A>Figure 8-4. Response to step setpoint change, as a function of <font face="symbol">l</font>, for a first-order process with a time constant of 10 minutes.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="385" src="FILES/08fig04.gif" ALT="graphics/08fig04.gif"></p></CENTER>
+<A NAME="ch08lev2sec4"></A><H4 class="docSection2Title"> Issues in Dynamic Controller Design</H4>
+<P class="docText">We have already seen that a controller needs to be <span class="docEmphasis">proper</span> to be implemented in a practical situation. We found that a dynamic controller could be designed by using a process model inverse, cascaded with a filter transfer function, to make the controller <span class="docEmphasis">proper</span>.</P>
+<p class="docText"><span class="docEmphStrong">Question 8.2.1</span>: 
+Can the process model inverse always be used for controller design?</p>
+<P class="docText">The answer to question 8.2.1 is shown clearly in the following example.</P>
+<A NAME="ch08lev2sec5"></A><H4 class="docSection2Title"> Example 8.1: Inverse Response System</H4>
+<P class="docText">Consider the following transfer function,</P>
+<P><B><A NAME="ch08equ14"></A>Equation 8.14 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="153" HEIGHT="47" src="FILES/08equ14.gif" ALT="graphics/08equ14.gif"></p><br>
+<P class="docText">where <font face="symbol">b</font> is a positive real number, indicating a positive zero (yielding inverse response) in the process transfer function. If we use the previous design procedure for a dynamic open-loop controller, we find</P>
+<P><B><A NAME="ch08equ15"></A>Equation 8.15 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="247" HEIGHT="48" src="FILES/08equ15.gif" ALT="graphics/08equ15.gif"></p><br>
+<P class="docText">and if we let <span class="docEmphasis">f</span>(<span class="docEmphasis">s</span>) = 1/(<font face="symbol">l</font><span class="docEmphasis">s</span> + 1), we obtain</P>
+<P><B><A NAME="ch08equ16"></A>Equation 8.16 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="179" HEIGHT="50" src="FILES/08equ16.gif" ALT="graphics/08equ16.gif"></p><br>
+<P class="docText">Notice that the zeros of the process model become the poles of the controller, when the model inverse is used for control-system design. This creates an unstable controller and the possibility of unbounded, manipulated variable action. Therefore<span class="docEmphasis">, if a process has a <span class="docEmphasis">RHP</span> zero, this zero must be factored out before using the model inverse for the controller design</span>.</P>
+<p class="docText"><span class="docEmphStrong">Answer 8.2.1</span>: 
+The process model cannot simply be inverted to form the controller. It must be factored so that the resulting controller is stable and realizable.</p>
+<P class="docText">Look at Equation (<A class="docLink" HREF="#ch08equ16">8.16)</A>. If we simply take out the unstable pole, we have</P>
+<P><B><A NAME="ch08equ17"></A>Equation 8.17 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="179" HEIGHT="51" src="FILES/08equ17.gif" ALT="graphics/08equ17.gif"></p><br>
+<P class="docText">Notice that this is not acceptable, because <span class="docEmphasis">q</span>(<span class="docEmphasis">s</span>) is not <span class="docEmphasis">proper</span>. To make it proper, we can simply increase the order of the filter.</P>
+<P><B><A NAME="ch08equ18"></A>Equation 8.18 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="180" HEIGHT="47" src="FILES/08equ18.gif" ALT="graphics/08equ18.gif"></p><br>
+<P class="docText">where we have used a second-order filter, <span class="docEmphasis">f</span>(<span class="docEmphasis">s</span>) = 1/(<font face="symbol">l</font><span class="docEmphasis">s</span> + 1)<SUP>2</SUP>, for the controller design. What kind of output response will be achieved?</P>
+<P><B><A NAME="ch08equ19"></A>Equation 8.19 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="396" HEIGHT="95" src="FILES/08equ19.gif" ALT="graphics/08equ19.gif"></p><br>
+<P class="docText">Notice that the output will exhibit an inverse response when there is a step setpoint change.</P>
+<P class="docText">This is an important result—process inverse response behavior <span class="docEmphasis">cannot</span> be removed by any <span class="docEmphasis">stable</span> control system.</P>
+<A NAME="ch08lev2sec6"></A><H4 class="docSection2Title"> Example 8.2: Numerical Example of an Inverse Response System</H4>
+<P class="docText">Consider the following transfer function, which has a RHP zero at 1/9 min<SUP>-1</SUP>:</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="139" HEIGHT="38" src="FILES/08equ19a.gif" ALT="graphics/08equ19a.gif"></p><br>
+<P class="docText">Compare the responses (input and output) under open-loop control, for the two cases: (i) when the RHP pole is removed from the controller and (ii) when the RHP pole is not removed from the controller (i.e., the controller is unstable)</P>
+<P class="docText">(i) <span class="docEmphasis">When the unstable controller pole is removed</span>, we have from Equation (<A class="docLink" HREF="#ch08equ18">8.18)</A></P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="130" HEIGHT="39" src="FILES/08equ19b.gif" ALT="graphics/08equ19b.gif"></p><br>
+<P class="docText">which yields the following manipulated and output variable response:</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="342" HEIGHT="40" src="FILES/08equ19c.gif" ALT="graphics/08equ19c.gif"></p><br>
+<P class="docText">For a unit step change in setpoint, the output and manipulated variable responses are shown in <A class="docLink" HREF="#ch08fig05">Figure 8-5</A> for <font face="symbol">l</font> = 5 minutes. Notice that the inverse response appears in the output variable, and that the manipulated input changes immediately when the setpoint change is made. The reader should be able to show that the manipulated input change is consistent with that predicted by the initial value theorem.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch08fig05"></A>Figure 8-5. Unit step setpoint response when controller is stable (<font face="symbol">l</font> = 5 minutes).</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="384" src="FILES/08fig05.gif" ALT="graphics/08fig05.gif"></p></CENTER>
+<P class="docText">(ii) <span class="docEmphasis">When the unstable controller pole is not removed</span>, we have from Equation (<A class="docLink" HREF="#ch08equ16">8.16)</A></P>
+<P><B><A NAME="ch08equ20"></A>Equation 8.20 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="135" HEIGHT="43" src="FILES/08equ20.gif" ALT="graphics/08equ20.gif"></p><br>
+<P class="docText">which is an unstable controller. This controller yields the manipulated variable response</P>
+<P><B><A NAME="ch08equ21"></A>Equation 8.21 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="210" HEIGHT="40" src="FILES/08equ21.gif" ALT="graphics/08equ21.gif"></p><br>
+<P class="docText">The output response is</P>
+<P><B><A NAME="ch08equ22"></A>Equation 8.22 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="324" HEIGHT="65" src="FILES/08equ22.gif" ALT="graphics/08equ22.gif"></p><br>
+<P class="docText">The output and manipulated variable responses are shown in <A class="docLink" HREF="#ch08fig06">Figure 8-6</A> for <font face="symbol">l</font> = 5 minutes. Notice that the inverse response does not appear in the output variable, but the manipulated variable is unbounded (unstable). This is often called <span class="docEmphasis">internal instability</span>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch08fig06"></A>Figure 8-6. Unit step setpoint response with unstable controller (note scale of response).</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="375" src="FILES/08fig06.gif" ALT="graphics/08fig06.gif"></p></CENTER>
+<P class="docText">This last example illustrated an important point that is not often mentioned in textbooks. If only the process output is calculated or plotted, then the engineer may overlook the fact that a manipulated variable is becoming unbounded. Good output performance does not ensure feasible manipulated variable action.</P>
+<P class="docText">When designing the open-loop control system of <A class="docLink" HREF="0133536408_ch08lev1sec1.html#ch08fig03">Figure 8-3</A>, it is critical that both the controller and the process be stable. If the process is unstable, an open-loop controller cannot be used. The proper control-system design procedure for open-loop unstable systems is covered in <A class="docLink" HREF="0133536408_ch09.html#ch09">Chapter 9</A>.</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch08lev1sec1.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch08lev1sec3.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

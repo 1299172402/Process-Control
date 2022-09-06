@@ -1,0 +1,39 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="5.9 S'IMULINK' Block Diagrams"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch05lev1sec8.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch05lev1sec10.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch05lev1sec9"></A><H3 class="docSection1Title" id="225793-919">5.9 S<span class="docEmphSmaller">IMULINK</span> Block Diagrams</H3>
+<P class="docText">S<span class="docEmphSmaller">IMULINK</span> is a natural environment for simulating closed-loop systems. It is recommended that you read <A class="docLink" HREF="0133536408_art02.html#art02">Module 2</A>, Introduction to S<span class="docEmphSmaller">IMULINK</span>, and reproduce the simulation results shown in <A class="docLink" HREF="0133536408_ch05lev1sec5.html#ch05lev2sec16">Example 5.3</A>. Generate the block diagram shown in <A class="docLink" HREF="#ch05fig18">Figure 5-18</A> and run the simulations for various controller proportional gains.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch05fig18"></A>Figure 5-18. S<span class="docEmphSmaller">IMULINK</span> diagram for <A class="docLink" HREF="0133536408_ch05lev1sec5.html#ch05lev2sec16">Example 5.3</A>.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="172" src="FILES/05fig18.gif" ALT="graphics/05fig18.gif"></p></CENTER>
+<P class="docText">Recall that the closed-loop characteristic equation for <A class="docLink" HREF="0133536408_ch05lev1sec5.html#ch05lev2sec16">Example 5.3</A> is</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="148" HEIGHT="20" src="FILES/05equ40.gif" ALT="graphics/05equ40.gif"></p>
+<br>
+<P class="docText">For <span class="docEmphasis">k</span><SUB>c</SUB> + 10, the M<span class="docEmphSmaller">ATLAB</span> <TT>roots</TT> command can be used to find that the process is on the verge of instability, with the following values for the poles:</P>
+<pre>
+
+</pre><pre>
+&#187; roots([6 11 6 11])
+ans =
+  -1.8333
+  -0.0000 + 1.0000i
+  -0.0000 - 1.0000i
+</pre>
+<P class="docText">Notice that this analysis can be performed for several values of <span class="docEmphasis">k</span><SUB>c</SUB>, to construct <A class="docLink" HREF="0133536408_ch05lev1sec6.html#ch05table01">Table 5-1</A>.</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch05lev1sec8.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch05lev1sec10.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

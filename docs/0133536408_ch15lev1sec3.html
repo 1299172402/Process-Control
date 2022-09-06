@@ -1,0 +1,41 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="15.3 Unit Operations Not Previously Covered"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch15lev1sec2.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch15lev1sec4.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch15lev1sec3"></A><H3 class="docSection1Title">15.3 Unit Operations Not Previously Covered</H3>
+<P class="docText">In this text, we have covered the control of a few unit operations but have not discussed control structure determination in detail. In this section, we first discuss the two major structures for maintaining material balance control, and then we discuss the control of some typical unit operations that occur in a process flow sheet.</P>
+<A NAME="ch15lev2sec5"></A><H4 class="docSection2Title"> Supply-Side vs. Demand-Side Control of Production</H4>
+<P class="docText">Material balance control can be accomplished using two approaches: supply side (direction of flow) and demand side (direction opposite to flow). A simple surge tank level example is shown in <A class="docLink" HREF="#ch15fig10">Figure 15-10</A>. The level controller manipulates the flow out of the vessel in supply-side control, while the level controller manipulates the feed flow to the vessel in demand-side control.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch15fig10"></A>Figure 15-10. Control in direction of flow (supply side) vs. direction opposite to flow (demand side).</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="238" src="FILES/15fig10.gif" ALT="graphics/15fig10.gif"></p></CENTER>
+<P class="docText">Using supply-side control, a change in the flow rate setpoint propagates downstream as a disturbance to all units that follow. In demand-side control, a flow rate setpoint change propagates upstream to all units that precede the unit. <A class="docLink" HREF="0133536408_ch15lev1sec8.html#ch15biblio01entry06">Luyben (1999)</A> has studied demand-side control structures for complex flow sheets and finds that they often add additional lags and create control problems, particularly when distillation columns are involved. This causes greater product variability, so the supply-side structure is generally recommended.</P>
+<A NAME="ch15lev2sec6"></A><H4 class="docSection2Title"> Compressor Control</H4>
+<P class="docText">It is more economical to condense a vapor stream and pump it than to vaporize a liquid stream and compress it. Gas compressors are often used on recycle streams composed of light components (hydrogen, methane, etc.). For these systems, it is not economical to condense the streams and pump them as liquids.</P>
+<P class="docText">Compressors that operate at a constant speed are usually controlled using one of the strategies shown in <A class="docLink" HREF="#ch15fig11">Figure 15-11</A>. Usually the "pinch" method will have lower operating costs than the "spillback" method. Variable speed control methods are shown in <A class="docLink" HREF="#ch15fig12">Figure 15-12</A> for an electric motor drive and for a steam turbine drive. The operating costs of variable speed compressors are generally lower than for fixed speed systems, with perhaps a slightly higher initial capital cost.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch15fig11"></A>Figure 15-11. Constant speed control systems.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="171" src="FILES/15fig11.gif" ALT="graphics/15fig11.gif"></p></CENTER>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch15fig12"></A>Figure 15-12. Variable speed control systems.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="224" src="FILES/15fig12.gif" ALT="graphics/15fig12.gif"></p></CENTER>
+<P class="docText">When compressors are used on recycle streams, <A class="docLink" HREF="0133536408_ch15lev1sec8.html#ch15biblio01entry09">Douglas (1988)</A> generally recommends that they be operated "wide open"; that is, at a constant maximum flow rate. This is because the economic return from the increased overall yield usually outweighs the incremental operating cost of the compressor.</P>
+<A NAME="ch15lev2sec7"></A><H4 class="docSection2Title"> Heat Exchangers</H4>
+<P class="docText">Heat exchangers are used in a large number of temperature-control services, so here we focus on the regulation of the exit temperature of a cold process stream that is exchanging heat with a hot process stream. A common application would be a feed/effluent exchanger for a chemical reactor. Three possible strategies are shown in <A class="docLink" HREF="#ch15fig13">Figure 15-13</A>. The preferred method will often be that shown in <A class="docLink" HREF="#ch15fig13">Figure 15-13c</A>, since the dynamics will be much faster than for the other two strategies shown. A change in the cold bypass flow rate has an almost immediate effect on the cold stream outlet temperature.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch15fig13"></A>Figure 15-13. Alternative temperature control strategies for a heat exchanger.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="448" src="FILES/15fig13.gif" ALT="graphics/15fig13.gif"></p></CENTER>
+<A NAME="ch15lev2sec8"></A><H4 class="docSection2Title"> Adiabatic Plug Flow Reactors</H4>
+<P class="docText">It is important to control the inlet temperature of adiabatic plug-flow reactors, since there is no method to add/remove energy from the reactor. For an exothermic reaction with a substantial heat effect, one might consider using the heat from the reactor effluent to preheat the feed to the reactor, as shown in <A class="docLink" HREF="#ch15fig14">Figure 15-14a</A>. A problem with this strategy is that it is not very flexible; if the bypass valve saturates (becomes fully closed, for example), there is a loss of temperature control. Also, additional equipment will usually need to be added to start up the system. The alternative shown in <A class="docLink" HREF="#ch15fig14">Figure 15-14b</A> leads to a more flexible design. Particularly at start up, the furnace allows the cold feed to be heated to a high enough temperature to initiate the reaction. The sacrifice is higher energy consumption; the relative increase depends on the steady-state ratio of the feed/effluent exchanger and furnace duties.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch15fig14"></A>Figure 15-14. Temperature control for an adiabatic plug flow reactor.</H5><p class="docText"><IMG BORDER="0" WIDTH="475" HEIGHT="481" src="FILES/15fig14.gif" ALT="graphics/15fig14.gif"></p></CENTER>
+
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch15lev1sec2.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch15lev1sec4.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

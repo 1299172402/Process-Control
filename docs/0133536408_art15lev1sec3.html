@@ -1,0 +1,40 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="M15.3 Control Valves"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_art15lev1sec2.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_art15lev1sec4.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="art15lev1sec3"></A><H3 class="docSection1Title">M15.3 Control Valves</H3>
+<P class="docText">The relationship for flow through a valve is</P>
+<P><B><A NAME="art15equ15"></A>Equation M15.15 </B></P><p class="docText"><IMG BORDER="0" WIDTH="100" HEIGHT="40" src="FILES/m15equ15.gif" ALT="graphics/m15equ15.gif"></p><br>
+<P class="docText">where <span class="docEmphasis">F</span> is the volumetric flow rate, <span class="docEmphasis">C<SUB>v</SUB></span> is the valve coefficient, <span class="docEmphasis">x</span> is the fraction of valve opening, <font face="symbol">D</font><span class="docEmphasis">P<SUB>v</SUB></span> is the pressure drop across the valve, s.g. is the specific gravity of the fluid, and <span class="docEmphasis">f</span>(<span class="docEmphasis">x</span>) is the flow characteristic.</P>
+<P class="docText">Three common valve characteristics are linear, equal-percentage, and quick-opening. For a linear valve,</P>
+<P><B><A NAME="art15equ16"></A>Equation M15.16 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="49" HEIGHT="15" src="FILES/m15equ16.gif" ALT="graphics/m15equ16.gif"></p><br>
+<P class="docText">For an equal-percentage valve,</P>
+<P><B><A NAME="art15equ17"></A>Equation M15.17 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="62" HEIGHT="17" src="FILES/m15equ17.gif" ALT="graphics/m15equ17.gif"></p><br>
+<P class="docText">For a quick-opening valve</P>
+<P><B><A NAME="art15equ18"></A>Equation M15.18 </B></P><p class="docText"><IMG BORDER="0" WIDTH="60" HEIGHT="18" src="FILES/m15equ18.gif" ALT="graphics/m15equ18.gif"></p><br>
+<P class="docText">The three characteristics are compared in <A class="docLink" HREF="#art15m15fig05">Figure M15-5</A>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="art15m15fig05"></A>Figure M15-5. Flow characteristics of control valves. <font face="symbol">a</font> = 50 for equal-percentage valve.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="296" src="FILES/m15fig05.gif" ALT="graphics/m15fig05.gif"></p></CENTER>
+<P class="docText">At this point it is reasonable to ask why we would ever want a valve characteristic that is not linear. After all, it seems reasonable that we would want the increase in flow to be linearly related to the increase in valve opening.</P>
+<P class="docText">Think about the orifice plate nonlinearity. If a square root extractor is not used, then the orifice plate gain is low at low flow rates and high at high flow rates [see Equation (<A class="docLink" HREF="0133536408_art15lev1sec2.html#art15equ11">M15.11</A>)]. Notice that the quick-opening valve has a high gain at low flow rates and a low gain at high flow rates, exactly the opposite of the orifice plate. Since the flowmeter and control valve are both elements in a control loop, the overall gain of the loop may be relatively unchanged by combining the nonlinearity of the direct-acting valve with the nonlinearity of the orifice plate flowmeter. This is probably less important in this day and age because square root extractors or computer computation of the actual flow rate can compensate for the orifice plate nonlinearity. A quick-opening valve is then no longer necessary. We discuss this because a number of older plants still have old analog equipment, which may not have nonlinear compensation (e.g., square root extraction) for the orifice plate. Perhaps a process was originally designed with the direct-acting valve and an orifice plate flowmeter with square root extraction. If a recent "retrofit" (installation of new equipment) to change the control instrumentation involved adding nonlinear compensation (square root extraction, etc.) but did involve the replacement of the control valve, then the overall loop gain could change tremendously as a function of the flow rate. These thoughts may help you when you are troubleshooting a control problem.</P>
+<P class="docText">Notice that the curves in <A class="docLink" HREF="#art15m15fig05">Figure M15-5</A> are based on a constant pressure drop across the valve. This may be reasonable, for example, if the pressure drop through a piping system was negligible and all the pressure drop was due to the valve. In this case, a linear valve is desirable because there is a linear relationship between the valve position and the actual flow rate.</P>
+<P class="docText">There are many systems, however, where the pressure drop due to piping is a significant portion of the pressure drop through the system and the pressure drop through the valve is not constant, and thus it may be desirable to use a nonlinear valve. This is shown more clearly in the next section.</P>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_art15lev1sec2.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_art15lev1sec4.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

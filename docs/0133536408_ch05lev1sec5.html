@@ -1,0 +1,54 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="5.5 Routh Stability Criterion"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch05lev1sec4.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch05lev1sec6.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch05lev1sec5"></A><H3 class="docSection1Title">5.5 Routh Stability Criterion</H3>
+<P class="docText">The stability of the system is determined from the values of the roots (poles) of its characteristic equation. Finding roots is easy for first- and second-order equations (and not too hard for third) since there is an analytical solution for the roots of polynomials through third order. If the polynomial is fourth order or higher, the roots must be determined numerically. There is a method for determining whether any of the roots are positive (unstable) without actually calculating the roots (Routh, 1905). This method involves an analysis of the coefficients of the characteristic polynomial by setting up the <span class="docEmphasis">Routh array</span>. The test of the coefficients in the Routh array is called the <span class="docEmphasis">Routh stability criterion</span>.</P>
+<P class="docText">The Routh (pronounced like <span class="docEmphasis">truth</span>) stability criterion is based on a polynomial equation that has the following form</P>
+<p class="docText"><IMG BORDER="0" WIDTH="198" HEIGHT="20" src="FILES/05equ19.gif" ALT="graphics/05equ19.gif"></p>
+<br>
+<P class="docText">The <span class="docEmphasis">necessary</span> condition for all the roots to be negative is that all <span class="docEmphasis">a</span><SUB>i</SUB> &gt; 0 (you can multiply all coefficients by –1 if needed). The <span class="docEmphasis">sufficiency</span> test requires the Routh array</P>
+<p class="docText"><IMG BORDER="0" WIDTH="175" HEIGHT="141" src="FILES/05equ20.gif" ALT="graphics/05equ20.gif"></p><br>
+<P class="docText">where the elements of rows 3 and higher have the form</P>
+<p class="docText"><IMG BORDER="0" WIDTH="377" HEIGHT="79" src="FILES/05equ21.gif" ALT="graphics/05equ21.gif"></p><br>
+<P class="docText">If all the coefficients in the first column of the Routh array are positive, then the sufficient condition for stability is satisfied. If all the coefficients are not positive, then we can determine the number of unstable (positive) roots by the number of changes in the sign of the coefficients as we move down the first column. An example of the use of the Routh array to determine limits of a tuning parameter for closed-loop stability is shown next.</P>
+<A NAME="ch05lev2sec16"></A><H4 class="docSection2Title"> Example 5.3: Third-Order Process with a P-Only Controller</H4>
+<P class="docText">Find the upper bound on proportional gain (for P-only control) for closed-loop stability of the following process</P>
+<p class="docText"><IMG BORDER="0" WIDTH="287" HEIGHT="40" src="FILES/05equ22.gif" ALT="graphics/05equ22.gif"></p><br>
+<P class="docText">The closed-loop transfer function is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="281" HEIGHT="47" src="FILES/05equ23.gif" ALT="graphics/05equ23.gif"></p><br>
+<P class="docText">We must use the Routh stability criterion on the characteristic polynomial. The coefficients are</P>
+<p class="docText"><IMG BORDER="0" WIDTH="238" HEIGHT="17" src="FILES/05equ24.gif" ALT="graphics/05equ24.gif"></p>
+<br>
+<P class="docText">The Routh array is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="86" HEIGHT="103" src="FILES/05equ25.gif" ALT="graphics/05equ25.gif"></p><br>
+<P class="docText">Inserting our values into the Routh array,</P>
+<p class="docText"><IMG BORDER="0" WIDTH="123" HEIGHT="105" src="FILES/05equ26.gif" ALT="graphics/05equ26.gif"></p><br>
+<P class="docText">we see from the necessary condition that 1 + <span class="docEmphasis">k</span><SUB>c</SUB> &gt; 0, or <span class="docEmphasis">k</span><SUB>c</SUB> &gt; 0. The sufficient condition that must be checked is <span class="docEmphasis">b</span><SUB>1</SUB> &gt; 0</P>
+<p class="docText"><IMG BORDER="0" WIDTH="206" HEIGHT="40" src="FILES/05equ27.gif" ALT="graphics/05equ27.gif"></p><br>
+<P class="docText">which leads to <span class="docEmphasis">k</span><SUB>c</SUB> &lt; 10 for stability. The range of tuning parameters for stability is then</P>
+<p class="docText"><IMG BORDER="0" WIDTH="80" HEIGHT="21" src="FILES/05equ28.gif" ALT="graphics/05equ28.gif"></p>
+<br>
+<P class="docText">As a practical matter, however, the controller gain should be the same sign as the process gain (recall that in <A class="docLink" HREF="0133536408_ch05lev1sec3.html#ch05lev2sec11">Example 5.1</A> a controller gain with the wrong sign led to a process output response in the opposite direction of the setpoint change). Simulation results for a unit step setpoint change are shown in <A class="docLink" HREF="#ch05fig15">Figure 5-15</A>. As <span class="docEmphasis">k</span><SUB>c</SUB> is increased, the closed-loop response becomes more oscillatory. The closed-loop system will lose stability at <span class="docEmphasis">k</span><SUB>c</SUB> = 10.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch05fig15"></A>Figure 5-15. Response of the third-order process to a unit setpoint change at <span class="docEmphasis">t</span> = 0. Effect of proportional gain. The system loses stability at <span class="docEmphasis">k</span><SUB>c</SUB> = 10.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="396" src="FILES/05fig15.gif" ALT="graphics/05fig15.gif"></p></CENTER>
+<P class="docText">Indeed, in <A class="docLink" HREF="0133536408_ch05lev1sec6.html#ch05table01">Table 5-1</A> we show the relationship between <span class="docEmphasis">k<SUB>c</SUB></span> and the closed-loop poles. Notice that one pole stays real and becomes more negative (faster) as <span class="docEmphasis">k<SUB>c</SUB></span> increases. The other two poles become complex and the magnitude of the imaginary portion becomes larger as <span class="docEmphasis">k<SUB>c</SUB></span> increases, indicating that the magnitude of oscillation is increasing. At <span class="docEmphasis">k</span><SUB>c</SUB> = 10, the complex poles cross from the left-half plane to the RHP, indicating that the closed-loop system is unstable for <span class="docEmphasis">k</span><SUB>c</SUB> &gt; 10.</P>
+<P class="docText"><A class="docLink" HREF="#ch05fig16">Figure 5-16</A> is a plot of the roots of the characteristic equation, as a function of <span class="docEmphasis">k</span><SUB>c</SUB>. It shows vividly the results presented in <A class="docLink" HREF="0133536408_ch05lev1sec6.html#ch05table01">Table 5-1</A>. The closed-loop poles start as three real, distinct poles at <span class="docEmphasis">k</span><SUB>c</SUB> = 0. Two become complex, and move toward the RHP as <span class="docEmphasis">k</span><SUB>c</SUB> is increased. When <span class="docEmphasis">k</span><SUB>c</SUB> &gt; 10, the two complex poles move into the RHP; at <span class="docEmphasis">k</span><SUB>c</SUB> = 10, a continuous oscillation is formed.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch05fig16"></A>Figure 5-16. Roots of the characteristic equation, as a function of <span class="docEmphasis">k</span><SUB>c</SUB>. <span class="docEmphasis">x</span> marks the three poles of the open-loop system (<span class="docEmphasis">k</span><SUB>c</SUB> = 0). This type of plot is often called a <span class="docEmphasis">root-locus</span> plot.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="288" src="FILES/05fig16.gif" ALT="graphics/05fig16.gif"></p></CENTER>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch05lev1sec4.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch05lev1sec6.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

@@ -1,0 +1,35 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="8.4 Model Uncertainty and Disturbances"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch08lev1sec3.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch08lev1sec5.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch08lev1sec4"></A><H3 class="docSection1Title">8.4 Model Uncertainty and Disturbances</H3>
+<P class="docText">Thus far we have assumed that the model is perfect when designing the open-loop control system. In practice, it is impossible to have a perfect model. Often, the process gain can be off by 20–50% (or even more, for highly nonlinear processes). The next example shows the problems associated with a purely open-loop control strategy when there are uncertainties or disturbances.</P>
+<A NAME="ch08lev2sec10"></A><H4 class="docSection2Title"> Example 8.4: First-Order Process with Model Uncertainty</H4>
+<P class="docText">The model and process are represented by the following transfer functions:</P>
+<p class="docText"><IMG BORDER="0" WIDTH="90" HEIGHT="91" src="FILES/08equ35c.gif" ALT="graphics/08equ35c.gif"></p><br>
+<P class="docText">There are no noninvertible elements, so the control design procedure results in the following:</P>
+<p class="docText"><IMG BORDER="0" WIDTH="269" HEIGHT="142" src="FILES/08equ35d.gif" ALT="graphics/08equ35d.gif"></p><br>
+<P class="docText">Notice that the response will be second order with numerator dynamics if the model is not perfect. Also, <span class="docEmphasis">there will be offset</span> when there is a step change in setpoint.</P>
+<P class="docText">Consider the following numerical example, where the model gain and time constant are 1 %/% and 10 minutes, respectively, but where the actual process has a gain of 1.2 %/% and a time constant of 8 minutes. If the tuning parameter, <font face="symbol">l</font> = 4 minutes, the relationship between the setpoint and the output is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="141" HEIGHT="40" src="FILES/08equ35e.gif" ALT="graphics/08equ35e.gif"></p><br>
+<P class="docText">Whereas the response with a perfect model would be y(s) = r(s)/(4s+1). The response with model uncertainty is compared with the perfect model response in <A class="docLink" HREF="#ch08fig07">Figure 8-7</A> for a unit step change in setpoint. The manipulated input value is the same whether the process model is perfect or in error, since there is no feedback from the measured output to correct for this error.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch08fig07"></A>Figure 8-7. Comparison of open-loop controller responses.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="391" src="FILES/08fig07.gif" ALT="graphics/08fig07.gif"></p></CENTER>
+<P class="docText">Some form of feedback is needed to correct for model uncertainty (as well as any disturbances entering the process). The method that we develop to account for model uncertainty and disturbances is known as internal model control (IMC). In the next section, we begin to develop the IMC structure.</P>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch08lev1sec3.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch08lev1sec5.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

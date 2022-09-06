@@ -1,0 +1,48 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="3.9 Poles and Zeros"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch03lev1sec8.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch03lev1sec10.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch03lev1sec9"></A><H3 class="docSection1Title">3.9 Poles and Zeros</H3>
+<P class="docText">There are a number of different ways to represent process transfer functions. The "polynomial" form is</P>
+<P><B><A NAME="ch03equ53"></A>Equation 3.49 </B></P><p class="docText"><IMG BORDER="0" WIDTH="221" HEIGHT="44" src="FILES/03equ49.gif" ALT="graphics/03equ49.gif"></p><br>
+<P class="docText">The values of <span class="docEmphasis">s</span> that cause the numerator of Equation (<A class="docLink" HREF="#ch03equ53">3.49</A>) to equal zero are known as the "zeros" of the transfer function. The values of <span class="docEmphasis">s</span> that cause the denominator of Equation (<A class="docLink" HREF="0133536408_ch03lev1sec7.html#ch03equ49">3.49</A>) to equal zero are known as the "poles" of the transfer function.</P>
+<P class="docText">The "pole-zero" form is</P>
+<P><B><A NAME="ch03equ54"></A>Equation 3.50 </B></P><p class="docText"><IMG BORDER="0" WIDTH="200" HEIGHT="43" src="FILES/03equ50.gif" ALT="graphics/03equ50.gif"></p><br>
+<P class="docText">and complex poles (or zeros) must occur in complex conjugate pairs.</P>
+<P class="docText">The "gain-time constant" form is the one that we use most often for control system design.</P>
+<P><B><A NAME="ch03equ55"></A>Equation 3.51 </B></P><p class="docText"><IMG BORDER="0" WIDTH="228" HEIGHT="49" src="FILES/03equ51.gif" ALT="graphics/03equ51.gif"></p><br>
+<P class="docText">where <font face="symbol">t</font><span class="docEmphasis"><SUB>ni</SUB></span> is a numerator time constant and <font face="symbol">t</font><span class="docEmphasis"><SUB>pi</SUB></span> is a denominator time constant. This form is normally used when the roots (poles) of the denominator polynomial are real.</P>
+<A NAME="ch03lev2sec26"></A><H4 class="docSection2Title"> Example 3.7: Comparison of Various Transfer Function Forms</H4>
+<P class="docText">Consider a transfer function with the following gain-time constant form</P>
+<p class="docText"><IMG BORDER="0" WIDTH="129" HEIGHT="40" src="FILES/03equ51a.gif" ALT="graphics/03equ51a.gif"></p><br>
+<P class="docText">The polynomial form is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="122" HEIGHT="37" src="FILES/03equ51b.gif" ALT="graphics/03equ51b.gif"></p><br>
+<P class="docText">The gain-polynomial form is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="129" HEIGHT="40" src="FILES/03equ52.gif" ALT="graphics/03equ52.gif"></p><br>
+<P class="docText">and the pole-zero form is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="170" HEIGHT="77" src="FILES/03equ55.gif" ALT="graphics/03equ55.gif"></p><br>
+<P class="docText">The zero is 1/10, and the poles are –1/3 and –1/15.</P>
+<P class="docText">Notice that the zero for <A class="docLink" HREF="#ch03lev2sec26">Example 3.7</A> is positive. A positive zero is called a right-half-plane (RHP) zero, because it appears in the right half of the complex plane (with real and imaginary axes). RHP zeros have a characteristic <span class="docEmphasis">inverse response</span>, as shown in <A class="docLink" HREF="0133536408_ch03lev1sec7.html#ch03fig11">Figure 3-11</A> for <font face="symbol">t</font><span class="docEmphasis"><SUB>n</SUB></span> = -10 (which corresponds to a zero of +0.1).</P>
+<P class="docText">Also notice that the poles are negative (left-half-plane), indicating a stable process. RHP (positive) poles are unstable. Recall that complex poles will yield an oscillatory response. A pole-zero plot of the transfer function in <A class="docLink" HREF="#ch03lev2sec26">Example 3.7</A> is shown in <A class="docLink" HREF="#ch03fig13">Figure 3-13</A> [the pole locations are (-1/3,0) and (-1/15,0) and the zero location is (1/10,0), with the coordinates (real,imaginary)]. For this system, there is no imaginary component and the poles and zeros lie on the real axis.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch03fig13"></A>Figure 3-13. Pole-zero location plot for <A class="docLink" HREF="#ch03lev2sec26">Example 3.7</A> (x, poles; o, zero).</H5><p class="docText"><IMG BORDER="0" WIDTH="400" HEIGHT="198" src="FILES/03fig13.gif" ALT="graphics/03fig13.gif"></p></CENTER>
+<P class="docText">As poles move further to the left they yield a faster response, and increasing the magnitude of the imaginary portion makes the response more oscillatory. This behavior is summarized in <A class="docLink" HREF="#ch03fig14">Figure 3-14</A>. Recall also that a process with a pole at the origin (and none in the RHP) is known as an <span class="docEmphasis">integrating</span> system; that is, the system never settles to a steady state when a step input change is made.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch03fig14"></A>Figure 3-14. Effect of pole-zero location on dynamic behavior (x, poles; o, zero). As poles become more negative, the response is faster. As the imaginary/real ratio increases, the response becomes more oscillatory.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="243" src="FILES/03fig14.gif" ALT="graphics/03fig14.gif"></p></CENTER>
+<P class="docText">Multiple RHP zeros cause multiple "changes in direction"; for example, with two RHP zeros, the step response, initially going in one direction, switches direction, then switches back to the initial direction.</P>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch03lev1sec8.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch03lev1sec10.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

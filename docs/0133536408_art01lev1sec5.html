@@ -1,0 +1,129 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="M1.5 Plotting"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_art01lev1sec4.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_art01lev1sec6.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="art01lev1sec5"></A><H3 class="docSection1Title">M1.5 Plotting</H3>
+<P class="docText">M<span class="docEmphSmaller">ATLAB</span> has many nice graphics capabilities. Here, we will illustrate standard two-dimensional plots. First, generate two vectors for plotting</P>
+<pre>
+
+</pre><pre>
+&#187; x = 1:2:11;
+&#187; z = 5:5:30;
+</pre>
+<P class="docText">For a standard solid line plot, simply enter</P>
+<pre>
+
+</pre><pre>
+&#187; plot(x,z)
+</pre>
+<P class="docText">and <A class="docLink" HREF="#art01m1fig02">Figure M1-2</A> appears. Axis labels are added by selecting "Insert" and specifying X label or Y label. Alternatively, in the command window you can use the following commands (<span class="docEmphasis">perform this</span>):</P>
+<pre>
+
+</pre><pre>
+&#187; xlabel('x')
+&#187; ylabel('z')
+</pre>
+<CENTER><H5 class="docFigureTitle"><A NAME="art01m1fig02"></A>Figure M1-2. Example plot.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="437" src="FILES/m01fig02.gif" ALT="graphics/m01fig02.gif"></p></CENTER>
+<P class="docText">For more plotting options, type</P>
+<pre>
+
+</pre><pre>
+&#187; help plot
+</pre>
+<P class="docText">If we wish to plot discrete points, using + as a symbol, we can use the following (<span class="docEmphasis">perform this</span>):</P>
+<pre>
+
+</pre><pre>
+&#187;  plot(x,z,'+')
+</pre>
+<P class="docText">Notice that a new plot appears in the place of the previous one. You can generate a new figure by entering <TT>figure(n)</TT>, where <span class="docEmphasis">n</span> is any integer, before entering new plot commands.</P>
+<P class="docText">Consider now the following equation:</P>
+<p class="docText"><IMG BORDER="0" WIDTH="78" HEIGHT="17" src="FILES/m01equ08.gif" ALT="graphics/m01equ08.gif"></p>
+<br>
+<P class="docText">We can plot this for a vector of t values using two simple commands,</P>
+<pre>
+
+</pre><pre>
+&#187; t = 0:1:50;
+&#187; y = 4*exp(-0.1*t);
+</pre>
+<P class="docText">and we can obtain a plot by entering in the command window (<span class="docEmphasis">perform this</span>)</P>
+<pre>
+
+</pre><pre>
+&#187; figure(2)
+&#187; plot(t,y)
+</pre>
+<P class="docText">Notice that we could shorten the sequence of commands by entering (<span class="docEmphasis">perform this</span>)</P>
+<pre>
+
+</pre><pre>
+&#187; plot(t,4*exp(-0.1*t))
+</pre>
+<P class="docText">To perform element-by-element multiplication of two vectors or arrays of the same size, we can use the .* command. We can plot the function <span class="docEmphasis">y</span>(<span class="docEmphasis">t</span>) = <span class="docEmphasis">t&#183;e</span><SUP>–0.1</SUP><span class="docEmphasis"><SUP>t</SUP></span> by using (<span class="docEmphasis">perform this</span>)</P>
+<pre>
+
+</pre><pre>
+&#187; figure(3)
+&#187; y = t.*exp(-0.1*t);
+&#187; plot(t,y)
+&#187; xlabel('t')
+&#187; ylabel('y')
+</pre>
+<P class="docText"><TT>axis('square')</TT> will place the plot in a square box, while <TT>axis('normal')</TT> will change back to a normal aspect ratio.</P>
+<P class="docText">You can also explicitly set the upper and lower bounds on the plot with</P>
+<pre>
+
+</pre><pre>
+axis([xlow  xhigh  ylow  yhigh])
+</pre>
+<P class="docText">For this example, we would use</P>
+<pre>
+
+</pre><pre>
+&#187; axis([0  50  0  4]);
+</pre>
+<P class="docText">Multiple curves can be placed on the same plot in the following fashion (<span class="docEmphasis">perform this</span>).</P>
+<pre>
+
+</pre><pre>
+&#187; plot(t,4*exp(-0.1*t),t,t.*exp(-0.1*t),'--')
+</pre>
+<P class="docText">The subplot command can be used to make multiple plots, as illustrated in <A class="docLink" HREF="#art01m1fig03">Figure M1-3</A>.</P>
+<pre>
+
+</pre><pre>
+&#187; subplot(2,1,1), plot(t,4*exp(-0.1*t)), xlabel('t'),ylabel('y1')
+&#187; subplot(2,1,2), plot(t,t.*exp(-0.1*t)), xlabel('t'),ylabel('y2')
+</pre>
+<CENTER><H5 class="docFigureTitle"><A NAME="art01m1fig03"></A>Figure M1-3. Use of subplot feature.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="403" src="FILES/m01fig03.gif" ALT="graphics/m01fig03.gif"></p></CENTER>
+<P class="docText">Here, <TT>subplot(i,j,k)</TT> means that there are <span class="docEmphasis">i</span> "rows" of figures, <span class="docEmphasis">j</span> "columns" of figures, and the current plot is the <span class="docEmphasis">k</span>th figure (counting left to right and top to bottom). The following is an example of a four plot sequence shown in <A class="docLink" HREF="#art01m1fig04">Figure M1-4</A>:</P>
+<pre>
+
+</pre><pre>
+&#187; t = 0:1:60;
+&#187; subplot(2,2,1),plot(t,4*exp(-0.1*t)), xlabel('t')
+&#187; subplot(2,2,2),plot(t,t.*exp(-0.1*t)), xlabel('t')
+&#187; subplot(2,2,3),plot(t,sin(.25*t)), xlabel('t')
+&#187; subplot(2,2,4),plot(t,cos(.25*t)), xlabel('t')
+</pre>
+<CENTER><H5 class="docFigureTitle"><A NAME="art01m1fig04"></A>Figure M1-4. Use of subplot feature.</H5><p class="docText"><IMG BORDER="0" WIDTH="450" HEIGHT="365" src="FILES/m01fig04.gif" ALT="graphics/m01fig04.gif"></p></CENTER>
+<P class="docText">To return to single plots, simply enter <TT>subplot(1,1,1)</TT>.</P>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_art01lev1sec4.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_art01lev1sec6.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

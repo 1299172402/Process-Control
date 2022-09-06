@@ -1,0 +1,55 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="14.7 IMC"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch14lev1sec6.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch14lev1sec8.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch14lev1sec7"></A><H3 class="docSection1Title" id="225793-858">14.7 IMC</H3>
+<P class="docText">The IMC design procedure for MIMO systems is similar to the design procedure developed in <A class="docLink" HREF="0133536408_ch08.html#ch08">Chapter 8</A> for SISO systems. The IMC block diagram is shown in the <A class="docLink" HREF="#ch14fig13">Figure 14-13</A>, where the blocks now represent matrix transfer functions and the inputs and outputs are vectors. We first use an example to illustrate the multivariable IMC design procedure, then follow with the general procedure.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch14fig13"></A>Figure 14-13. IMC.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="202" src="FILES/14fig13.gif" ALT="graphics/14fig13.gif"></p></CENTER>
+<A NAME="ch14lev2sec13"></A><H4 class="docSection2Title"> Example 14.1, continued</H4>
+<P class="docText">Here we consider <span class="docEmphasis">system A</span> from <A class="docLink" HREF="0133536408_ch14lev1sec2.html#ch14lev2sec3">Example 14.1</A>. Recall that system A had a RHP transmission zero (z = 3 min<SUP>-1</SUP>)</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="250" HEIGHT="158" src="FILES/14equ28a.gif" ALT="graphics/14equ28a.gif"></p><br>
+<P class="docText">There are a number of ways to factor this matrix. The easiest way is to place the RHP transmission zero on the diagonal of the "bad (noninvertible) matrix."</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="212" HEIGHT="66" src="FILES/14equ28b.gif" ALT="graphics/14equ28b.gif"></p><br>
+<P class="docText">Since <IMG BORDER="0" id="129022115118" WIDTH="112" HEIGHT="23" src="FILES/14inequ06.gif" ALT="graphics/14inequ06.gif"> , we can solve for the "good matrix" from <IMG BORDER="0" id="129022115118" WIDTH="111" HEIGHT="24" src="FILES/14inequ07.gif" ALT="graphics/14inequ07.gif">, and find that</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="392" HEIGHT="196" src="FILES/14equ28c.gif" ALT="graphics/14equ28c.gif"></p><br>
+<P class="docText">Where the controller is</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="407" HEIGHT="257" src="FILES/14equ28d.gif" ALT="graphics/14equ28d.gif"></p><br>
+<P class="docText">Assume a perfect model with no disturbances. For <font face="symbol">l</font><SUB>1</SUB> = <font face="symbol">l</font><SUB>2</SUB> = 0.333 min, in <A class="docLink" HREF="#ch14fig14">Figure 14-14</A> we find the response to a step setpoint change in output 1. Notice that the output response is decoupled, although both manipulated inputs are changed. Also, although the original <span class="docEmphasis">g</span><SUB>11</SUB>(s) transfer function did not have a RHP zero, the multivariable system has inverse response behavior in the closed loop. It should be noted that, in general, the IMC filter factors (<font face="symbol">l</font><SUB>1</SUB> and <font face="symbol">l</font><SUB>2</SUB>) should be tuned to have different values.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch14fig14"></A>Figure 14-14. Response to a setpoint change in output 1, with a diagonal factorization matrix and <font face="symbol">l</font><SUB>1</SUB> = <font face="symbol">l</font><SUB>2</SUB> = 0.333 min.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="450" HEIGHT="356" src="FILES/14fig14.gif" ALT="graphics/14fig14.gif"></p></CENTER>
+<P class="docText">The reader should show that a setpoint change in output 2 also leads to inverse response behavior in output 2.</P>
+<P class="docText">A major disadvantage to the diagonal factorization is that inverse response appears in all output setpoint responses. It is also possible to perform a factorization that places all the inverse response behavior in one of the output variables, resulting in good closed-loop performance in the other outputs. See <A class="docLink" HREF="0133536408_ch14lev1sec10.html#ch14biblio01entry03">Holt and Morari (1985)</A> for more details.</P>
+<P class="docText">The general multivariable IMC procedure is as follows.</P>
+<A NAME="ch14pr01"></A>
+
+
+
+<span style="font-weight:bold"><OL class="docList" START="1"><LI><span style="font-weight:normal" value="1"><P class="docList">Factor the process model into invertible and noninvertible elements.</P>
+<P><B><A NAME="ch14equ29"></A>Equation 14.29 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="110" HEIGHT="23" src="FILES/14equ29.gif" ALT="graphics/14equ29.gif"></p><br>
+<P class="docList">The difficulty is that there are many ways to factor the process transfer function matrix. One way is to place the RHP transmission zero on the diagonal.</P>
+<P><B><A NAME="ch14equ30"></A>Equation 14.30 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="264" HEIGHT="210" src="FILES/14equ30.gif" ALT="graphics/14equ30.gif"></p><br>
+<P class="docText">Although this is perhaps the simplest method, it usually does not result in the best performance. Other factorization methods are beyond the scope of this text. The motivated reader should consult <A class="docLink" HREF="0133536408_ch14lev1sec10.html#ch14biblio01entry04">Morari and Zafiriou (1989)</A> for more details.</P></span></LI><LI><span style="font-weight:normal" value="2"><P class="docText">Form the idealized controller.</P>
+<P><B><A NAME="ch14equ31"></A>Equation 14.31 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="84" HEIGHT="25" src="FILES/14equ31.gif" ALT="graphics/14equ31.gif"></p><br></span></LI><LI><span style="font-weight:normal" value="3"><P class="docList">Add a filter to make all elements in the controller matrix proper.</P>
+<P><B><A NAME="ch14equ32"></A>Equation 14.32 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="172" HEIGHT="23" src="FILES/14equ32.gif" ALT="graphics/14equ32.gif"></p><br>
+<P class="docText">where <span class="docEmphasis">F</span>(<span class="docEmphasis">s</span>) is normally a diagonal matrix.</P>
+<P><B><A NAME="ch14equ33"></A>Equation 14.33 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="134" HEIGHT="51" src="FILES/14equ33.gif" ALT="graphics/14equ33.gif"></p><br></span></LI><LI><span style="font-weight:normal" value="4"><P class="docList">The filter factors are adjusted to vary the response and robustness characteristics.</P>
+<P class="docList">In the limit of a perfect model (<IMG BORDER="0" id="129022115118" WIDTH="78" HEIGHT="19" src="FILES/14inequ08.gif" ALT="graphics/14inequ08.gif">), the response will be</P>
+<P><B><A NAME="ch14equ34"></A>Equation 14.34 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="280" HEIGHT="68" src="FILES/14equ34.gif" ALT="graphics/14equ34.gif"></p><br>
+<P class="docText">and where, as in the SISO case, the "bad stuff" must appear in the output response.</P></span></LI></OL></span>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch14lev1sec6.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch14lev1sec8.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

@@ -1,0 +1,42 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="2.8 Summary"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch02lev1sec7.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch02lev1sec9.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch02lev1sec8"></A><H3 class="docSection1Title">2.8 Summary</H3>
+<P class="docText">We have focused primarily on the development of ordinary differential equation models that describe the dynamic behavior of processes where perfect mixing can be assumed. The models have the form</P>
+<p class="docText"><IMG BORDER="0" WIDTH="75" HEIGHT="38" src="FILES/02equ102.gif" ALT="graphics/02equ102.gif"></p><br>
+<P class="docText">where the states, inputs, outputs, and parameters are <span class="docEmphasis">x</span>, <span class="docEmphasis">u</span>, <span class="docEmphasis">y</span>, and <span class="docEmphasis">p</span>, respectively.</P>
+<P class="docText">States appear in the "accumulation" (derivative with respect to time) term, inputs can be either manipulated or disturbance variables, outputs are often a subset of the states, and parameters are often physical intensive variables, such as density or kinetic rate parameters. The modeling equations are based on material (component or total) and energy balances. States are often concentrations (from the component balances), volume (total material balance on liquids), pressure (total material balances on gases), or temperature (energy balances).</P>
+<P class="docText">The steady-state solution is <IMG BORDER="0" WIDTH="37" HEIGHT="14" src="FILES/02inequ08.gif" ALT="graphics/02inequ08.gif">, or <span class="docEmphasis">f</span>(<span class="docEmphasis">x</span>,<span class="docEmphasis">u</span>,<span class="docEmphasis">p</span>) = 0 which can be found numerically, using M<span class="docEmphSmaller">ATLAB</span> functions such as <TT>fzero</TT> and <TT>fsolve</TT> (which require the optimization toolbox) as shown in the M<span class="docEmphSmaller">ATLAB</span> tutorial module.</P>
+<P class="docText">To integrate the differential equations numerically, we use a variant of Euler integration, which is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="160" HEIGHT="18" src="FILES/02equ103.gif" ALT="graphics/02equ103.gif"></p>
+<br>
+<P class="docText">The ODE module provides a tutorial on the use of M<span class="docEmphSmaller">ATLAB</span> to integrate ordinary differential equations.</P>
+<P class="docText">An understanding of dynamic behavior is obtained by using linear state-space models, which have the form</P>
+<p class="docText"><IMG BORDER="0" WIDTH="97" HEIGHT="38" src="FILES/02equ104.gif" ALT="graphics/02equ104.gif"></p><br>
+<P class="docText">where the prime notation (') is used to indicate a deviation variable. In the next chapter we further analyze linear state space models to obtain an understanding of dynamic behavior. These state space models are converted to Laplace transfer function models, which are used later for control system design.</P>
+<P class="docText">For the processes studied, some important characteristics were discussed. For example, <span class="docEmphasis">residence time</span> (volume/flow rate) is often a good indicator of the relative "speed" of the process dynamics, particularly for nonreacting systems. For chemical reactors, the <span class="docEmphasis">Damkohler</span> number is an important parameter, since it is the ratio of a characteristic reaction time to residence time.</P>
+<P class="docText">The concept of <span class="docEmphasis">process gain</span> is extremely important for process control design. Process gain is the sensitivity of the process output to a manipulated input. That is, process gain is the ratio of the long-term (steady-state) change in process output to the change in process input.</P>
+<P class="docText">Many process systems can be represented as single-state models, where the output is the state. The resulting first-order model has the form</P>
+<p class="docText"><IMG BORDER="0" WIDTH="103" HEIGHT="37" src="FILES/02equ105.gif" ALT="graphics/02equ105.gif"></p><br>
+<P class="docText">where <span class="docEmphasis">k<SUB>p</SUB></span> is the process gain and <font face="symbol">t</font><span class="docEmphasis"><SUB>p</SUB></span> is the process time constant. The dynamic behavior of first-order processes will be discussed in the next chapter.</P>
+<P class="docText">The examples used in this chapter were</P>
+<BLOCKQUOTE><P><P class="docList">2.1 Gas Surge Drum</P></P><P><P class="docList">2.2 An Isothermal Chemical Reactor</P></P><P><P class="docList">2.3 Heated Mixing Tank</P></P><P><P class="docList">2.4 A Second-Order Reaction</P></P><P><P class="docList">2.5 Jacketed Heater</P></P></BLOCKQUOTE>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch02lev1sec7.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch02lev1sec9.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

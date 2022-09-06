@@ -1,0 +1,93 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="4.4 Discrete-Time Autoregressive Models"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch04lev1sec3.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch04lev1sec5.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch04lev1sec4"></A><H3 class="docSection1Title">4.4 Discrete-Time Autoregressive Models</H3>
+<P class="docText">Most of the models developed and used in this text are based on continuous time. In the most general case of fundamental models, these are nonlinear ordinary differential equations. State space models consist of sets of linear ordinary differential equations, where the states and inputs are in deviation variable form. Transfer functions are used to denote a linear relationship between inputs and outputs. All these previous models assume that the manipulated input and the measured output signals are continuously available.</P>
+<P class="docText">In practice, manipulated input changes are made at discrete time intervals and measured outputs are available at discrete sample times. The physical inputs and outputs are continuous; only the changes and measurements occur at discrete times. <span class="docEmphasis">Since the focus of this textbook is on controller design based on continuous models, the topic of discrete models may be skipped on a first reading</span>. Discrete models are primarily useful for model predictive control (<A class="docLink" HREF="0133536408_ch16.html#ch16">Chapter 16</A>) and digital control design and analysis (<A class="docLink" HREF="0133536408_art16.html#art16">Module 16</A>).</P>
+<P class="docText">In this section we cover discrete autoregressive models, in <A class="docLink" HREF="0133536408_ch04lev1sec5.html#ch04lev1sec5">Section 4.5</A> parameter estimation of discrete autoregressive models is covered, and in <A class="docLink" HREF="0133536408_ch04lev1sec6.html#ch04lev1sec6">Section 4.6</A> we cover finite step and impulse response models. It should be noted that the M<span class="docEmphSmaller">ATLAB</span> Control Toolbox has routines that convert continuous-time models to discrete and vice versa. The details of the conversion are beyond the scope of this text, but are summarized in the appendix; read <A class="docLink" HREF="0133536408_art04.html#art04">Module 4</A> for explanations on how to use these routines.</P>
+<A NAME="ch04lev2sec7"></A><H4 class="docSection2Title"> Introduction to Autoregressive Models</H4>
+<P class="docText">Discrete autoregressive models assume that an output at the current time step is a function of the outputs and inputs at previous time steps. The general form is</P>
+<P><B><A NAME="ch04equ05"></A>Equation 4.5 </B></P><p class="docText"><IMG BORDER="0" WIDTH="314" HEIGHT="36" src="FILES/04equ05.gif" ALT="graphics/04equ05.gif"></p><br>
+<P class="docText">where <span class="docEmphasis">k</span> represents the current time step, <span class="docEmphasis">k</span> - 1 the previous time step, and so forth. The notation <span class="docEmphasis">y</span>(<span class="docEmphasis">k</span>) is used to indicate the value of the output at step <span class="docEmphasis">k</span>. If all of the outputs are brought to the left hand side, Equation (<A class="docLink" HREF="#ch04equ05">4.5</A>) can be written</P>
+<P><B><A NAME="ch04equ06"></A>Equation 4.6 </B></P><p class="docText"><IMG BORDER="0" WIDTH="359" HEIGHT="39" src="FILES/04equ06.gif" ALT="graphics/04equ06.gif"></p><br>
+<P class="docText">This form is primarily used to lead to the notion of discrete input-output transfer functions covered next.</P>
+<A NAME="ch04lev2sec8"></A><H4 class="docSection2Title"> Z-Transforms</H4>
+<P class="docText">Similar to the use of Laplace transforms for continuous systems, <span class="docEmphasis">Z-transforms</span> are used for discrete systems.</P>
+<P class="docText">The <span class="docEmphasis">Z</span>-transform of a discrete variable, <span class="docEmphasis">y</span>(<span class="docEmphasis">k</span>), is</P>
+<P><B><A NAME="ch04equ07"></A>Equation 4.7 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="80" HEIGHT="16" src="FILES/04equ07.gif" ALT="graphics/04equ07.gif"></p><br>
+<P class="docText">The so-called backwards shift operator (<span class="docEmphasis">z</span><SUP>-</SUP><SUP>1</SUP>) is represented by</P>
+<P><B><A NAME="ch04equ08"></A>Equation 4.8 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="124" HEIGHT="25" src="FILES/04equ08.gif" ALT="graphics/04equ08.gif"></p><br>
+<P class="docText">so <span class="docEmphasis">Z</span>[<span class="docEmphasis">y</span>(<span class="docEmphasis">k</span> - <span class="docEmphasis">2</span>)] = <span class="docEmphasis">z</span><SUP>-</SUP><SUP>2</SUP><span class="docEmphasis">y</span>(<span class="docEmphasis">z</span>), and so forth. Taking the <span class="docEmphasis">Z</span>-transform of each term in Equation (<A class="docLink" HREF="#ch04equ06">4.6</A>), we find</P>
+<P><B><A NAME="ch04equ09"></A>Equation 4.9 </B></P><p class="docText"><IMG BORDER="0" WIDTH="252" HEIGHT="40" src="FILES/04equ09.gif" ALT="graphics/04equ09.gif"></p><br>
+<P class="docText">Solving for <span class="docEmphasis">y</span>(<span class="docEmphasis">z</span>) yields the discrete transfer function relationship</P>
+<P><B><A NAME="ch04equ10"></A>Equation 4.10 </B></P><p class="docText"><IMG BORDER="0" WIDTH="268" HEIGHT="46" src="FILES/04equ10.gif" ALT="graphics/04equ10.gif"></p><br>
+<P class="docText">where the discrete transfer function is</P>
+<P><B><A NAME="ch04equ11"></A>Equation 4.11 </B></P><p class="docText"><IMG BORDER="0" WIDTH="252" HEIGHT="45" src="FILES/04equ11.gif" ALT="graphics/04equ11.gif"></p><br>
+<P class="docText">The discrete transfer function is the discrete-time analogy to the continuous-time transfer function based on the Laplace transform. Similar to continuous (Laplace) transfer functions, discrete (<span class="docEmphasis">z</span>-transform) transfer functions can be written in several forms. Multiplying Equation (<A class="docLink" HREF="#ch04equ11">4.11</A>) by <span class="docEmphasis">z<SUP>n</SUP></span>/<span class="docEmphasis">z<SUP>n</SUP></span>, we find</P>
+<P><B><A NAME="ch04equ12"></A>Equation 4.12 </B></P><p class="docText"><IMG BORDER="0" WIDTH="228" HEIGHT="45" src="FILES/04equ12.gif" ALT="graphics/04equ12.gif"></p><br>
+<P class="docText">For most process systems there is not an immediate effect of the input on the output, so <span class="docEmphasis">b</span><SUB>0</SUB> = 0.</P>
+<A NAME="ch04lev2sec9"></A><H4 class="docSection2Title"> Poles/Zeros of Discrete Models</H4>
+<P class="docText">Recall that the stability of a <span class="docEmphasis">continuous</span> input-output (transfer function) model is determined by the values of the poles (the roots of the denominator polynomial in <span class="docEmphasis">s</span>). If the poles are negative, then the model is stable. Similarly, the stability of a <span class="docEmphasis">discrete</span> input-output model is determined by the poles of the denominator polynomial in <span class="docEmphasis">z</span>. For a discrete-time model, if all poles have a <span class="docEmphasis">magnitude</span> less than 1 (i.e., they are "inside the unit circle") the model is stable. If any pole has a magnitude greater than 1, the model is unstable.</P>
+<P class="docText">The polynomial forms of Equations (<A class="docLink" HREF="#ch04equ11">4.11</A>) and (<A class="docLink" HREF="#ch04equ12">4.12</A>) can be factored into gain-pole-zero form</P>
+<P><B><A NAME="ch04equ13"></A>Equation 4.13 </B></P><p class="docText"><IMG BORDER="0" WIDTH="217" HEIGHT="43" src="FILES/04equ13.gif" ALT="graphics/04equ13.gif"></p><br>
+<P class="docText">where <span class="docEmphasis">z</span><SUB>i</SUB> and <span class="docEmphasis">p</span><SUB>i</SUB> are the zeros and poles, respectively.</P>
+<A NAME="ch04lev2sec10"></A><H4 class="docSection2Title"> Example 4.3: Discrete Poles and Stability</H4>
+<P class="docText">Consider the simple first-order model</P>
+<p class="docText"><IMG BORDER="0" WIDTH="189" HEIGHT="19" src="FILES/04equ13a.gif" ALT="graphics/04equ13a.gif"></p>
+<br>
+<P class="docText">which has the transfer function</P>
+<p class="docText"><IMG BORDER="0" WIDTH="148" HEIGHT="43" src="FILES/04equ13b.gif" ALT="graphics/04equ13b.gif"></p><br>
+<P class="docText">The pole is found by solving for the roots of the denominator polynomial. In this case</P>
+<p class="docText"><IMG BORDER="0" WIDTH="51" HEIGHT="17" src="FILES/04equ13c.gif" ALT="graphics/04equ13c.gif"></p>
+<br>
+<P class="docText">To illustrate the importance of pole values, we will study the following values for <span class="docEmphasis">a</span><SUB>1</SUB>:</P>
+<p class="docText"><IMG BORDER="0" WIDTH="140" HEIGHT="18" src="FILES/04equ13d.gif" ALT="graphics/04equ13d.gif"></p>
+<br>
+<P class="docText">yielding the corresponding pole values</P>
+<p class="docText"><IMG BORDER="0" WIDTH="138" HEIGHT="19" src="FILES/04equ13e.gif" ALT="graphics/04equ13e.gif"></p>
+<br>
+<P class="docText">Also, realize that the modeling equation can be written</P>
+<p class="docText"><IMG BORDER="0" WIDTH="164" HEIGHT="20" src="FILES/04equ13f.gif" ALT="graphics/04equ13f.gif"></p>
+<br>
+<P class="docText">For simplicity, we will assume no input change, so <span class="docEmphasis">u</span>(<span class="docEmphasis">k</span>) = 0. Also, let the initial value of the output be <span class="docEmphasis">y</span>(0) = 1. The first few values of <span class="docEmphasis">y</span>(<span class="docEmphasis">k</span>) for each value of a<SUB>1</SUB> are shown in the table below.</P>
+<P><TABLE CELLSPACING="0" FRAME="hsides" RULES="rows" CELLPADDING="4" WIDTH="100%"><COLGROUP align="left" span="5"><THEAD></THEAD><TR><TD class="docTableCell" valign="top"><P class="docText"><span class="docEmphasis">a</span><SUB>1</SUB></P></TD><TD class="docTableCell" valign="top"><P class="docText">0.5</P></TD><TD class="docTableCell" valign="top"><P class="docText">-0.5</P></TD><TD class="docTableCell" valign="top"><P class="docText">1.5</P></TD><TD class="docTableCell" valign="top"><P class="docText">-1.5</P></TD></TR><TR><TD class="docTableCell" valign="top"><P class="docText"><span class="docEmphasis">p</span></P></TD><TD class="docTableCell" valign="top"><P class="docText">-0.5</P></TD><TD class="docTableCell" valign="top"><P class="docText">0.5</P></TD><TD class="docTableCell" valign="top"><P class="docText">-1.5</P></TD><TD class="docTableCell" valign="top"><P class="docText">1.5</P></TD></TR><TR><TD class="docTableCell" valign="top"><P class="docText"><span class="docEmphasis">y</span>(1)</P></TD><TD class="docTableCell" valign="top"><P class="docText">-0.5</P></TD><TD class="docTableCell" valign="top"><P class="docText">0.5</P></TD><TD class="docTableCell" valign="top"><P class="docText">-1.5</P></TD><TD class="docTableCell" valign="top"><P class="docText">1.5</P></TD></TR><TR><TD class="docTableCell" valign="top"><P class="docText"><span class="docEmphasis">y</span>(2)</P></TD><TD class="docTableCell" valign="top"><P class="docText">0.25</P></TD><TD class="docTableCell" valign="top"><P class="docText">0.25</P></TD><TD class="docTableCell" valign="top"><P class="docText">2.25</P></TD><TD class="docTableCell" valign="top"><P class="docText">2.25</P></TD></TR><TR><TD class="docTableCell" valign="top"><P class="docText"><span class="docEmphasis">y</span>(3)</P></TD><TD class="docTableCell" valign="top"><P class="docText">-0.125</P></TD><TD class="docTableCell" valign="top"><P class="docText">0.125</P></TD><TD class="docTableCell" valign="top"><P class="docText">-3.375</P></TD><TD class="docTableCell" valign="top"><P class="docText">3.375</P></TD></TR><TR><TD class="docTableCell" valign="top"><P class="docText"><span class="docEmphasis">y</span>(4)</P></TD><TD class="docTableCell" valign="top"><P class="docText">0.0625</P></TD><TD class="docTableCell" valign="top"><P class="docText">0.0625</P></TD><TD class="docTableCell" valign="top"><P class="docText">5.0625</P></TD><TD class="docTableCell" valign="top"><P class="docText">5.0625</P></TD></TR><TR><TD class="docTableCell" valign="top"><P class="docText">Characteristic behavior</P></TD><TD class="docTableCell" valign="top"><P class="docText">Oscillatory, stable</P></TD><TD class="docTableCell" valign="top"><P class="docText">Monotonic, stable</P></TD><TD class="docTableCell" valign="top"><P class="docText">Oscillatory, unstable</P></TD><TD class="docTableCell" valign="top"><P class="docText">Monotonic, unstable</P></TD></TR></COLGROUP></TABLE></P>
+<P class="docText">As expected, when the magnitude of the pole is less than 1.0, the process is stable; when the magnitude is greater than 1.0, the process is unstable. One thing that is unusual for this first-order discrete example is that the output can oscillate even with a constant (in this case, 0) input value. For continuous-time systems there must be at least two states (the process must be at least second-order) for oscillation to occur. This is because the condition for oscillation in continuous-time systems is that the eigenvalues must be complex; for this to happen, there must be at least two eigenvalues, each complex-conjugates of the other. Discrete time systems can oscillate, as long as a pole has a negative value; if the negative pole has a magnitude less than one, it is a stable oscillation.</P>
+<A NAME="ch04lev2sec11"></A><H4 class="docSection2Title"> Final and Initial Values Theorems for Discrete Systems</H4>
+<P class="docText">Recall that the process gain of a continuous system could be determined by setting <span class="docEmphasis">s</span> = 0. Similarly, the gain of a discrete-time system can be found by setting <span class="docEmphasis">z</span> = 1.</P>
+<A NAME="ch04lev3sec1"></A><H5 class="docSection3Title"> Final Value Theorem for Discrete-Time Systems</H5>
+<P class="docText">The formal statement of the final value theorem is (where <font face="symbol">D</font><span class="docEmphasis">t</span> is the sample time)</P>
+<p class="docText"><IMG BORDER="0" WIDTH="176" HEIGHT="29" src="FILES/04equ13g.gif" ALT="graphics/04equ13g.gif"></p><br>
+<P class="docText">For a discrete-time input-output model</P>
+<p class="docText"><IMG BORDER="0" WIDTH="92" HEIGHT="20" src="FILES/04equ13h.gif" ALT="graphics/04equ13h.gif"></p>
+<br>
+<P class="docText">subject to a unit step input</P>
+<p class="docText"><IMG BORDER="0" WIDTH="127" HEIGHT="36" src="FILES/04equ13i.gif" ALT="graphics/04equ13i.gif"></p><br>
+<P class="docText">we find</P>
+<p class="docText"><IMG BORDER="0" WIDTH="189" HEIGHT="36" src="FILES/04equ13j.gif" ALT="graphics/04equ13j.gif"></p><br>
+<P class="docText">so, applying the final value theorem</P>
+<p class="docText"><IMG BORDER="0" WIDTH="387" HEIGHT="35" src="FILES/04equ13k.gif" ALT="graphics/04equ13k.gif"></p><br>
+<P class="docText">so we can find the long-term behavior of the process output, subject to a unit step input, simply by setting <span class="docEmphasis">z</span> = 1 in <span class="docEmphasis">g<SUB>p</SUB></span>(<span class="docEmphasis">z</span>).</P>
+<A NAME="ch04lev3sec2"></A><H5 class="docSection3Title"> Initial Value Theorem for Discrete-Time Systems</H5>
+<P class="docText">Similarly, the initial value theorem is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="166" HEIGHT="31" src="FILES/04equ13l.gif" ALT="graphics/04equ13l.gif"></p><br>
+<a href="0133536408_10971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch04lev1sec3.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch04lev1sec5.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

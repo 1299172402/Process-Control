@@ -1,0 +1,71 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="2.4 Constitutive Relationships"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch02lev1sec3.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch02lev1sec5.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch02lev1sec4"></A><H3 class="docSection1Title">2.4 Constitutive Relationships</H3>
+<P class="docText"><A class="docLink" HREF="0133536408_ch02lev1sec3.html#ch02lev2sec6">Examples 2.1</A> and <A class="docLink" HREF="0133536408_ch02lev1sec3.html#ch02lev2sec8">2.2</A> required more than simple material balances to define the modeling equations. These required relationships are known as <span class="docEmphasis">constitutive</span> equations; several examples of constitutive equations are shown in this section.</P>
+<A NAME="ch02lev2sec9"></A><H4 class="docSection2Title"> Gas Law</H4>
+<P class="docText">Process systems containing a gas will often need a gas-law expression in the model. The <span class="docEmphasis">ideal gas law</span> is commonly used to relate pressure (<span class="docEmphasis">P</span>), molar volume (<IMG BORDER="0" WIDTH="11" HEIGHT="16" src="FILES/vcap.gif" ALT="graphics/vcap.gif">), and temperature (<span class="docEmphasis">T</span>):</P>
+<P><B><A NAME="ch02equ36"></A>Equation 2.33 </B></P><p class="docText"><IMG BORDER="0" WIDTH="55" HEIGHT="19" src="FILES/02equ33.gif" ALT="graphics/02equ33.gif"></p><br>
+<P class="docText">The <span class="docEmphasis">van der Waal's P</span><IMG BORDER="0" WIDTH="11" HEIGHT="16" src="FILES/vcap.gif" ALT="graphics/vcap.gif"><span class="docEmphasis">T</span> relationship contains two parameters (<span class="docEmphasis">a</span> and <span class="docEmphasis">b</span>) that are system specific:</P>
+<P><B><A NAME="ch02equ37"></A>Equation 2.34 </B></P><p class="docText"><IMG BORDER="0" WIDTH="131" HEIGHT="38" src="FILES/02equ34.gif" ALT="graphics/02equ34.gif"></p><br>
+<P class="docText">For other gas laws, see a thermodynamics text, such as <A class="docLink" HREF="0133536408_ch02lev1sec9.html#ch02biblio01entry04">Smith, Van Ness, and Abbott (2001)</A>.</P>
+<A NAME="ch02lev2sec10"></A><H4 class="docSection2Title"> Chemical Reactions</H4>
+<P class="docText">The rate of reaction per unit volume (mol/volume*time) is usually a function of the concentration of the reacting species. For example, consider the reaction <span class="docEmphasis">A</span> + 2<span class="docEmphasis">B</span> <img src="FILES/U2192.GIF" border=0> <span class="docEmphasis">C</span> + 3<span class="docEmphasis">D</span>. If the rate of the reaction of <span class="docEmphasis">A</span> is first order in both <span class="docEmphasis">A</span> and <span class="docEmphasis">B</span>, we use the expression</P>
+<P><B><A NAME="ch02equ38"></A>Equation 2.35 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="80" HEIGHT="18" src="FILES/02equ35.gif" ALT="graphics/02equ35.gif"></p><br>
+<P class="docText">where <span class="docEmphasis">r<SUB>A</SUB></span> is the rate of reaction of <span class="docEmphasis">A</span> (mol <span class="docEmphasis">A</span>/volume time), <span class="docEmphasis">k</span> the reaction rate constant, <span class="docEmphasis">C<SUB>A</SUB></span> the concentration of <span class="docEmphasis">A</span> (mol <span class="docEmphasis">A</span>/volume), and <span class="docEmphasis">C<SUB>B</SUB></span> the concentration of <span class="docEmphasis">B</span> (mol <span class="docEmphasis">B</span>/volume).</P>
+<P class="docText">Reaction rates are normally expressed in terms of generation of a species. The minus sign indicates that <span class="docEmphasis">A</span> is consumed in the reaction above. It is good practice to associate the units with all parameters in a model. For consistency in the units for <span class="docEmphasis">r<SUB>A</SUB></span>, we find that <span class="docEmphasis">k</span> has units of (vol/mol <span class="docEmphasis">B</span> * time). Notice that 2 mol of <span class="docEmphasis">B</span> react for each 1 mol of <span class="docEmphasis">A</span>. Then we can write</P>
+<p class="docText"><IMG BORDER="0" WIDTH="127" HEIGHT="54" src="FILES/02equ35a.gif" ALT="graphics/02equ35a.gif"></p><br>
+<P class="docText">Usually, the reaction rate coefficient is a function of temperature. The most commonly used representation is the Arrhenius rate law,</P>
+<P><B><A NAME="ch02equ39"></A>Equation 2.36 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="129" HEIGHT="18" src="FILES/02equ36.gif" ALT="graphics/02equ36.gif"></p><br>
+<P class="docText">where <span class="docEmphasis">k</span>(<span class="docEmphasis">T</span>) is the reaction rate constant, as a function of temperature, <span class="docEmphasis">k</span><SUB>0</SUB> the frequency factor or preexponential factor, <span class="docEmphasis">E</span> the activation energy (cal/gmol), <span class="docEmphasis">R</span> the ideal gas constant (1.987 cal/gmol K), and <span class="docEmphasis">T</span> the absolute temperature scale (K or R.)</P>
+<P class="docText">The frequency factor and activation energy can be estimated based on data of the reaction constant as a function of reaction temperature. Taking the natural logarithm of the Arrhenius rate law, we find</P>
+<P><B><A NAME="ch02equ40"></A>Equation 2.37 </B></P><p class="docText"><IMG BORDER="0" WIDTH="130" HEIGHT="37" src="FILES/02equ37.gif" ALT="graphics/02equ37.gif"></p><br>
+<P class="docText">and we see that <span class="docEmphasis">k</span><SUB>0</SUB> and <span class="docEmphasis">E</span> can be found from the slope and intercept of a plot of (ln <span class="docEmphasis">k</span>) vs. (1/<span class="docEmphasis">T</span>).</P>
+<A NAME="ch02lev2sec11"></A><H4 class="docSection2Title"> Equilibrium Relationships</H4>
+<P class="docText">The relationship between the liquid- and vapor-phase compositions of component <span class="docEmphasis">i</span>, when the phases are in equilibrium, can be represented by</P>
+<P><B><A NAME="ch02equ41"></A>Equation 2.38 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="52" HEIGHT="17" src="FILES/02equ38.gif" ALT="graphics/02equ38.gif"></p><br>
+<P class="docText">where <span class="docEmphasis">y<SUB>i</SUB></span> is the vapor-phase mole fraction of component <span class="docEmphasis">i</span>, <span class="docEmphasis">x<SUB>i</SUB></span> the liquid-phase mole fraction of component <span class="docEmphasis">i</span>, and <span class="docEmphasis">K<SUB>i</SUB></span> the vapor/liquid equilibrium constant for component <span class="docEmphasis">i.</span></P>
+<P class="docText">The equilibrium constant is a function of composition and temperature. The simplest assumption for the calculation of an equilibrium constant is to use Raoult's law. Here,</P>
+<P><B><A NAME="ch02equ42"></A>Equation 2.39 </B></P><p class="docText"><IMG BORDER="0" WIDTH="64" HEIGHT="41" src="FILES/02equ39.gif" ALT="graphics/02equ39.gif"></p><br>
+<P class="docText">where the pure component vapor (saturation) pressure often has the following form:</P>
+<P><B><A NAME="ch02equ43"></A>Equation 2.40 </B></P><p class="docText"><IMG BORDER="0" WIDTH="115" HEIGHT="40" src="FILES/02equ40.gif" ALT="graphics/02equ40.gif"></p><br>
+<P class="docText">Often, we will see a <span class="docEmphasis">constant relative volatility</span> assumption made, to simplify vapor/liquid equilibrium models. In a binary system, the relationship often used between the vapor and liquid phases for the light component is</P>
+<P><B><A NAME="ch02equ44"></A>Equation 2.41 </B></P><p class="docText"><IMG BORDER="0" WIDTH="92" HEIGHT="37" src="FILES/02equ41.gif" ALT="graphics/02equ41.gif"></p><br>
+<P class="docText">where <span class="docEmphasis">x</span> is the liquid-phase mole fraction of light component, <span class="docEmphasis">y</span> the vapor-phase mole fraction of light component, and <font face="symbol">a</font> the relative volatility (<font face="symbol">a</font> &gt; 1).</P>
+<A NAME="ch02lev2sec12"></A><H4 class="docSection2Title"> Heat Transfer</H4>
+<P class="docText">The rate of heat transfer through a vessel wall separating two fluids (a jacketed reactor, for example) can be described by</P>
+<P><B><A NAME="ch02equ45"></A>Equation 2.42 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="72" HEIGHT="17" src="FILES/02equ42.gif" ALT="graphics/02equ42.gif"></p><br>
+<P class="docText">where <span class="docEmphasis">Q</span> is the rate of heat transfer from hot to cold fluid, <span class="docEmphasis">U</span> the overall heat transfer coefficient, <span class="docEmphasis">A</span> the area for heat transfer, and <font face="symbol">D</font><span class="docEmphasis">T</span> the difference between hot and cold temperatures.</P>
+<P class="docText">At the design stage the overall heat transfer coefficient can be estimated from correlations; it is a function of fluid properties and velocities. The individual film heat transfer coefficients (<span class="docEmphasis">h<SUB>i</SUB></span> and <span class="docEmphasis">h<SUB>o</SUB></span>), the metal conductivity (<span class="docEmphasis">k</span>, and thickness, <font face="symbol">D</font><span class="docEmphasis">x</span>), and a fouling factor (<span class="docEmphasis">f</span>) can be used to determine the overall heat transfer coefficient from the relationship</P>
+<P><B><A NAME="ch02equ46"></A>Equation 2.43 </B></P><p class="docText"><IMG BORDER="0" WIDTH="129" HEIGHT="40" src="FILES/02equ43.gif" ALT="graphics/02equ43.gif"></p><br>
+<P class="docText">The individual film coefficients are a strong function of fluid properties and velocities. The overall heat transfer coefficient is often estimated from experimental data.</P>
+<A NAME="ch02lev2sec13"></A><H4 class="docSection2Title"> Flow Through Valves</H4>
+<P class="docText">The flow through valve is often described by the relationship</P>
+<P><B><A NAME="ch02equ47"></A>Equation 2.44 </B></P><p class="docText"><IMG BORDER="0" WIDTH="101" HEIGHT="42" src="FILES/02equ44.gif" ALT="graphics/02equ44.gif"></p><br>
+<P class="docText">where <span class="docEmphasis">F</span> is the volumetric flow rate, <span class="docEmphasis">C<SUB>v</SUB></span> the valve coefficient, <span class="docEmphasis">x</span> the fraction the valve is open (0 <img src="FILES/U2264.GIF" border=0> x <img src="FILES/U2264.GIF" border=0> 1), <font face="symbol">D</font><span class="docEmphasis">P<SUB>v</SUB></span> the pressure drop across the valve, <span class="docEmphasis">s.g.</span> the specific gravity of the fluid, and <span class="docEmphasis">f</span>(<span class="docEmphasis">x</span>) the flow characteristic (varies from 0 to 1, as a function of <span class="docEmphasis">x</span>).</P>
+<P class="docText">Three common valve characteristics are (i) linear, (ii) equal-percentage, and (iii) quick-opening. For a linear valve, <span class="docEmphasis">f</span>(<span class="docEmphasis">x</span>) = <span class="docEmphasis">x</span>. For an equal-percentage valve, <span class="docEmphasis">f</span>(<span class="docEmphasis">x</span>) = <font face="symbol">a</font><SUP><span class="docEmphasis">x</span> - 1</SUP>. For a quick-opening valve, <IMG BORDER="0" WIDTH="62" HEIGHT="20" src="FILES/02inequ01.gif" ALT="graphics/02inequ01.gif">. These flow characteristics are plotted in <A class="docLink" HREF="#ch02fig06">Figure 2-6</A>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch02fig06"></A>Figure 2-6. Valve flow characteristics. The sensitivity or valve "gain" is related to the slope of the curve.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="404" src="FILES/02fig06.gif" ALT="graphics/02fig06.gif"></p></CENTER>
+<P class="docText">Notice that for the quick-opening valve, the sensitivity (or "gain") of flow to valve position is high at low openings and low at high openings; the opposite is true for an equal-percentage valve. The sensitivity of a linear valve does not change as a function of valve position. The equal-percentage valve is commonly used in chemical processes because of desirable characteristics when installed in piping systems where a significant piping pressure drop occurs at high flow rates. Knowledge of these characteristics will be important when developing feedback control systems. Flow control is discussed in detail in <A class="docLink" HREF="0133536408_art15.html#art15">Module 15</A>.</P>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch02lev1sec3.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch02lev1sec5.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

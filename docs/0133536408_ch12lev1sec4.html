@@ -1,0 +1,36 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="12.4 Split-Range Control"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch12lev1sec3.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch12lev1sec5.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch12lev1sec4"></A><H3 class="docSection1Title" id="225793-962">12.4 Split-Range Control</H3>
+<P class="docText">A split-range strategy is often used in situations where one or more valves may be used, depending on the operating scenario. An example application is a batch reactor. Batch reactors must often be heated from ambient temperature to a desired operating temperature. Particularly if the reaction is exothermic, then cooling will be needed to maintain the desired reactor temperature. In the split-range control strategy shown in <A class="docLink" HREF="#ch12fig04">Figure 12-4</A>, if the jacket temperature controller output is between 0 and 50%, the cold glycol valve is open; if the jacket temperature controller output is between 50 and 100%, the hot glycol valve is open. For safety reasons we wish the cold glycol valve to fail-open and the hot glycol valve to fail-closed. The diagram in <A class="docLink" HREF="#ch12fig05">Figure 12-5</A> more clearly shows the relationship between valve positions and the jacket temperature controller output.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch12fig04"></A>Figure 12-4. Batch reactor temperature control. The jacket temperature controller has a split-range output, where the cold glycol valve is open during "cooling mode" and the hot glycol valve is open during "heating mode."</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="450" HEIGHT="311" src="FILES/12fig04.gif" ALT="graphics/12fig04.gif"></p></CENTER>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch12fig05"></A>Figure 12-5. Depiction of the split-range controller action.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="258" src="FILES/12fig05.gif" ALT="graphics/12fig05.gif"></p></CENTER>
+<P class="docText">The implementation is as follows. Let <span class="docEmphasis">u</span> represent the output of the jacket temperature controller (0–100%). Also, let <span class="docEmphasis">v</span><SUB>c</SUB> and <span class="docEmphasis">v</span><SUB>h</SUB> represent the cold and hot glycol valve positions, respectively. The split-range algorithm can be stated as</P>
+<P><B><A NAME="ch12equ06"></A>Equation 12.6 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="221" HEIGHT="33" src="FILES/12equ06.gif" ALT="graphics/12equ06.gif"></p><br>
+<P class="docText">Sometimes there is a small deadband, where the cold glycol is open between 0 and 45%, while the hot glycol is open between 55 and 100%. This adds the equivalent of a small time delay to the control strategy but avoids situations where both cold and hot valves are open owing to small miscalibrations.</P>
+<A NAME="ch12lev2sec1"></A><H4 class="docSection2Title"> Example 12.1: 1000 Liter Stirred-Tank Heater</H4>
+<P class="docText">Here we show results for a 1000 liter jacketed, continuous stirred-tank heater, operated at 85% of capacity. For clarity, we consider only the <span class="docEmphasis">jacket temperature controller</span>, which is split-ranged as shown in <A class="docLink" HREF="#ch12fig05">Figure 12-5</A>. Ordinarily this jacket temperature controller would be the secondary (inner-loop or slave controller) where the output of a vessel temperature controller (outer-loop or primary controller) is the setpoint to the jacket temperature controller.</P>
+<P class="docText">The modeling equations are</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="214" HEIGHT="83" src="FILES/12equ07.gif" ALT="graphics/12equ07.gif"></p><br>
+<P class="docText">where the jacket make-up flow rate (<span class="docEmphasis">F</span><SUB>j</SUB>; of either cold or hot glycol) is the process input. Numerical values are shown in Exercise 5.</P>
+<P class="docText">The responses for setpoint changes in jacket temperature are shown in <A class="docLink" HREF="#ch12fig06">Figure 12-6</A>. A positive setpoint change is made at <span class="docEmphasis">t</span> = 0 minutes, followed by a negative change at <span class="docEmphasis">t</span> = 10 minutes. The middle plot shows the jacket temperature controller output and the bottom plot shows the individual valve positions. All variables are in deviation form. When the controller output is positive, the hot valve is activated; when the controller output is negative, the cold valve is activated.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch12fig06"></A>Figure 12-6. Response to step setpoint changes in jacket temperature. All variables are in deviation form.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="384" src="FILES/12fig06.gif" ALT="graphics/12fig06.gif"></p></CENTER>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch12lev1sec3.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch12lev1sec5.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

@@ -1,0 +1,46 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="M4.6 Summary"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_art04lev1sec5.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_art04lev1sec7.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="art04lev1sec6"></A><H3 class="docSection1Title">M4.6 Summary</H3>
+<P class="docText">The M<span class="docEmphSmaller">ATLAB</span> Control Toolbox can be used to create LTI objects. These objectives can then easily be converted to other forms. Conversion from continuous to discrete is particularly useful when implementing a digital control algorithm. The commands used include the following:</P>
+<pre>
+
+</pre><pre>
+sys   =  ss(a,b,c,d)        % state space form
+sys   =  tf(num,den)        % transfer function form
+sys   =  zpk(z,p,k)         % zero-pole-gain form
+sysd  =  filt(num,den,Ts)   % backward shift form
+sysd  =  c2d(sys,Ts,'zoh'   % continuous to discrete
+sys   =  d2c(sysd,'zoh')    % discrete to continuous
+pi    =  pole(sys)          % poles
+zi    =  tzero(sys)         % zeros
+[y,t] =  step(sys)          % step response
+[y,t] =  impulse(sys)       % impulse response
+</pre>
+<P class="docText">In addition, the following do not require the Control Toolbox:</P>
+<pre>
+
+</pre><pre>
+[num,den] = ss2tf(a,b,c,d,iu)  % state space to transfer function
+[a,b,c,d] = tf2ss(a,b,c,d)     % transfer function to state space
+</pre>
+<P class="docText">Examples for the most important commands can be found in <A class="docLink" HREF="0133536408_art04lev1sec1.html#art04lev1sec1">Section M4.1</A>.</P>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_art04lev1sec5.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_art04lev1sec7.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

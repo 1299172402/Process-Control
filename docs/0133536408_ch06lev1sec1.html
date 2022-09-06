@@ -1,0 +1,56 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="6.1 Introduction"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch06.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch06lev1sec2.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch06lev1sec1"></A><H3 class="docSection1Title" id="225793-822">6.1 Introduction</H3>
+<P class="docText">Consider the standard feedback block diagram shown in <A class="docLink" HREF="#ch06fig01">Figure 6-1</A>, where disturbance inputs have been neglected. Transfer functions (and block diagrams) are used to analyze the behavior of control systems, because the algebraic expressions are easy to manipulate.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch06fig01"></A>Figure 6-1. Feedback control block diagram.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="195" src="FILES/06fig01.gif" ALT="graphics/06fig01.gif"></p></CENTER>
+<P class="docText">We noted in <A class="docLink" HREF="0133536408_ch05.html#ch05">Chapter 5</A> that the closed-loop transfer function could be used to determine, for example, the range of controller gains that assure closed-loop stability.</P>
+<A NAME="ch06lev2sec1"></A><H4 class="docSection2Title"> PID Controller Forms</H4>
+<P class="docText">PID controller algorithms were developed in <A class="docLink" HREF="0133536408_ch05.html#ch05">Chapter 5</A>. Here we provide a concise review of the algorithms in common use.</P>
+<A NAME="ch06lev3sec1"></A><H5 class="docSection3Title"> P-Only Control</H5>
+<P class="docText">The proportional only algorithm is</P>
+<P><B><A NAME="ch06equ01"></A>Equation 6.1a </B></P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="165" HEIGHT="19" src="FILES/06equ01a.gif" ALT="graphics/06equ01a.gif"></p><br>
+<P class="docText">which has the following transfer function relationship between error and controller output:</P>
+<P><B><A NAME="ch06equ02"></A>Equation 6.1b </B></P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="73" HEIGHT="15" src="FILES/06equ01b.gif" ALT="graphics/06equ01b.gif"></p><br>
+<A NAME="ch06lev3sec2"></A><H5 class="docSection3Title"> PI-Control</H5>
+<P class="docText">The PI algorithm is</P>
+<P><B><A NAME="ch06equ03"></A>Equation 6.2a </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="163" HEIGHT="53" src="FILES/06equ02a.gif" ALT="graphics/06equ02a.gif"></p><br>
+<P class="docText">which has the following transfer function relationship between error and controller output:</P>
+<P><B><A NAME="ch06equ04"></A>Equation 6.2b </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="226" HEIGHT="42" src="FILES/06equ02b.gif" ALT="graphics/06equ02b.gif"></p><br>
+<A NAME="ch06lev3sec3"></A><H5 class="docSection3Title"> <span class="docEmphasis">PID</span> Control</H5>
+<P class="docText">The ideal PID algorithm is</P>
+<P><B><A NAME="ch06equ05"></A>Equation 6.3a </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="225" HEIGHT="51" src="FILES/06equ03a.gif" ALT="graphics/06equ03a.gif"></p><br>
+<P class="docText">which has the following transfer function relationship between error and controller output:</P>
+<P><B><A NAME="ch06equ06"></A>Equation 6.3b </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="317" HEIGHT="47" src="FILES/06equ03b.gif" ALT="graphics/06equ03b.gif"></p><br>
+<P class="docText">In practice it is impossible to perfectly differentiate the error signal, so the following Laplace transfer function approximations are often used for "real" PID control (where <font face="symbol">a</font> = 0.1 is common):</P>
+<P><B><A NAME="ch06equ07"></A>Equation 6.4a </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="316" HEIGHT="44" src="FILES/06equ04a.gif" ALT="graphics/06equ04a.gif"></p><br>
+<P class="docText">or</P>
+<P><B><A NAME="ch06equ08"></A>Equation 6.4b </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="318" HEIGHT="45" src="FILES/06equ04b.gif" ALT="graphics/06equ04b.gif"></p><br>
+<P class="docText">A problem with taking the derivative of the error is that step setpoint changes cause the derivative to become unbounded and result in a "spike" in the manipulated variable action. In most practical PID controllers, then, the derivative of the measured process output is used.</P>
+<P><B><A NAME="ch06equ09"></A>Equation 6.5a </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="225" HEIGHT="50" src="FILES/06equ05a.gif" ALT="graphics/06equ05a.gif"></p><br>
+<P class="docText">The transfer function representation is</P>
+<P><B><A NAME="ch06equ10"></A>Equation 6.5b </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="193" HEIGHT="43" src="FILES/06equ05b.gif" ALT="graphics/06equ05b.gif"></p><br>
+<P class="docText">which is usually implemented in the form of</P>
+<P><B><A NAME="ch06equ11"></A>Equation 6.5c </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="216" HEIGHT="48" src="FILES/06equ05c.gif" ALT="graphics/06equ05c.gif"></p><br>
+<P class="docText">where the measured process output has been "filtered" to minimize noise problems.</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch06.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch06lev1sec2.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

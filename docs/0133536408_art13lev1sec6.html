@@ -1,0 +1,69 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="M13.6 Singular Value Analysis"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_art13lev1sec5.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_art13lev1sec7.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="art13lev1sec6"></A><H3 class="docSection1Title">M13.6 Singular Value Analysis</H3>
+<P class="docText">The SVD can be used to predict directional sensitivity of a process. The process gain matrix is decomposed into three matrices,</P>
+<p class="docText"><IMG BORDER="0" WIDTH="63" HEIGHT="14" src="FILES/m13equ01c.gif" ALT="graphics/m13equ01c.gif"></p>
+<br>
+<P class="docText">where <span class="docEmphasis">U</span> is the left singular vector matrix, <font face="symbol">S</font> the diagonal matrix of singular values, ordered, and <span class="docEmphasis">V</span> the right singular vector matrix. The left and right singular vector matrices are both orthonormal matrices; that is, each column of the matrix is orthogonal to all other columns and the columns each are unit length. The diagonal singular value matrix is ordered so that the largest singular value is in the (1,1) position. <span class="docEmphasis">Note that the standard notation for <span class="docEmphasis">SVD</span> is to use U to represent the left singular vector matrix. Please do not confuse this with the u vector commonly used to represent the vector of manipulated inputs</span>.</P>
+<P class="docText">When performing a singular value analysis, it is important to scale the inputs and outputs to cover the same range. For this system, we assume that we desire the output compositions to vary by only &#177;0.01 mole fraction. Also, we assume that the inputs vary by &#177;0.5 kmol/minute. The scaled process gain matrix is then</P><p class="docText"><IMG BORDER="0" WIDTH="271" HEIGHT="55" src="FILES/m13equ01d.gif" ALT="graphics/m13equ01d.gif"></p>
+<P class="docText">The M<span class="docEmphSmaller">ATLAB</span> SVD analysis of this system is shown below.</P>
+<A NAME="art13lev2sec7"></A><H4 class="docSection2Title"> M<span class="docEmphSmaller">ATLAB</span> SVD Analysis</H4>
+<pre>
+
+</pre><pre>
+&#187; g = [0.878 -0.864;1.082 -1.096];
+
+&#187; gs = [100 0;0 100]*g*[0.5 0;0 0.5]
+
+gs =
+   43.9000  -43.2000
+   54.1000  -54.8000
+
+&#187; [u,s,v] = svd(gs)
+
+u =
+    0.6246   -0.7809
+    0.7809    0.6246
+
+s =
+   98.6043         0
+         0    0.6957
+
+v =
+    0.7066   -0.7077
+   -0.7077   -0.7066
+
+&#187; cond(gs)
+
+ans =  141.7320
+</pre>
+<P class="docText">The SVD of the scaled gain matrix is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="314" HEIGHT="66" src="FILES/m13equ01e.gif" ALT="graphics/m13equ01e.gif"></p><br>
+<P class="docText">The condition number is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="115" HEIGHT="35" src="FILES/m13equ01f.gif" ALT="graphics/m13equ01f.gif"></p><br>
+<P class="docText">which indicates that this is an ill-conditioned system. The first column of the left singular vector matrix indicates that the most sensitive output direction is a simultaneous change in the distillate and bottoms composition in the same direction. The first column of the right singular vector matrix indicates that the strongest input direction is to change reflux and vapor boil-up by the same magnitude, but in different directions (increase reflux and decrease vapor boil-up, or vice versa). Physically, this is because these types of changes have a greater effect on the overall material balance around the column.</P>
+<P class="docText">We can view these SVD results to understand both open-loop and closed-loop effects.</P>
+<p class="docText"><span class="docEmphasis">Open-loop</span>. 
+An input in the most sensitive direction will have a large-magnitude effect on the outputs. This means that an input in the most sensitive direction has a high "gain" effect on the output; that is, a small input change causes a large output change. Similarly, an input in the least sensitive direction (column 2 of the V matrix) has very little effect on the output. These effects are illustrated by the open-loop responses in <A class="docLink" HREF="0133536408_art13lev1sec2.html#art13m13fig04">Figures M13-4</A> and <A class="docLink" HREF="0133536408_art13lev1sec2.html#art13m13fig05">M13-5</A>. <A class="docLink" HREF="0133536408_art13lev1sec2.html#art13m13fig04">Figure M13-4</A> is a forcing in the most sensitive input direction, while <A class="docLink" HREF="0133536408_art13lev1sec2.html#art13m13fig05">Figure M13-5</A> is a forcing in the least sensitive direction.</p>
+<p class="docText"><span class="docEmphasis">Closed-loop</span>. 
+A desired output change in the most sensitive output direction will require an input in the most sensitive input direction, and these are associated with the largest singular value. This means that a setpoint change in the most sensitive output direction will not require as large a magnitude input change as a setpoint change in the least sensitive output direction. It should be noted that the response shown in <A class="docLink" HREF="0133536408_art13lev1sec5.html#art13m13fig07">Figure M13-7</A> is based a setpoint change in the most sensitive output direction, which requires little manipulated variable action. The reader should show that a setpoint change in the weakest direction will yield a slow response, similar to <A class="docLink" HREF="0133536408_art13lev1sec5.html#art13m13fig06">Figure M13-6</A>.</p>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_art13lev1sec5.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_art13lev1sec7.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

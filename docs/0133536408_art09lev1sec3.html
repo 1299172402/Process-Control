@@ -1,0 +1,42 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="M9 Feedback Controller Design"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_art09lev1sec2.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_art09lev1sec4.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="art09lev1sec3"></A><H3 class="docSection1Title">M9 Feedback Controller Design</H3>
+<P class="docText">Instructors and students are asked to choose from a variety of controller design options. The following are suggestions: IMC-based PID, Ziegler-Nichols (and Tyreus-Luyben), and frequency response.</P>
+<P class="docText">For the selected controller design technique, perform simulations for the following:</P>
+<span style="font-weight:bold"><OL class="docList" TYPE="a"><LI><span style="font-weight:normal"><P class="docList">A level setpoint change of 0.1 (dimensionless) at <span class="docEmphasis">t</span> = 1 minute.</P></span></LI><LI><span style="font-weight:normal"><P class="docList">A steam demand change of 0.5 (dimensionless) at <span class="docEmphasis">t</span> = 1 minute.</P></span></LI></OL></span>
+<P class="docText">In each case discuss the effect of controller tuning. In addition to the response of stream drum level (process output), include plots of the manipulated input (valve position). You may wish to revise the S<span class="docEmphSmaller">IMULINK</span> diagram shown in <A class="docLink" HREF="0133536408_art09lev1sec6.html#art09lev1sec6">Appendix M9.1</A>, for your simulations.</P>
+<A NAME="art09lev2sec1"></A><H4 class="docSection2Title"> IMC-Based PID</H4>
+<P class="docText">Use the IMC-based PID procedure to find that the resulting feedback controller: assuming all-pass and allowing the IMC controller to be semiproper. The resulting feedback controller will be lead-lag [neglect the valve dynamics in controller design but include it in the simulation, that is, use Equation (<A class="docLink" HREF="0133536408_art09lev1sec2.html#art09equ01">M9.1</A>) for controller design].</P>
+<span style="font-weight:bold"><OL class="docList" TYPE="a"><LI><span style="font-weight:normal"><P class="docList">What is the PID controller transfer function? (You should find that there is no integral term.)</P></span></LI><LI><span style="font-weight:normal"><P class="docList">Plot the closed-loop response for a step setpoint change of 0.1 at <span class="docEmphasis">t</span> = 1 minute. Compare the closed-loop responses for several values of the IMC filter factor, <font face="symbol">l</font>.</P></span></LI><LI><span style="font-weight:normal"><P class="docList">Plot the closed-loop response for a step load disturbance change of 0.5 at <span class="docEmphasis">t</span> = 1 minute. Compare the closed-loop responses for several values of the IMC filter factor, <font face="symbol">l</font>. You should find that there is offset since there is no controller integral action.</P></span></LI></OL></span>
+<P class="docText">You found that the feedback-only controller had offset when a load disturbance occurred. This is because the controller does not have integral action. An IMC-based PID controller with integral action can be designed for the integrating process with inverse response</P>
+<p class="docText"><IMG BORDER="0" WIDTH="111" HEIGHT="46" src="FILES/m09equ03a.gif" ALT="graphics/m09equ03a.gif"></p><br>
+<P class="docText">by using the following IMC filter, and by not forming an all-pass factorization</P>
+<p class="docText"><IMG BORDER="0" WIDTH="90" HEIGHT="37" src="FILES/m09equ03b.gif" ALT="graphics/m09equ03b.gif"></p><br>
+<P class="docText">and by letting <font face="symbol">g</font> = 2<font face="symbol">l</font> + <font face="symbol">b</font> to obtain integral action. The resulting <span class="docEmphasis">ideal PID</span> controller parameters are:</P>
+<p class="docText"><IMG BORDER="0" WIDTH="99" HEIGHT="111" src="FILES/m09equ03c.gif" ALT="graphics/m09equ03c.gif"></p><br>
+<A NAME="art09lev2sec2"></A><H4 class="docSection2Title"> Ziegler-Nichols (or Tyreus-Luyben)</H4>
+<P class="docText">Using the Ziegler-Nichols continuous-oscillation procedure, find the critical gain and ultimate period. Based on the critical gain and ultimate period, choose either the Ziegler-Nichols or Tyreus-Luyben values for PI and PID controllers.</P>
+<span style="font-weight:bold"><OL class="docList" TYPE="a"><LI><span style="font-weight:normal"><P class="docList">What are the values of the PI and PID tuning parameters?</P></span></LI><LI><span style="font-weight:normal"><P class="docList">Plot the closed-loop response for a step setpoint change of 0.1 at <span class="docEmphasis">t</span> = 1 minute. Compare the closed-loop responses the PI and PID controllers.</P></span></LI><LI><span style="font-weight:normal"><P class="docList">Plot the closed-loop response for a step load disturbance change of 0.5 at <span class="docEmphasis">t</span> = 1 minute. Compare the closed-loop responses for the PI and PID controllers.</P></span></LI></OL></span>
+<A NAME="art09lev2sec3"></A><H4 class="docSection2Title"> Frequency Response</H4>
+<P class="docText">Design a PI controller with a gain margin of 2 and a phase margin of at least 60&#176;.</P>
+<span style="font-weight:bold"><OL class="docList" TYPE="a"><LI><span style="font-weight:normal"><P class="docList">What are the values of the PI controller? What are the gain and phase margins and the relevant frequencies?</P></span></LI><LI><span style="font-weight:normal"><P class="docList">Plot the closed-loop response for a step setpoint change of 0.1 at <span class="docEmphasis">t</span> = 1 minute.</P></span></LI><LI><span style="font-weight:normal"><P class="docList">Plot the closed-loop response for a step load disturbance change of 0.5 at <span class="docEmphasis">t</span> = 1 minute.</P></span></LI></OL></span>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_art09lev1sec2.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_art09lev1sec4.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

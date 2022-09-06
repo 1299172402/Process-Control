@@ -1,0 +1,82 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="8.8 The IMC Design Procedure"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch08lev1sec7.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch08lev1sec9.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch08lev1sec8"></A><H3 class="docSection1Title">8.8 The IMC Design Procedure</H3>
+<P class="docText">The IMC design procedure for SISO systems is identical to the design procedure that we developed for open-loop controller design earlier. The assumption we are making is that the model is perfect, so the relationship between the output, <span class="docEmphasis">y</span>, and the setpoint, <span class="docEmphasis">r</span>, is given by Equation (<A class="docLink" HREF="0133536408_ch08lev1sec1.html#ch08equ01">8.1)</A>. Model uncertainty is handled by adjusting the "filter factor" for <span class="docEmphasis">robustness</span> (tolerance of model uncertainty) and speed of response. The IMC design procedure consists of the following four steps.</P>
+<A NAME="ch08pr02"></A>
+
+
+
+<span style="font-weight:bold"><OL class="docList" START="1"><LI><span style="font-weight:normal" value="1"><P class="docList">Factor the process model into invertible ("good stuff") and noninvertible ("bad stuff"—time delays and RHP zeros) elements (generally, an all-pass factorization will be used).</P>
+<P><B><A NAME="ch08equ39"></A>Equation 8.39 </B></P><p class="docText"><IMG BORDER="0" WIDTH="124" HEIGHT="20" src="FILES/08equ39.gif" ALT="graphics/08equ39.gif"></p><br>
+<P class="docText">This factorization is performed so that the resulting controller will be stable.</P></span></LI><LI><span style="font-weight:normal" value="2"><P class="docText">Form the idealized IMC controller. The ideal internal model controller is the inverse of the invertible portion of the process model ("good stuff").</P>
+<P><B><A NAME="ch08equ40"></A>Equation 8.40 </B></P><p class="docText"><IMG BORDER="0" WIDTH="76" HEIGHT="22" src="FILES/08equ40.gif" ALT="graphics/08equ40.gif"></p><br></span></LI><LI><span style="font-weight:normal" value="3"><P class="docList">Add a filter to make the controller proper. A transfer function is proper if the order of the denominator polynomial is at least as high as the numerator polynomial.</P>
+<P><B><A NAME="ch08equ41"></A>Equation 8.41 </B></P><p class="docText"><IMG BORDER="0" WIDTH="160" HEIGHT="22" src="FILES/08equ41.gif" ALT="graphics/08equ41.gif"></p><br>
+<P class="docList">If it is most desirable to track step setpoint changes, the filter transfer function usually has the form</P>
+<P><B><A NAME="ch08equ42"></A>Equation 8.42 </B></P><p class="docText"><IMG BORDER="0" WIDTH="96" HEIGHT="40" src="FILES/08equ42.gif" ALT="graphics/08equ42.gif"></p><br>
+<P class="docText">and <span class="docEmphasis">n</span> is chosen to make the controller proper (or semiproper). If it is most desirable to track ramp setpoint changes (often used for batch reactors or transition control problems), then</P>
+<p class="docText"><IMG BORDER="0" WIDTH="94" HEIGHT="45" src="FILES/08equ42a.gif" ALT="graphics/08equ42a.gif"></p><br></span></LI><LI><span style="font-weight:normal" value="4"><P class="docText">Adjust the filter-tuning parameter to vary the speed of response of the closed-loop system. If the <font face="symbol">l</font> is "small," the closed loop system is "fast," if <font face="symbol">l</font> is "large," the closed-loop system is more <span class="docEmphasis">robust</span> (insensitive to model error).</P></span></LI></OL></span>
+<P class="docText">The student should note that the factorization performed in Equation (<A class="docLink" HREF="#ch08equ39">8.39)</A> is used only for controller design. The process model that is simulated in parallel with the process is still the full model, <IMG BORDER="0" WIDTH="30" HEIGHT="19" src="FILES/08inequ14.gif" ALT="graphics/08inequ14.gif">.</P>
+<P class="docText">If the process model is <span class="docEmphasis">perfect</span>, then we can easily calculate what the output response to a setpoint change will be. Substituting Equation (<A class="docLink" HREF="#ch08equ40">8.40)</A> into Equation (<A class="docLink" HREF="0133536408_ch08lev1sec7.html#ch08equ38">8.38)</A>, we find</P>
+<P><B><A NAME="ch08equ43"></A>Equation 8.43 </B></P><p class="docText"><IMG BORDER="0" WIDTH="354" HEIGHT="27" src="FILES/08equ43.gif" ALT="graphics/08equ43.gif"></p><br>
+<P class="docText">If the model is <span class="docEmphasis">perfect</span>, then</P>
+<P><B><A NAME="ch08equ44"></A>Equation 8.44 </B></P><p class="docText"><IMG BORDER="0" WIDTH="164" HEIGHT="19" src="FILES/08equ44.gif" ALT="graphics/08equ44.gif"></p><br>
+<P class="docText">and we can substitute Equation (<A class="docLink" HREF="#ch08equ44">8.44)</A> into Equation (<A class="docLink" HREF="#ch08equ43">8.43)</A> to find</P>
+<P><B><A NAME="ch08equ45"></A>Equation 8.45 </B></P><p class="docText"><IMG BORDER="0" WIDTH="177" HEIGHT="22" src="FILES/08equ45.gif" ALT="graphics/08equ45.gif"></p><br>
+<P class="docText">which yields</P>
+<P><B><A NAME="ch08equ46"></A>Equation 8.46 </B></P><p class="docText"><IMG BORDER="0" WIDTH="116" HEIGHT="18" src="FILES/08equ46.gif" ALT="graphics/08equ46.gif"></p><br>
+<P class="docText">Equation (<A class="docLink" HREF="#ch08equ46">8.46)</A> indicates that the bad stuff must appear in the output response. That is, if the open-loop process has a RHP zero (inverse response), then the closed-loop system must exhibit inverse response. Also, if the process has dead time, then dead time must appear in the closed-loop response. <span class="docEmphasis">Please remember that Equation (<A class="docLink" HREF="#ch08equ46">8.46)</A> only holds for the case of a perfect model</span>.</P>
+<P class="docText">The most common process model is a first-order plus time-delay transfer function. The design procedure for this system is shown in the next example.</P>
+<A NAME="ch08lev2sec14"></A><H4 class="docSection2Title"> Example 8.5: First-Order + Dead Time Process</H4>
+<P class="docText">Consider a first-order + time-delay model:</P>
+<p class="docText"><IMG BORDER="0" WIDTH="90" HEIGHT="45" src="FILES/08equ46a.gif" ALT="graphics/08equ46a.gif"></p><br>
+<P class="docText">Using the four-step design procedure, first factor out the noninvertible elements,</P>
+<p class="docText"><IMG BORDER="0" WIDTH="207" HEIGHT="46" src="FILES/08equ46b.gif" ALT="graphics/08equ46b.gif"></p><br>
+<P class="docText">Then form the idealized IMC controller,</P>
+<p class="docText"><IMG BORDER="0" WIDTH="134" HEIGHT="46" src="FILES/08equ46c.gif" ALT="graphics/08equ46c.gif"></p><br>
+<P class="docText">and add a filter to make the controller proper</P>
+<p class="docText"><IMG BORDER="0" WIDTH="340" HEIGHT="46" src="FILES/08equ46d.gif" ALT="graphics/08equ46d.gif"></p><br>
+<P class="docText">Once again, the controller is of lead-lag form. Finally, adjust <font face="symbol">l</font> for response speed and robustness. The closed-loop response (assuming a perfect model) to a setpoint change is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="196" HEIGHT="42" src="FILES/08equ46e.gif" ALT="graphics/08equ46e.gif"></p><br>
+<P class="docText">For a step setpoint change of magnitude <span class="docEmphasis">R</span>,</P>
+<p class="docText"><IMG BORDER="0" WIDTH="180" HEIGHT="64" src="FILES/08equ46f.gif" ALT="graphics/08equ46f.gif"></p><br>
+<A NAME="ch08lev3sec2"></A><H5 class="docSection3Title"> Numerical Example</H5>
+<P class="docText">Consider a first-order + time-delay process with a time constant of 10 seconds, a time delay of 5 seconds, and a gain of 1%/%. The output and manipulated variable responses for various values of <font face="symbol">l</font> are shown in <A class="docLink" HREF="#ch08fig14">Figure 8-14</A>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch08fig14"></A>Figure 8-14. Response as a function of <font face="symbol">l</font> for IMC of a first-order + time-delay process.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="385" src="FILES/08fig14.gif" ALT="graphics/08fig14.gif"></p></CENTER>
+<P class="docText">Notice that the IMC procedure has effectively "compensated" for the time delay. The time delay was not removed, but the controller does not "expect" results from a manipulated variable move until "after" the time delay because the model is integrated "in-parallel" with the process.</P>
+<A NAME="ch08lev2sec15"></A><H4 class="docSection2Title"> Example 8.6: Second-Order with an RHP Zero</H4>
+<P class="docText">Consider the following transfer function, which has an RHP zero at 1/9 min<SUP>-1</SUP>:</P>
+<p class="docText"><IMG BORDER="0" WIDTH="138" HEIGHT="40" src="FILES/08equ46g.gif" ALT="graphics/08equ46g.gif"></p><br>
+<P class="docText">Using all-pass factorization of the model, we find</P>
+<p class="docText"><IMG BORDER="0" WIDTH="273" HEIGHT="40" src="FILES/08equ46h.gif" ALT="graphics/08equ46h.gif"></p><br>
+<P class="docText">Forming the idealized controller,</P>
+<p class="docText"><IMG BORDER="0" WIDTH="181" HEIGHT="38" src="FILES/08equ46i.gif" ALT="graphics/08equ46i.gif"></p><br>
+<P class="docText">Add the filter to make the controller semiproper:</P>
+<p class="docText"><IMG BORDER="0" WIDTH="307" HEIGHT="39" src="FILES/08equ46j.gif" ALT="graphics/08equ46j.gif"></p><br>
+<P class="docText">For a perfect model, the output response is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="244" HEIGHT="37" src="FILES/08equ46k.gif" ALT="graphics/08equ46k.gif"></p><br>
+<P class="docText">and the manipulated variable response is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="210" HEIGHT="39" src="FILES/08equ46l.gif" ALT="graphics/08equ46l.gif"></p><br>
+<P class="docText">The output and manipulated responses for a step setpoint change is shown in <A class="docLink" HREF="#ch08fig15">Figure 8-15</A> as a function of <font face="symbol">l</font>. Notice that as <font face="symbol">l</font> is decreased, the inverse response becomes more pronounced—the inverse response can not be removed by a stable controller.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch08fig15"></A>Figure 8-15. Input and output response as a function of <font face="symbol">l</font> when all-pass filter is used.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="384" src="FILES/08fig15.gif" ALT="graphics/08fig15.gif"></p></CENTER>
+<P class="docText">It should be noted that the initial-value theorem can be used to determine the manipulated variable action that occurs immediately after a step setpoint change.</P>
+<P class="docText">We have shown how to factor models with time delays and RHP zeros and have used several examples to illustrate the effect of the tuning parameter (or filter time constant), <font face="symbol">l</font>, on the output response to setpoint changes if the model is perfect. The IMC design procedure is identical to the open-loop control design procedure presented in <A class="docLink" HREF="0133536408_ch08lev1sec3.html#ch08lev1sec3">Section 8.3</A>. Although the control-system design procedure is the same, the implementation of IMC is much different, since it incorporates feedback to compensate for model uncertainty or disturbances.</P>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch08lev1sec7.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch08lev1sec9.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

@@ -1,0 +1,89 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="M2.3 Feedback-Control Simulations"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_art02lev1sec2.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_art02lev1sec4.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="art02lev1sec3"></A><H3 class="docSection1Title">M2.3 Feedback-Control Simulations</H3>
+<P class="docText">The <TT>Math</TT> icon from <A class="docLink" HREF="0133536408_art02lev1sec1.html#art02m2fig02">Figure M2-2</A> can be selected, resulting in the functions shown in <A class="docLink" HREF="#art02m2fig06">Figure M2-6</A>. Additional icons can be found by selecting the <TT>Simulink Extras</TT> icon shown in <A class="docLink" HREF="0133536408_art02lev1sec1.html#art02m2fig01">Figure M2-1</A>. Selecting the <TT>Additional Linear</TT> icon from this group yields the set of icons shown in <A class="docLink" HREF="#art02m2fig07">Figure M2-7</A>. The most useful icon here is the <TT>PID Controller</TT>. Any icon can be "dragged" into the <TT>untitled</TT> model workspace. In <A class="docLink" HREF="#art02m2fig08">Figure M2-8</A>, we show the preliminary stage of the construction of a control block diagram, where icons have been dragged from their respective libraries into the <TT>untitled</TT> model workspace.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="art02m2fig06"></A>Figure M2-6. S<span class="docEmphSmaller">IMULINK</span> Math.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="400" HEIGHT="625" src="FILES/m02fig06.gif" ALT="graphics/m02fig06.gif"></p></CENTER>
+<CENTER><H5 class="docFigureTitle"><A NAME="art02m2fig07"></A>Figure M2-7. S<span class="docEmphSmaller">IMULINK</span> Additional Linear.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="425" HEIGHT="511" src="FILES/m02fig07.gif" ALT="graphics/m02fig07.gif"></p></CENTER>
+<CENTER><H5 class="docFigureTitle"><A NAME="art02m2fig08"></A>Figure M2-8. Block diagram for feedback control of the Van de Vusse CSTR. (a) Preliminary block diagram. (b) Completed block diagram, with name and parameter changes.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="475" HEIGHT="482" src="FILES/m02fig08.gif" ALT="graphics/m02fig08.gif"></p></CENTER>
+<P class="docText">The labels (names below each icon) can easily be changed. The default parameters for each icon are changed by double clicking the icon and entering new parameter values. Also, connections can be made between the outputs of one icon and inputs of another. <A class="docLink" HREF="#art02m2fig08">Figure M2-8b</A> shows how the icons from <A class="docLink" HREF="#art02m2fig08">Figure M2-8a</A> have been changed and linked together to form a feedback-control block diagram.</P>
+<P class="docText">It should be noted that the form of the PID control law used by the S<span class="docEmphSmaller">IMULINK</span> <TT>PID Controller</TT> icon is not the typical form that we use as process-control engineers. The form can be found by double clicking the icon to reveal the controller transfer function representation</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="107" HEIGHT="33" src="FILES/m02equ01.gif" ALT="graphics/m02equ01.gif"></p><br>
+<P class="docText">while we normally deal with the following PID structure:</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="144" HEIGHT="41" src="FILES/m02equ02.gif" ALT="graphics/m02equ02.gif"></p><br>
+<P class="docText">So the numerical values for the following parameters must be entered in the S<span class="docEmphSmaller">IMULINK</span> PID controller:</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="154" HEIGHT="18" src="FILES/m02equ03.gif" ALT="graphics/m02equ03.gif"></p>
+<br>
+<P class="docText">The <span class="docEmphasis">s</span>-polynomials in the process transfer function were entered by double clicking on the transfer function and entering the coefficients for the numerator and denominator polynomials. Notice also that the default step (used for the step setpoint change) is to step from a value of 0 to a value of 1 at <span class="docEmphasis">t</span> = 1. These default values can be changed by double clicking the <TT>step</TT> icon. The simulation parameters can be changed by going to the <TT>Simulation</TT> "pull-down" menu and modifying the start time (default = 0), stop time (default = 10) or the integration solver method (default = ode45).</P>
+<P class="docText">The controller tuning parameters of <span class="docEmphasis">k</span><SUB>c</SUB> = 1.89 and <font face="symbol">t</font><SUB>I</SUB> = 1.23 are used by entering <span class="docEmphasis">P</span> = 1.89 and <span class="docEmphasis">I</span> = 1.89/1.23 in the default <TT>PID Controller</TT> block. The following plot commands were used to generate <A class="docLink" HREF="#art02m2fig09">Figure M2-9</A>:</P>
+<pre>
+
+</pre><pre>
+&#187; subplot(2,1,1),plot(t,r,'--',t,y)
+&#187; xlabel('t (min)')
+&#187; ylabel('y (mol/l)')
+&#187; subplot(2,1,2),plot(t,u)
+&#187; xlabel('t (min)')
+&#187; ylabel('u (min^-1)')
+</pre>
+<CENTER><H5 class="docFigureTitle"><A NAME="art02m2fig09"></A>Figure M2-9. Measured output and manipulated input responses to a unit step setpoint change.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="450" HEIGHT="356" src="FILES/m02fig09.gif" ALT="graphics/m02fig09.gif"></p></CENTER>
+<P class="docText">The curves in <A class="docLink" HREF="#art02m2fig09">Figure M2-9</A> could be made smoother by selecting the '<TT>refine</TT>' box in the Simulation pull-down menu. Selecting <TT>refine = 2</TT> will plot two points for each integration step.</P>
+<P class="docText">This brief tutorial has gotten you started in the world of S<span class="docEmphSmaller">IMULINK</span>-based control block diagram simulation. You may now easily compare the effect of different tuning parameters or different formulations of a PID controller ("ideal" vs. "real," for example).</P>
+<P class="docText">Let's say you generated responses for a set of tuning parameters that we call case 1 for convenience. You could generate time, input, and output vectors for this case by setting</P>
+<pre>
+
+</pre><pre>
+&#187; t1 = t;
+&#187; y1 = y;
+&#187; u1 = u;
+</pre>
+<P class="docText">after running the case 1 values. You could then enter case 2 values, run another simulation, and create new vectors:</P>
+<pre>
+
+</pre><pre>
+&#187; t2 = t;
+&#187; y2 = y;
+&#187; u2 = u;
+</pre>
+<P class="docText">Then, compare case 1 and case 2 results by</P>
+<pre>
+
+</pre><pre>
+&#187; subplot(2,1,1),plot(t1,y1,t2,y2,'--')
+&#187; xlabel('t (min)')
+&#187; ylabel('y (mol/l)')
+&#187; subplot(2,1,2),plot(t1,u1,t2,u2,'--')
+&#187; xlabel('t (min)')
+&#187; ylabel('u (min^-1)')
+</pre>
+<P class="docText">which automatically plots case 1 as a solid line and case 2 as a dashed line.</P>
+<P class="docText">Similarly, you could modify the controller type by placing a transfer function block for the controller and using a "real PID" transfer function (this only differs when there is derivative action).</P>
+<A NAME="art02lev2sec1"></A><H4 class="docSection2Title"> Other Commonly Used Icons</H4>
+<P class="docText">Often you will want to simulate the behavior of systems that have time delays. The <TT>Transport Delay</TT> icon can be selected from the <TT>Continuous</TT> library shown in <A class="docLink" HREF="0133536408_art02lev1sec1.html#art02m2fig02">Figure M2-2</A>. The transport delay icon is shown in <A class="docLink" HREF="#art02m2fig10">Figure M2-10</A>. Our experience is that simulations can become somewhat "flaky" if 0 is entered for a transport delay. We recommend that you remove the transport delay block for simulations where no time delay is involved.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="art02m2fig10"></A>Figure M2-10. Transport Delay icon.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="80" HEIGHT="101" src="FILES/m02fig10.gif" ALT="graphics/m02fig10.gif"></p></CENTER>
+<P class="docText">Manipulated variables are often constrained to between minimum (0 flow, for example) and maximum (fully open valve) values. A <TT>saturation</TT> icon from the <TT>Discontinuities</TT> library can be used to simulate this behavior. The saturation icon is shown in <A class="docLink" HREF="#art02m2fig11">Figure M2-11</A>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="art02m2fig11"></A>Figure M2-11. Saturation element.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="100" HEIGHT="88" src="FILES/m02fig11.gif" ALT="graphics/m02fig11.gif"></p></CENTER>
+<P class="docText">Actuators (valves) and sensors (measurement devices) often have additional dynamic lags that can be simulated by transfer functions. These can be placed on the block diagram in the same fashion that a transfer function was used to represent the process earlier.</P>
+<P class="docText">It should be noted that icons can be "flipped" or "rotated" by selecting the icon and going to the format "pull-down" menu and selecting <TT>Flip Block</TT> or <TT>Rotate Block</TT>. The block diagram of <A class="docLink" HREF="#art02m2fig08">Figure M2-8</A> has been extended to include the saturation element and transport delay, as shown in <A class="docLink" HREF="#art02m2fig12">Figure M2-12</A>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="art02m2fig12"></A>Figure M2-12. Block diagram with saturation and time-delay elements.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="289" src="FILES/m02fig12.gif" ALT="graphics/m02fig12.gif"></p></CENTER>
+<P class="docText">The default data method for the "<TT>to workspace</TT>" blocks (<TT>r,t,u,y</TT> in <A class="docLink" HREF="#art02m2fig12">Figure M2-12</A>) must be changed from "<TT>structure</TT>" to "<TT>array</TT>" in order to save data in an appropriate form for plotting.</P>
+
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_art02lev1sec2.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_art02lev1sec4.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

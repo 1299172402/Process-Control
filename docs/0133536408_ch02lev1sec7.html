@@ -1,0 +1,119 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="2.7 Linear Models and Deviation Variables"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch02lev1sec6.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch02lev1sec8.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch02lev1sec7"></A><H3 class="docSection1Title">2.7 Linear Models and Deviation Variables</H3>
+<P class="docText">Consider the stirred-tank heater model (<A class="docLink" HREF="0133536408_ch02lev1sec5.html#ch02lev2sec15">Example 2.3</A>), when the volume, flow rate, and inlet temperature are constant at their steady-state values (indicated by the subscript <span class="docEmphasis">s</span>):</P>
+<P><B><A NAME="ch02equ74"></A>Equation 2.70 </B></P><p class="docText"><IMG BORDER="0" WIDTH="151" HEIGHT="44" src="FILES/02equ70.gif" ALT="graphics/02equ70.gif"></p><br>
+<A NAME="ch02lev2sec23"></A><H4 class="docSection2Title"> Deviation Variable Formulation</H4>
+<P class="docText">Control engineers like to think in terms of "deviation variables," that is, perturbations from a steady-state operating condition. The reader should show that if we define the following deviation variables</P>
+<P><B><A NAME="ch02equ75"></A>Equation 2.71 </B></P><p class="docText"><IMG BORDER="0" WIDTH="70" HEIGHT="33" src="FILES/02equ71.gif" ALT="graphics/02equ71.gif"></p><br>
+<P class="docText">then Equation (<A class="docLink" HREF="#ch02equ74">2.70</A>) can be written in the form</P>
+<P><B><A NAME="ch02equ76"></A>Equation 2.72 </B></P><p class="docText"><IMG BORDER="0" WIDTH="131" HEIGHT="44" src="FILES/02equ72.gif" ALT="graphics/02equ72.gif"></p><br>
+<P class="docText">or</P>
+<P><B><A NAME="ch02equ77"></A>Equation 2.73 </B></P><p class="docText"><IMG BORDER="0" WIDTH="107" HEIGHT="36" src="FILES/02equ73.gif" ALT="graphics/02equ73.gif"></p><br>
+<P class="docText">where the new parameters that appear are</P>
+<p class="docText"><IMG BORDER="0" WIDTH="157" HEIGHT="80" src="FILES/02equ73a.gif" ALT="graphics/02equ73a.gif"></p><br>
+<P class="docText">Notice that the process gain is the same as the sensitivity shown in Equation (<A class="docLink" HREF="0133536408_ch02lev1sec5.html#ch02equ64">2.60</A>) and the time constant, in this case, is the same as the residence time. Equation (<A class="docLink" HREF="#ch02equ77">2.73</A>) is one of the most widely used models to describe the dynamic behavior of chemical processes.</P>
+<A NAME="ch02lev2sec24"></A><H4 class="docSection2Title"> Linearization of Nonlinear Models</H4>
+<P class="docText">The material and energy balance models that describe the behavior of chemical processes are generally nonlinear, while commonly used control strategies are based on linear systems theory. It is important, then, to be able to <span class="docEmphasis">linearize</span> nonlinear models for control system design and analysis purposes. The method that we use to form linear models is based on a Taylor series approximation to the nonlinear model. The Taylor series approximation is based on the steady-state operating point of the process.</P>
+<A NAME="ch02lev3sec7"></A><H5 class="docSection3Title"> One State Variable</H5>
+<P class="docText">Consider a single variable function (equation)</P>
+<P><B><A NAME="ch02equ78"></A>Equation 2.74 </B></P><p class="docText"><IMG BORDER="0" WIDTH="61" HEIGHT="36" src="FILES/02equ74.gif" ALT="graphics/02equ74.gif"></p><br>
+<P class="docText">The value of this function can be approximated using a Taylor series expansion of the form</P>
+<p class="docText"><IMG BORDER="0" WIDTH="430" HEIGHT="53" src="FILES/02equ74a.gif" ALT="graphics/02equ74a.gif"></p><br>
+<P class="docText">where the subscript <span class="docEmphasis">s</span> is used to indicate the point of linearization (usually the steady-state operating point). The quadratic and higher order terms are neglected, resulting in the following approximate equation:</P>
+<P><B><A NAME="ch02equ79"></A>Equation 2.75 </B></P><p class="docText"><IMG BORDER="0" WIDTH="212" HEIGHT="45" src="FILES/02equ75.gif" ALT="graphics/02equ75.gif"></p><br>
+<P class="docText">Since the steady-state operating point is chosen as the point of linearization, then [by definition of a steady state, <span class="docEmphasis">f</span>(<span class="docEmphasis">x<SUB>s</SUB></span>) = 0]</P>
+<P><B><A NAME="ch02equ80"></A>Equation 2.76 </B></P><p class="docText"><IMG BORDER="0" WIDTH="125" HEIGHT="42" src="FILES/02equ76.gif" ALT="graphics/02equ76.gif"></p><br>
+<P class="docText">and since <span class="docEmphasis">x<SUB>s</SUB></span> is a constant value, we can write the following form</P>
+<P><B><A NAME="ch02equ81"></A>Equation 2.77 </B></P><p class="docText"><IMG BORDER="0" WIDTH="169" HEIGHT="50" src="FILES/02equ77.gif" ALT="graphics/02equ77.gif"></p><br>
+<P class="docText">or, dropping the "approximately equal" notation</P>
+<p class="docText"><IMG BORDER="0" WIDTH="63" HEIGHT="41" src="FILES/02equ77a.gif" ALT="graphics/02equ77a.gif"></p><br>
+<P class="docText">where <span class="docEmphasis">x</span>' = <span class="docEmphasis">x</span> - <span class="docEmphasis">x<SUB>s</SUB></span> represents a deviation variable, and <IMG BORDER="0" WIDTH="68" HEIGHT="23" src="FILES/02inequ03.gif" ALT="graphics/02inequ03.gif"> is the derivative of the function evaluated at the steady-state value.</P>
+<A NAME="ch02lev3sec8"></A><H5 class="docSection3Title"> One State and One Input</H5>
+<P class="docText">Consider now the following single-state, single-input equation,</P>
+<P><B><A NAME="ch02equ82"></A>Equation 2.78 </B></P><p class="docText"><IMG BORDER="0" WIDTH="74" HEIGHT="37" src="FILES/02equ78.gif" ALT="graphics/02equ78.gif"></p><br>
+<P class="docText">The value of this function can be approximated using a Taylor series expansion of the form</P>
+<p class="docText"><IMG BORDER="0" WIDTH="477" HEIGHT="45" src="FILES/02equ78a.gif" ALT="graphics/02equ78a.gif"></p><br>
+<P class="docText">where the subscript <span class="docEmphasis">s</span> is used to indicate the point of linearization (usually the steady-state operating point). The quadratic and higher order terms are neglected, resulting in the following approximate equation</P>
+<P><B><A NAME="ch02equ83"></A>Equation 2.79 </B></P><p class="docText"><IMG BORDER="0" WIDTH="406" HEIGHT="49" src="FILES/02equ79.gif" ALT="graphics/02equ79.gif"></p><br>
+<P class="docText">Since the steady-state operating point is chosen as the point of linearization, then [by definition of a steady state, <span class="docEmphasis">f</span>(<span class="docEmphasis">x<SUB>s</SUB></span>, <span class="docEmphasis">u<SUB>s</SUB></span>) = 0]</P>
+<p class="docText"><IMG BORDER="0" WIDTH="92" HEIGHT="39" src="FILES/02equ79a.gif" ALT="graphics/02equ79a.gif"></p><br>
+<P class="docText">where <span class="docEmphasis">x</span>' = <span class="docEmphasis">x</span> - <span class="docEmphasis">x<SUB>s</SUB></span> represents a deviation variable, and <IMG BORDER="0" WIDTH="80" HEIGHT="24" src="FILES/02inequ04.gif" ALT="graphics/02inequ04.gif"> and <IMG BORDER="0" WIDTH="84" HEIGHT="25" src="FILES/02inequ05.gif" ALT="graphics/02inequ05.gif"> are the derivatives of the function with respect to the state and input, evaluated at the steady-state value.</P>
+<A NAME="ch02lev3sec9"></A><H5 class="docSection3Title"> Output Variable</H5>
+<P class="docText">Consider now the expression for an output variable</P>
+<P><B><A NAME="ch02equ84"></A>Equation 2.80 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="58" HEIGHT="17" src="FILES/02equ80.gif" ALT="graphics/02equ80.gif"></p><br>
+<P class="docText">A Taylor series expansion about the state and input yields (after neglecting higher order derivatives)</P>
+<P><B><A NAME="ch02equ85"></A>Equation 2.81 </B></P><p class="docText"><IMG BORDER="0" WIDTH="401" HEIGHT="46" src="FILES/02equ81.gif" ALT="graphics/02equ81.gif"></p><br>
+<P class="docText">and since <span class="docEmphasis">y<SUB>s</SUB></span> = <span class="docEmphasis">g</span>(<span class="docEmphasis">x<SUB>s</SUB></span>,<span class="docEmphasis">u<SUB>s</SUB></span>)</P>
+<p class="docText"><IMG BORDER="0" WIDTH="91" HEIGHT="20" src="FILES/02equ82.gif" ALT="graphics/02equ82.gif"></p>
+<br>
+<P class="docText">where <span class="docEmphasis">y</span>' = <span class="docEmphasis">y</span> - <span class="docEmphasis">y<SUB>s</SUB></span>, <span class="docEmphasis">x</span>' = <span class="docEmphasis">x</span> - <span class="docEmphasis">x<SUB>s</SUB></span>, and <span class="docEmphasis">u</span>' = <span class="docEmphasis">u</span> - <span class="docEmphasis">u<SUB>s</SUB></span> represent deviation variables, and <IMG BORDER="0" WIDTH="83" HEIGHT="25" src="FILES/02inequ06.gif" ALT="graphics/02inequ06.gif"> and <IMG BORDER="0" WIDTH="83" HEIGHT="23" src="FILES/02inequ07.gif" ALT="graphics/02inequ07.gif"> are the derivatives of the function with respect to the state and input, evaluated at the steady-state value.</P>
+<P class="docText">These basic ideas are illustrated in the following example.</P>
+<A NAME="ch02lev2sec25"></A><H4 class="docSection2Title"> Example 2.4: A Second-Order Reaction</H4>
+<P class="docText">Consider a CSTR with a single, second-order reaction. The modeling equation, assuming constant volume and density is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="226" HEIGHT="36" src="FILES/02equ83.gif" ALT="graphics/02equ83.gif"></p><br>
+<P class="docText">Here the state variable is <span class="docEmphasis">C<SUB>A</SUB></span> and the input variable is <span class="docEmphasis">F</span>. A Taylor series expansion performed at the steady-state solution yields</P>
+<p class="docText"><IMG BORDER="0" WIDTH="202" HEIGHT="112" src="FILES/02equ84.gif" ALT="graphics/02equ84.gif"></p><br>
+<P class="docText">Now, consider the concentration of <span class="docEmphasis">A</span> to be the output variable</P>
+<p class="docText"><IMG BORDER="0" WIDTH="105" HEIGHT="17" src="FILES/02equ85.gif" ALT="graphics/02equ85.gif"></p>
+<br>
+<P class="docText">so</P>
+<p class="docText"><IMG BORDER="0" WIDTH="109" HEIGHT="85" src="FILES/02equ86.gif" ALT="graphics/02equ86.gif"></p><br>
+<P class="docText">and the state space model is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="96" HEIGHT="40" src="FILES/02equ87.gif" ALT="graphics/02equ87.gif"></p><br>
+<P class="docText">where the state, input, and output (in deviation variable form) are</P>
+<p class="docText"><IMG BORDER="0" WIDTH="118" HEIGHT="57" src="FILES/02equ88.gif" ALT="graphics/02equ88.gif"></p><br>
+<P class="docText">For the following parameters,</P>
+<p class="docText"><IMG BORDER="0" WIDTH="250" HEIGHT="41" src="FILES/02equ89.gif" ALT="graphics/02equ89.gif"></p><br>
+<P class="docText">A steady-state operating point is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="152" HEIGHT="38" src="FILES/02equ90.gif" ALT="graphics/02equ90.gif"></p><br>
+<P class="docText">and the partial derivatives are</P>
+<p class="docText"><IMG BORDER="0" WIDTH="369" HEIGHT="116" src="FILES/02equ91.gif" ALT="graphics/02equ91.gif"></p><br>
+<P class="docText">and the linear model is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="107" HEIGHT="38" src="FILES/02equ92.gif" ALT="graphics/02equ92.gif"></p><br>
+<A NAME="ch02lev3sec10"></A><H5 class="docSection3Title"> Generalization</H5>
+<P class="docText">Consider the general nonlinear model with <span class="docEmphasis">nx</span> states, <span class="docEmphasis">ny</span> outputs, <span class="docEmphasis">nu</span> inputs, and <span class="docEmphasis">np</span> parameters</P>
+<p class="docText"><IMG BORDER="0" WIDTH="242" HEIGHT="222" src="FILES/02equ93.gif" ALT="graphics/02equ93.gif"></p><br>
+<P class="docText">The elements of the linearization matrices are defined as</P>
+<p class="docText"><IMG BORDER="0" WIDTH="180" HEIGHT="113" src="FILES/02equ94.gif" ALT="graphics/02equ94.gif"></p><br>
+<P class="docText">where <span class="docEmphasis">ij</span> subscripts refer to the <span class="docEmphasis">i</span>th row and <span class="docEmphasis">j</span>th column of the corresponding matrix. For example, element <span class="docEmphasis">B<SUB>ij</SUB></span> refers to the effect of the <span class="docEmphasis">j</span>th input on the <span class="docEmphasis">i</span>th state derivative.</P>
+<P class="docText">The linear <span class="docEmphasis">state space</span> form is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="95" HEIGHT="39" src="FILES/02equ95.gif" ALT="graphics/02equ95.gif"></p><br>
+<P class="docText">where the <span class="docEmphasis">deviation variables</span> are defined as perturbations from their steady-state values</P>
+<p class="docText"><IMG BORDER="0" WIDTH="72" HEIGHT="55" src="FILES/02equ96.gif" ALT="graphics/02equ96.gif"></p><br>
+<P class="docText">In future chapters we normally drop the prime (') notation for deviation variables and assume that a state space model is always in deviation variable form.</P>
+<A NAME="ch02lev2sec26"></A><H4 class="docSection2Title"> Example 2.5: Jacketed Heater</H4>
+<P class="docText">Consider the jacketed stirred-tank heater shown in <A class="docLink" HREF="#ch02fig11">Figure 2-11</A>. A hot fluid circulated through the jacket (which is assumed to be perfectly mixed), and heat flow between the jacket and vessel increases the energy content of the vessel fluid. The rate of heat transfer from the jacket fluid to the vessel fluid is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="96" HEIGHT="18" src="FILES/02equ97.gif" ALT="graphics/02equ97.gif"></p>
+<br>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch02fig11"></A>Figure 2-11. Jacketed stirred-tank heater.</H5><p class="docText"><IMG BORDER="0" WIDTH="450" HEIGHT="244" src="FILES/02fig11.gif" ALT="graphics/02fig11.gif"></p></CENTER>
+<P class="docText">where <span class="docEmphasis">U</span> is the overall heat transfer coefficient and <span class="docEmphasis">A</span> is the area for heat transfer. Assuming that the volume and density are constant, <span class="docEmphasis">F<SUB>i</SUB></span> = <span class="docEmphasis">F</span>. Energy balances on the vessel and jacket fluids result in the following equations.</P>
+<p class="docText"><IMG BORDER="0" WIDTH="352" HEIGHT="87" src="FILES/02equ98.gif" ALT="graphics/02equ98.gif"></p><br>
+<P class="docText">Here the outputs are the vessel and jacket temperatures, which are also the states; the inputs are the jacket flow rate, feed flow rate, feed temperature, and jacket inlet temperature. If the outputs, states, and inputs, in deviation variable form, are</P>
+<p class="docText"><IMG BORDER="0" WIDTH="181" HEIGHT="131" src="FILES/02equ99.gif" ALT="graphics/02equ99.gif"></p><br>
+<P class="docText">Then, the linearized model is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="278" HEIGHT="182" src="FILES/02equ100.gif" ALT="graphics/02equ100.gif"></p><br>
+<P class="docText">Similarly, the reader should show that</P>
+<p class="docText"><IMG BORDER="0" WIDTH="371" HEIGHT="169" src="FILES/02equ101.gif" ALT="graphics/02equ101.gif"></p><br>
+<P class="docText">Exercise 8 is a numerical example for this problem.</P>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch02lev1sec6.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch02lev1sec8.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

@@ -1,0 +1,68 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="11.3 Autotuning Techniques"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch11lev1sec2.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch11lev1sec4.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch11lev1sec3"></A><H3 class="docSection1Title" id="225793-979">11.3 Autotuning Techniques</H3>
+<P class="docText">Many process control systems have an automatic tuning (autotune) feature. The operator can simply push the autotune button and have the controller tune itself, that is, determine the values of the tuning parameters. This is done not continuously (an approach known as adaptive control) but only when the operator feels that the current set of tuning parameters is not performing well.</P>
+<P class="docText">The most common method of automatic tuning uses a relay switch to create what is essentially an on-off controller. The resulting oscillatory behavior is analyzed to determine the proper controller settings.</P>
+<A NAME="ch11lev2sec6"></A><H4 class="docSection2Title"> Control Block Diagram</H4>
+<P class="docText">The basic control loop for a controller with an autotune relay switch is shown in <A class="docLink" HREF="#ch11fig11">Figure 11-11</A>. For normal operation, the switch is connected to the PID controller, as shown in <A class="docLink" HREF="#ch11fig11">Figure 11-11a</A>. When the autotune function is operating, the switch is set to the output of the relay block, as shown in <A class="docLink" HREF="#ch11fig11">Figure 11-11b</A>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch11fig11"></A>Figure 11-11. Control block diagram for an autotune relay switch. (a) Switch set to PID Control. (b) Switch set to relay function for automatic tuning.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="450" HEIGHT="419" src="FILES/11fig11.gif" ALT="graphics/11fig11.gif"></p></CENTER>
+<P class="docText">Notice that the relay block represents a nonlinear function. As drawn, it represents the following:</P>
+<P><B><A NAME="ch11equ02"></A>Equation 11.2 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="124" HEIGHT="33" src="FILES/11equ02.gif" ALT="graphics/11equ02.gif"></p><br>
+<P class="docText">Assuming that the input is symmetrical with a steady-state value of 0 (in deviation variable form), the magnitude of the input change allowed is <span class="docEmphasis">h</span>, so <span class="docEmphasis">u</span><SUB>max</SUB> = <span class="docEmphasis">h</span>, and <span class="docEmphasis">u</span><SUB>min</SUB> = –<span class="docEmphasis">h</span>. Notice that this assumes that the process gain is positive. If the process gain is negative, then switch the inequalities shown in <A class="docLink" HREF="#ch11equ02">Equation 11.2</A>.</P>
+<P class="docText">In autotune mode, the closed-loop system oscillates and the manipulated variable action is on-off (or bang-bang), as shown in <A class="docLink" HREF="#ch11fig12">Figure 11-12</A>. In this example, <span class="docEmphasis">h</span> = 0.05.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch11fig12"></A>Figure 11-12. Oscillations in autotune mode.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="450" HEIGHT="343" src="FILES/11fig12.gif" ALT="graphics/11fig12.gif"></p></CENTER>
+<P class="docText">There are two parameters that result from this autotune test. One is the period (time between successive peaks), <span class="docEmphasis">P</span>, and the other is the amplitude of the process output, <span class="docEmphasis">a</span>. The period has units of time; the ultimate frequency can be found from</P>
+<P><B><A NAME="ch11equ03"></A>Equation 11.3 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="53" HEIGHT="31" src="FILES/11equ03.gif" ALT="graphics/11equ03.gif"></p><br>
+<P class="docText">And the ultimate gain can be found from the amplitude</P>
+<P><B><A NAME="ch11equ04"></A>Equation 11.4 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="53" HEIGHT="32" src="FILES/11equ04.gif" ALT="graphics/11equ04.gif"></p><br>
+<P class="docText">In the results shown in <A class="docLink" HREF="#ch11fig12">Figure 11-12</A>, the period is 16.4 min and the process output amplitude is 0.019. The manipulated input magnitude is 0.05, yielding the following values for <span class="docEmphasis">k</span><SUB>cu</SUB> and <font face="symbol">w</font><SUB>u</SUB>:</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="164" HEIGHT="70" src="FILES/11equ04a.gif" ALT="graphics/11equ04a.gif"></p><br>
+<P class="docText">The behavior is very similar to that obtained from the Ziegler-Nichols closed-loop cycling method. The Ziegler-Nichols results for the same process are shown in <A class="docLink" HREF="#ch11fig13">Figure 11-13</A>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch11fig13"></A>Figure 11-13. Ziegler-Nichols closed-loop test. The controller proportional gain is <span class="docEmphasis">k</span><SUB>c</SUB> = 3.83.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="475" HEIGHT="360" src="FILES/11fig13.gif" ALT="graphics/11fig13.gif"></p></CENTER>
+<P class="docText">The Ziegler-Nichols test yields an ultimate gain of 3.83 and an ultimate period of 17.13 min; contrast these with the relay values of 3.35 and 16.4 min.</P>
+<A NAME="ch11lev2sec7"></A><H4 class="docSection2Title"> Relay Deadband (Hysteresis)</H4>
+<P class="docText">If the ideal relay is implemented, there can be problems if there is process or measurement noise. To handle this, a deadband (or hysteresis) with a magnitude of <span class="docEmphasis"><font face="symbol">e</font></span> is added to the relay switch, as shown below (again, a positive process gain is assumed). The magnitude of the deadband is selected to be at least two to three times the standard deviation of the measurement noise:</P>
+<P><B><A NAME="ch11equ05"></A>Equation 11.5 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="132" HEIGHT="34" src="FILES/11equ05.gif" ALT="graphics/11equ05.gif"></p><br>
+<P class="docText">Also, if the error is in between the minimum and maximum limits, then the control action stays at the current value.</P>
+<A NAME="ch11lev2sec8"></A><H4 class="docSection2Title"> Controller Tuning</H4>
+<P class="docText">Once the process parameters (ultimate gain and frequency) are identified from the relay test, a controller tuning procedure must be used. An obvious method is to use the Ziegler-Nichols values, since the autotune test is similar to the Ziegler-Nichols test. These controller tuning parameters are not robust, however, and result in closed-loop systems that may go unstable if the process conditions change.</P>
+<P class="docText">An alternative is to use a model-based procedure, such as IMC-based PID. A problem is that the ultimate gain and frequency must be converted to model parameters. Since only two parameters, ultimate gain and frequency, are obtained from the relay test, a two-parameter process model must be developed. The classical first-order + time-delay model cannot be used because it has three parameters. Two options are integrator + time delay (<A class="docLink" HREF="#ch11equ06">11.6</A>) and gain + time delay (<A class="docLink" HREF="#ch11equ07">11.7</A>):</P>
+<P><B><A NAME="ch11equ06"></A>Equation 11.6 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="79" HEIGHT="35" src="FILES/11equ06.gif" ALT="graphics/11equ06.gif"></p><br>
+<P><B><A NAME="ch11equ07"></A>Equation 11.7 </B></P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="71" HEIGHT="18" src="FILES/11equ07.gif" ALT="graphics/11equ07.gif"></p><br>
+<P class="docText">The integrator + time-delay model is generally a very good approximation to a first-order + time-delay process if the time constant is much larger than the time delay. The gain + time-delay model is generally a good approximation if the time delay is much larger than the time constant (such as for liquid flows with significant pipe volume delays).</P>
+<A NAME="ch11lev3sec1"></A><H5 class="docSection3Title"> Integrator <span class="docEmphasis">+</span> Time Delay</H5>
+<P class="docText">For the integrator + time-delay model, the dead time and process gain can be found from the relay parameters in the following fashion:</P>
+<P><B><A NAME="ch11equ08"></A>Equation 11.8 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="60" HEIGHT="31" src="FILES/11equ08.gif" ALT="graphics/11equ08.gif"></p><br>
+<P class="docText">The IMC-based PI tuning parameters can be found from (see <A class="docLink" HREF="0133536408_ch09.html#ch09">Chapter 9</A>)</P>
+<P><B><A NAME="ch11equ09"></A>Equation 11.9 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="84" HEIGHT="58" src="FILES/11equ09.gif" ALT="graphics/11equ09.gif"></p><br>
+<A NAME="ch11lev3sec2"></A><H5 class="docSection3Title"> Gain <span class="docEmphasis">+</span> Time Delay</H5>
+<P class="docText">For the gain + time-delay model, the dead time and process gain can be found from the relay parameters in the following fashion</P>
+<P><B><A NAME="ch11equ10"></A>Equation 11.10 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="46" HEIGHT="30" src="FILES/11equ10.gif" ALT="graphics/11equ10.gif"></p><br>
+<P class="docText">The IMC-based PI tuning parameters can be found from</P>
+<P><B><A NAME="ch11equ11"></A>Equation 11.11 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="51" HEIGHT="54" src="FILES/11equ11.gif" ALT="graphics/11equ11.gif"></p><br>
+<P class="docText">In both cases, the IMC filter-factor (<font face="symbol">l</font><span class="docEmphasis">)</span> is adjusted to provide a tradeoff between nominal performance and robustness to model uncertainty.</P>
+<A NAME="ch11lev3sec3"></A><H5 class="docSection3Title"> Comparison of Model-Based PI Controllers</H5>
+<P class="docText">In the example shown in <A class="docLink" HREF="#ch11fig12">Figure 11-12</A>, the period and output amplitudes were 16.4 min and 0.019 for a control magnitude of 0.05. The IMC-based PI controllers obtained under the two different model-based assumptions are compared in <A class="docLink" HREF="0133536408_ch11lev1sec4.html#ch11table01">Table 11-1</A>.</P>
+<P class="docText">The responses of the two model-based PI controllers are shown in <A class="docLink" HREF="#ch11fig14">Figure 11-14</A>. The <font face="symbol">l</font> value was adjusted to achieve 25% overshoot in both cases. For more robust performance, the <font face="symbol">l</font> values must be increased.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch11fig14"></A>Figure 11-14. Comparison of closed-loop responses for the example process. IMC-based PI tuning parameters based on two different models (integrator + time-delay and gain + time-delay) identified from a relay test.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="450" HEIGHT="360" src="FILES/11fig14.gif" ALT="graphics/11fig14.gif"></p></CENTER>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch11lev1sec2.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch11lev1sec4.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

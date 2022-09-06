@@ -1,0 +1,33 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="M7.4 Unstable Steady-State Operating Point"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_art07lev1sec3.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_art07lev1sec5.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="art07lev1sec4"></A><H3 class="docSection1Title">M7.4 Unstable Steady-State Operating Point</H3>
+<P class="docText">Design an IMC-based PID controller to control the bioreactor at equilibrium point 2—the <span class="docEmphasis">unstable</span> nontrivial point. The steady state (also use this as the initial condition for your simulations) is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="103" HEIGHT="39" src="FILES/m07equ10.gif" ALT="graphics/m07equ10.gif"></p><br>
+<P class="docText">At this point, the state space model is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="263" HEIGHT="63" src="FILES/m07equ11.gif" ALT="graphics/m07equ11.gif"></p><br>
+<P class="docText">Use M<span class="docEmphSmaller">ATLAB</span> to find that the eigenvalues are –0.3 and 0.169836 hr<SUP>-1</SUP>, so the system is unstable and the IMC-based PID method for unstable systems must be used (<A class="docLink" HREF="0133536408_ch09lev1sec7.html#ch09table03">Table 9-3</A>). Find the transfer function relating the dilution rate to the biomass concentration and use this for controller design. You may wish to use the M<span class="docEmphSmaller">ATLAB</span> function <TT>ss2tf</TT> to find the process transfer function</P>
+<p class="docText"><IMG BORDER="0" WIDTH="170" HEIGHT="33" src="FILES/m07equ12.gif" ALT="graphics/m07equ12.gif"></p><br>
+<P class="docText">After placing the process model in gain and time constant form (and cancelling common poles and zeros), you should find</P>
+<p class="docText"><IMG BORDER="0" WIDTH="111" HEIGHT="32" src="FILES/m07equ13.gif" ALT="graphics/m07equ13.gif"></p><br>
+<P class="docText">That is, the transfer function has a RHP pole at 0.1698 hr<SUP>-1</SUP> which is consistent with the state space model. Notice that we can use the first entry in <A class="docLink" HREF="0133536408_ch09lev1sec7.html#ch09table03">Table 9-3</A>, which is a PI controller.</P>
+<span style="font-weight:bold"><OL class="docList" TYPE="a"><LI><span style="font-weight:normal"><P class="docList">Show how the response to a small setpoint change varies with <font face="symbol">l</font> (show explicitly how the PID tuning parameters vary with <font face="symbol">l</font>). I suggest setpoint changes from 0.995103 to 0.985 and 1.005 g/liter.</P></span></LI><LI><span style="font-weight:normal"><P class="docList">For a particular value of <font face="symbol">l</font>, show how the magnitude of the setpoint change affects your response. This is where the nonlinearity comes into play. Try changing from the steady-state value of 0.995013 to 0.5, 0.75, 1.5, and 2.0 g/liter.</P></span></LI><LI><span style="font-weight:normal"><P class="docList">Use the transport delay block in S<span class="docEmphSmaller">IMULINK</span>. Start with <font face="symbol">q</font> = 0.25 hour and discuss how the time delay affects your choice of <font face="symbol">l</font>.</P></span></LI><LI><span style="font-weight:normal"><P class="docList">Consider now disturbance rejection. Do not make a setpoint change but do make a step change in substract feed concentration (x<SUB>2f</SUB>) from 4 to 3.5 gmol/liter at <span class="docEmphasis">t</span> = 1 hour.</P></span></LI></OL></span>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_art07lev1sec3.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_art07lev1sec5.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

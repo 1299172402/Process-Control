@@ -1,0 +1,34 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="11.4 Nonlinear PID Control"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch11lev1sec3.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch11lev1sec5.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch11lev1sec4"></A><H3 class="docSection1Title">11.4 Nonlinear PID Control</H3>
+<P class="docText">The fixed-parameter PID controller is ubiquitous in the process industries. The <span class="docEmphasis">ideal</span> PID controller has the form (see <A class="docLink" HREF="0133536408_ch05.html#ch05">Chapter 5</A>)</P>
+<P><B><A NAME="ch11equ12"></A>Equation 11.12 </B></P><p class="docText"><IMG BORDER="0" WIDTH="221" HEIGHT="48" src="FILES/11equ12.gif" ALT="graphics/11equ12.gif"></p><br>
+<P class="docText">where it is understood that any bias associated with steady-state operation is absorbed into the integral term. Other forms for PID control are presented in <A class="docLink" HREF="0133536408_ch05.html#ch05">Chapter 5</A>.</P>
+<P class="docText">Often it is useful to have a nonlinear controller even if the process is linear. A common example is level control of a surge drum where the primary objective is to maintain a reasonably consistent outlet flow under disturbances in the inlet flow rate, subject to high and low drum level constraints. In this situation, some small nominal controller gain can be used when the level is close to the setpoint, and as the error increases, the gain can increase. A common choice is to make the proportional gain a function of the absolute value of the error,</P>
+<A NAME="ch11table01"></A><P><TABLE CELLSPACING="0" FRAME="hsides" RULES="none" CELLPADDING="5" WIDTH="100%"><CAPTION><h5 class="docTableTitle">Table 11-1. Example Parameters for Model-Based Controllers</h5></CAPTION><COLGROUP align="left" span="3"><THEAD><TR><TH class="docTableHeader" valign="top"><P class="docText"><span class="docEmphBoldItalic">Model</span></P></TH><TH class="docTableHeader" valign="top"><P class="docText"><span class="docEmphBoldItalic">Integrator</span> + <span class="docEmphBoldItalic">time delay</span></P></TH><TH class="docTableHeader" valign="top"><P class="docText"><span class="docEmphBoldItalic">Gain</span> + <span class="docEmphBoldItalic">time delay</span></P></TH></TR></THEAD><TR><TD class="docTableCell" valign="top"><P class="docText"><span class="docEmphasis">k</span></P></TD><TD class="docTableCell" valign="top"><P class="docText">4(0.019)/(16.4)0.05 = 0.093</P></TD><TD class="docTableCell" valign="top"><P class="docText">0.019/0.05 = 0.38</P></TD></TR><TR><TD class="docTableCell" valign="top"><P class="docText"><font face="symbol">q</font></P></TD><TD class="docTableCell" valign="top"><P class="docText">16.4/4 = 4.1 min</P></TD><TD class="docTableCell" valign="top"><P class="docText">16.4/2 = 8.2 min</P></TD></TR><TR><TD class="docTableCell" valign="top"><P class="docText"><span class="docEmphasis">k</span><SUB>c</SUB></P></TD><TD class="docTableCell" valign="top"><P class="docText">(2<font face="symbol">l</font>+4.1)/[0.093(<font face="symbol">l</font> +4.1)<SUP>2</SUP>] = 1.831 for <font face="symbol">l</font> = 5 min</P></TD><TD class="docTableCell" valign="top"><P class="docText">(8.2/2)/(0.38<font face="symbol">l</font>) = 10.79/<font face="symbol">l</font> = 1.269 for <font face="symbol">l</font> = 8.5 min</P></TD></TR><TR><TD class="docTableCell" valign="top"><P class="docText"><font face="symbol">t</font>I</P></TD><TD class="docTableCell" valign="top"><P class="docText">2<font face="symbol">l</font> +4.1 = 14.1 for <font face="symbol">l</font> = 5 min</P></TD><TD class="docTableCell" valign="top"><P class="docText">8.2 min</P></TD></TR></COLGROUP></TABLE></P>
+<P><B><A NAME="ch11equ13"></A>Equation 11.13 </B></P><p class="docText"><IMG BORDER="0" WIDTH="112" HEIGHT="20" src="FILES/11equ13.gif" ALT="graphics/11equ13.gif"></p><br>
+<P class="docText">This means that the controller output is effectively proportional to the square of the error, as shown below for a P-only nonlinear controller.</P>
+<P><B><A NAME="ch11equ14"></A>Equation 11.14 </B></P><p class="docText"><IMG BORDER="0" WIDTH="240" HEIGHT="20" src="FILES/11equ14.gif" ALT="graphics/11equ14.gif"></p><br>
+<P class="docText">An alternative to making the controller gain a continuous function of the error is to form a piecewise linear controller (sometimes called a gap controller), where (often <span class="docEmphasis">k</span><SUB>c,high</SUB> = <span class="docEmphasis">k</span><SUB>c,low</SUB>)</P>
+<P><B><A NAME="ch11equ15"></A>Equation 11.15 </B></P><p class="docText"><IMG BORDER="0" WIDTH="169" HEIGHT="53" src="FILES/11equ15.gif" ALT="graphics/11equ15.gif"></p><br>
+<P class="docText">An example of nonlinear PID control is given in <A class="docLink" HREF="0133536408_art10.html#art10">Module 10</A> (Surge Vessel Level Control).</P>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch11lev1sec3.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch11lev1sec5.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

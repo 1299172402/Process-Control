@@ -1,0 +1,176 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="M4.2 Forming Discrete-Time Models"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_art04lev1sec1.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_art04lev1sec3.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="art04lev1sec2"></A><H3 class="docSection1Title" id="225793-928">M4.2 Forming Discrete-Time Models</H3>
+<P class="docText">The formation of discrete-time models is the same as for continuous-time models, except that a sample time should also be specified. This sample time is simply the next argument in the function call statement,</P>
+<pre>
+
+</pre><pre>
+sys  =  ss(a,b,c,d,Ts)  % discrete state space
+sys  =  tf(num,den,Ts)  % discrete transfer function
+sys  =  zpk(z,p,k,Ts) % discrete zero-pole-gain
+</pre>
+<P class="docText">where <TT>Ts</TT> is the sample time.</P>
+<A NAME="art04lev2sec8"></A><H4 class="docSection2Title"> Discrete State Space Models</H4>
+<P class="docText">A discrete-time state space model has the form</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="147" HEIGHT="33" src="FILES/m04equ08.gif" ALT="graphics/m04equ08.gif"></p><br>
+<P class="docText">where <span class="docEmphasis">k</span> represents the discrete-time step index. Consider the discrete state space model</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="349" HEIGHT="38" src="FILES/m04equ09.gif" ALT="graphics/m04equ09.gif"></p><br>
+<P class="docText">with a sample time of <font face="symbol">D</font>t = 0.1 minutes. Please note that, if you need to convert a continuous state space model to discrete, see <A class="docLink" HREF="0133536408_art04lev1sec3.html#art04lev1sec3">Section M4.3</A>.</P>
+<P class="docText">After the <span class="docEmphasis">a, b, c</span> and <span class="docEmphasis">d</span> matrices are entered, the state space object can be created:</P>
+<pre>
+
+</pre><pre>
+&#187;  vdv_ssd = ss(a,b,c,d,0.1)
+
+a =
+                        x1           x2
+           x1      0.78625            0
+           x2      0.06607      0.79947
+
+b =
+                        u1
+           x1      0.62219
+           x2     -0.07506
+
+c =
+                        x1           x2
+           y1            0            1
+
+d =
+                        u1
+           y1            0
+
+Sampling time: 0.1
+Discrete-time system.
+</pre>
+<P class="docText">If you have a discrete-time model but do not know the sample time, enter –1 for <TT>Ts</TT>.</P>
+<pre>
+
+</pre><pre>
+&#187;vdv_ssd1 = ss(a,b,c,d,-1)
+
+a =
+                        x1           x2
+           x1      0.78625            0
+           x2      0.06607      0.79947
+
+
+b =
+                        u1
+           x1      0.62219
+           x2     -0.07506
+
+
+c =
+                        x1           x2
+           y1            0            1
+
+
+d =
+                        u1
+           y1            0
+
+Sampling time: unspecified
+Discrete-time system.
+</pre>
+<P class="docText">The poles and zeros are found using the same commands as for continuous systems.</P>
+<pre>
+
+</pre><pre>
+&#187; pole(vdv_ssd)
+ans =
+    0.7995
+    0.7863
+&#187; tzero(vdv_ssd)
+ans =
+   1.3339
+</pre>
+<P class="docText">The poles are inside the unit circle, indicating stability. The zero is outside the unit circle, indicating that the model inverse is unstable.</P>
+<A NAME="art04lev2sec9"></A><H4 class="docSection2Title"> Discrete Transfer Function</H4>
+<P class="docText">The discrete transfer function model is</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="157" HEIGHT="33" src="FILES/m04equ10.gif" ALT="graphics/m04equ10.gif"></p><br>
+<P class="docText">which represents the following input-output model</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="396" HEIGHT="15" src="FILES/m04equ11.gif" ALT="graphics/m04equ11.gif"></p>
+<br>
+<P class="docText">The transfer function object is created</P>
+<pre>
+
+</pre><pre>
+&#187; vdv_tfd = tf([-0.07506 0.1001],[1 -1.586 0.6286],0.1)
+
+Transfer function:
+ -0.07506 z + 0.1001
+----------------------
+z^2 - 1.586 z + 0.6286
+
+Sampling time: 0.1
+
+&#187; pole(vdv_tfd)
+ans =
+    0.7995
+    0.7863
+
+&#187; tzero(vdv_tfd)
+ans =
+   1.3339
+</pre>
+<P class="docText">Again, the poles are inside the unit circle, indicating stability. The zero is outside the unit circle, indicating that the model inverse is unstable.</P>
+<A NAME="art04lev2sec10"></A><H4 class="docSection2Title"> Discrete Filter Form</H4>
+<P class="docText">It is common to use the backward shift notation for discrete chemical process models. There is an additional Control Toolbox LTI object specifically for this.</P>
+<pre>
+
+</pre><pre>
+sys  =  filt(num,den,Ts)  % discrete transfer function, z^-1
+</pre>
+<P class="docText">Consider the transfer function in backward shift form:</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="186" HEIGHT="36" src="FILES/m04equ12.gif" ALT="graphics/m04equ12.gif"></p><br>
+<P class="docText">The M<span class="docEmphSmaller">ATLAB</span> command and results are</P>
+<pre>
+
+</pre><pre>
+&#187; vdv_ff = filt([0 0.1564 0.2408],[1 -0.3513 0.0307],0.1)
+
+Transfer function:
+  0.1564 z^-1 + 0.2408 z^-2
+-----------------------------
+1 - 0.3513 z^-1 + 0.0307 z^-2
+
+Sampling time: 0.1
+</pre>
+<P class="docText">Note that with the discrete filter form, it is critical to have the leading zero element in the numerator polynomial.</P>
+<A NAME="art04lev2sec11"></A><H4 class="docSection2Title"> Converting Between Discrete Model Types</H4>
+<P class="docText">A model in any one of the standard discrete forms can easily be converted to another standard discrete form.</P>
+<A NAME="art04lev3sec2"></A><H5 class="docSection3Title"> Converting from State Space Form to Transfer Function Form</H5>
+<P class="docText">As an example, assume that the discrete state space form has been entered as <TT>vdv_ssd</TT>. The discrete transfer function is found using <TT>tf</TT>:</P>
+<pre>
+
+</pre><pre>
+&#187; vdv_tfd1 = tf(vdv_ssd)
+
+Transfer function:
+ -0.07506 z + 0.1001
+----------------------
+z^2 - 1.586 z + 0.6286
+
+Sampling time: 0.1
+</pre>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_art04lev1sec1.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_art04lev1sec3.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

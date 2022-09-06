@@ -1,0 +1,30 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="4.1 Introduction"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch04.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch04lev1sec2.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch04lev1sec1"></A><H3 class="docSection1Title">4.1 Introduction</H3>
+<P class="docText">For many processes there is not enough time, or it is not worth the effort, to develop fundamental process models. Particularly if your main interest is tuning a specific control loop, it is likely that you will develop a transfer function-based model by performing a plant test. The most common plant test is to make a step change in the manipulated input (controller output) and observe the measured process output response. Then a model is developed to provide the best match between the model output and the observed plant output.</P>
+<P class="docText">There are a number of important issues in developing an input-output model. Foremost is the selection of the proper input and output variables. For many processes this is not trivial, because a particular manipulated input may affect a number of measured outputs. Similarly, a measured output may be affected by a number of manipulated inputs. In this chapter we assume that the manipulated input and measured output have already been selected. The important discussion of the selection of a particular input to be "paired" with a particular output is postponed until <A class="docLink" HREF="0133536408_ch13.html#ch13">Chapter 13</A>.</P>
+<P class="docText">It is common to base an input-output model on step responses. In this procedure we first bring the process to a consistent and desirable steady-state operating point, then make a step change in the input variable. An important decision is the magnitude of the step change to make.</P>
+<UL><LI><P class="docList">If the step change in input is too small, the measured output may not change enough to develop a reliable model. This is particularly true if the measured output is "noisy." Clearly, the magnitude of step input must be enough so that the output "signal-to-noise" ratio is high enough to obtain a good model.</P></LI><LI><P class="docList">If the step change in the input is too large, the output variable may change too much and produce product that is "off-specification." This is not desirable because of the severe economic penalty (i.e., the plant loses too much money while the step test is being performed). Also, if the step input change is too large, nonlinear effects may dominate. That is, the operating condition may become significantly different than the desired condition.</P></LI></UL>
+<P class="docText">Clearly there is a trade-off here. The input must be changed enough to observe a change in the output variable (it must increase above the noise level), yet not so much that the output variable change is too great (causing an economic penalty).</P>
+<P class="docText">As a process engineer conducting a plant step test, you will usually have some basic knowledge of (or experience with) the input-output pair under consideration. Observations of the measured output with time will provide an estimate of the standard deviation or variance of the measurement noise. A rough estimate of the process gain will enable you to select an input change magnitude so that the output change is "above the noise level." An estimate of the process gain can often be obtained through steady-state material and energy balances.</P>
+<P class="docText">In the following sections we show how to estimate parameters for some common simple models. By far the most commonly used model, for control-system design purposes, is the first-order + time-delay model discussed in the next section.</P>
+<a href="0133536408_10971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch04.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch04lev1sec2.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

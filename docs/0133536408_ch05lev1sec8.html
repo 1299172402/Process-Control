@@ -1,0 +1,42 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="5.8 Open-Loop Unstable Systems"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch05lev1sec7.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch05lev1sec9.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch05lev1sec8"></A><H3 class="docSection1Title">5.8 Open-Loop Unstable Systems</H3>
+<P class="docText">The examples presented thus far in this chapter have assumed that the process is open-loop (that is, without control) stable. For these systems we can always "detune" a controller enough so that the closed-loop system is stable. Indeed, if we simply let <span class="docEmphasis">k</span><SUB>c</SUB> = 0, then we have stability because the closed-loop transfer function is equal to the open-loop transfer function. Open-loop unstable systems are much tougher to control, because the control must be tuned "tightly" enough to stabilize the system, yet not so tightly that the closed-loop system will be unstable. Some exothermic chemical reactors and biochemical reactors are operated at open-loop unstable steady states (that is, at least one eigenvalue of the <span class="docEmphasis">A</span> matrix is positive; this is equivalent to at least one pole of the process transfer function being positive).</P>
+<A NAME="ch05lev2sec21"></A><H4 class="docSection2Title"> Example 5.5: First-Order Open-Loop Unstable Process with P-Only Control</H4>
+<P class="docText">Consider a first-order open-loop unstable process (see <A class="docLink" HREF="0133536408_art07.html#art07">Module 7</A> on bioreactor control for an example),</P>
+<p class="docText"><IMG BORDER="0" WIDTH="95" HEIGHT="38" src="FILES/05equ34.gif" ALT="graphics/05equ34.gif"></p><br>
+<P class="docText">where <font face="symbol">t</font><span class="docEmphasis"><SUB>u</SUB></span> &gt; 0. We use this notation to make it clear that the process is open-loop unstable, since the pole is positive.</P>
+<P class="docText">Here again we use a proportional controller</P>
+<p class="docText"><IMG BORDER="0" WIDTH="59" HEIGHT="17" src="FILES/05equ35.gif" ALT="graphics/05equ35.gif"></p>
+<br>
+<P class="docText">The closed-loop transfer function is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="357" HEIGHT="45" src="FILES/05equ36.gif" ALT="graphics/05equ36.gif"></p><br>
+<P class="docText">which can be written</P>
+<p class="docText"><IMG BORDER="0" WIDTH="189" HEIGHT="79" src="FILES/05equ37.gif" ALT="graphics/05equ37.gif"></p><br>
+<P class="docText">Notice that for stability we require that</P>
+<p class="docText"><IMG BORDER="0" WIDTH="152" HEIGHT="35" src="FILES/05equ38.gif" ALT="graphics/05equ38.gif"></p><br>
+<P class="docText">which means that (since – <font face="symbol">t</font><SUB>u</SUB> &lt; 0), 1 + <span class="docEmphasis">k</span><SUB>p</SUB><span class="docEmphasis">k</span><SUB>c</SUB> &lt; 0, or</P>
+<p class="docText"><IMG BORDER="0" WIDTH="59" HEIGHT="17" src="FILES/05equ39.gif" ALT="graphics/05equ39.gif"></p>
+<br>
+<P class="docText">Recall that an open-loop stable first-order process under P-only control (<A class="docLink" HREF="0133536408_ch05lev1sec3.html#ch05lev2sec11">Example 5.1</A>) required that <span class="docEmphasis">k</span><SUB>p</SUB><span class="docEmphasis">k</span><SUB>c</SUB> &gt; –1 for closed-loop stability (and <span class="docEmphasis">k</span><SUB>p</SUB><span class="docEmphasis">k</span><SUB>c</SUB> &gt; 0 for reasonable performance). For open-loop stable processes and controllers with integral action, <span class="docEmphasis">k</span><SUB>p</SUB><span class="docEmphasis">k</span><SUB>c</SUB> &gt; 0 is required for stability; this means that the process gain and controller gain must be the same sign. It is interesting that this open-loop unstable process needs the controller and process gain to be different signs.</P>
+<P class="docText">Not all open-loop unstable processes can be stabilized by P-only control. For example, one of the processes in Exercise 10 cannot be stabilized by P-only control.</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch05lev1sec7.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch05lev1sec9.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

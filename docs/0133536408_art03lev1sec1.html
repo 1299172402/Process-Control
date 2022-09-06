@@ -1,0 +1,122 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="M3.1 M'ATLAB' ode—Basic"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_art03.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_art03lev1sec2.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="art03lev1sec1"></A><H3 class="docSection1Title">M3.1 M<span class="docEmphSmaller">ATLAB</span> ode—Basic</H3>
+<P class="docText">M<span class="docEmphSmaller">ATLAB</span> has several different routines for numerical integration; all use the same basic call statements:</P>
+<pre>
+
+</pre><pre>
+[t,x]= ode45('xprime',tspan,x0)   % nonstiff, medium order
+[t,x]= ode23('xprime',tspan,x0)   % nonstiff, low order
+[t,x]= ode113('xprime',tspan,x0)  % nonstiff, variable order
+[t,x]= ode15s('xprime',tspan,x0)  % stiff, variable order
+[t,x]= ode23s('xprime',tspan,x0)  % stiff, low order
+[t,x]= ode23t('xprime',tspan,x0)  % moderately stiff, trapezoidal
+[t,x]= ode23tb('xprime',tspan,x0) % stiff, low order
+</pre>
+<P class="docText"><TT>ode45</TT> uses fourth-order and <TT>ode23</TT> uses second-order Runge-Kutta integration. All routines use a <span class="docEmphasis">variable integration step size</span> (<font face="symbol">D</font><span class="docEmphasis">t</span> is not constant). The integration step size is adjusted by the routine to provide the necessary accuracy, without taking too much computation time.</P>
+<P class="docText">To use these routines, the user must first generate an <span class="docEmphasis">m</span>-file to evaluate the state variable derivatives. The m-file must be named '<TT>xprime.m</TT>', and contain the following statement in the first line of the file</P>
+<pre>
+
+</pre><pre>
+function xdot = xprime(t,x);
+</pre>
+<P class="docText">where '<TT>xprime</TT>' is the name of the function routine (usually selected as something meaningfully related to the system of equations), '<TT>xdot</TT>' is the vector of time derivatives of the states, '<TT>t</TT>' is time, and '<TT>x</TT>' is the vector of states. '<TT>xdot</TT>' must be generated as a column vector.</P>
+<P class="docText">The command given to perform the integration is</P>
+<pre>
+
+</pre><pre>
+[t,x]= <span class="docEmphasis">solver</span>('xprime',tspan,x0)
+</pre>
+<P class="docText">where</P>
+<P><TABLE CELLSPACING="0" FRAME="void" RULES="none" CELLPADDING="5" WIDTH="100%"><COLGROUP align="left" span="2"><THEAD></THEAD><TR><TD class="docTableCell" valign="top"><P class="docText"><span class="docEmphasis"><TT>solver</TT></span></P></TD><TD class="docTableCell" valign="top"><P class="docText">is any of the integration routines (<TT>ode45</TT>, etc.)</P></TD></TR><TR><TD class="docTableCell" valign="top"><P class="docText"><TT>xprime</TT></P></TD><TD class="docTableCell" valign="top"><P class="docText">is a string variable containing the name of the m-file for the state derivatives</P></TD></TR><TR><TD class="docTableCell" valign="top"><P class="docText"><TT>tspan</TT></P></TD><TD class="docTableCell" valign="top"><P class="docText">is the vector of time values (row vector)</P></TD></TR><TR><TD class="docTableCell" valign="top"><P class="docText"><TT>x0</TT></P></TD><TD class="docTableCell" valign="top"><P class="docText">is the initial condition vector for the state variables (column vector).</P></TD></TR></COLGROUP></TABLE></P>
+<P class="docText">The arrays that are returned are</P>
+<P><TABLE CELLSPACING="0" FRAME="void" RULES="none" CELLPADDING="5" WIDTH="100%"><COLGROUP align="left" span="2"><THEAD></THEAD><TR><TD class="docTableCell" valign="top"><P class="docText"><TT>t</TT></P></TD><TD class="docTableCell" valign="top"><P class="docText">a (column) vector of time</P></TD></TR><TR><TD class="docTableCell" valign="top"><P class="docText"><TT>x</TT></P></TD><TD class="docTableCell" valign="top"><P class="docText">an array of state variables as a function of time (column 1 is state 1, etc.).</P></TD></TR></COLGROUP></TABLE></P>
+<P class="docText">For example, if the time vector has 50 elements and there are three state variables, then the state variable vector has the 50 rows and three columns. After the integration is performed, if the student wishes to plot all three variables as a function of time, she/he simply enters</P>
+<pre>
+
+</pre><pre>
+plot(t,x)
+</pre>
+<P class="docText">If you only want to plot the second state variable, then the command <TT>plot(t,x(2,:))</TT> is given.</P>
+<A NAME="art03lev2sec1"></A><H4 class="docSection2Title"> Example M3.1: Van de Vusse Reaction</H4>
+<P class="docText">Consider the following set of differential equations that describe the van de Vusse reaction scheme in an isothermal, CSTR.</P>
+<p class="docText"><IMG BORDER="0" WIDTH="199" HEIGHT="70" src="FILES/m03equ01.gif" ALT="graphics/m03equ01.gif"></p><br>
+<P class="docText">The parameter values are</P>
+<p class="docText"><IMG BORDER="0" WIDTH="334" HEIGHT="17" src="FILES/m03equ02.gif" ALT="graphics/m03equ02.gif"></p>
+<br>
+<P class="docText">The input values used in the following simulation are</P>
+<p class="docText"><IMG BORDER="0" WIDTH="215" HEIGHT="20" src="FILES/m03equ03.gif" ALT="graphics/m03equ03.gif"></p>
+<br>
+<P class="docText">The differential equations are placed in a file named <TT>vdv_ode.m</TT></P>
+<pre>
+
+</pre><pre>
+  function xdot = vdv_ode(t,x);
+%
+% Solves the two differential equations modeling
+% the van de vusse reaction
+% scheme in an isothermal CSTR. The states are the concentration
+% of A and B in the reactor.
+%
+% [t,x] = ode45(vdv_ode,[0 5],x0)
+% integrates from t = 0 to t = 5 min, with initial conditions
+% ca0 = x0(1) and cb0 = x0(2), and x0 is a column vector
+% 16 Jan 99
+% b.w. bequette
+%
+% since the states are passed to this routine in the x vector,
+% convert to natural notation
+
+  ca = x(1);
+  cb = x(2);
+
+% the parameters are:
+  k1 = 5/6;    % rate constant for A--&gt;B (min^-1)
+  k2 = 5/3;    % rate constant for B--&gt;C (min^-1)
+  k3 = 1/6;    % rate constant for 2A--&gt;D (mol/(l min))
+% the input values are:
+
+  fov = 4/7;   % dilution rate (min^-1)
+  caf = 10;    % mol/l
+
+% the modeling equations are:
+  dcadt = fov*(caf-ca) - k1*ca –k3*ca*ca;
+  dcbdt = -fov*cb + k1*ca – k2*cb;
+
+% now, create the column vector of state derivatives
+
+  xdot = [dcadt;dcbdt];
+
+% end of file
+</pre>
+<P class="docText">In the M<span class="docEmphSmaller">ATLAB</span> command window, enter the initial conditions and run <TT>ode45</TT></P>
+<pre>
+
+</pre><pre>
+&#187; x0 = [2;1.117]
+&#187; [t,x] = ode45('vdv_ode',[0 5],x0);
+&#187; subplot(2,1,1),plot(t,x(:,1)), xlabel('t'), ylabel('ca')
+&#187; subplot(2,1,2),plot(t,x(:,2)), xlabel('t'), ylabel('cb')
+</pre>
+<P class="docText">The plots are shown in <A class="docLink" HREF="#art03m3fig01">Figure M3-1</A>. Notice that the system converges to the steady-state values of <span class="docEmphasis">C</span><SUB>A</SUB>=3, <span class="docEmphasis">C</span><SUB>B</SUB>=1.117.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="art03m3fig01"></A>Figure M3-1. Transient response to initial conditions perturbed from the steady-state values, <span class="docEmphasis">C</span><SUB>A</SUB>(0) = 2, <span class="docEmphasis">C</span><SUB>B</SUB>(0) = 1.117.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="391" src="FILES/m03fig01.gif" ALT="graphics/m03fig01.gif"></p></CENTER>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_art03.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_art03lev1sec2.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

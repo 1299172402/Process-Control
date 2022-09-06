@@ -1,0 +1,59 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="13.4 The Relative Gain Array"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch13lev1sec3.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch13lev1sec5.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch13lev1sec4"></A><H3 class="docSection1Title">13.4 The Relative Gain Array</H3>
+<P class="docText">Ed Bristol (a control engineer with Foxboro) developed a heuristic technique to predict possible interactive effects between control loops when multiple SISO loops are used. He was motivated to develop a dimensionless measure of interaction by some boiler control problems he was working on. His simple measure of interaction is known as the <span class="docEmphasis">relative gain</span>, or the Bristol <span class="docEmphasis">relative gain array</span> (RGA). Since then, many papers have been written to provide a more rigorous theoretical basis for the technique.</P>
+<A NAME="ch13lev2sec6"></A><H4 class="docSection2Title"> Two-Inputs and Two-Outputs</H4>
+<P class="docText">The relationship between <span class="docEmphasis">u</span><SUB>1</SUB> and <span class="docEmphasis">y</span><SUB>1</SUB> at steady state (<span class="docEmphasis">s</span> = 0), with no change in <span class="docEmphasis">u</span><SUB>2</SUB>, is</P>
+<P><B><A NAME="ch13equ18"></A>Equation 13.18 </B></P><p class="docText"><IMG BORDER="0" WIDTH="126" HEIGHT="45" src="FILES/13equ18.gif" ALT="graphics/13equ18.gif"></p><br>
+<P class="docText">This is referred to as the gain between <span class="docEmphasis">u</span><SUB>1</SUB> and <span class="docEmphasis">y</span><SUB>1</SUB> with all other loops <span class="docEmphasis">open</span> (that is, <span class="docEmphasis">u</span><SUB>2</SUB> is constant for this 2 x 2 example).</P>
+<P class="docText">The steady-state relationship between <span class="docEmphasis">u</span><SUB>1</SUB> and <span class="docEmphasis">y</span><SUB>1</SUB> at steady state, with <span class="docEmphasis">y</span><SUB>2</SUB> maintained constant at its setpoint (using a controller with integral action), is</P>
+<P><B><A NAME="ch13equ19"></A>Equation 13.19 </B></P><p class="docText"><IMG BORDER="0" WIDTH="303" HEIGHT="44" src="FILES/13equ19.gif" ALT="graphics/13equ19.gif"></p><br>
+<P class="docText">Notice that Equation (<A class="docLink" HREF="#ch13equ19">13.19</A>) is the gain between input 1 and output 1, assuming output 2 is constant.</P>
+<A NAME="ch13lev2sec7"></A><H4 class="docSection2Title"> Definition of the Relative Gain</H4>
+<P class="docText">The relative gain (<font face="symbol">l</font><SUB>ij</SUB>) between input <span class="docEmphasis">j</span> and output <span class="docEmphasis">i</span> is defined in the following fashion:</P>
+<P><B><A NAME="ch13equ20"></A>Equation 13.20 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="377" HEIGHT="151" src="FILES/13equ44.gif" ALT="graphics/13equ44.gif"></p><br>
+<P class="docText">By convention, the symbol used for the relative gain is <font face="symbol">l</font><span class="docEmphasis"><SUB>ij</SUB></span>. Please do not confuse it with the <font face="symbol">l</font> that was used for the IMC filter or for the <font face="symbol">l</font> that is commonly used to represent the eigenvalues of a matrix. The relative gain will normally be shown with two subscripts, distinguishing it from eigenvalues or the IMC filter factor.</P>
+<A NAME="ch13lev2sec8"></A><H4 class="docSection2Title"> Relative Gain Between Input 1 and Output 1 for a Two Input–Two Output System</H4>
+<P class="docText">The relative gain between input 1 and output 1 is then [see Equation (<A class="docLink" HREF="#ch13equ23">13.23</A>)]</P>
+<p class="docText"><IMG BORDER="0" WIDTH="261" HEIGHT="35" src="FILES/13equ20a.gif" ALT="graphics/13equ20a.gif"></p><br>
+<P class="docText">We see that the relative gain between <span class="docEmphasis">u</span><SUB>1</SUB> and <span class="docEmphasis">y</span><SUB>1</SUB> for a 2 x 2 system is</P>
+<P><B><A NAME="ch13equ21"></A>Equation 13.21 </B></P><p class="docText"><IMG BORDER="0" WIDTH="287" HEIGHT="91" src="FILES/13equ21.gif" ALT="graphics/13equ21.gif"></p><br>
+<P class="docText">Remember that Equation (<A class="docLink" HREF="#ch13equ21">13.21</A>) is only true for the two input–two output case.</P>
+<A NAME="ch13lev2sec9"></A><H4 class="docSection2Title"> The RGA</H4>
+<P class="docText">The RGA is simply the matrix that contains the individual relative gain as elements, that is <font face="symbol">L</font> = {<font face="symbol">l</font><SUB>ij</SUB>} . For a 2 x 2 system, the RGA is</P>
+<P><B><A NAME="ch13equ22"></A>Equation 13.22 </B></P><p class="docText"><IMG BORDER="0" WIDTH="90" HEIGHT="39" src="FILES/13equ22.gif" ALT="graphics/13equ22.gif"></p><br>
+<p class="docText"><span class="docEmphBoldItalic">Question:</span> 
+What value do we desire for the relative gain?</p>
+<P class="docText">Think of it this way. If we want to use a <span class="docEmphasis">u</span><SUB>1</SUB>-<span class="docEmphasis">y</span><SUB>1</SUB> pairing for a SISO controller, we do not want it to matter whether the other loops in the system are closed or not. This tells us that we desire a relative gain close to 1.0. That is,</P>
+<p class="docText"><span class="docEmphBoldItalic">Answer:</span> 
+We desire <font face="symbol">l</font><SUB>11</SUB> <img src="FILES/U2248.GIF" border=0> 1.0 if we wish to pair output 1 with input 1.</p>
+<P class="docText">The <font face="symbol">l</font><SUB>11</SUB> calculation for a 2 x 2 system yielded <IMG BORDER="0" WIDTH="118" HEIGHT="36" src="FILES/13inequ02.gif" ALT="graphics/13inequ02.gif">. The more general result is (see <A class="docLink" HREF="0133536408_ch13lev1sec13.html#ch13lev1sec13">Appendix 13.1</A> for a derivation)</P>
+<P><B><A NAME="ch13equ23"></A>Equation 13.23 </B></P><p class="docText"><IMG BORDER="0" WIDTH="137" HEIGHT="23" src="FILES/13equ23.gif" ALT="graphics/13equ23.gif"></p><br>
+<P class="docText">where <IMG BORDER="0" WIDTH="49" HEIGHT="22" src="FILES/13inequ03.gif" ALT="graphics/13inequ03.gif"> element of <span class="docEmphasis">G</span><SUP>–</SUP><SUP>1</SUP>(0). Notice that this is not the same as matrix multiplication. Here, the individual elements of the two matrices are being multiplied together.</P>
+<P class="docText">We check the general results derived above by applying them to a 2 x 2 (two output, two input) system,</P>
+<p class="docText"><IMG BORDER="0" WIDTH="210" HEIGHT="41" src="FILES/13equ23a.gif" ALT="graphics/13equ23a.gif"></p><br>
+<P class="docText">and recalling our rules for inverting a 2 x 2 matrix,</P>
+<p class="docText"><IMG BORDER="0" WIDTH="419" HEIGHT="72" src="FILES/13equ23b.gif" ALT="graphics/13equ23b.gif"></p><br>
+<P class="docText">Multiplying the individual elements of <span class="docEmphasis">G</span>(0) and <span class="docEmphasis"><img src="FILES/U011C.GIF" border=0></span>(0), as in Equation (<A class="docLink" HREF="#ch13equ23">13.23</A>), we find</P>
+<P><B><A NAME="ch13equ24"></A>Equation 13.24 </B></P><p class="docText"><IMG BORDER="0" WIDTH="294" HEIGHT="73" src="FILES/13equ24.gif" ALT="graphics/13equ24.gif"></p><br>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch13lev1sec3.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch13lev1sec5.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

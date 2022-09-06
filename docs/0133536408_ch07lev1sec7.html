@@ -1,0 +1,113 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="7.7 M'ATLAB' Control Toolbox: Bode and Nyquist Functions"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch07lev1sec6.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch07lev1sec8.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch07lev1sec7"></A><H3 class="docSection1Title">7.7 M<span class="docEmphSmaller">ATLAB</span> Control Toolbox: Bode and Nyquist Functions</H3>
+<P class="docText">The M<span class="docEmphSmaller">ATLAB</span> Control Toolbox has special functions to generate Bode and Nyquist plots, and to calculate gain and phase margins. Here we use <A class="docLink" HREF="0133536408_ch07lev1sec5.html#ch07lev2sec11">Example 7.3</A> to illustrate the use of the M<span class="docEmphSmaller">ATLAB</span> <TT>bode</TT>, <TT>nyquist</TT>, and <TT>imargin</TT> functions that are available in the Control Toolbox. For information, simply enter <TT>help bode</TT>, and so forth, in the M<span class="docEmphSmaller">ATLAB</span> command window.</P>
+<P class="docText">First, define the process transfer function (<span class="docEmphasis">g</span><SUB>p</SUB>).</P>
+<pre>
+
+</pre><pre>
+&#187; vdvtf = tf(0.5848*[-0.3549 1],[0.1858 0.8627 1])
+
+Transfer function:
+   -0.2075 s + 0.5848
+-------------------------
+0.1858 s^2 + 0.8627 s + 1
+</pre>
+<P class="docText">Next, generate the open-loop transfer function (<span class="docEmphasis">g</span><SUB>c</SUB><span class="docEmphasis">g</span><SUB>p</SUB>) for a controller gain (<span class="docEmphasis">k</span><SUB>c</SUB>) of 2.5.</P>
+<pre>
+
+</pre><pre>
+&#187; kc = 2.5;
+
+&#187; gcgp = kc*vdvtf
+
+
+Transfer function:
+    -0.5189 s + 1.462
+-------------------------
+0.1858 s^2 + 0.8627 s + 1
+</pre>
+<P class="docText">Now, use the <TT>bode</TT> function to generate magnitude and phase angles as a function of frequency. Also, use <TT>imargin</TT> to perform the gain margin (<TT>Gm</TT>) and phase margin (<TT>Pm</TT>) calculations at their respective frequencies (<TT>Wcg</TT> and <TT>Wcp</TT>).</P>
+<pre>
+
+</pre><pre>
+&#187;[mag,phase,w] = bode(gcgp);
+
+[Gm,Pm,Wcg,Wcp] = imargin(squeeze(mag),squeeze(phase),w)
+
+Gm =
+    1.6680
+
+Pm =
+   59.0905
+
+Wcg =
+    4.3064
+
+Wcp =
+    2.0956
+</pre>
+<P class="docText"><A class="docLink" HREF="0133536408_ch07lev1sec5.html#ch07fig14">Figure 7-14</A> is generated using the following sequence of commands.</P>
+<pre>
+
+</pre><pre>
+subplot(2,1,1),loglog(w,squeeze(mag),[0.1 Wcg Wcg],
+   [1/Gm 1/Gm min(mag)],'--')
+subplot(2,1,2),semilogx(w,squeeze(phase),[min(w) Wcg Wcg],
+   [-180 -180 0],'--')
+</pre>
+<P class="docText"><A class="docLink" HREF="0133536408_ch07lev1sec5.html#ch07fig15">Figure 7-15</A> is generated using the following sequence of commands.</P>
+<pre>
+
+</pre><pre>
+subplot(2,1,1),loglog(w,squeeze(mag),[0.1 Wcp Wcp],
+   [1 1 min(mag)],'--')
+subplot(2,1,2),semilogx(w,squeeze(phase),[0.1 Wcp Wcp],
+   [-180+Pm -180+Pm 0],'--')
+</pre>
+<P class="docText">The Nyquist plot, <A class="docLink" HREF="0133536408_ch07lev1sec5.html#ch07fig16">Figure 7-16</A>, is generated using the following sequence of steps. First, define an appropriate frequency range.</P>
+<pre>
+
+</pre><pre>
+w1 = logspace(-2,2,300);
+</pre>
+<P class="docText">Then use the nyquist function to generate real and imaginary vectors.</P>
+<pre>
+
+</pre><pre>
+[regcgp,imgcgp] = nyquist(gcgp,w1);
+</pre>
+<P class="docText">Generate circles for convenience when interpreting the Nyquist plot.</P>
+<pre>
+
+</pre><pre>
+circlex = cos(0:0.2:2*pi);
+circley = sin(0:0.2:2*pi);
+phaseptx = cos((-180+Pm)*pi/180);
+phasepty = sin((-180+Pm)*pi/180);
+plot(squeeze(regcgp),squeeze(imgcgp),circlex,circley,'--',
+   [-1/Gm],[0],'o', phaseptx,phasepty,'*')
+axis('square')
+xlabel('real')
+ylabel('imaginary')
+</pre>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch07lev1sec6.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch07lev1sec8.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

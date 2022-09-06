@@ -1,0 +1,39 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="Student Exercises"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch12lev1sec7.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch13.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch12lev1sec8"></A><H3 class="docSection1Title"> Student Exercises</H3>
+<P><TABLE BORDER="0" cellspacing="16" cellpadding="0"><TR valign="top"><TD align="right" class="docText"><A NAME="qad1e37979"></A><B>1:</B></TD><TD><P class="docText">Consider the ratio control strategy shown in <A class="docLink" HREF="0133536408_ch12lev1sec2.html#ch12fig01">Figure 12-1b</A>. If the blend stream has a concentration measurement and controller, construct the control instrumentation diagram where the output of the concentration controller is the desired ratio of stream <span class="docEmphasis">B</span> to stream <span class="docEmphasis">A</span> flows.</P></TD></TR><TR valign="top"><TD align="right" class="docText"><A NAME="qad1e37993"></A><B>2:</B></TD><TD><P class="docText">Consider the high-temperature select control problem shown in <A class="docLink" HREF="0133536408_ch12lev1sec3.html#ch12fig02">Figure 12-2</A>. Modify the control instrumentation diagram to include a cascade-control strategy, where the output of the reactor temperature controller is the setpoint to a reactor inlet temperature controller. The reactor inlet temperature controller then manipulates the flow to the preheat exchanger.</P></TD></TR><TR valign="top"><TD align="right" class="docText"><A NAME="qad1e38002"></A><B>3:</B></TD><TD><P class="docText">Consider a gas-phase reactor where a valve on the output stream is normally regulated to maintain a desired outlet composition. Design a selector-based control strategy that switches to pressure control if the pressure is too high.</P></TD></TR><TR valign="top"><TD align="right" class="docText"><A NAME="qad1e38007"></A><B>4:</B></TD><TD><P class="docText">Consider a waste treatment system. A pH controller may need to adjust the pH by manipulating either basic or acidic stream flow rates. Design a split-range control strategy to do this.</P></TD></TR><TR valign="top"><TD align="right" class="docText"><A NAME="qad1e38012"></A><B>5:</B></TD><TD><P class="docText">Consider <A class="docLink" HREF="0133536408_ch12lev1sec4.html#ch12lev2sec1">Example 12.1</A>, where input 1 is the cold glycol make-up flow rate, and input 2 is the hot glycol make-up flow rate. The steady-state temperature is 20&#176;C, which is also the vessel feed temperature. At steady-state the cold and hot glycol make-up flow rates are 0. The parameter values are</P>
+<pre>
+
+</pre><pre>
+fov     =  1/30; % minutes^-1
+ua      =  24  ; % kcal/min deg C
+vrhocp  = 850  ; % kcal/deg C
+vrhocpj = 250  ; % kcal/deg C
+Tjfcold = -20  ; % deg C
+Tjfhot  = 100  ; % deg C
+Tjs     =  20  ; % deg C
+vj      = 250  ; % liters
+</pre>
+<P class="docText">and the state space model matrices are</P>
+<p class="docText"><IMG BORDER="0" WIDTH="261" HEIGHT="266" src="FILES/12equ08.gif" ALT="graphics/12equ08.gif"></p><br>
+<P class="docText">Solve for the numerical values of all matrices. Design a jacket temperature controller and implement the S<span class="docEmphSmaller">IMULINK</span> diagram shown in <A class="docLink" HREF="0133536408_ch12lev1sec5.html#ch12fig07">Figure 12-7</A>. Discuss your jacket temperature controller design and tuning procedure. Notice that the jacket temperature output has a range of 100%, constrained between –50% and +50%. The cold valve is fully open at –50% and fully closed at 0%. The hot valve is fully closed at 0% and fully open at +50%,</P></TD></TR><TR valign="top"><TD align="right" class="docText"><A NAME="qad1e38043"></A><B>6:</B></TD><TD><P class="docText">Develop a S<span class="docEmphSmaller">IMULINK</span> diagram of a cascade control strategy, where <A class="docLink" HREF="0133536408_ch12lev1sec5.html#ch12fig07">Figure 12-7</A> represents the inner-loop (jacket temperature) control system. The output of the primary (outer-loop) controller that you develop should be the setpoint for the jacket temperature controller. Discuss the design and implementation (tuning) of both controllers. Use the parameter values from Exercise 5.</P></TD></TR></TABLE></P><br>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch12lev1sec7.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch13.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

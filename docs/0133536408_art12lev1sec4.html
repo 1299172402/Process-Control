@@ -1,0 +1,55 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="M12.4 Blood Glucose Control in Diabetic Patients"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_art12lev1sec3.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_art12lev1sec5.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="art12lev1sec4"></A><H3 class="docSection1Title" id="225793-834">M12.4 Blood Glucose Control in Diabetic Patients</H3>
+<P class="docText">The human body has many innate feedback-control loops. For example, blood glucose is regulated by the production of insulin by the pancreas. When food is consumed and broken down by the digestive system, the blood glucose level rises, stimulating insulin production. Cells use insulin to break down the glucose. People with diabetes have a reduced capability of producing insulin. Type I diabetes mellitus patients cannot produce any insulin and must administer insulin shots several times a day to help regulate their blood glucose level. A typical patient is then serving as a control system. Some actions are feedforward in nature, such as the administration of an insulin shot to coincide with meal consumption. Other actions are feedback in nature, such as when the patient changes dosages based on blood glucose measurements, obtained from "finger pricks" and analysis of glucose strips. In the long-term, hyperglycemia (high blood sugar) can lead to blindness and cardiovascular problems. In the short-term, hypoglycemia (low blood sugar) can lead to fainting or a diabetic coma.</P>
+<P class="docText">Clearly, there is a tremendous motivation for the development of closed-loop insulin delivery systems. Current technology involves external pumps with insulin reservoirs that can deliver insulin continuously, rather than having "pulses" due to shots administered several times a day. With an external infusion pump, the patient must still perform tests to monitor blood glucose levels.</P>
+<P class="docText">There is a major research effort to develop implantable glucose sensors and insulin infusion pumps. An implanted sensor will measure glucose and send a telemetry signal to a small, wristwatch-sized controller that can send another telemetry signal to a small implanted insulin pump. This closed-loop system essentially acts as an artificial pancreas, yielding a lifestyle that differs little from a nondiabetic person on a day-to-day basis.</P>
+<A NAME="art12lev2sec2"></A><H4 class="docSection2Title"> Nonlinear Model</H4>
+<P class="docText">One of the more widely used models of the effect of insulin infusion and glucose (meal) inputs on the blood glucose concentration is known as the Bergman "minimal model" (<A class="docLink" HREF="0133536408_art12lev1sec8.html#art12biblio01entry10">Bergman et al., 1981</A>). This is described by three differential equations:</P>
+<P><B><A NAME="art12equ05"></A>Equation M12.5 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="187" HEIGHT="114" src="FILES/m12equ05.gif" ALT="graphics/m12equ05.gif"></p><br>
+<P class="docText">where G and I represent the deviation in blood glucose and insulin concentrations, respectively. Also, X is proportional to the insulin concentration in a "remote" compartment. The inputs are G<SUB>meal</SUB>, a meal disturbance input of glucose, and U, the manipulated insulin infusion rate. The parameters include p<SUB>1</SUB>, p<SUB>2</SUB>, p<SUB>3</SUB>, n, and V<SUB>1</SUB> (which represents the blood volume). Other parameters are G<SUB>b</SUB> and I<SUB>b</SUB>, the "basal" (baseline or steady state) values of blood glucose and insulin concentration. These values can be used to determine the basal infusion rate of insulin necessary to maintain a steady state.</P>
+<A NAME="art12lev2sec3"></A><H4 class="docSection2Title"> Linear Model</H4>
+<P class="docText">A linear state space model can be developed for use in control-system design. Here, define the state, input, and output variables (in deviation form) as</P>
+<P><B><A NAME="art12equ06"></A>Equation M12.6 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="281" HEIGHT="61" src="FILES/m12equ06.gif" ALT="graphics/m12equ06.gif"></p><br>
+<P class="docText">where the first input is manipulated (insulin infusion) and the second input represents a meal glucose disturbance. The state space model is</P>
+<P><B><A NAME="art12equ07"></A>Equation M12.7 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="257" HEIGHT="86" src="FILES/m12equ07.gif" ALT="graphics/m12equ07.gif"></p><br>
+<A NAME="art12lev2sec4"></A><H4 class="docSection2Title"> Example Set of Parameters</H4>
+<P class="docText">Consider a diabetic that is modeled using the following set of parameters (<A class="docLink" HREF="0133536408_art12lev1sec8.html#art12biblio01entry12">Lynch and Bequette, 2001</A>):</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="137" HEIGHT="122" src="FILES/m12equ07a.gif" ALT="graphics/m12equ07a.gif"></p><br>
+<P class="docText">It is necessary to be careful with units. Since the concentrations are in mmol/liter, and the glucose disturbance has units of grams, we must apply a conversion factor of 5.5556 mmol/g to the G<SUB>meal</SUB> term. Solving for the steady states, we find that the basal insulin infusion rate must be U<SUB>b</SUB> = 16.667 mU/min. For these parameters, the resulting state space model is</P>
+<P><B><A NAME="art12equ08"></A>Equation M12.8 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="311" HEIGHT="60" src="FILES/m12equ08.gif" ALT="graphics/m12equ08.gif"></p><br>
+<P class="docText">In the United States it is more common to work with glucose concentration units of mg/deciliter rather than mmol/liter. Since the molecular weight of glucose is 180 g/mol, we must multiply the glucose state (mmol/liter) by 18 to obtain the measured glucose output (mg/deciliter). This yields the following state-output relationship</P>
+<P><B><A NAME="art12equ09"></A>Equation M12.9 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="187" HEIGHT="18" src="FILES/m12equ09.gif" ALT="graphics/m12equ09.gif"></p><br>
+<P class="docText">You should find that the process transfer function is</P>
+<P><B><A NAME="art12equ10"></A>Equation M12.10 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="158" HEIGHT="35" src="FILES/m12equ10.gif" ALT="graphics/m12equ10.gif"></p><br>
+<P class="docText">Due to pole/zero cancellation, the disturbance transfer function is</P>
+<P><B><A NAME="art12equ11"></A>Equation M12.11 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="79" HEIGHT="32" src="FILES/m12equ11.gif" ALT="graphics/m12equ11.gif"></p><br>
+<P class="docText">In practice, the glucose does not directly enter the blood stream. The processing in the gut before entering the blood can be modeled as a first-order transfer function with a 20-minute time constant. This means that the disturbance transfer function, including the lag in the gut, is</P>
+<P><B><A NAME="art12equ12"></A>Equation M12.12 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="101" HEIGHT="35" src="FILES/m12equ12.gif" ALT="graphics/m12equ12.gif"></p><br>
+<P class="docText">Also, unlike many chemical process disturbances, a meal disturbance is best modeled as a pulse. Assume that a 50 g glucose meal is consumed over a 15-minute period; the pulse then has a magnitude of 3.333 g/minute for a duration of 15 minutes.</P>
+<A NAME="art12lev2sec5"></A><H4 class="docSection2Title"> Desired Control Performance</H4>
+<P class="docText">The steady-state glucose concentration of 4.5 mmol/liter corresponds to a measured glucose concentration of 81 mg/deciliter. It is important that a diabetic maintain her/his blood glucose concentration above 70 mg/deciliter (to avoid short-term problems with hypoglycemia, such as fainting). Notice that the insulin infusion rate (manipulated input) cannot go below 0; it is critical that you consider this constraint in your simulations.</P>
+<P class="docText">A number of control strategies could be used. One suggestion is to simplify the process transfer function (<A class="docLink" HREF="#art12equ10">M12.10</A>) to the following form</P>
+<P><B><A NAME="art12equ13"></A>Equation M12.13 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="101" HEIGHT="42" src="FILES/m12equ13.gif" ALT="graphics/m12equ13.gif"></p><br>
+<P class="docText">and design an IMC-based PD or PID controller. Also, since the diabetic knows when they are consuming a meal, some type of feed-forward action can be used.</P>
+<P class="docText">Perform disturbance rejection simulations and discuss your results. What feedback-only design (and tuning) do you recommend? What are the minimum and maximum blood glucose values that occur after a pulse meal consumption of 50 g glucose over a 15-minute period? Does your strategy satisfy constraints on the insulin infusion rate? How much better is the performance if feed-forward control is included? Compare the resulting blood glucose profiles with those found in the literature.</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_art12lev1sec3.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_art12lev1sec5.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

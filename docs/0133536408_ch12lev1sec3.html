@@ -1,0 +1,30 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="12.3 Selective and Override Control"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch12lev1sec2.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch12lev1sec4.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch12lev1sec3"></A><H3 class="docSection1Title">12.3 Selective and Override Control</H3>
+<P class="docText">Often a controller needs to select from a set of possible measurements for control. For example, consider the packed-bed reactor shown in <A class="docLink" HREF="#ch12fig02">Figure 12-2</A>. It is important to maintain the "hot spot" temperature at a certain value to minimize catalyst degradation. In this strategy, the "high selector" (represented as the block with &gt;) chooses the highest of three bed temperatures to send to the temperature controller. In algorithmic form, let <span class="docEmphasis">T</span><SUB>1</SUB>, <span class="docEmphasis">T</span><SUB>2</SUB>, and <span class="docEmphasis">T</span><SUB>3</SUB> represent the three temperature measurements, and <span class="docEmphasis">T</span> represent the temperature measurement used by the controller, then</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch12fig02"></A>Figure 12-2. High-temperature selector for a packed-bed reactor.</H5><p class="docText"><IMG BORDER="0" WIDTH="450" HEIGHT="266" src="FILES/12fig02.gif" ALT="graphics/12fig02.gif"></p></CENTER>
+<P><B><A NAME="ch12equ05"></A>Equation 12.5 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="111" HEIGHT="16" src="FILES/12equ05.gif" ALT="graphics/12equ05.gif"></p><br>
+<P class="docText">When manipulating the fuel gas flow to a fired heater (furnace), it is important to make certain that a minimum air/fuel ratio is maintained. High/low selectors can be used to assure this, as shown in <A class="docLink" HREF="#ch12fig03">Figure 12-3</A>; here the <span class="docEmphasis">A</span>/<span class="docEmphasis">F</span> boxes indicate the air/fuel ratio. To understand how this strategy works, first consider a positive change in the fuel flow setpoint. Notice that the combination of high and low selectors will force the combustion air flow rate to increase before the fuel flow increases. Also, if a decrease in fuel flow setpoint is made, the fuel flow must decrease before the combustion air flow. This strategy makes certain that excess combustion air is always available.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch12fig03"></A>Figure 12-3. Use of high/low selectors for fuel gas and air flow control of a fired heater. Notice the simplified representation for the air flow; ordinarily a damper inside an air duct would be adjusted to vary the air flow.</H5><p class="docText"><IMG BORDER="0" WIDTH="450" HEIGHT="392" src="FILES/12fig03.gif" ALT="graphics/12fig03.gif"></p></CENTER>
+<P class="docText">In practice this strategy is just one part of the overall furnace control strategy. Usually, the fuel flow setpoint will be the output of another controller (e.g., process fluid temperature or steam system pressure), and the air/fuel ratio might be the output of a furnace stack gas O<SUB>2</SUB> or CO measurement and control strategy.</P>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch12lev1sec2.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch12lev1sec4.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

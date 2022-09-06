@@ -1,0 +1,66 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="13.8 Using the RGA to Determine Variable Pairings"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch13lev1sec7.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch13lev1sec9.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch13lev1sec8"></A><H3 class="docSection1Title">13.8 Using the RGA to Determine Variable Pairings</H3>
+<P class="docText">In the previous section, we showed how to tune controllers, assuming that a decision on the pairing had already been established. The purpose of this section is to give some examples to illustrate how inputs and outputs should be paired to form MVSISO control loops.</P>
+<A NAME="ch13lev2sec21"></A><H4 class="docSection2Title"> Example 13.1, continued</H4>
+<P class="docText">Consider the whiskey-blending problem, which had the steady-state process gain matrix and RGA:</P>
+<p class="docText"><IMG BORDER="0" WIDTH="410" HEIGHT="40" src="FILES/13equ32.gif" ALT="graphics/13equ32.gif"></p><br>
+<P class="docText">indicating that the output-input pairings should be <span class="docEmphasis">y</span><SUB>1</SUB>-<span class="docEmphasis">u</span><SUB>2</SUB> and <span class="docEmphasis">y</span><SUB>2</SUB>-<span class="docEmphasis">u</span><SUB>1</SUB>. In order to achieve this pairing, we could use the block diagram shown in <A class="docLink" HREF="#ch13fig13">Figure 13-13</A>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch13fig13"></A>Figure 13-13. Control block diagram for 1-2/2-1 pairing.</H5><p class="docText"><IMG BORDER="0" WIDTH="450" HEIGHT="333" src="FILES/13fig13.gif" ALT="graphics/13fig13.gif"></p></CENTER>
+<P class="docText">Notice that the difference between <span class="docEmphasis">r</span><SUB>2</SUB> and <span class="docEmphasis">y</span><SUB>2</SUB> (the error in output 2) is used to adjust <span class="docEmphasis">u</span><SUB>1</SUB>, using a PID controller (<span class="docEmphasis">g</span><SUB>c1</SUB>), hence, we refer to this pairing as <span class="docEmphasis">y</span><SUB>2</SUB>-<span class="docEmphasis">u</span><SUB>1</SUB>. Similarly, the difference between <span class="docEmphasis">r</span><SUB>1</SUB> and <span class="docEmphasis">y</span><SUB>1</SUB> (the error in output 1) is used to adjust u<SUB>2</SUB>, using a PID controller (<span class="docEmphasis">g</span><SUB>c1</SUB>); hence, we refer to this pairing as <span class="docEmphasis">y</span><SUB>1</SUB>-<span class="docEmphasis">u</span><SUB>2</SUB>. This corresponds to the physical diagram shown in <A class="docLink" HREF="0133536408_ch13lev1sec2.html#ch13fig03">Figure 13-3b</A>.</P>
+<P class="docText">An alternative is to rearrange (renumber) our outputs or inputs so that the natural pairing is <span class="docEmphasis">y</span><SUB>1</SUB>-<span class="docEmphasis">u</span><SUB>1</SUB> and <span class="docEmphasis">y</span><SUB>2</SUB>-<span class="docEmphasis">u</span><SUB>2</SUB> (in the renumbered variables). For example, we could renumber the outputs. Let <IMG BORDER="0" WIDTH="41" HEIGHT="17" src="FILES/13inequ09.gif" ALT="graphics/13inequ09.gif"> and <IMG BORDER="0" WIDTH="41" HEIGHT="21" src="FILES/13inequ10.gif" ALT="graphics/13inequ10.gif">, where * indicates the newly redefined variable. This corresponds to the control and instrumentation diagram shown in <A class="docLink" HREF="#ch13fig14">Figure 13-14</A>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch13fig14"></A>Figure 13-14. Control instrumentation diagram for redefined variables.</H5><p class="docText"><IMG BORDER="0" WIDTH="450" HEIGHT="218" src="FILES/13fig14.gif" ALT="graphics/13fig14.gif"></p></CENTER>
+<P class="docText">We can write</P>
+<p class="docText"><IMG BORDER="0" WIDTH="298" HEIGHT="42" src="FILES/13equ33.gif" ALT="graphics/13equ33.gif"></p><br>
+<P class="docText">or</P>
+<p class="docText"><IMG BORDER="0" WIDTH="304" HEIGHT="42" src="FILES/13equ34.gif" ALT="graphics/13equ34.gif"></p><br>
+<P class="docText">The reader should verify that the new RGA is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="105" HEIGHT="39" src="FILES/13equ35.gif" ALT="graphics/13equ35.gif"></p><br>
+<P class="docText">Notice that redefining the <span class="docEmphasis">outputs</span> is equivalent to switching the <span class="docEmphasis">rows</span> of the process gain matrix related to the corresponding outputs (in this case, switching rows 1 and 2 is equivalent to exchanging outputs 1 and 2). The new RGA is found by making the same transformation of rows in the RGA, as was performed on the process gain matrix.</P>
+<P class="docText">Similarly, redefining the <span class="docEmphasis">inputs</span> is equivalent to switching the <span class="docEmphasis">columns</span> of the process gain matrix related to the corresponding inputs. The new RGA is found by making the same transformation of columns in the RGA, as was performed on the process gain matrix.</P>
+<A NAME="ch13lev3sec9"></A><H5 class="docSection3Title"> Generalization</H5>
+<P class="docText">We have shown, by way of example, that outputs can be renumbered by switching the rows in the process gain matrix, and inputs can be renumbered by switching columns in the process gain matrix. Each time we perform this exchange of variables, we do not need to recalculate the relative gain array—we simply find the new RGA by performing the same row and column exchanges on the RGA that we performed on the process gain matrix. By performing this exchange (renumbering) of variables, we can always rearrange our inputs and outputs such that loop 1 has a pairing of <span class="docEmphasis">y</span><SUB>1</SUB> and <span class="docEmphasis">u</span><SUB>1</SUB> (in the newly defined variables). For this reason, we will often assume that a <span class="docEmphasis">y</span><SUB>1</SUB>-<span class="docEmphasis">u</span><SUB>1</SUB> pairing has been made and discuss the effect of <font face="symbol">l</font><SUB>11</SUB> on controller tuning.</P>
+<A NAME="ch13lev2sec22"></A><H4 class="docSection2Title"> Example 13.4: A Three Input–Three Output System</H4>
+<P class="docText">Consider the following RGA for a system with three inputs and three outputs:</P>
+<p class="docText"><IMG BORDER="0" WIDTH="102" HEIGHT="61" src="FILES/13equ36.gif" ALT="graphics/13equ36.gif"></p><br>
+<P class="docText">How would you choose input-output pairings for this process?</P>
+<P class="docText"><span class="docEmphasis">Solution</span>:</P>
+<A NAME="ch13pr01"></A>
+
+<span style="font-weight:bold"><OL class="docList" START="1"><LI><span style="font-weight:normal" value="1"><P class="docText">First of all, we know that we do not want to pair on a negative relative gain.</P></span></LI><LI><span style="font-weight:normal" value="2"><P class="docText">Second, we do not want to pair with a relative gain of 0 because that means that the particular input does not have an effect on the particular output, when all of the other loops are open.</P></span></LI></OL></span>
+<P class="docText">Look at row 3 in the relative gain array; this corresponds to output 3. We would not pair <span class="docEmphasis">y</span><SUB>3</SUB> with <span class="docEmphasis">u</span><SUB>3</SUB> because of the 0 term. We also would not pair <span class="docEmphasis">y</span><SUB>3</SUB> with <span class="docEmphasis">u</span><SUB>1</SUB> because of the –3 term. This means that <span class="docEmphasis">y</span><SUB>3</SUB> must be paired with <span class="docEmphasis">u</span><SUB>2</SUB>. Let us indicate this choice in our RGA,</P>
+<p class="docText"><IMG BORDER="0" WIDTH="111" HEIGHT="64" src="FILES/13equ37.gif" ALT="graphics/13equ37.gif"></p><br>
+<P class="docText">Now we have eliminated the third output (row) and the second input (column) from our selection process. From the first row (output), we see that we would not pair <span class="docEmphasis">y</span><SUB>1</SUB> with <span class="docEmphasis">u</span><SUB>3</SUB> because of the –1 term. We also cannot pair <span class="docEmphasis">y</span><SUB>1</SUB> with <span class="docEmphasis">u</span><SUB>2</SUB> because we have already paired <span class="docEmphasis">u</span><SUB>2</SUB> with <span class="docEmphasis">y</span><SUB>3</SUB> (hence, the circle). Our only choice is to pair <span class="docEmphasis">y</span><SUB>1</SUB> with <span class="docEmphasis">u</span><SUB>1</SUB>. Let us indicate this choice in our RGA,</P>
+<p class="docText"><IMG BORDER="0" WIDTH="117" HEIGHT="64" src="FILES/13equ38.gif" ALT="graphics/13equ38.gif"></p><br>
+<P class="docText">Now, we have eliminated outputs 1 and 3 (rows 1 and 3) as well as inputs 1 and 2 (columns 1 and 2). We have no choice but to pair <span class="docEmphasis">y</span><SUB>2</SUB> with <span class="docEmphasis">u</span><SUB>3</SUB>, and we make that choice below:</P>
+<p class="docText"><IMG BORDER="0" WIDTH="120" HEIGHT="65" src="FILES/13equ39.gif" ALT="graphics/13equ39.gif"></p><br>
+<P class="docText">Notice also, that we can renumber our outputs, such that pairings of the new variables occur on the diagonal. For example, if we define <IMG BORDER="0" WIDTH="45" HEIGHT="18" src="FILES/13inequ11.gif" ALT="graphics/13inequ11.gif"> and <IMG BORDER="0" WIDTH="45" HEIGHT="18" src="FILES/13inequ12.gif" ALT="graphics/13inequ12.gif">, this is equivalent to switching the second and third rows to obtain</P>
+<p class="docText"><IMG BORDER="0" WIDTH="118" HEIGHT="62" src="FILES/13equ40.gif" ALT="graphics/13equ40.gif"></p><br>
+<P class="docText">which is based on the new output vector</P>
+<p class="docText"><IMG BORDER="0" WIDTH="95" HEIGHT="65" src="FILES/13equ41.gif" ALT="graphics/13equ41.gif"></p><br>
+<A NAME="ch13lev2sec23"></A><H4 class="docSection2Title"> Example 13.5: A Four Input–Four Output Distillation Column (<A class="docLink" HREF="0133536408_ch13lev1sec11.html#ch13biblio01entry02">Alatiqi and Luyben, 1986</A>)</H4>
+<P class="docText">The steady-state gain input–output relationship is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="255" HEIGHT="83" src="FILES/13equ42.gif" ALT="graphics/13equ42.gif"></p><br>
+<P class="docText">The RGA (using the m-file <TT>rga.m</TT> shown in <A class="docLink" HREF="0133536408_ch13lev1sec14.html#ch13lev1sec14">Appendix 13.2</A>) is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="262" HEIGHT="82" src="FILES/13equ43.gif" ALT="graphics/13equ43.gif"></p><br>
+<P class="docText">Now, let us systematically choose our pairings. Looking at <span class="docEmphasis">column 3,</span> we see only one relative gain that is not negative, therefore, we must pair <span class="docEmphasis">y</span><SUB>2</SUB> with <span class="docEmphasis">u</span><SUB>3</SUB>. Looking at <span class="docEmphasis">row 4</span>, we notice that there is only one relative gain that is not negative, therefore, we must pair <span class="docEmphasis">y</span><SUB>4</SUB> with <span class="docEmphasis">u</span><SUB>1</SUB>. Looking at <span class="docEmphasis">column 2</span>, there are 2 nonnegative relative gains, but we have already used output 2, so we must pair <span class="docEmphasis">y</span><SUB>3</SUB> with <span class="docEmphasis">u</span><SUB>2</SUB>. This leaves <span class="docEmphasis">y</span><SUB>1</SUB> and <span class="docEmphasis">u</span><SUB>4</SUB>, which, fortunately, has a favorable relative gain (0.8546). If the <span class="docEmphasis">y</span><SUB>1</SUB>-<span class="docEmphasis">u</span><SUB>4</SUB> relative gain had not been favorable, we would have been forced to drop output 1 and input 4 and simply have three control loops for our system.</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch13lev1sec7.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch13lev1sec9.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

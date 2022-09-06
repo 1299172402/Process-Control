@@ -1,0 +1,101 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="3.7 Second-Order Behavior"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch03lev1sec6.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch03lev1sec8.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch03lev1sec7"></A><H3 class="docSection1Title">3.7 Second-Order Behavior</H3>
+<P class="docText">Second-order models arise from systems that are modeled with two differential equations (two states). In this section we separately consider transfer functions that do not have "numerator" dynamics and those that do.</P>
+<A NAME="ch03lev2sec22"></A><H4 class="docSection2Title"> Pure Second-Order Systems</H4>
+<P class="docText">Consider a linear second-order ODE, with constant parameters</P>
+<P><B><A NAME="ch03equ37"></A>Equation 3.35 </B></P><p class="docText"><IMG BORDER="0" WIDTH="170" HEIGHT="41" src="FILES/03equ35.gif" ALT="graphics/03equ35.gif"></p><br>
+<P class="docText">This is often written in the form</P>
+<P><B><A NAME="ch03equ38"></A>Equation 3.36 </B></P><p class="docText"><IMG BORDER="0" WIDTH="159" HEIGHT="40" src="FILES/03equ36.gif" ALT="graphics/03equ36.gif"></p><br><P class="docText">where (obviously <span class="docEmphasis">a</span><SUB>0</SUB> <img src="FILES/U2260.GIF" border=0> 0)</P>
+<p class="docText"><IMG BORDER="0" WIDTH="199" HEIGHT="24" src="FILES/03equ36a.gif" ALT="graphics/03equ36a.gif"></p><br>
+<P class="docText">and the parameters are as follows: <span class="docEmphasis">k</span> is the gain (units of output/input), <font face="symbol">z</font> the damping factor (dimensionless), and <font face="symbol">t</font> the natural period (units of time).</P>
+<P class="docText">The second-order model shown in Equation (<A class="docLink" HREF="0133536408_ch03lev1sec6.html#ch03equ35">3.35</A>) or (<A class="docLink" HREF="0133536408_ch03lev1sec6.html#ch03equ36">3.36</A>) generally arises by changing a set of two first-order equations (state-space model) to a single second-order equation. For a given second-order ODE, there are an infinite number of sets of two first-order (state-space) models that are equivalent.</P>
+<P class="docText">Taking the Laplace transform of Equation (<A class="docLink" HREF="0133536408_ch03lev1sec6.html#ch03equ36">3.36</A>),</P>
+<P><B><A NAME="ch03equ39"></A>Equation 3.37 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="342" HEIGHT="18" src="FILES/03equ37.gif" ALT="graphics/03equ37.gif"></p><br>
+<P class="docText">where <span class="docEmphasis">y</span>(<span class="docEmphasis">s</span>) indicates the Laplace transformed variable.</P>
+<P class="docText">Assuming initial conditions are zero, that is <IMG BORDER="0" WIDTH="114" HEIGHT="22" src="FILES/03inequ01.gif" ALT="graphics/03inequ01.gif">, we find</P>
+<P><B><A NAME="ch03equ40"></A>Equation 3.38 </B></P><p class="docText"><IMG BORDER="0" WIDTH="157" HEIGHT="39" src="FILES/03equ38.gif" ALT="graphics/03equ38.gif"></p><br>
+<P class="docText">The <span class="docEmphasis">characteristic equation</span> of the second-order transfer function is <font face="symbol">t</font><SUP>2</SUP>s<SUP>2</SUP> + 2<font face="symbol">z</font><font face="symbol">t</font><span class="docEmphasis">s</span> + 1. We can find the roots (known as the <span class="docEmphasis">poles</span>) by using the quadratic formula</P>
+<p class="docText"><IMG BORDER="0" WIDTH="223" HEIGHT="42" src="FILES/03equ38a.gif" ALT="graphics/03equ38a.gif"></p><br>
+<P class="docText">which yields the following values for the roots:</P>
+<P><B><A NAME="ch03equ41"></A>Equation 3.39 </B></P><p class="docText"><IMG BORDER="0" WIDTH="223" HEIGHT="42" src="FILES/03equ39.gif" ALT="graphics/03equ39.gif"></p><br>
+<P class="docText">The following analysis assumes that <font face="symbol">z</font> &gt;0 and <font face="symbol">t</font> &gt; 0. This implies that the real portions of <span class="docEmphasis">p</span><SUB>1</SUB> and <span class="docEmphasis">p</span><SUB>2</SUB> are negative and, therefore, the system is stable. The three possible cases are shown in <A class="docLink" HREF="#ch03table02">Table 3-2</A>.</P>
+<A NAME="ch03lev3sec5"></A><H5 class="docSection3Title"> Step Responses</H5>
+<P class="docText">Now, we consider the dynamic response of second-order systems to step inputs (<span class="docEmphasis">u</span>(<span class="docEmphasis">s</span>) = <font face="symbol">D</font><span class="docEmphasis">u</span>/<span class="docEmphasis">s</span>),</P>
+<P><B><A NAME="ch03equ42"></A>Equation 3.40 </B></P><p class="docText"><IMG BORDER="0" WIDTH="154" HEIGHT="40" src="FILES/03equ40.gif" ALT="graphics/03equ40.gif"></p><br>
+<P class="docText">where <font face="symbol">D</font><span class="docEmphasis">u</span> represents the magnitude of the step change.</P>
+<A NAME="ch03lev4sec1"></A><H5 class="docSection4Title"> Case 1: Overdamped (<font face="symbol">z</font> &gt; 1)</H5>
+<P class="docText">For <font face="symbol">z</font> &gt; 1, the denominator polynomial, <font face="symbol">t</font><SUP>2</SUP><span class="docEmphasis">s</span><SUP>2</SUP> + 2<font face="symbol">z</font><font face="symbol">t</font><span class="docEmphasis">s</span> + 1, can be factored into the form</P>
+<p class="docText"><IMG BORDER="0" WIDTH="217" HEIGHT="19" src="FILES/03equ40a.gif" ALT="graphics/03equ40a.gif"></p>
+<br>
+<P class="docText">where the time constants are</P>
+<p class="docText"><IMG BORDER="0" WIDTH="201" HEIGHT="41" src="FILES/03equ40b.gif" ALT="graphics/03equ40b.gif"></p><br>
+<A NAME="ch03table02"></A><P><TABLE CELLSPACING="0" FRAME="hsides" RULES="none" CELLPADDING="5" WIDTH="100%"><CAPTION><h5 class="docTableTitle">Table 3-2. Characteristic Behavior of Second-Order Transfer Functions</h5></CAPTION><COLGROUP align="left" span="4"><THEAD><TR><TH class="docTableHeader" valign="bottom"><P class="docText"><span class="docEmphBoldItalic">Case</span></P></TH><TH class="docTableHeader" valign="bottom"><P class="docText"><span class="docEmphBoldItalic">Damping factor</span></P></TH><TH class="docTableHeader" valign="bottom"><P class="docText"><span class="docEmphBoldItalic">Pole location</span></P></TH><TH class="docTableHeader" valign="bottom"><P class="docText"><span class="docEmphBoldItalic">Characteristic behavior</span></P></TH></TR></THEAD><TR><TD class="docTableCell" valign="top"><P class="docText">1</P></TD><TD class="docTableCell" valign="top"><P class="docText"><font face="symbol">z</font> &gt; 1</P></TD><TD class="docTableCell" valign="top"><P class="docText">Two real, distinct roots</P></TD><TD class="docTableCell" valign="top"><P class="docText">Overdamped</P></TD></TR><TR><TD class="docTableCell" valign="top"><P class="docText">2</P></TD><TD class="docTableCell" valign="top"><P class="docText"><font face="symbol">z</font> = 1</P></TD><TD class="docTableCell" valign="top"><P class="docText">Two real, equal roots</P></TD><TD class="docTableCell" valign="top"><P class="docText">Critically damped</P></TD></TR><TR><TD class="docTableCell" valign="top"><P class="docText">3</P></TD><TD class="docTableCell" valign="top"><P class="docText"><font face="symbol">z</font> &lt; 1</P></TD><TD class="docTableCell" valign="top"><P class="docText">Two complex conjugate roots</P></TD><TD class="docTableCell" valign="top"><P class="docText">Underdamped</P></TD></TR></COLGROUP></TABLE></P>
+<P class="docText">We can derive the following solution for step responses of overdamped systems,</P>
+<P><B><A NAME="ch03equ43"></A>Equation 3.41 </B></P><p class="docText"><IMG BORDER="0" WIDTH="193" HEIGHT="44" src="FILES/03equ41.gif" ALT="graphics/03equ41.gif"></p><br>
+<P class="docText">Note that, as in the case of first-order systems, we can divide by <span class="docEmphasis">k</span><font face="symbol">D</font><span class="docEmphasis">u</span> to develop a dimensionless output. Also, the dimensionless time is <span class="docEmphasis">t</span>/<font face="symbol">t</font> and we can plot curves for dimensionless output as a function of <font face="symbol">z</font>. This is done in <A class="docLink" HREF="#ch03fig08">Figure 3-8</A>, which includes the critically damped case, as discussed next. Most chemical processes exhibit overdamped behavior.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch03fig08"></A>Figure 3-8. Step response of a second-order overdamped system.</H5><p class="docText"><IMG BORDER="0" WIDTH="450" HEIGHT="352" src="FILES/03fig08.gif" ALT="graphics/03fig08.gif"></p></CENTER>
+
+<A NAME="ch03lev4sec2"></A><H5 class="docSection4Title"> Case 2: Critically damped (<font face="symbol">z</font> = 1)</H5>
+<P class="docText">The transition between overdamped and under damped is known as critically damped. We can derive the following for the step response of a critically damped system</P>
+<P><B><A NAME="ch03equ44"></A>Equation 3.42 </B></P><p class="docText"><IMG BORDER="0" WIDTH="168" HEIGHT="41" src="FILES/03equ42.gif" ALT="graphics/03equ42.gif"></p><br>
+<P class="docText">Notice that the main difference between overdamped (or critically damped) step responses and first-order step responses is that the second-order step responses have an <span class="docEmphasis">S</span> shape with a maximum slope at an inflection point, whereas the first-order responses have their maximum slope initially.</P>
+<P class="docText">The initial behavior for a step change is really dictated by the <span class="docEmphasis">relative order</span> of the system. The relative order is the difference between the orders of the numerator and denominator polynomials in the transfer function. If the relative order is 1, then output response has a nonzero slope at the time of the step input; the step response of a system with a relative order greater than 1 has a zero slope at the time of the step input.</P>
+
+<A NAME="ch03lev4sec3"></A><H5 class="docSection4Title"> Case 3: Underdamped (<font face="symbol">z</font> &lt; 1)</H5>
+<P class="docText">For <font face="symbol">z</font> &lt; 1, we find [from Equation (<A class="docLink" HREF="#ch03equ39">3.39</A>)] that the poles are complex,</P>
+<P><B><A NAME="ch03equ45"></A>Equation 3.43a </B></P><p class="docText"><IMG BORDER="0" WIDTH="271" HEIGHT="43" src="FILES/03equ43a.gif" ALT="graphics/03equ43a.gif"></p><br>
+<P class="docText">where the real and imaginary contributions are</P>
+<P><B><A NAME="ch03equ46"></A>Equation 3.43b </B></P><p class="docText"><IMG BORDER="0" WIDTH="176" HEIGHT="43" src="FILES/03equ43b.gif" ALT="graphics/03equ43b.gif"></p><br>
+<P class="docText">We can derive the following step response for an underdamped system,</P>
+<P><B><A NAME="ch03equ47"></A>Equation 3.44a </B></P><p class="docText"><IMG BORDER="0" WIDTH="241" HEIGHT="51" src="FILES/03equ44a.gif" ALT="graphics/03equ44a.gif"></p><br>
+<P class="docText">where</P>
+<P><B><A NAME="ch03equ48"></A>Equation 3.44b </B></P><p class="docText"><IMG BORDER="0" WIDTH="232" HEIGHT="51" src="FILES/03equ44b.gif" ALT="graphics/03equ44b.gif"></p><br>
+<P class="docText">Again, dividing Equation (<A class="docLink" HREF="#ch03equ47">3.44a</A>) by <span class="docEmphasis">k</span><font face="symbol">D</font><span class="docEmphasis">u</span>, we can produce the dimensionless plot shown in <A class="docLink" HREF="#ch03fig09">Figure 3-9</A>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch03fig09"></A>Figure 3-9. Step response of a second-order underdamped system as a function of the damping factor (<font face="symbol">z</font>). Interpolate between the curves for the behavior of other damping factor values.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="390" src="FILES/03fig09.gif" ALT="graphics/03fig09.gif"></p></CENTER>
+<P class="docText">A number of insights can be obtained from <A class="docLink" HREF="#ch03fig09">Figure 3-9</A> and from an analysis of the step response equations. For <font face="symbol">z</font> &lt; 1, the ratio of the imaginary portion to the real portion of the pole [from Equation (<A class="docLink" HREF="#ch03equ39">3.39</A>)] is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="84" HEIGHT="45" src="FILES/03equ44c.gif" ALT="graphics/03equ44c.gif"></p><br>
+<P class="docText">As the imaginary/real ratio gets larger, the response becomes more oscillatory (<font face="symbol">z</font> becomes smaller). We also notice that a decreasing ratio corresponds to a larger negative value for the real portion. As the real portion becomes larger in magnitude (more negative), the response becomes faster. We use these insights to interpret pole/zero plots in <A class="docLink" HREF="0133536408_ch03lev1sec9.html#ch03lev1sec9">Section 3.9</A>.</P>
+
+<A NAME="ch03lev2sec23"></A><H4 class="docSection2Title"> Underdamped Step Response Characteristics</H4>
+<P class="docText">The following common measures of underdamped second-order step responses are shown in <A class="docLink" HREF="#ch03fig10">Figure 3-10</A>, and defined below: (1) rise time, (2) time to first peak, (3) overshoot, (4) decay ratio, and (5) period of oscillation.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch03fig10"></A>Figure 3-10. Step response characteristics of underdamped second-order processes.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="421" src="FILES/03fig10.gif" ALT="graphics/03fig10.gif"></p></CENTER>
+<P class="docText"><span class="docEmphasis">Rise time</span> is the amount of time it takes to first reach the new steady-state value. <span class="docEmphasis">Time to first peak</span> is the time required to reach the first peak. <span class="docEmphasis">Overshoot</span> is the distance between the first peak and the new steady state. This is usually expressed as the overshoot ratio, as shown in <A class="docLink" HREF="#ch03fig10">Figure 3-10</A>. <span class="docEmphasis">Decay ratio</span> is a measure of how rapidly the oscillations are decreasing. A <span class="docEmphasis">b</span>/<span class="docEmphasis">a</span> ratio of 1/4 is commonly called "quarter wave damping." <span class="docEmphasis">Period of oscillation</span> is the time between successive peaks.</P>
+<A NAME="ch03lev2sec24"></A><H4 class="docSection2Title"> Second-Order Systems with Numerator Dynamics</H4>
+<P class="docText">The previous discussion involved pure second-order systems, where the <span class="docEmphasis">relative order</span> (difference between the denominator and numerator polynomial orders) was two.</P>
+<P class="docText">Consider now a second-order system with numerator dynamics with the gain/time constant form</P>
+<P><B><A NAME="ch03equ49"></A>Equation 3.45 </B></P><p class="docText"><IMG BORDER="0" WIDTH="140" HEIGHT="42" src="FILES/03equ45.gif" ALT="graphics/03equ45.gif"></p><br>
+<P class="docText">which is relative order one. The reader should show that the pole-zero form is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="136" HEIGHT="42" src="FILES/03equ45a.gif" ALT="graphics/03equ45a.gif"></p><br>
+<P class="docText">where the parameters are</P>
+<p class="docText"><IMG BORDER="0" WIDTH="295" HEIGHT="39" src="FILES/03equ45b.gif" ALT="graphics/03equ45b.gif"></p><br>
+<P class="docText">The gain/time constant form has the following time-domain response to a step input (see Exercise 4):</P>
+<P><B><A NAME="ch03equ50"></A>Equation 3.46 </B></P><p class="docText"><IMG BORDER="0" WIDTH="292" HEIGHT="46" src="FILES/03equ46.gif" ALT="graphics/03equ46.gif"></p><br>
+<P class="docText">The reader should show that, if <font face="symbol">t</font><span class="docEmphasis"><SUB>n</SUB></span> = <font face="symbol">t</font><SUB>2</SUB>, the response is the same as a first-order process.</P>
+<A NAME="ch03lev2sec25"></A><H4 class="docSection2Title"> Example 3.6: Illustration of Numerator Dynamics</H4>
+<P class="docText">Consider the following input-output relationship:</P>
+<p class="docText"><IMG BORDER="0" WIDTH="157" HEIGHT="40" src="FILES/03equ46a.gif" ALT="graphics/03equ46a.gif"></p><br>
+<P class="docText">The unit step responses are shown in <A class="docLink" HREF="#ch03fig11">Figure 3-11</A>. Notice that negative numerator time constants (corresponding to positive zeros) yield a step response which initially decreases before increasing to the final steady state. This type of response is known as <span class="docEmphasis">inverse response</span> and causes tough challenges for process control systems. Positive zeros are often caused by two first-order transfer functions, with gains of opposite sign, acting in parallel (see Exercise 5).</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch03fig11"></A>Figure 3-11. Step responses of a second-order system with numerator dynamics.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="395" src="FILES/03fig11.gif" ALT="graphics/03fig11.gif"></p></CENTER>
+<P class="docText">Notice also that a numerator time constant that is greater than the denominator time constant causes overshoot before settling to the final steady state. Also notice that the inverse response becomes "deeper" as the numerator zero (–1/<font face="symbol">t</font><span class="docEmphasis"><SUB>n</SUB></span>) approaches a value of 0 from the positive side.</P>
+<a href="0133536408_10971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch03lev1sec6.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch03lev1sec8.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

@@ -1,0 +1,52 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="M15.2 Flowmeters"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_art15lev1sec1.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_art15lev1sec3.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="art15lev1sec2"></A><H3 class="docSection1Title">M15.2 Flowmeters</H3>
+<P class="docText">An orifice plate meter is the most common flow measurement device. A constricting orifice is placed between two flanges, as shown in <A class="docLink" HREF="#art15m15fig04">Figure M15-4</A>. As the fluid "speeds up" through the orifice, the pressure drops. The volumetric flow rate is related to the pressure drop across the orifice. As shown in the motivating example, a DP cell is typically used to measure the pressure drop; here, we use a manometer for illustrative purposes.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="art15m15fig04"></A>Figure M15-4. Orifice meter.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="243" src="FILES/m15fig04.gif" ALT="graphics/m15fig04.gif"></p></CENTER>
+<P class="docText">The equation for flow through an orifice is (<A class="docLink" HREF="0133536408_art15lev1sec6.html#art15biblio01entry01">McCabe and Smith, 1976</A>)</P>
+<P><B><A NAME="art15equ05"></A>Equation M15.5 </B></P><p class="docText"><IMG BORDER="0" WIDTH="164" HEIGHT="48" src="FILES/m15equ05.gif" ALT="graphics/m15equ05.gif"></p><br>
+<P class="docText">where <span class="docEmphasis">v<SUB>o</SUB></span> is the average velocity through the orifice;</P>
+<BLOCKQUOTE><P><P class="docList"><font face="symbol">b</font> is the ratio of orifice to pipe diameters, <span class="docEmphasis">D<SUB>o</SUB></span>/<span class="docEmphasis">D<SUB>p</SUB></span>;</P></P><P><P class="docList"><span class="docEmphasis">g<SUB>c</SUB></span> is Newton's law gravitational constant, 32.174 ft lb<SUB>m</SUB>/lb<SUB>f</SUB>s<SUP>2</SUP>; <font face="symbol">r</font> is the fluid density;</P></P><P><P class="docList"><span class="docEmphasis">C<SUB>o</SUB></span> is the orifice coefficient (typically 0.61); and</P></P><P><P class="docList"><span class="docEmphasis">P</span><SUB>1</SUB>,<span class="docEmphasis">P</span><SUB>2</SUB> are the upstream and downstream pressures.</P></P></BLOCKQUOTE>
+<P class="docText">The volumetric flow rate, <span class="docEmphasis">F</span>, is</P>
+<P><B><A NAME="art15equ06"></A>Equation M15.6 </B></P><p class="docText"><IMG BORDER="0" WIDTH="76" HEIGHT="34" src="FILES/m15equ06.gif" ALT="graphics/m15equ06.gif"></p><br>
+<P class="docText">so the volumetric flow rate [combining Equations (<A class="docLink" HREF="#art15equ05">M15.5</A>) and (<A class="docLink" HREF="#art15equ06">M15.6</A>)] is</P>
+<P><B><A NAME="art15equ07"></A>Equation M15.7 </B></P><p class="docText"><IMG BORDER="0" WIDTH="194" HEIGHT="47" src="FILES/m15equ07.gif" ALT="graphics/m15equ07.gif"></p><br>
+<P class="docText">which can be written</P>
+<P><B><A NAME="art15equ08"></A>Equation M15.8 </B></P><p class="docText"><IMG BORDER="0" WIDTH="88" HEIGHT="21" src="FILES/m15equ08.gif" ALT="graphics/m15equ08.gif"></p><br>
+<P class="docText">where</P>
+<P><B><A NAME="art15equ09"></A>Equation M15.9 </B></P><p class="docText"><IMG BORDER="0" WIDTH="151" HEIGHT="43" src="FILES/m15equ09.gif" ALT="graphics/m15equ09.gif"></p><br>
+<P class="docText">Notice that <span class="docEmphasis">C</span><SUB>1</SUB> will be a constant for a given system. Notice also that an orifice plate has a nonlinear input-output relationship. Consider the input to be the volumetric flow rate. The output is the differential pressure. After rearranging Equation (<A class="docLink" HREF="#art15equ08">M15.8</A>) we find Equation (<A class="docLink" HREF="#art15equ10">M15.10)</A> and notice that the pressure drop is a function of the square of the flow rate,</P>
+<P><B><A NAME="art15equ10"></A>Equation M15.10 </B></P><p class="docText"><IMG BORDER="0" WIDTH="75" HEIGHT="38" src="FILES/m15equ10.gif" ALT="graphics/m15equ10.gif"></p><br>
+<P class="docText">This means that the orifice plate gain (pressure drop change/flow rate change) increases with increasing flow. The orifice plate gain is</P>
+<P><B><A NAME="art15equ11"></A>Equation M15.11 </B></P><p class="docText"><IMG BORDER="0" WIDTH="126" HEIGHT="39" src="FILES/m15equ11.gif" ALT="graphics/m15equ11.gif"></p><br>
+<P class="docText">and we see that if the flow rate doubles, then the orifice plate gain doubles. If a controller is tuned to obtain good control when the flow rate is low, there is a chance that the control loop will become unstable when the flow rate is high, because of the increase in overall control loop gain, which is due to the increasing orifice plate gain. A common way of handling this varying gain problem is to use a <span class="docEmphasis">square root extractor</span>.</P>
+<A NAME="art15lev2sec7"></A><H4 class="docSection2Title"> Square Root Extractor</H4>
+<P class="docText">Assume that the input to a square root extractor is the pressure drop signal. The output is a 4- to 20-mA signal that is proportional to the square root of the pressure drop. Let <span class="docEmphasis">P</span><SUB>op</SUB> represent the signal entering the square root extractor and <span class="docEmphasis">I</span> represent the signal out of the square root extractor. The input-output relationship is then</P>
+<P><B><A NAME="art15equ12"></A>Equation M15.12 </B></P><p class="docText"><IMG BORDER="0" WIDTH="108" HEIGHT="21" src="FILES/m15equ12.gif" ALT="graphics/m15equ12.gif"></p><br>
+<P class="docText">where <span class="docEmphasis">C</span><SUB>2</SUB> is a constant. The gain of the square root extractor is</P>
+<P><B><A NAME="art15equ13"></A>Equation M15.13 </B></P><p class="docText"><IMG BORDER="0" WIDTH="182" HEIGHT="38" src="FILES/m15equ13.gif" ALT="graphics/m15equ13.gif"></p><br>
+<P class="docText">Notice that the square root extractor gain is inversely proportional to the square root of the pressure drop. The purpose of a square root extractor can be seen by combining Equations (<A class="docLink" HREF="#art15equ12">M15.12</A>) and (<A class="docLink" HREF="#art15equ10">M15.10</A>) to yield</P>
+<P><B><A NAME="art15equ14"></A>Equation M15.14 </B></P><p class="docText"><IMG BORDER="0" WIDTH="228" HEIGHT="44" src="FILES/m15equ14.gif" ALT="graphics/m15equ14.gif"></p><br>
+<P class="docText">The gain between flow rate and the signal out of the square root extractor is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="49" HEIGHT="33" src="FILES/m15equ14a.gif" ALT="graphics/m15equ14a.gif"></p><br>
+<P class="docText">where <IMG BORDER="0" WIDTH="78" HEIGHT="21" src="FILES/m15inequ01.gif" ALT="graphics/m15inequ01.gif">. That is, we have a signal that is now directly proportional to the flow rate.</P>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_art15lev1sec1.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_art15lev1sec3.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

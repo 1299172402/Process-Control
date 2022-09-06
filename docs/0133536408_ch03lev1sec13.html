@@ -1,0 +1,63 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="3.13 M'ATLAB' and S'IMULINK'"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch03lev1sec12.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch03lev1sec14.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch03lev1sec13"></A><H3 class="docSection1Title">3.13 M<span class="docEmphSmaller">ATLAB</span> and S<span class="docEmphSmaller">IMULINK</span></H3>
+<P class="docText">M<span class="docEmphSmaller">ATLAB</span> and S<span class="docEmphSmaller">IMULINK</span> are ideal for analyzing and simulating dynamic behavior. The Control Toolbox uses LTI (linear, time invariant) <span class="docEmphasis">objects</span> to represent dynamic models. These objects can be state space or transfer function models; details on how to use these are presented in <A class="docLink" HREF="0133536408_art04.html#art04">Module 4</A>.</P>
+<P class="docText">Here we first present some useful M<span class="docEmphSmaller">ATLAB</span> functions not covered in other modules.</P>
+<A NAME="ch03lev2sec29"></A><H4 class="docSection2Title"> <TT>conv</TT> (Convolution) and <TT>roots</TT></H4>
+<P class="docText">Often it is necessary to multiply polynomials in <span class="docEmphasis">s</span> together. Although the following multiplication is quite simple: (5<span class="docEmphasis">s</span> + 1)(3<span class="docEmphasis">s</span> + 1) = 15<span class="docEmphasis">s</span><SUP>2</SUP> + 8<span class="docEmphasis">s</span> + 1, a more complex multiplication, such as (2<span class="docEmphasis">s</span><SUP>2</SUP> + 1.5<span class="docEmphasis">s</span> + 1)(3<span class="docEmphasis">s</span><SUP>3</SUP> + 8<span class="docEmphasis">s</span><SUP>2</SUP> + 4<span class="docEmphasis">s</span> + 1) could be quite time consuming. The following <TT>conv</TT> (convolve) command makes this straightforward. Also, the roots of the resulting polynomial are easily calculated using the <TT>roots</TT> command.</P>
+<pre>
+
+</pre><pre>
+&#187; g = conv([2 1.5 1],[3 8 4 1])
+g =
+ 6.0000 20.5000 23.0000 16.0000 5.5000 1.0000
+&#187; p = roots(g)
+p =
+ -2.1095
+ -0.3750 + 0.5995i
+ -0.3750 - 0.5995i
+ -0.2786 + 0.2836i
+ -0.2786 - 0.2836i
+</pre>
+<A NAME="ch03lev2sec30"></A><H4 class="docSection2Title"> <TT>step</TT></H4>
+<P class="docText">First, define an object, such one of the transfer functions in <A class="docLink" HREF="0133536408_ch03lev1sec7.html#ch03lev2sec25">Example 3.6</A>.</P>
+<pre>
+
+</pre><pre>
+&#187; num = [-10 1]; den = [45 18 1];
+&#187; sysc = tf(num,den)
+
+Transfer function:
+ -10 s + 1
+-----------------
+45 s^2 + 18 s + 1
+</pre>
+<P class="docText">then plot the step response (use <TT>help step</TT> to view other options)</P>
+<pre>
+
+</pre><pre>
+&#187; step(sysc)
+</pre>
+<P class="docText">A number of other useful functions, such as <TT>pole</TT> and <TT>tzero</TT> are shown in <A class="docLink" HREF="0133536408_art04.html#art04">Module 4</A>.</P>
+<A NAME="ch03lev2sec31"></A><H4 class="docSection2Title"> Simulink</H4>
+<P class="docText">It is highly recommended that you interactively work through the initial sections of <A class="docLink" HREF="0133536408_art02.html#art02">Module 2</A> to understand how S<span class="docEmphSmaller">IMULINK</span> can be used to simulate dynamic systems.</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch03lev1sec12.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch03lev1sec14.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

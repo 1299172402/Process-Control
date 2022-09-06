@@ -1,0 +1,55 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="14.6 Decoupling"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch14lev1sec5.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch14lev1sec7.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch14lev1sec6"></A><H3 class="docSection1Title">14.6 Decoupling</H3>
+<P class="docText">We have seen the problems with control-loop interaction; these occur because a manipulated input affects more than one controlled output. One approach to handling this problem is known as <span class="docEmphasis">decoupling</span>. The idea is to develop "synthetic" manipulated inputs that affect only one process output each. This approach is illustrated in <A class="docLink" HREF="#ch14fig09">Figure 14-9</A>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch14fig09"></A>Figure 14-9. Decoupling control strategy—synthetic inputs and process outputs.</H5><p class="docText"><IMG BORDER="0" WIDTH="450" HEIGHT="425" src="FILES/14fig09.gif" ALT="graphics/14fig09.gif"></p></CENTER>
+<P class="docText">The relationship between the synthetic input vector and the process output vector is</P>
+<P><B><A NAME="ch14equ21"></A>Equation 14.21 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="122" HEIGHT="21" src="FILES/14equ21.gif" ALT="graphics/14equ21.gif"></p><br>
+<P class="docText">For a two input–two output process,</P>
+<P><B><A NAME="ch14equ22"></A>Equation 14.22 </B></P><p class="docText"><IMG BORDER="0" WIDTH="154" HEIGHT="41" src="FILES/14equ22.gif" ALT="graphics/14equ22.gif"></p><br>
+<P class="docText">where <span class="docEmphasis">G</span><SUB>p</SUB>(<span class="docEmphasis">s</span>)<span class="docEmphasis">D</span>(<span class="docEmphasis">s</span>) is a 2 x 2 transfer function matrix. There are a number of possible choices for the "target" <span class="docEmphasis">G</span><SUB>p</SUB>(<span class="docEmphasis">s</span>)<span class="docEmphasis">D</span>(<span class="docEmphasis">s</span>) matrix. Two common ones lead to ideal decoupling and simplified decoupling.</P>
+<A NAME="ch14lev2sec10"></A><H4 class="docSection2Title"> Ideal Decoupling</H4>
+<P class="docText">One possible choice for <span class="docEmphasis">G</span><SUB>p</SUB>(<span class="docEmphasis">s</span>)<span class="docEmphasis">D</span>(<span class="docEmphasis">s</span>) is</P>
+<P><B><A NAME="ch14equ23"></A>Equation 14.23 </B></P><p class="docText"><IMG BORDER="0" WIDTH="166" HEIGHT="43" src="FILES/14equ23.gif" ALT="graphics/14equ23.gif"></p><br>
+<P class="docText">Solving for <span class="docEmphasis">D</span>(<span class="docEmphasis">s</span>), we find</P>
+<P><B><A NAME="ch14equ24"></A>Equation 14.24 </B></P><p class="docText"><IMG BORDER="0" WIDTH="169" HEIGHT="42" src="FILES/14equ24.gif" ALT="graphics/14equ24.gif"></p><br>
+<P class="docText">where we use the (~) notation to make it clear that these calculations are performed based on a process model. The relationship between the synthetic inputs and process outputs, <span class="docEmphasis">y</span>(<span class="docEmphasis">s</span>) = <span class="docEmphasis">G<SUB>P</SUB></span>(<span class="docEmphasis">s</span>)<span class="docEmphasis">D</span>(<span class="docEmphasis">s</span>)<span class="docEmphasis">u<SUP>*</SUP></span>(<span class="docEmphasis">s</span>), that results is</P>
+<P><B><A NAME="ch14equ25"></A>Equation 14.25 </B></P><p class="docText"><IMG BORDER="0" WIDTH="188" HEIGHT="44" src="FILES/14equ25.gif" ALT="graphics/14equ25.gif"></p><br>
+<P class="docText">and we see that each synthetic input affects only one process output (assuming a perfect model).</P>
+<p class="docText"><IMG BORDER="0" WIDTH="108" HEIGHT="46" src="FILES/14equ25a.gif" ALT="graphics/14equ25a.gif"></p><br>
+<P class="docText">The main advantage is that independent SISO tuning parameters can be used for each control loop. A major disadvantage is that the resulting decoupler is the inverse of the process transfer function matrix. There are numerous problems with this approach, including the fact that the decoupler will be unstable if there are RHP transmission zeros associated with the process transfer function matrix. Also, this type of decoupler is known to be extremely sensitive to model error.</P>
+<A NAME="ch14lev2sec11"></A><H4 class="docSection2Title"> Simplified Decoupling</H4>
+<P class="docText">An alternative approach, known as simplified decoupling, is shown for a 2 x 2 example in <A class="docLink" HREF="#ch14fig10">Figure 14-10</A>. Here, the decoupling matrix is restricted to the form</P>
+<P><B><A NAME="ch14equ26"></A>Equation 14.26 </B></P><p class="docText"><IMG BORDER="0" WIDTH="133" HEIGHT="41" src="FILES/14equ26.gif" ALT="graphics/14equ26.gif"></p><br>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch14fig10"></A>Figure 14-10. Simplified decoupling control strategy—synthetic inputs and process outputs.</H5><p class="docText"><IMG BORDER="0" WIDTH="475" HEIGHT="313" src="FILES/14fig10.gif" ALT="graphics/14fig10.gif"></p></CENTER>
+<P class="docText">Here, we specify a decoupled response and the decoupler with the structure in Equation (<A class="docLink" HREF="#ch14equ26">14.26</A>),</P>
+<P><B><A NAME="ch14equ27"></A>Equation 14.27 </B></P><p class="docText"><IMG BORDER="0" WIDTH="291" HEIGHT="94" src="FILES/14equ27.gif" ALT="graphics/14equ27.gif"></p><br>
+<P class="docText">and we can solve four equations in four unknowns to find</P>
+<P><B><A NAME="ch14equ28"></A>Equation 14.28 </B></P><p class="docText"><IMG BORDER="0" WIDTH="170" HEIGHT="166" src="FILES/14equ28.gif" ALT="graphics/14equ28.gif"></p><br>
+<P class="docText">Notice that the decoupling elements (<span class="docEmphasis">d</span><SUB>12</SUB> and <span class="docEmphasis">d</span><SUB>21</SUB>) are the same as the feed-forward control design presented in <A class="docLink" HREF="0133536408_ch10.html#ch10">Chapter 10</A>. The effect of the synthetic inputs are being "fed-forward" to minimize control loop interaction. Similar to feed-forward control, some factorization of the decoupling elements must be performed to make certain that they are stable and physically realizable.</P>
+<P class="docText">The feedback control diagram for simplified decoupling is shown in <A class="docLink" HREF="#ch14fig11">Figure 14-11</A>. Whether ideal or simplified decoupling is being implemented, the result is a true multivariable strategy, as shown in <A class="docLink" HREF="#ch14fig12">Figure 14-12</A>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch14fig11"></A>Figure 14-11. Feedback control using simplified decoupling.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="304" src="FILES/14fig11.gif" ALT="graphics/14fig11.gif"></p></CENTER>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch14fig12"></A>Figure 14-12. Illustration of multivariable control using decoupling.</H5><p class="docText"><IMG BORDER="0" WIDTH="450" HEIGHT="231" src="FILES/14fig12.gif" ALT="graphics/14fig12.gif"></p></CENTER>
+<A NAME="ch14lev2sec12"></A><H4 class="docSection2Title"> Static Decoupling</H4>
+<P class="docText">In practice, static decoupling (based on steady-state gains) is used much more often than dynamic decoupling, since the dynamic version may not be physically realizable, or the dynamic parameters may be too uncertain. In this case, simply set <span class="docEmphasis">s</span> = 0 in the decoupling equations.</P>
+<a href="0133536408_10971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch14lev1sec5.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch14lev1sec7.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

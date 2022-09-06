@@ -1,0 +1,100 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="2.5 Material and Energy Balances"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch02lev1sec4.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch02lev1sec6.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch02lev1sec5"></A><H3 class="docSection1Title">2.5 Material and Energy Balances</H3>
+<P class="docText"><A class="docLink" HREF="0133536408_ch02lev1sec3.html#ch02lev1sec3">Section 2.3</A> covered models which consist of material balances only. These are useful if thermal effects are not important, where system properties, reaction rates, etc. do not depend on temperature, or if the system is truly isothermal (constant temperature). Many chemical processes have important thermal effects, so it is necessary to develop material and energy balance models. One key is that a basis must always be selected when evaluating an intensive property such as enthalpy.</P>
+<A NAME="ch02lev2sec14"></A><H4 class="docSection2Title"> Review of Thermodynamics</H4>
+<P class="docText">Developing correct energy balance equations is not trivial and the chemical engineering literature contains many incorrect derivations. <A class="docLink" HREF="0133536408_ch05.html#ch05">Chapter 5</A> of the book by <A class="docLink" HREF="0133536408_ch02lev1sec9.html#ch02biblio01entry02">Denn (1986)</A> points out numerous examples where incorrect energy balances were used to develop process models.</P>
+<P class="docText">The total energy (<span class="docEmphasis">TE</span>) of a system consists of internal (<span class="docEmphasis">U</span>), kinetic (<span class="docEmphasis">KE</span>), and potential energy (<span class="docEmphasis">PE</span>),</P>
+<P><B><A NAME="ch02equ48"></A>Equation 2.45 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="120" HEIGHT="16" src="FILES/02equ45.gif" ALT="graphics/02equ45.gif"></p><br>
+<P class="docText">where the kinetic and potential energy terms are</P>
+<p class="docText"><IMG BORDER="0" WIDTH="72" HEIGHT="60" src="FILES/02equ45a.gif" ALT="graphics/02equ45a.gif"></p><br>
+<P class="docText">For most chemical processes where there are thermal effects, the kinetic and potential energy terms can be neglected, because their contribution is generally at least an order of magnitude less than that of the internal energy term.</P>
+<P class="docText">When dealing with flowing systems, we usually work with enthalpy. Total enthalpy is defined as</P>
+<P><B><A NAME="ch02equ49"></A>Equation 2.46 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="78" HEIGHT="18" src="FILES/02equ46.gif" ALT="graphics/02equ46.gif"></p><br>
+<P class="docText">The heat capacity is defined as the partial derivative of enthalpy with respect to temperature, at constant pressure. The heat capacity, on a unit mass basis, is</P>
+<P><B><A NAME="ch02equ50"></A>Equation 2.47 </B></P><p class="docText"><IMG BORDER="0" WIDTH="62" HEIGHT="43" src="FILES/02equ47.gif" ALT="graphics/02equ47.gif"></p><br>
+<P class="docText">where the overbar indicates that the enthalpy is on a unit mass basis. We make use of this relationship in the following example.</P>
+<P class="docText">The goal of the following example is severalfold:</P>
+<UL><LI><P class="docList">develop a model consisting of both material and energy balances</P></LI><LI><P class="docList">illustrate the steady-state effect of the input on the output</P></LI><LI><P class="docList">illustrate the effect of process "size" (magnitude of flow rate, for example)</P></LI><LI><P class="docList">illustrate dynamic behavior</P></LI></UL>
+<A NAME="ch02lev2sec15"></A><H4 class="docSection2Title"> Example 2.3: Heated Mixing Tank</H4>
+<P class="docText">Consider a perfectly mixed stirred-tank heater, with a single feed stream and a single product stream, as shown below. Assuming that the flow rate and temperature of the inlet stream can vary, that the tank is perfectly insulated, and that the rate of heat added per unit time (<span class="docEmphasis">Q</span>) can vary, develop a model (<A class="docLink" HREF="#ch02fig07">Figure 2-7</A>) to find the tank liquid temperature as a function of time.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch02fig07"></A>Figure 2-7. Stirred-tank heater.</H5><p class="docText"><IMG BORDER="0" WIDTH="450" HEIGHT="257" src="FILES/02fig07.gif" ALT="graphics/02fig07.gif"></p></CENTER>
+<A NAME="ch02lev3sec3"></A><H5 class="docSection3Title"> Material Balance</H5>
+<p class="docText"><IMG BORDER="0" WIDTH="98" HEIGHT="37" src="FILES/02equ47a.gif" ALT="graphics/02equ47a.gif"></p><br>
+<P class="docText">Neglecting changes in density due to temperature, we find</P>
+<P><B><A NAME="ch02equ51"></A>Equation 2.48 </B></P><p class="docText"><IMG BORDER="0" WIDTH="73" HEIGHT="33" src="FILES/02equ48.gif" ALT="graphics/02equ48.gif"></p><br>
+<A NAME="ch02lev3sec4"></A><H5 class="docSection3Title"> Energy Balance</H5>
+<P class="docText">Here we neglect the kinetic and potential energy contributions,</P>
+<P><B><A NAME="ch02equ52"></A>Equation 2.49 </B></P><p class="docText"><IMG BORDER="0" WIDTH="172" HEIGHT="36" src="FILES/02equ49.gif" ALT="graphics/02equ49.gif"></p><br>
+<P class="docText">We write the total work done on the system as a combination of the shaft work (<span class="docEmphasis">W<SUB>S</SUB></span>) and the energy added to the system to get the fluid into the tank and the energy that the system performs on the surroundings to force the fluid out.</P>
+<P><B><A NAME="ch02equ53"></A>Equation 2.50 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="127" HEIGHT="20" src="FILES/02equ50.gif" ALT="graphics/02equ50.gif"></p><br>
+<P class="docText">This allows us to write Equation (<A class="docLink" HREF="#ch02equ52">2.49</A>) as</P>
+<P><B><A NAME="ch02equ54"></A>Equation 2.51 </B></P><p class="docText"><IMG BORDER="0" WIDTH="252" HEIGHT="44" src="FILES/02equ51.gif" ALT="graphics/02equ51.gif"></p><br>
+<P class="docText">and since <span class="docEmphasis">H</span> = <span class="docEmphasis">U</span> + <span class="docEmphasis">pV</span>, and <IMG BORDER="0" WIDTH="137" HEIGHT="23" src="FILES/02inequ02.gif" ALT="graphics/02inequ02.gif">, we can rewrite Equation (<A class="docLink" HREF="#ch02equ54">2.51</A>) as</P>
+<p class="docText"><IMG BORDER="0" WIDTH="210" HEIGHT="37" src="FILES/02equ51a.gif" ALT="graphics/02equ51a.gif"></p><br>
+<P class="docText">Neglecting pressure*volume changes, we find</P>
+<P><B><A NAME="ch02equ55"></A>Equation 2.52 </B></P><p class="docText"><IMG BORDER="0" WIDTH="171" HEIGHT="33" src="FILES/02equ52.gif" ALT="graphics/02equ52.gif"></p><br>
+<P class="docText">We must remember the assumptions that went into the development of Equation (<A class="docLink" HREF="#ch02equ55">2.52</A>).</P>
+<UL><LI><P class="docList">The kinetic and potential energy effects were neglected.</P></LI><LI><P class="docList">The change in the <span class="docEmphasis">pV</span> term was neglected.</P></LI></UL>
+<P class="docText">The total enthalpy term is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="59" HEIGHT="21" src="FILES/02equ52a.gif" ALT="graphics/02equ52a.gif"></p><br>
+<P class="docText">and assuming no phase change, we select an arbitrary reference temperature (<span class="docEmphasis">T</span><SUB>ref</SUB>) for enthalpy</P>
+<P><B><A NAME="ch02equ56"></A>Equation 2.53 </B></P><p class="docText"><IMG BORDER="0" WIDTH="91" HEIGHT="49" src="FILES/02equ53.gif" ALT="graphics/02equ53.gif"></p><br>
+<P class="docText">Often we assume that the heat capacity is constant, or calculated at an average temperature, so</P>
+<P><B><A NAME="ch02equ57"></A>Equation 2.54a </B></P><p class="docText"><IMG BORDER="0" WIDTH="114" HEIGHT="25" src="FILES/02equ54a.gif" ALT="graphics/02equ54a.gif"></p><br>
+<P><B><A NAME="ch02equ58"></A>Equation 2.54b </B></P><p class="docText"><IMG BORDER="0" WIDTH="120" HEIGHT="25" src="FILES/02equ54b.gif" ALT="graphics/02equ54b.gif"></p><br>
+<P class="docText">We now write the energy balance (2.52) in the following fashion,</P>
+<p class="docText"><IMG BORDER="0" WIDTH="346" HEIGHT="43" src="FILES/02equ54c.gif" ALT="graphics/02equ54c.gif"></p><br>
+<P class="docText">Expanding the derivative term and assuming that the density is constant, we have</P>
+<p class="docText"><IMG BORDER="0" WIDTH="455" HEIGHT="44" src="FILES/02equ54d.gif" ALT="graphics/02equ54d.gif"></p><br>
+<P class="docText">or from Equation (<A class="docLink" HREF="#ch02equ51">2.48</A>)</P>
+<p class="docText"><IMG BORDER="0" WIDTH="477" HEIGHT="46" src="FILES/02equ54e.gif" ALT="graphics/02equ54e.gif"></p><br>
+<P class="docText">Canceling common terms gives</P>
+<P><B><A NAME="ch02equ59"></A>Equation 2.55 </B></P><p class="docText"><IMG BORDER="0" WIDTH="242" HEIGHT="44" src="FILES/02equ55.gif" ALT="graphics/02equ55.gif"></p><br>
+<P class="docText">but <span class="docEmphasis">T</span><SUB>ref</SUB> is a constant, so <span class="docEmphasis">d</span>(<span class="docEmphasis">T</span> - <span class="docEmphasis">T<SUB>ref</SUB></span>)/<span class="docEmphasis">dt</span> = <span class="docEmphasis">dT</span>/<span class="docEmphasis">dt</span>. Also, neglecting <span class="docEmphasis">W<SUB>S</SUB></span> (which is significant only for very viscous fluids), we can write</P>
+<P><B><A NAME="ch02equ60"></A>Equation 2.56 </B></P><p class="docText"><IMG BORDER="0" WIDTH="171" HEIGHT="36" src="FILES/02equ56.gif" ALT="graphics/02equ56.gif"></p><br>
+<P class="docText">which yields the two modeling equations</P>
+<P><B><A NAME="ch02equ61"></A>Equation 2.57 </B></P><p class="docText"><IMG BORDER="0" WIDTH="74" HEIGHT="35" src="FILES/02equ57.gif" ALT="graphics/02equ57.gif"></p><br>
+<P><B><A NAME="ch02equ62"></A>Equation 2.58 </B></P><p class="docText"><IMG BORDER="0" WIDTH="145" HEIGHT="42" src="FILES/02equ58.gif" ALT="graphics/02equ58.gif"></p><br>
+<P class="docText">In order to solve this problem, we must specify the parameters <font face="symbol">r</font> and <span class="docEmphasis">c<SUB>p</SUB></span>, the inputs <span class="docEmphasis">F<SUB>i</SUB></span>, <span class="docEmphasis">F</span>, <span class="docEmphasis">Q</span>, and <span class="docEmphasis">T<SUB>i</SUB></span> (as a function of time), and the initial conditions <span class="docEmphasis">V</span>(0) and <span class="docEmphasis">T</span>(0).</P>
+<A NAME="ch02lev3sec5"></A><H5 class="docSection3Title"> Steady-State Behavior and the Effect of Scale (Size)</H5>
+<P class="docText">The steady-state solution can be found by setting the derivative terms in Equations (<A class="docLink" HREF="#ch02equ61">2.57</A>) and (<A class="docLink" HREF="#ch02equ62">2.58</A>) to 0. The resulting relationship between the manipulated power and the outlet temperature is</P>
+<P><B><A NAME="ch02equ63"></A>Equation 2.59 </B></P><p class="docText"><IMG BORDER="0" WIDTH="95" HEIGHT="39" src="FILES/02equ59.gif" ALT="graphics/02equ59.gif"></p><br>
+<P class="docText">where the subscript <span class="docEmphasis">s</span> is used to indicate a steady-state value. Notice that for a given steady-state flow rate, the relationship between heater power and outlet temperature is linear. Also, the volume of the vessel has no effect on the steady-state temperature (volume has a solely dynamic effect).</P>
+<P class="docText">Here we consider a stream of water entering a stirred-tank heater at 20&#176;C, at three possible flow rates: 1 liter/minute (espresso machine), 10 liters/minute (household shower), and 100 liters/minute (small car wash). The outlet temperature as a function of heater power [Equation (<A class="docLink" HREF="#ch02equ63">2.59</A>)] is plotted in <A class="docLink" HREF="#ch02fig08">Figure 2-8</A> for each of the three cases. As expected from Equation (<A class="docLink" HREF="#ch02equ63">2.59</A>), the curves are linear. The lower flow rate operation has a high sensitivity (slope) of temperature to power, while the higher flow rate operation has a low sensitivity. This makes physical sense, because a given change in power will have a much larger affect on a low flow rate than a high flow rate stream.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch02fig08"></A>Figure 2-8. Outlet temperature as a function of heater power. The slope is the sensitivity (also known as the "gain") of the output with respect to the input.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="400" src="FILES/02fig08.gif" ALT="graphics/02fig08.gif"></p></CENTER>
+<P class="docText">This sensitivity is also known as the process gain and is defined as the partial derivative of the output with respect to the input, evaluated at steady state.</P>
+<P><B><A NAME="ch02equ64"></A>Equation 2.60 </B></P><p class="docText"><IMG BORDER="0" WIDTH="80" HEIGHT="44" src="FILES/02equ60.gif" ALT="graphics/02equ60.gif"></p><br>
+<P class="docText">It is clear from Equation (<A class="docLink" HREF="#ch02equ64">2.60</A>) that larger flow rates will have smaller gains (slopes or sensitivities). It is often useful to work with scaled variables. For example, if a scaled steady-state input is defined as</P>
+<P><B><A NAME="ch02equ65"></A>Equation 2.61 </B></P><p class="docText"><IMG BORDER="0" WIDTH="89" HEIGHT="37" src="FILES/02equ61.gif" ALT="graphics/02equ61.gif"></p><br>
+<P class="docText">then all three input flow rates have the same steady-state sensitivity of the output to the scaled input. This is shown in <A class="docLink" HREF="#ch02fig09">Figure 2-9</A> and the following equation:</P>
+<P><B><A NAME="ch02equ66"></A>Equation 2.62 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="101" HEIGHT="20" src="FILES/02equ62.gif" ALT="graphics/02equ62.gif"></p><br>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch02fig09"></A>Figure 2-9. Outlet temperature as a function of scaled heater power.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="405" src="FILES/02fig09.gif" ALT="graphics/02fig09.gif"></p></CENTER>
+<P class="docText">The discussion thus far has centered on the steady-state behavior of stirred-tank heaters, and we found that the volume had no effect. The volume has a major impact, however, on the dynamic behavior of a stirred-tank heater.</P>
+<A NAME="ch02lev3sec6"></A><H5 class="docSection3Title"> Dynamic Behavior</H5>
+<P class="docText">Volume has a considerable effect on the dynamic behavior of this process. The response of the temperature to a step change in the scaled heat input is shown in <A class="docLink" HREF="#ch02fig10">Figure 2-10</A>, as a function of the residence time (<span class="docEmphasis">V</span>/<span class="docEmphasis">F</span>). As expected, longer residence times have a slower response time than shorter residence-time systems. These curves were obtained by integrating Equation (<A class="docLink" HREF="#ch02equ62">2.58</A>) for the three different residence times (with <span class="docEmphasis">V</span> assumed constant). The initial steady-state values are <span class="docEmphasis">T</span> = <span class="docEmphasis">T<SUB>i</SUB></span> = 20&#176;C and <span class="docEmphasis">Q</span><SUP>scaled</SUP> = 0. At <span class="docEmphasis">t</span> = 0, <span class="docEmphasis">Q</span><SUP>scaled</SUP> is stepped from 0&#176; to 1&#176;C.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch02fig10"></A>Figure 2-10. Response of temperature to step change in scaled heat addition rate.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="394" src="FILES/02fig10.gif" ALT="graphics/02fig10.gif"></p></CENTER>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch02lev1sec4.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch02lev1sec6.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

@@ -1,0 +1,79 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="3.2 Linear State Space Models"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch03lev1sec1.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch03lev1sec3.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch03lev1sec2"></A><H3 class="docSection1Title">3.2 Linear State Space Models</H3>
+<P class="docText">In <A class="docLink" HREF="0133536408_ch02.html#ch02">Chapter 2</A> we developed fundamental models, which were normally nonlinear in nature. We then developed state space models that were based on linearizing the fundamental models at a steady-state solution. This led to the notion of a <span class="docEmphasis">perturbation</span> or <span class="docEmphasis">deviation</span> variable, which is simply the perturbation of a variable from its steady-state value.</P>
+<P class="docText">State space models have the following form, where the states <span class="docEmphasis">(x</span>), inputs (<span class="docEmphasis">u</span>), and outputs (<span class="docEmphasis">y</span>) are all perturbation or deviation variables</P>
+<P><B><A NAME="ch03equ01"></A>Equation 3.1 </B></P><p class="docText"><IMG BORDER="0" WIDTH="284" HEIGHT="131" src="FILES/03equ01.gif" ALT="graphics/03equ01.gif"></p><br>
+<P class="docText">Recall that in matrix notation, the first subscript refers to the row and the second subscript refers to the column. When matrices multiply vectors, each row corresponds to a particular output of the multiplication, while the column corresponds to a particular input of the operation. Consider the <span class="docEmphasis">C</span> matrix, which relates the states to the outputs. Element <span class="docEmphasis">c<SUB>ij</SUB></span> relates the effect of state <span class="docEmphasis">x<SUB>j</SUB></span> on output <span class="docEmphasis">y<SUB>i</SUB></span>.</P>
+<P class="docText">The shorthand notation for Equation (<A class="docLink" HREF="#ch03equ01">3.1</A>) is</P>
+<P><B><A NAME="ch03equ02"></A>Equation 3.2 </B></P><p class="docText"><IMG BORDER="0" WIDTH="81" HEIGHT="35" src="FILES/03equ02.gif" ALT="graphics/03equ02.gif"></p><br>
+<P class="docText">It is important to always check for dimensional consistency in matrix operations. In a matrix-vector operation <span class="docEmphasis">y</span> = <span class="docEmphasis">Cx</span>, the number of rows in <span class="docEmphasis">C</span> must be equal to the number of elements in <span class="docEmphasis">y</span>. Also, the number of columns in <span class="docEmphasis">C</span> must be equal to the number of elements in <span class="docEmphasis">x</span>.</P>
+<A NAME="ch03lev2sec1"></A><H4 class="docSection2Title"> Stability</H4>
+<P class="docText">One of the first basic concepts that we need to cover is the notion of stability. Consider a process where one or more states have been perturbed from the steady-state solution or operating point. The process is stable if after a period of time, the variables return to the steady-state values. This means that the state variables, since they are deviation variables, return to zero.</P>
+<P class="docText">Numerically, we can determine the stability of a state space model by finding the eigenvalues of the state space <span class="docEmphasis">A</span> matrix. Remember that the <span class="docEmphasis">A</span> matrix is simply the matrix of derivatives of the dynamic modeling equations with respect to the state variables.</P>
+<P class="docText">If all of the eigenvalues are negative, then the system is <span class="docEmphasis">stable</span>; if any single eigenvalue is positive, the system is <span class="docEmphasis">unstable</span>. A system with all but one eigenvalues negative and with one eigenvalue equal to zero is called an <span class="docEmphasis">integrating</span> system and is characteristic of processes with liquid levels or gas drum pressures that can vary.</P>
+<P class="docText">Examples of unstable systems are shown in <A class="docLink" HREF="#ch03fig02">Figure 3-2</A>. If an eigenvalue is real and positive, the system response is that shown in the top curves. If there are complex conjugate eigenvalues, with positive real portions, the system oscillates (with ever increasing amplitude), as shown at the bottom.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch03fig02"></A>Figure 3-2. Unstable responses. (a) Monotonic and (b) oscillatory.</H5><p class="docText"><IMG BORDER="0" WIDTH="400" HEIGHT="238" src="FILES/03fig02.gif" ALT="graphics/03fig02.gif"></p></CENTER>
+<P class="docText">Mathematically, the eigenvalues of the <span class="docEmphasis">A</span> matrix are found from the roots of the <span class="docEmphasis">characteristic polynomial</span></P>
+<P><B><A NAME="ch03equ03"></A>Equation 3.3 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="92" HEIGHT="19" src="FILES/03equ03.gif" ALT="graphics/03equ03.gif"></p><br>
+<P class="docText">where <font face="symbol">l</font> is known as an eigenvalue, and <span class="docEmphasis">I</span> is the identity matrix. For a state space model with <span class="docEmphasis">n</span> states, <span class="docEmphasis">A</span> is an <span class="docEmphasis">n</span> x <span class="docEmphasis">n</span> matrix, and there will be <span class="docEmphasis">n</span> solutions (eigenvalues) of Equation (<A class="docLink" HREF="#ch03equ03">3.3</A>). There are analytical solutions for two- and three-state systems; the two-state solution is shown below.</P>
+<P class="docText"><span class="docEmphasis">In two-state systems,</span></P>
+<p class="docText"><IMG BORDER="0" WIDTH="287" HEIGHT="42" src="FILES/03equ03a.gif" ALT="graphics/03equ03a.gif"></p><br>
+<P class="docText">The determinant can be found by</P>
+<p class="docText"><IMG BORDER="0" WIDTH="326" HEIGHT="69" src="FILES/03equ03b.gif" ALT="graphics/03equ03b.gif"></p><br>
+<P class="docText">and the eigenvalues are found as the two solutions (roots) to</P>
+<P><B><A NAME="ch03equ04"></A>Equation 3.4 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="213" HEIGHT="19" src="FILES/03equ04.gif" ALT="graphics/03equ04.gif"></p><br>
+<P class="docText">The roots can be found using the quadratic formula</P>
+<P><B><A NAME="ch03equ05"></A>Equation 3.5 </B></P><p class="docText"><IMG BORDER="0" WIDTH="282" HEIGHT="44" src="FILES/03equ05.gif" ALT="graphics/03equ05.gif"></p><br>
+<P class="docText">It is easy to show that if and <span class="docEmphasis">a</span><SUB>11</SUB> + <span class="docEmphasis">a</span><SUB>22</SUB> &lt; 0 and <span class="docEmphasis">a</span><SUB>11</SUB><span class="docEmphasis">a</span><SUB>22</SUB> &gt;<span class="docEmphasis">a</span><SUB>12</SUB><span class="docEmphasis">a</span><SUB>21</SUB>, the roots (eigenvalues) are negative and the system is stable. A more general method of qualitatively checking the stability, known as the <span class="docEmphasis">Routh stability criterion</span>, is shown in <A class="docLink" HREF="0133536408_ch05.html#ch05">Chapter 5</A>.</P>
+<A NAME="ch03lev2sec2"></A><H4 class="docSection2Title"> Example 3.1: Exothermic CSTR</H4>
+<P class="docText">Models for an exothermic, CSTR are detailed in <A class="docLink" HREF="0133536408_art08.html#art08">Module 8</A>. For a two-state representation, the first state is the concentration and the second state is the reactor temperature. For a particular reactor with two different operating conditions, the <span class="docEmphasis">A</span> matrix is (the time unit is hours)</P>
+<P><TABLE CELLSPACING="0" FRAME="void" RULES="none" CELLPADDING="5" WIDTH="100%"><COLGROUP align="left" span="2"><THEAD><TR><TH class="docTableHeader" valign="top"><P class="docText"><span class="docEmphasis">Operating condition 1</span></P></TH><TH class="docTableHeader" valign="top"><P class="docText"><span class="docEmphasis">Operating condition 2</span></P></TH></TR></THEAD><TR><TD class="docTableCell" valign="top"><P class="docText"><IMG BORDER="0" WIDTH="149" HEIGHT="39" src="FILES/03equ05a.gif" ALT="graphics/03equ05a.gif"></P></TD><TD class="docTableCell" valign="top"><P class="docText"><IMG BORDER="0" WIDTH="149" HEIGHT="39" src="FILES/03equ05b.gif" ALT="graphics/03equ05b.gif"></P></TD></TR></COLGROUP></TABLE></P>
+<P class="docText">and the eigenvalues for operating condition 1 can be found using the following steps</P>
+<p class="docText"><IMG BORDER="0" WIDTH="355" HEIGHT="90" src="FILES/03equ05c.gif" ALT="graphics/03equ05c.gif"></p><br>
+<P class="docText">with the solutions [using the quadratic formula (<A class="docLink" HREF="#ch03equ05">3.5</A>)]</P>
+<p class="docText"><IMG BORDER="0" WIDTH="249" HEIGHT="17" src="FILES/03equ05d.gif" ALT="graphics/03equ05d.gif"></p>
+<br>
+<P class="docText">Since both eigenvalues are negative, operating condition 1 is <span class="docEmphasis">stable</span>.</P>
+<P class="docText">The reader should show that the eigenvalues of <span class="docEmphasis">A</span><SUB>2</SUB> are</P>
+<p class="docText"><IMG BORDER="0" WIDTH="247" HEIGHT="16" src="FILES/03equ05e.gif" ALT="graphics/03equ05e.gif"></p>
+<br>
+<P class="docText">where the positive eigenvalue indicates that operating condition 2 is <span class="docEmphasis">unstable</span>.</P>
+<A NAME="ch03lev2sec3"></A><H4 class="docSection2Title"> M<span class="docEmphSmaller">ATLAB</span> Eigenvalue Function</H4>
+<P class="docText">The M<span class="docEmphSmaller">ATLAB</span> <TT>eig</TT> command can be used to quickly find eigenvalues of a matrix. The reader should use the M<span class="docEmphSmaller">ATLAB</span> command window to verify the following results for the second operating condition:</P>
+<pre>
+
+</pre><pre>
+&#187; a2 = [-1.8124 -0.2324;9.6837 1.4697];
+&#187; eig(a2)
+ans =
+  -0.8366
+   0.4939
+</pre>
+<P class="docText">Again, the positive eigenvalue indicates that the second operating condition is unstable.</P>
+<A NAME="ch03lev2sec4"></A><H4 class="docSection2Title"> Generalization</H4>
+<P class="docText">Notice that a solution of a second-order polynomial was required to find the eigenvalues of the two-state example; this resulted in two eigenvalues. For the general case of an <span class="docEmphasis">n</span> x <span class="docEmphasis">n</span> matrix, there will be <span class="docEmphasis">n</span> eigenvalues. It is too complex to find these analytically for all but the simplest low-order systems. The simplest way to find eigenvalues is by using existing numerical analysis software; for example, in M<span class="docEmphSmaller">ATLAB</span> the <TT>eig</TT> function can be used to find eigenvalues.</P>
+<P class="docText">The values of the eigenvalues are related to the "speed of response," and the eigenvalue unit is inverse time. If the unit of time used in the differential equations is minutes, for example, then the eigenvalues have min<SUP>-1</SUP> as the unit. For stable systems (where all eigenvalues are negative), the larger magnitude (more negative) eigenvalues are faster.</P>
+<P class="docText">For matrices that are 2 x 2 or larger, some eigenvalues may occur in complex conjugate pairs. In this case, the stability is determined by the sign of the real portion of the complex number. As long as all real portions are negative, the system is stable.</P>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch03lev1sec1.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch03lev1sec3.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

@@ -1,0 +1,56 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="M8.5 For Further Study: Detailed Model"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_art08lev1sec4.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_art08lev1sec6.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="art08lev1sec5"></A><H3 class="docSection1Title">M8.5 For Further Study: Detailed Model</H3>
+<P class="docText">A more detailed model of a CSTR includes the effect of cooling jacket dynamics. The three modeling equations are</P>
+<P><B><A NAME="art08equ14"></A>Equation M8.11a </B></P><p class="docText"><IMG BORDER="0" WIDTH="308" HEIGHT="36" src="FILES/m08equ11a.gif" ALT="graphics/m08equ11a.gif"></p><br>
+<P><B><A NAME="art08equ15"></A>Equation M8.11b </B></P><p class="docText"><IMG BORDER="0" WIDTH="419" HEIGHT="41" src="FILES/m08equ11b.gif" ALT="graphics/m08equ11b.gif"></p><br>
+<P><B><A NAME="art08equ16"></A>Equation M8.11c </B></P><p class="docText"><IMG BORDER="0" WIDTH="298" HEIGHT="39" src="FILES/m08equ11c.gif" ALT="graphics/m08equ11c.gif"></p><br>
+<P class="docText">where F<SUB>j</SUB> is the flow rate through the jacket, and <span class="docEmphasis">T</span><SUB>jin</SUB> is the jacket inlet temperature. The variable definition should be clear from <A class="docLink" HREF="#art08m8fig05">Figure M8-5</A>. Notice that the manipulated input is the jacket make-up flow rate (<span class="docEmphasis">F</span><SUB>jf</SUB>), which does not appear in the above modeling equations.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="art08m8fig05"></A>Figure M8-5. CSTR with recirculating jacket. Definition of variables.</H5><p class="docText"><IMG BORDER="0" WIDTH="450" HEIGHT="374" src="FILES/m08fig05.gif" ALT="graphics/m08fig05.gif"></p></CENTER>
+<P class="docText">A static energy balance can be used to find the jacket inlet temperature as a function of the jacket make-up flow rate (<span class="docEmphasis">F</span><SUB>jf</SUB>)</P>
+<P><B><A NAME="art08equ17"></A>Equation M8.11d </B></P><p class="docText"><IMG BORDER="0" WIDTH="134" HEIGHT="38" src="FILES/m08equ11d.gif" ALT="graphics/m08equ11d.gif"></p><br>
+<P class="docText">When (<A class="docLink" HREF="#art08equ17">M8.11d</A>) is substituted into (<A class="docLink" HREF="#art08equ16">M8.11c</A>), the following equations result</P>
+<P><B><A NAME="art08equ18"></A>Equation M8.12a </B></P><p class="docText"><IMG BORDER="0" WIDTH="307" HEIGHT="37" src="FILES/m08equ12a.gif" ALT="graphics/m08equ12a.gif"></p><br>
+<P><B><A NAME="art08equ19"></A>Equation M8.12b </B></P><p class="docText"><IMG BORDER="0" WIDTH="419" HEIGHT="41" src="FILES/m08equ12b.gif" ALT="graphics/m08equ12b.gif"></p><br>
+<P><B><A NAME="art08equ20"></A>Equation M8.12c </B></P><p class="docText"><IMG BORDER="0" WIDTH="298" HEIGHT="40" src="FILES/m08equ12c.gif" ALT="graphics/m08equ12c.gif"></p><br>
+<P class="docText">which is the same set of equations that would be derived from a reactor with a "once-through" jacket, shown in <A class="docLink" HREF="#art08m8fig06">Figure M8-6</A>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="art08m8fig06"></A>Figure M8-6. CSTR with "once-through" jacket. Definition of variables.</H5><p class="docText"><IMG BORDER="0" WIDTH="450" HEIGHT="392" src="FILES/m08fig06.gif" ALT="graphics/m08fig06.gif"></p></CENTER>
+<P class="docText">This is an interesting result. The model for a CSTR with a "once-through" jacket is the same as that for a recirculating jacket, assuming a static energy balance around the mixing point. This is one reason that it is common to see <A class="docLink" HREF="#art08m8fig06">Figure M8-6</A> used to represent a CSTR when <A class="docLink" HREF="#art08m8fig05">Figure M8-5</A> is the more common configuration in industry. It should be noted that the assumption of a constant heat-transfer coefficient is much better for <A class="docLink" HREF="#art08m8fig05">Figure M8-5</A> than <A class="docLink" HREF="#art08m8fig06">M8-6</A>, since the jacket velocity will stay relatively constant for this system.</P>
+<A NAME="art08lev2sec12"></A><H4 class="docSection2Title"> Linear Open-Loop Results</H4>
+<P class="docText">Here we again study the propylene glycol reactor presented in <A class="docLink" HREF="0133536408_art08lev1sec3.html#art08lev1sec3">Section M8.3</A>, with the following additional jacket parameters</P>
+<p class="docText"><IMG BORDER="0" WIDTH="124" HEIGHT="53" src="FILES/m08equ12d.gif" ALT="graphics/m08equ12d.gif"></p><br>
+<P class="docText">For the 100-ft<SUP>3</SUP> reactor the state space model is (see <A class="docLink" HREF="0133536408_art08lev1sec10.html#art08lev1sec10">Appendix M8.1</A> for the linearization results)</P>
+<P><B><A NAME="art08equ21"></A>Equation M8.13 </B></P><p class="docText"><IMG BORDER="0" WIDTH="337" HEIGHT="105" src="FILES/m08equ13.gif" ALT="graphics/m08equ13.gif"></p><br>
+<P class="docText">where <span class="docEmphasis">x</span> = [<span class="docEmphasis">C<SUB>A</SUB></span> – <span class="docEmphasis">C<SUB>As</SUB></span> <span class="docEmphasis">T</span> – <span class="docEmphasis">T<SUB>s</SUB></span> <span class="docEmphasis">T<SUB>j</SUB></span> – <span class="docEmphasis">T<SUB>js</SUB></span>]<span class="docEmphasis"><SUP>T</SUP></span>, <span class="docEmphasis">u</span> = <span class="docEmphasis">F<SUB>jf</SUB></span> – <span class="docEmphasis">F<SUB>jfs</SUB></span>, <span class="docEmphasis">y</span> = [<span class="docEmphasis">T</span> – <span class="docEmphasis">T<SUB>s</SUB> T<SUB>j</SUB></span> – <span class="docEmphasis">T<SUB>js</SUB></span>]<span class="docEmphasis"><SUP>T</SUP></span></P>
+<P class="docText">You should be able to show (using M<span class="docEmphSmaller">ATLAB</span>) that the process transfer function relating the jacket flow rate (u<SUB>1</SUB>) to the reactor temperature (y<SUB>1</SUB>) is</P>
+<P><B><A NAME="art08equ22"></A>Equation M8.14 </B></P><p class="docText"><IMG BORDER="0" WIDTH="221" HEIGHT="33" src="FILES/m08equ14.gif" ALT="graphics/m08equ14.gif"></p><br>
+<P class="docText">which has an unstable pole.</P>
+<A NAME="art08lev2sec13"></A><H4 class="docSection2Title"> Nonlinear Open-Loop Results</H4>
+<P class="docText">There is also multiple steady-state behavior as shown in <A class="docLink" HREF="#art08m8fig07">Figure M8-7</A>. This is an interesting result, because the 100-ft<SUP>3</SUP> reactor was stable when the simplified model was used, and there was only one operating point. The simplified model essentially assumes perfect control of the jacket temperature. This means that the jacket temperature controller stabilizes the process.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="art08m8fig07"></A>Figure M8-7. Steady-state input-output plot of reactor temperature as a function of jacket flow rate for the 100-ft<SUP>3</SUP> reactor. The desired steady-state operating point is denoted by '+'.</H5><p class="docText"><IMG BORDER="0" WIDTH="475" HEIGHT="384" src="FILES/m08fig07.gif" ALT="graphics/m08fig07.gif"></p></CENTER>
+<A NAME="art08lev2sec14"></A><H4 class="docSection2Title"> Linear Closed-Loop Results</H4>
+<P class="docText">Since the CSTR is open-loop unstable, a feedback controller must be designed to stabilize the reactor operation. In the next problem, the Routh stability criterion is used to find the range of controller gains that stabilize the CSTR.</P>
+<P class="docText"><span class="docEmphStrong">Problem M8.5</span> A Stabilizing P-only Controller for the 100-ft<SUP>3</SUP> Reactor</P>
+<P class="docText">Use the Routh stability criterion to determine the range of controller gains, for a P-only controller, that stabilize the reactor (based on the transfer function <A class="docLink" HREF="#art08equ22">M8.14</A>). Based on simulation results, what value of gain do you recommend for the P-only controller?</P>
+<P class="docText"><span class="docEmphStrong">Problem M8.6</span> Cascade Control of the 100-ft<SUP>3</SUP> Reactor</P>
+<P class="docText">Develop a S<span class="docEmphSmaller">IMULINK</span> diagram of a cascade controller CSTR, where a state space representation [Equation (<A class="docLink" HREF="#art08equ18">M8.12</A>)] is used for the reactor. First, tune the secondary loop to stabilize the process. Then, tune the primary loop for the desired setpoint response behavior.</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_art08lev1sec4.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_art08lev1sec6.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

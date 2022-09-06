@@ -1,0 +1,89 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="13.3 The General Pairing Problem"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch13lev1sec2.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch13lev1sec4.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch13lev1sec3"></A><H3 class="docSection1Title" id="225793-966">13.3 The General Pairing Problem</H3>
+<P class="docText">Given a general multivariable process diagram, how do we select the pairings for a control structure that consists of multiple SISO loops? In the following sections, we use matrix vector notation, where <span class="docEmphasis">y</span>(<span class="docEmphasis">s</span>) is a vector of <span class="docEmphasis">n</span> outputs and <span class="docEmphasis">u</span>(<span class="docEmphasis">s</span>) is a vector of <span class="docEmphasis">m</span> inputs,</P>
+<P><B><A NAME="ch13equ01"></A>Equation 13.1 </B></P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="83" HEIGHT="15" src="FILES/13equ01.gif" ALT="graphics/13equ01.gif"></p><br>
+<P><B><A NAME="ch13equ02"></A>Equation 13.2 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="233" HEIGHT="103" src="FILES/13equ02.gif" ALT="graphics/13equ02.gif"></p><br>
+<P class="docText">where each output can be represented by</P>
+<P><B><A NAME="ch13equ03"></A>Equation 13.3 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="118" HEIGHT="41" src="FILES/13equ03.gif" ALT="graphics/13equ03.gif"></p><br>
+<P class="docText">To form a MVSISO system, we must ask the following:</P>
+<P class="docText">Which output <span class="docEmphasis">y</span><SUB>i</SUB> should be paired with which input <span class="docEmphasis">u</span><SUB>j</SUB> to form an SISO control loop?</P>
+<A NAME="ch13lev2sec2"></A><H4 class="docSection2Title"> Two Input–Two Output Processes</H4>
+<P class="docText">Let us consider the relationship between <span class="docEmphasis">y</span><SUB>i</SUB> and <span class="docEmphasis">u</span><SUB>j</SUB> under a number of conditions. For simplicity, we will deal primarily with 2 x 2 (two input–two output) systems. The open-loop input-output relationships are</P>
+<P><B><A NAME="ch13equ04"></A>Equation 13.4 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="171" HEIGHT="34" src="FILES/13equ04.gif" ALT="graphics/13equ04.gif"></p><br>
+<P class="docText">which is written in matrix form as</P>
+<P><B><A NAME="ch13equ05"></A>Equation 13.5 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="187" HEIGHT="40" src="FILES/13equ05.gif" ALT="graphics/13equ05.gif"></p><br>
+<P class="docText">and we can think of the input output relationships as shown in <A class="docLink" HREF="#ch13fig07">Figure 13-7</A>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch13fig07"></A>Figure 13-7. Input-output block diagram for a two input–two output process.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="400" HEIGHT="322" src="FILES/13fig07.gif" ALT="graphics/13fig07.gif"></p></CENTER>
+<P class="docText">The corresponding feedback control system, if the pairings are <span class="docEmphasis">u</span><SUB>1</SUB>-<span class="docEmphasis">y</span><SUB>1</SUB> and <span class="docEmphasis">u</span><SUB>2</SUB>-<span class="docEmphasis">y</span><SUB>2</SUB>, is shown in <A class="docLink" HREF="#ch13fig08">Figure 13-8</A>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch13fig08"></A>Figure 13-8. Feedback block diagram for a two input–two output process where output <span class="docEmphasis">y</span><SUB>1</SUB> is paired with input <span class="docEmphasis">u</span><SUB>1</SUB>.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="400" HEIGHT="294" src="FILES/13fig08.gif" ALT="graphics/13fig08.gif"></p></CENTER>
+<A NAME="ch13lev2sec3"></A><H4 class="docSection2Title"> Input 1–Output 1 Dynamic Behavior</H4>
+<P class="docText">For consistency in notation, we refer to loop 1 as the <span class="docEmphasis">y</span><SUB>1</SUB>-<span class="docEmphasis">u</span><SUB>1</SUB> pairing and loop 2 as the <span class="docEmphasis">y</span><SUB>2</SUB>-<span class="docEmphasis">u</span><SUB>2</SUB> pairing. We wish to consider how control loop 1 should be designed. We have focused on the use of input-output models for control system design. In the case of loop 1, we need to know how input 1 affects output 1.</P>
+<P class="docText">Now, consider how <span class="docEmphasis">u</span><SUB>1</SUB> affects <span class="docEmphasis">y</span><SUB>1</SUB> if (a) loop 2 is open and if (b) loop 2 is closed.</P>
+<P class="docText">(a) <span class="docEmphasis">Loop 2 is open</span> (loop 1 is also open). If the second input (<span class="docEmphasis">u</span><SUB>2</SUB>) is constant, then the outputs depend only on the first input (<span class="docEmphasis">u</span><SUB>1</SUB>), as shown in <A class="docLink" HREF="#ch13fig09">Figure 13-9</A>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch13fig09"></A>Figure 13-9. Block diagram with loop 2 open (loop 1 is open as well).</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="400" HEIGHT="150" src="FILES/13fig09.gif" ALT="graphics/13fig09.gif"></p></CENTER>
+<P class="docText">The input-output relationship is</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="99" HEIGHT="15" src="FILES/13equ05a.gif" ALT="graphics/13equ05a.gif"></p>
+<br>
+<P class="docText">If we designed a SISO feedback control system for loop 1, we would use g<SUB>11</SUB>(s) as the process transfer function for control system design.</P>
+<P class="docText">(b) <span class="docEmphasis">Loop 2 is closed</span>. If the second loop (<span class="docEmphasis">y</span><SUB>2</SUB>-<span class="docEmphasis">u</span><SUB>2</SUB>) is closed, then the outputs depend on input 1 (<span class="docEmphasis">u</span><SUB>1</SUB>), as shown in <A class="docLink" HREF="#ch13fig10">Figure 13-10</A>. Notice that there is an additional effect of input 1 on input 2 owing to the action of controller 2. Input 1 affects output 2, which then changes input 2 through the second controller. This change in input 2 then has an additional effect on output 1; this effect can be positive or negative.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch13fig10"></A>Figure 13-10. Block diagram of input 1–output 1 relationship with loop 2 closed.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="450" HEIGHT="386" src="FILES/13fig10.gif" ALT="graphics/13fig10.gif"></p></CENTER>
+<P class="docText">Thus, the relationship between <span class="docEmphasis">u</span><SUB>1</SUB>(<span class="docEmphasis">s</span>) and <span class="docEmphasis">y</span><SUB>1</SUB>(<span class="docEmphasis">s</span>) is no longer just <span class="docEmphasis">g</span><SUB>11</SUB>(<span class="docEmphasis">s</span>). Indeed, we can derive the relationship in the fashion:</P>
+<P><B><A NAME="ch13equ06"></A>Equation 13.6 </B></P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="170" HEIGHT="16" src="FILES/13equ06.gif" ALT="graphics/13equ06.gif"></p><br>
+<P class="docText">but (assuming no setpoint change in loop 2, r<SUB>2</SUB> = 0),</P>
+<P><B><A NAME="ch13equ07"></A>Equation 13.7 </B></P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="184" HEIGHT="16" src="FILES/13equ07.gif" ALT="graphics/13equ07.gif"></p><br>
+<P class="docText">also</P>
+<P><B><A NAME="ch13equ08"></A>Equation 13.8 </B></P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="169" HEIGHT="15" src="FILES/13equ08.gif" ALT="graphics/13equ08.gif"></p><br>
+<P class="docText">Combining Equations (<A class="docLink" HREF="#ch13equ07">13.7</A>) and (<A class="docLink" HREF="#ch13equ08">13.8</A>),</P>
+<P><B><A NAME="ch13equ09"></A>Equation 13.9 </B></P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="215" HEIGHT="15" src="FILES/13equ09.gif" ALT="graphics/13equ09.gif"></p><br>
+<P class="docText">and solving for <span class="docEmphasis">y</span><SUB>2</SUB>(<span class="docEmphasis">s</span>),</P>
+<P><B><A NAME="ch13equ10"></A>Equation 13.10 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="133" HEIGHT="37" src="FILES/13equ10.gif" ALT="graphics/13equ10.gif"></p><br>
+<P class="docText">Substituting this into Equation (<A class="docLink" HREF="#ch13equ07">13.7</A>),</P>
+<P><B><A NAME="ch13equ11"></A>Equation 13.11 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="161" HEIGHT="37" src="FILES/13equ11.gif" ALT="graphics/13equ11.gif"></p><br>
+<P class="docText">and substituting this result into Equation (<A class="docLink" HREF="#ch13equ06">13.6</A>), we find</P>
+<P><B><A NAME="ch13equ12"></A>Equation 13.12 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="228" HEIGHT="41" src="FILES/13equ12.gif" ALT="graphics/13equ12.gif"></p><br>
+<P class="docText">That is, <span class="docEmphasis">y</span><SUB>1</SUB>(<span class="docEmphasis">s</span>) = <span class="docEmphasis">g</span><SUB>11,eff</SUB>(<span class="docEmphasis">s</span>) <span class="docEmphasis">u</span><SUB>1</SUB>(<span class="docEmphasis">s</span>), where</P>
+<P><B><A NAME="ch13equ13"></A>Equation 13.13 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="210" HEIGHT="38" src="FILES/13equ13.gif" ALT="graphics/13equ13.gif"></p><br>
+<P class="docText"><span class="docEmphasis">g</span><SUB>11,eff</SUB>(<span class="docEmphasis">s</span>) is the effective input-output relationship between <span class="docEmphasis">u</span><SUB>1</SUB> and <span class="docEmphasis">y</span><SUB>1</SUB>, with loop 2 closed. This means that <span class="docEmphasis">g</span><SUB>11,eff</SUB>(<span class="docEmphasis">s</span>) should be used as the process transfer function to design controller 1 if loop 2 is closed. Unless <span class="docEmphasis">g</span><SUB>12</SUB>(<span class="docEmphasis">s</span>) or <span class="docEmphasis">g</span><SUB>21</SUB>(<span class="docEmphasis">s</span>) = 0, if the second control loop is closed, then the first control loop must be designed differently than if the second control loop were open. Naturally, the relationship between <span class="docEmphasis">u</span><SUB>1</SUB> and <span class="docEmphasis">y</span><SUB>1</SUB> is a function of the controller <span class="docEmphasis">g</span><SUB>c2</SUB> when the second loop is closed.</P>
+<A NAME="ch13lev2sec4"></A><H4 class="docSection2Title"> Example 13.1, continued</H4>
+<P class="docText">Consider the expected effect of the second loop in the blending example posed earlier. In <A class="docLink" HREF="#ch13fig11">Figure 13-11</A> we compare the response of ethanol concentration due to a change in whiskey flow rate, under two conditions: with the flow controller (loop 2) open (solid), and with the flow controller closed (dashed). Notice the tremendous amplification of the effect of the whiskey flow rate. Here, we rationalize the effect of the flow loop being closed. When the whiskey flow rate is increased, it causes the total blend flow rate to increase. The total blend flow-rate controller then cuts back on the dilution water flow rate, which causes the ethanol concentration to increase even more. The flow rate controller has caused the whiskey stream to have roughly four times the effect on the ethanol concentration, compared to when the flow control loop is open.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch13fig11"></A>Figure 13-11. Response of ethanol concentration to a step increase in whiskey flow rate; loop 2 open (solid curve) and loop 2 closed (dashed curve).</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="400" src="FILES/13fig11.gif" ALT="graphics/13fig11.gif"></p></CENTER>
+<A NAME="ch13lev2sec5"></A><H4 class="docSection2Title"> Steady-State Effective Gain</H4>
+<P class="docText"><span class="docEmphStrong">Comment</span>:</P>
+<P class="docText">What we would really like is a method to determine the relationship between <span class="docEmphasis">u</span><SUB>1</SUB> and <span class="docEmphasis">y</span><SUB>1</SUB> with loop 2 closed, without knowing <span class="docEmphasis">g</span><SUB>c2</SUB>(<span class="docEmphasis">s</span>).</P>
+<P class="docText">We can easily determine this relationship for a limiting case, the steady state. For the steady state, we simply let <span class="docEmphasis">s</span> <img src="FILES/U2192.GIF" border=0> 0. Assuming integral action is used in the controller, we find that as <span class="docEmphasis">s</span> <img src="FILES/U2192.GIF" border=0> 0, <span class="docEmphasis">g</span><SUB>c2</SUB>(<span class="docEmphasis">s</span>) <img src="FILES/U2192.GIF" border=0> <img src="FILES/U221E.GIF" border=0>. Also, from Equation (<A class="docLink" HREF="#ch13equ13">13.13</A>) and <span class="docEmphasis">g</span><SUB>c2</SUB>(0) <img src="FILES/U2192.GIF" border=0> <img src="FILES/U221E.GIF" border=0> as <span class="docEmphasis">s</span> <img src="FILES/U2192.GIF" border=0> 0, we find the following relationship (where 0 represents <span class="docEmphasis">s</span> = 0, the steady state; do not confuse this with <span class="docEmphasis">t</span> = 0, the initial condition):</P>
+<P><B><A NAME="ch13equ14"></A>Equation 13.14 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="307" HEIGHT="36" src="FILES/13equ14.gif" ALT="graphics/13equ14.gif"></p><br>
+<P class="docText">This can also be determined from the steady-state relationship</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="125" HEIGHT="39" src="FILES/13equ14a.gif" ALT="graphics/13equ14a.gif"></p><br>
+<P class="docText">Assuming <span class="docEmphasis">perfect</span> control of <span class="docEmphasis">y</span><SUB>2</SUB>, that is, <span class="docEmphasis">y</span><SUB>2</SUB> = 0,</P>
+<P><B><A NAME="ch13equ15"></A>Equation 13.15 </B></P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="115" HEIGHT="15" src="FILES/13equ15.gif" ALT="graphics/13equ15.gif"></p><br>
+<P><B><A NAME="ch13equ16"></A>Equation 13.16 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="68" HEIGHT="36" src="FILES/13equ16.gif" ALT="graphics/13equ16.gif"></p><br>
+<P class="docText">and we can then find the following relationships:</P>
+<P><B><A NAME="ch13equ17"></A>Equation 13.17 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="171" HEIGHT="108" src="FILES/13equ17.gif" ALT="graphics/13equ17.gif"></p><br>
+<P class="docText">We now have a steady-state effective gain relationship between <span class="docEmphasis">u</span><SUB>1</SUB> and <span class="docEmphasis">y</span><SUB>1</SUB> with the loop between <span class="docEmphasis">u</span><SUB>2</SUB> and <span class="docEmphasis">y</span><SUB>2</SUB> closed.</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch13lev1sec2.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch13lev1sec4.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

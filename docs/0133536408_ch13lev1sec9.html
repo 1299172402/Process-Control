@@ -1,0 +1,44 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="13.9 M'ATLAB' RGA Function File"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch13lev1sec8.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch13lev1sec10.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch13lev1sec9"></A><H3 class="docSection1Title" id="225793-861">13.9 M<span class="docEmphSmaller">ATLAB</span> RGA Function File</H3>
+<P class="docText">The M<span class="docEmphSmaller">ATLAB</span> function file, <TT>rga.m</TT>, given in <A class="docLink" HREF="0133536408_ch13lev1sec14.html#ch13lev1sec14">Appendix 13.2</A> can be used to the find the RGA of any square (number of inputs = number of outputs) gain matrix. For example, consider the wet grinding circuit of Exercise 10.</P>
+<P class="docText">First, the gain matrix is entered</P>
+<pre>
+
+</pre><pre>
+&#187; g = [119 153 -21; 370 767 -50; 903 -667 -1033]
+g =
+         119         153         -21
+         370         767         -50
+         903        -667       -1033
+</pre>
+<P class="docText">Then the RGA is calculated using the call to the function file:</P>
+<pre>
+
+</pre><pre>
+&#187; lambda = rga(g)
+lambda =
+    3.6449   -1.9131   -0.7318
+   -2.3616    2.9581    0.4035
+   -0.2833   -0.0450    1.3283
+</pre>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch13lev1sec8.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch13lev1sec10.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

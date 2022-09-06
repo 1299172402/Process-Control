@@ -1,0 +1,56 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="2.6 Form of Dynamic Models"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch02lev1sec5.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch02lev1sec7.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch02lev1sec6"></A><H3 class="docSection1Title">2.6 Form of Dynamic Models</H3>
+<P class="docText">The dynamic models derived in this chapter consist of a set of first-order (only first derivatives with respect to time), nonlinear, explicit, initial-value, ordinary differential equations. A representation of a set of first-order differential equations is</P>
+<P><B><A NAME="ch02equ67"></A>Equation 2.63 </B></P><p class="docText"><IMG BORDER="0" WIDTH="238" HEIGHT="105" src="FILES/02equ63.gif" ALT="graphics/02equ63.gif"></p><br>
+<P class="docText">where <span class="docEmphasis">x</span><SUB>i</SUB> is a state variable, <span class="docEmphasis">u</span><SUB>i</SUB> is an input variable, and <span class="docEmphasis">p<SUB>i</SUB></span> is a parameter. The notation <IMG BORDER="0" WIDTH="12" HEIGHT="14" src="FILES/xidot.gif" ALT="graphics/xidot.gif"> is used to represent <span class="docEmphasis">dx<SUB>i</SUB></span>/<span class="docEmphasis">dt</span>. Notice that there are <span class="docEmphasis">nx</span> equations, <span class="docEmphasis">nx</span> state variables, <span class="docEmphasis">nu</span> inputs, and <span class="docEmphasis">np</span> parameters.</P>
+<P class="docText">Also included in these models is a set of algebraic equations, relating states, inputs, and parameters to output variables.</P>
+<P><B><A NAME="ch02equ68"></A>Equation 2.64 </B></P><p class="docText"><IMG BORDER="0" WIDTH="236" HEIGHT="106" src="FILES/02equ64.gif" ALT="graphics/02equ64.gif"></p><br>
+<A NAME="ch02lev2sec16"></A><H4 class="docSection2Title"> State Variables</H4>
+<P class="docText">A state variable is a variable that arises naturally in the accumulation term of a dynamic material or energy balance. A state variable is a measurable (at least conceptually) quantity that indicates the state of a system. For example, temperature is the common state variable that arises from a dynamic energy balance. Concentration is a state variable that arises when dynamic component balances are written.</P>
+<A NAME="ch02lev2sec17"></A><H4 class="docSection2Title"> Input Variables</H4>
+<P class="docText">An input variable is a variable that normally must be specified before a problem can be solved or a process can be operated. Inputs are normally specified by an engineer, based on knowledge of the process being considered. Input variables typically include flow rates of streams entering or leaving a process (notice that the flow rate of an outlet stream might be considered an input variable!). Compositions or temperatures of streams entering a process are also typical input variables. Input variables are often manipulated (by process controllers) in order to achieve desired performance.</P>
+<A NAME="ch02lev2sec18"></A><H4 class="docSection2Title"> Parameters</H4>
+<P class="docText">A parameter is typically a physical or chemical property value that must be specified or known to mathematically solve a problem. Parameters are often fixed by nature, that is, the reaction chemistry, molecular structure, existing vessel configuration, operation, and so forth. Examples include density, viscosity, thermal conductivity, heat transfer coefficient, and mass-transfer coefficient. When designing a process, a parameter might be "adjusted" to achieve some desired performance. For example, reactor volume may be an important design parameter.</P>
+<A NAME="ch02lev2sec19"></A><H4 class="docSection2Title"> Output Variables</H4>
+<P class="docText">An output variable is often a state variable that is measured, particularly for control purposes. Very often the measured outputs are simply a subset of the state variables. Other times the outputs are a nonlinear function of the states (or even inputs).</P>
+<A NAME="ch02lev2sec20"></A><H4 class="docSection2Title"> Vector Notation</H4>
+<P class="docText">The set of differential and algebraic Equations (<A class="docLink" HREF="#ch02equ67">2.63</A>) and (<A class="docLink" HREF="#ch02equ68">2.64</A>) can be written more compactly in vector form.</P>
+<P><B><A NAME="ch02equ69"></A>Equation 2.65 </B></P><p class="docText"><IMG BORDER="0" WIDTH="79" HEIGHT="35" src="FILES/02equ65.gif" ALT="graphics/02equ65.gif"></p><br>
+<P class="docText">where <span class="docEmphasis">x</span> is the vector of state variables, <span class="docEmphasis">u</span> the vector of input variables, <span class="docEmphasis">p</span> the vector of parameters, and <span class="docEmphasis">y</span> the vector of output variables.</P>
+<A NAME="ch02lev2sec21"></A><H4 class="docSection2Title"> Steady-State Solutions</H4>
+<P class="docText">Notice that dynamic models (<A class="docLink" HREF="#ch02equ67">2.63</A>) can also be used to solve steady-state problems, since</P>
+<p class="docText"><IMG BORDER="0" WIDTH="67" HEIGHT="39" src="FILES/02equ65a.gif" ALT="graphics/02equ65a.gif"></p><br>
+<P class="docText">That is,</P>
+<P><B><A NAME="ch02equ70"></A>Equation 2.66 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="81" HEIGHT="18" src="FILES/02equ66.gif" ALT="graphics/02equ66.gif"></p><br>
+<P class="docText">for steady-state processes, resulting in a set of algebraic equations. In this case, all inputs and parameters would be specified, leaving the <span class="docEmphasis">nx</span> state values to be solved for; that is, <span class="docEmphasis">nx</span> equations in <span class="docEmphasis">nx</span> unknowns must be solved. The focus of this text is not on the development of numerical methods, so we briefly cover the basic idea in <A class="docLink" HREF="0133536408_ch02lev1sec11.html#ch02lev1sec11">Appendix 2.1</A>. Note that differential equation solvers can also be used to solve for the steady state of stable systems, by simply integrating from an initial value for the states for a long period of time, until a steady state is reached.</P>
+<A NAME="ch02lev2sec22"></A><H4 class="docSection2Title"> Numerical Integration</H4>
+<P class="docText">Here we briefly consider numerical methods to integrate ordinary differential equations.</P>
+<P><B><A NAME="ch02equ71"></A>Equation 2.67 </B></P><p class="docText"><IMG BORDER="0" WIDTH="75" HEIGHT="16" src="FILES/02equ67.gif" ALT="graphics/02equ67.gif"></p><br>
+<P class="docText">if the derivative term is approximated (where <span class="docEmphasis">k</span> represents a time index) as</P>
+<P><B><A NAME="ch02equ72"></A>Equation 2.68 </B></P><p class="docText"><IMG BORDER="0" WIDTH="235" HEIGHT="37" src="FILES/02equ68.gif" ALT="graphics/02equ68.gif"></p><br>
+<P class="docText">The explicit <span class="docEmphasis">Euler</span> integration technique involves specifying the integration step size, <font face="symbol">D</font><span class="docEmphasis">t</span>,</P>
+<P><B><A NAME="ch02equ73"></A>Equation 2.69 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="163" HEIGHT="21" src="FILES/02equ69.gif" ALT="graphics/02equ69.gif"></p><br>
+<P class="docText">and marching sequentially from one time step to another. This approach is illustrated in <A class="docLink" HREF="0133536408_ch02lev1sec12.html#ch02lev1sec12">Appendix 2.2</A>. In practice, more accurate integration routines using a variable step size are used. For more details on how to use M<span class="docEmphSmaller">ATLAB</span> integration routines, see <A class="docLink" HREF="0133536408_art03.html#art03">Module 3</A>.</P>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch02lev1sec5.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch02lev1sec7.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

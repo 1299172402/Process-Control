@@ -1,0 +1,34 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="M13.5 Multiple SISO Controllers"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_art13lev1sec4.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_art13lev1sec6.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="art13lev1sec5"></A><H3 class="docSection1Title">M13.5 Multiple SISO Controllers</H3>
+<A NAME="art13lev2sec5"></A><H4 class="docSection2Title"> Setpoint Changes</H4>
+<P class="docText">In <A class="docLink" HREF="0133536408_art13lev1sec3.html#art13lev1sec3">Section M13.3</A>, the composition control loops were tuned independently using the IMC-based PI technique, neglecting time delays. The control system was simulated assuming a 2-minute time delay on all measurements. The IMC filter factors (<font face="symbol">l</font><SUB>1</SUB>, <font face="symbol">l</font><SUB>2</SUB>) were both set to 25 minutes, one third of the process time constant. Here, we show the responses for both loops closed simultaneously. The response for a setpoint change of 1 mol% (0.01 mole fraction) in the distillate composition is shown in <A class="docLink" HREF="#art13m13fig06">Figure M13-6</A>. Note that the controllers are highly interacting and the response time is extremely slow (the outputs are still far from the setpoint after 1000 minutes).</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="art13m13fig06"></A>Figure M13-6. Setpoint change of <span class="docEmphasis">r</span> = [1,0], mol% light comp. Note the long timescale.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="383" src="FILES/m13fig06.gif" ALT="graphics/m13fig06.gif"></p></CENTER>
+<P class="docText">It is intriguing that simultaneous setpoint changes of 0.625 mol% in the distillate and 0.78 mol% in bottoms composition lead to much more rapid closed-loop responses, as shown in <A class="docLink" HREF="#art13m13fig07">Figure M13-7</A>. Notice here that the time scale is 100 minutes, and that the desired setpoint has been achieved in 55 minutes.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="art13m13fig07"></A>Figure M13-7. Setpoint change of <span class="docEmphasis">r</span> = [0.625,0.78], mol% light comp. Note the relatively short timescale compared to <A class="docLink" HREF="#art13m13fig06">Figure M13-6</A>.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="380" src="FILES/m13fig07.gif" ALT="graphics/m13fig07.gif"></p></CENTER>
+<P class="docText">Without any other information, one might assume that nonlinearities could be used to explain the difference in the system behavior displayed in <A class="docLink" HREF="#art13m13fig06">Figures M13-6</A> and <A class="docLink" HREF="#art13m13fig07">M13-7</A>. These simulations, however, are based on the linear transfer function model. The differences observed are due to the "directional sensitivity" of multivariable systems. Singular value analysis will be used in <A class="docLink" HREF="0133536408_art13lev1sec6.html#art13lev1sec6">Section M13.6</A> to better understand this behavior.</P>
+<P class="docText">The reader should tune the controllers for tighter performance for the setpoint change in the "slow" direction (<A class="docLink" HREF="#art13m13fig08">Figure M13-8</A>). Decrease <font face="symbol">l</font><SUB>1</SUB> and <font face="symbol">l</font><SUB>2</SUB> (increase the magnitude of the proportional gains) and observe the behavior (Additional Exercise 3). Also, once tighter control has been achieved with both loops closed, consider the effect of opening one loop. You should observe that the other loop goes unstable (Additional Exercise 4).</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="art13m13fig08"></A>Figure M13-8. Responses to an increase in reflux (2.706–2.806) and decrease in vapor (3.206–3.106) rates.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="376" src="FILES/m13fig08.gif" ALT="graphics/m13fig08.gif"></p></CENTER>
+
+<A NAME="art13lev2sec6"></A><H4 class="docSection2Title"> Disturbance Rejection</H4>
+<P class="docText">The focus of the previous sections has been on setpoint changes. It is also very important for any control strategy to reject feed flowrate and feed composition disturbances. In Additional Exercise 9 you have the opportunity to perform simulations and discuss results for disturbance rejection.</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_art13lev1sec4.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_art13lev1sec6.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>
