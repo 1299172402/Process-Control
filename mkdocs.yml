@@ -1,0 +1,18 @@
+site_name: Process Control Modeling, Design and Simulation (B. Wayne Bequette)
+
+theme:
+  name: material
+  features:
+    # Instant loading
+    - navigation.instant
+    # Anchor tracking
+    - navigation.tracking
+    # Navigation integration
+    - toc.integrate
+    # Back-to-top button
+    - navigation.top
+
+# markdown_extensions:
+#   # Table of Contents
+#   - toc:
+#       permalink: true
