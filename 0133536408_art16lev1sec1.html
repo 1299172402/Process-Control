@@ -1,0 +1,28 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="M16.1 Background"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_art16.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_art16lev1sec2.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="art16lev1sec1"></A><H3 class="docSection1Title">M16.1 Background</H3>
+<P class="docText">The focus of this textbook has been on continuous systems although, in practice, most controllers are implemented digitally. Fortunately, the sample time is usually small compared with the process dynamics, so continuous systems theory is usually sufficient.</P>
+<P class="docText">Processes are best described as continuous systems (with differential equation models), with inputs that are applied continuously and outputs that are available continuously. With digital controllers, however, measurements are made at discrete intervals of time and control moves are made at discrete intervals of time. Discrete-time models were developed in <A class="docLink" HREF="0133536408_ch04.html#ch04">Chapter 4</A> and the conversion of continuous time to discrete time models (using LTI objects in M<span class="docEmphSmaller">ATLAB</span>) were presented in <A class="docLink" HREF="0133536408_art04.html#art04">Module 4</A>.</P>
+<P class="docText">Recall that continuous systems are stable if their poles are negative [in the left-half plane (LHP)]; also, process models can only be inverted to form stable controllers if the models have zeros in the LHP. Models with RHP zeros must be factored into "good" and "bad" stuff; only the portion with LHP (good stuff) zeros can be inverted to form a controller. For continuous systems, then, the focus is on the LHP vs. the RHP. Discrete-time systems are stable if their poles are "inside the unit circle," that is, with a magnitude &lt;1. If a discrete-time process model has a zero outside the unit circle (magnitude &gt;1), it cannot be inverted to form a stable controller; the zero must be factored into the bad stuff before the good stuff is inverted to form a stable controller.</P>
+<P class="docText">Stable continuous process models will always have stable discrete process transfer functions. That is, if all poles of a continuous process model are negative, then the discrete process model will have all discrete poles inside the unit circle. It is possible, however, for a continuous process with no RHP zeros to have a discrete zero that is outside the unit circle. This is possible for continuous transfer functions that have a <span class="docEmphasis">relative order</span> (difference between the denominator and numerator polynomial orders) of 3 or higher. See Additional Exercise 4 for an example of this problem.</P>
+<P class="docText">The purpose of this interactive module is to obtain a better understanding of the effect of discretization on control system performance. We focus initially on PID control, then study IMC.</P>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_art16.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_art16lev1sec2.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

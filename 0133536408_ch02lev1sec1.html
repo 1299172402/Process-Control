@@ -1,0 +1,40 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="2.1 Background"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch02.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch02lev1sec2.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch02lev1sec1"></A><H3 class="docSection1Title" id="225793-801">2.1 Background</H3>
+<A NAME="ch02lev2sec1"></A><H4 class="docSection2Title"> Reasons for Modeling</H4>
+<P class="docText">There are many reasons for developing process <span class="docEmphasis">models</span>. Improving or understanding chemical process operation is a major overall objective for developing a dynamic process model. These models are often used for (i) operator training, (ii) process design, (iii) safety system analysis, or (iv) process control.</P>
+<p class="docText"><span class="docEmphasis">Operator training</span>: 
+The people responsible for the operation of a chemical manufacturing process are known as <span class="docEmphasis">process operators</span>. A dynamic process model can be used to perform simulations to train process operators, in the same fashion that flight simulators are used to train airplane pilots. Process operators can learn the proper response to upset conditions, before having to experience them on the actual process.</p>
+<p class="docText"><span class="docEmphasis">Process design</span>: 
+A dynamic process model can be used to properly design chemical-process equipment for a desired production rate. For example, a model of a batch chemical reactor can be used to determine the appropriate size of the reactor to produce a certain product at a desired rate.</p>
+<p class="docText"><span class="docEmphasis">Safety</span>: 
+Dynamic process models can also be used to design safety systems. For example, they can be used to determine how long it will take, after a valve fails, for a system to reach a certain pressure.</p>
+<p class="docText"><span class="docEmphasis">Process control</span>: 
+Feedback control systems are used to maintain process variables at desirable values. For example, a control system may measure a product temperature (an output) and adjust the steam flow rate (an input) to maintain that desired temperature. For complex systems, particularly those with many inputs and outputs, it is necessary to base the control-system design on a process model. Also, before a complex control system is implemented on a process, it is normally tested by simulation.</p>
+<P class="docText">It should be noted that no single model of a process exists, since a model only approximates the process behavior. The desired accuracy and resulting complexity of a process model depends on the final use of the model. Usually more-complex models will require much more data and effort to develop than simplified models, since more model parameters will need to be determined. The focus of this textbook is on process control, so model development is provided with this in mind.</P>
+<A NAME="ch02lev2sec2"></A><H4 class="docSection2Title"> Lumped Parameter System Models</H4>
+<P class="docText">The models developed in this textbook are known as <span class="docEmphasis">lumped parameter systems</span> models. These models consist of initial-value ordinary differential equations, often based on a perfect mixing assumption. The models have the form</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="76" HEIGHT="44" src="FILES/02equ01a.gif" ALT="graphics/02equ01a.gif"></p><br>
+<P class="docText">where <span class="docEmphasis">x</span> is the vector of state variables, <IMG BORDER="0" id="129022115118" WIDTH="9" HEIGHT="13" src="FILES/xdot.gif" ALT="graphics/xdot.gif"> the vector of state variables derivatives with respect to time equal to <span class="docEmphasis">dx/dt</span>, <span class="docEmphasis">u</span> the vector of input variables, <span class="docEmphasis">p</span> the vector of parameters, <span class="docEmphasis">y</span> the vector of output variables, and, <span class="docEmphasis">f(x,u,p)</span> and <span class="docEmphasis">g(x,u,p)</span> the vectors of functions.</P>
+<P class="docText">State variables are variables that naturally appear in the derivative term of ordinary differential equation models. Common states resulting from overall material balance equations include total mass, volume, level for liquid-phase processes, and pressure for gas-phase processes. Component compositions are the most common states that arise from component material balances. Temperature is the most common state arising from an energy balance modeling equation.</P>
+<P class="docText">This state-variable representation seems very abstract at this juncture, and it generally takes students some time to become comfortable with it. The easiest way is to work through some simple examples to begin to associate the notion of states, parameters, inputs, and outputs with the physical variables associated with chemical processes. Throughout the text we use matrix and vector notation; you may wish to review any standard linear algebra book to become familiar with this notation. A concise review is also provided in the M<span class="docEmphSmaller">ATLAB</span> module (<A class="docLink" HREF="0133536408_art01.html#art01">Module 1</A>).</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch02.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch02lev1sec2.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

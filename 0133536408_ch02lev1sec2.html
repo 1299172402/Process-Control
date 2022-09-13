@@ -1,0 +1,62 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="2.2 Balance Equations"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch02lev1sec1.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch02lev1sec3.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch02lev1sec2"></A><H3 class="docSection1Title">2.2 Balance Equations</H3>
+<P class="docText">In this text, we are interested in dynamic balances that have the form</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="354" HEIGHT="65" src="FILES/02equ01b.gif" ALT="graphics/02equ01b.gif"></p><br>
+<P class="docText">This equation is deceptively simple because there may be many in and out terms, particularly for component balances. The in and out terms would then include the generation and conversion of species by chemical reaction, respectively. The rate of mass accumulation in a system has the form <span class="docEmphasis">dM</span>/<span class="docEmphasis">dt</span>, where <span class="docEmphasis">M</span> is the total mass in the system. Similarly, the rate of energy accumulation has the form <span class="docEmphasis">dE</span>/<span class="docEmphasis">dt</span>, where <span class="docEmphasis">E</span> is the total energy in a system. If <span class="docEmphasis">N<SUB>i</SUB></span> is used to represent the moles of component <span class="docEmphasis">i</span> in a system, then <span class="docEmphasis">dN<SUB>i</SUB></span>/<span class="docEmphasis">dt</span> represents the molar rate of accumulation of component <span class="docEmphasis">i</span> in the system.</P>
+<P class="docText">When solving a problem, it is important to specify what is meant by system. In some cases the system may be microscopic in nature (a differential element, for example), while in other cases it may be macroscopic in nature (the liquid content of a mixing tank, for example). Also, when developing a dynamic model we can take one of two general viewpoints. One viewpoint is based on an <span class="docEmphasis">integral</span> balance, while the other is based on an <span class="docEmphasis">instantaneous</span> balance. Integral balances are particularly useful when developing models for distributed parameter systems, which result in partial differential equations; the focus in this text is on ordinary differential equation-based models. Another viewpoint is the instantaneous balance where the time rate of change is written directly.</P>
+<A NAME="ch02lev2sec3"></A><H4 class="docSection2Title"> Integral Balances</H4>
+<P class="docText">An integral balance is developed by viewing a system at two different "snapshots" in time. Consider a finite time interval, <font face="symbol">D</font><span class="docEmphasis">t</span>, and perform a material balance over that time interval,</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="486" HEIGHT="63" src="FILES/02equ01c.gif" ALT="graphics/02equ01c.gif"></p><br>
+<P class="docText">The mean-value theorems of integral and differential calculus are then used to reduce the equations to differential equations. For example, consider the system shown in <A class="docLink" HREF="#ch02fig01">Figure 2-1</A>, where one boundary represents the mass in the system at time <span class="docEmphasis">t</span>, while the other boundary represents the mass in the system at <span class="docEmphasis">t</span> + <font face="symbol">D</font><span class="docEmphasis">t</span>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch02fig01"></A>Figure 2-1. Conceptual material balance problem.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="264" src="FILES/02fig01.gif" ALT="graphics/02fig01.gif"></p></CENTER>
+<P class="docText">An integral balance on the total mass in the system is written in the form</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="438" HEIGHT="68" src="FILES/02equ01d.gif" ALT="graphics/02equ01d.gif"></p><br>
+<P class="docText">Mathematically this is written as</P>
+<P><B><A NAME="ch02equ01"></A>Equation 2.1 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="311" HEIGHT="51" src="FILES/02equ01.gif" ALT="graphics/02equ01.gif"></p><br>
+<P class="docText">where M represents the total mass in the system, while <IMG BORDER="0" WIDTH="21" HEIGHT="16" src="FILES/mdotin.gif" ALT="graphics/mdotin.gif"> and <IMG BORDER="0" WIDTH="26" HEIGHT="16" src="FILES/mdotout.gif" ALT="graphics/mdotout.gif"> represent the mass rates entering and leaving the system, respectively. We can write the right-hand side of Equation (<A class="docLink" HREF="#ch02equ01">2.1</A>), using the mean-value theorem of <span class="docEmphasis">integral</span> calculus, as</P>
+<P><B><A NAME="ch02equ02"></A>Equation 2.2 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="235" HEIGHT="54" src="FILES/02equ02.gif" ALT="graphics/02equ02.gif"></p><br>
+<P class="docText">where 0 &lt; <font face="symbol">a</font> &lt; 1. Substituting the right-hand side of Equation (<A class="docLink" HREF="#ch02equ02">2.2</A>) into Equation (<A class="docLink" HREF="#ch02equ01">2.1</A>), we find</P>
+<P><B><A NAME="ch02equ03"></A>Equation 2.3 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="207" HEIGHT="27" src="FILES/02equ03.gif" ALT="graphics/02equ03.gif"></p><br>
+<P class="docText">By dividing Equation (<A class="docLink" HREF="#ch02equ03">2.3</A>) by <font face="symbol">D</font>t, and using the mean value theorem of <span class="docEmphasis">differential</span> calculus (0 &lt; <font face="symbol">b</font> &lt; 1) for the left-hand side,</P>
+<P><B><A NAME="ch02equ04"></A>Equation 2.4 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="189" HEIGHT="39" src="FILES/02equ04.gif" ALT="graphics/02equ04.gif"></p><br>
+<P><B><A NAME="ch02equ05"></A>Equation 2.5 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="142" HEIGHT="41" src="FILES/02equ05.gif" ALT="graphics/02equ05.gif"></p><br>
+<P class="docText">and by substituting Equation (<A class="docLink" HREF="#ch02equ05">2.5</A>) into Equation (<A class="docLink" HREF="#ch02equ04">2.4</A>),</P>
+<P><B><A NAME="ch02equ06"></A>Equation 2.6 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="165" HEIGHT="41" src="FILES/02equ06.gif" ALT="graphics/02equ06.gif"></p><br>
+<P class="docText">and taking the limit as <font face="symbol">D</font>t goes to zero, we find</P>
+<P><B><A NAME="ch02equ07"></A>Equation 2.7 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="96" HEIGHT="33" src="FILES/02equ07.gif" ALT="graphics/02equ07.gif"></p><br>
+<P class="docText">Representing the total mass as <span class="docEmphasis">M</span> = <span class="docEmphasis">V<font face="symbol">r</font></span>, <IMG BORDER="0" WIDTH="21" HEIGHT="16" src="FILES/mdotin.gif" ALT="graphics/mdotin.gif"> as <span class="docEmphasis">F<SUB>in</SUB><font face="symbol">r</font><SUB>in</SUB></span> and <IMG BORDER="0" WIDTH="26" HEIGHT="16" src="FILES/mdotout.gif" ALT="graphics/mdotout.gif"> as <span class="docEmphasis">F<SUB>out</SUB><font face="symbol">r</font></span>, where <span class="docEmphasis">V</span> is the volume, <span class="docEmphasis"><font face="symbol">r</font></span> is the mass density (mass/volume), and <span class="docEmphasis">F</span> is a volumetric flow rate (volume/time), we obtain the equation</P>
+<P><B><A NAME="ch02equ08"></A>Equation 2.8 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="120" HEIGHT="38" src="FILES/02equ08.gif" ALT="graphics/02equ08.gif"></p><br>
+<P class="docText">Note that we have assumed that the system is <span class="docEmphasis">perfectly mixed</span>, so that the density of material leaving the system is equal to the density of material in the system (<span class="docEmphasis"><font face="symbol">r</font><SUB>out</SUB></span> = <span class="docEmphasis"><font face="symbol">r</font></span>).</P>
+<A NAME="ch02lev2sec4"></A><H4 class="docSection2Title"> Instantaneous Balances</H4>
+<P class="docText">Here we write the dynamic balance equations directly, based on an instantaneous rate-of-change</P>
+<P><B><A NAME="ch02equ09"></A>Equation 2.7 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="280" HEIGHT="86" src="FILES/02equ08a.gif" ALT="graphics/02equ08a.gif"></p><br>
+<P class="docText">which can also be written as</P>
+<P><B><A NAME="ch02equ10"></A>Equation 2.8 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="122" HEIGHT="36" src="FILES/02equ08b.gif" ALT="graphics/02equ08b.gif"></p><br>
+<P class="docText">This is the same result obtained using an integral balance. Although the integral balance takes longer to arrive at the same result as the instantaneous balance method, the integral balance method is probably clearer when developing distributed parameter (partial differential equation-based) models.</P>
+<A NAME="ch02lev2sec5"></A><H4 class="docSection2Title"> Steady State</H4>
+<P class="docText">At steady state, the derivative with respect to time is zero, by definition, so from Equation (<A class="docLink" HREF="#ch02equ07">2.7</A>),</P>
+<P><B><A NAME="ch02equ11"></A>Equation 2.9 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="65" HEIGHT="22" src="FILES/02equ09.gif" ALT="graphics/02equ09.gif"></p><br>
+<P class="docText">or from Equation (<A class="docLink" HREF="#ch02equ08">2.8</A>),</P>
+<P><B><A NAME="ch02equ12"></A>Equation 2.10 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="79" HEIGHT="18" src="FILES/02equ10.gif" ALT="graphics/02equ10.gif"></p><br>
+<P class="docText">Steady-state relationships are often used for process design and determination of optimal operating conditions.</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch02lev1sec1.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch02lev1sec3.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

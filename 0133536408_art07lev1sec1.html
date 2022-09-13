@@ -1,0 +1,35 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="M7.1 Background"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_art07.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_art07lev1sec2.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="art07lev1sec1"></A><H3 class="docSection1Title">M7.1 Background</H3>
+<P class="docText">Biochemical reactors are used in a wide variety of processes, from waste treatment to alcohol fermentation. Biomass (cells) consume substrate (sugar or waste chemicals) and produce more cells. A typical control and instrumentation diagram, with biomass concentration as the measured output, is shown in <A class="docLink" HREF="#art07m7fig01">Figure M7-1</A>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="art07m7fig01"></A>Figure M7-1. Simplified control and instrumentation diagram for a biochemical reactor.</H5><p class="docText"><IMG BORDER="0" WIDTH="450" HEIGHT="201" src="FILES/m07fig01.gif" ALT="graphics/m07fig01.gif"></p></CENTER>
+<A NAME="art07lev2sec1"></A><H4 class="docSection2Title"> Model</H4>
+<P class="docText">The modeling equations for a bioreactor are</P>
+<P><B><A NAME="art07equ01"></A>Equation M7.1 </B></P><p class="docText"><IMG BORDER="0" WIDTH="142" HEIGHT="69" src="FILES/m07equ01.gif" ALT="graphics/m07equ01.gif"></p><br>
+<P class="docText">where the state variables are <span class="docEmphasis">x</span><SUB>1</SUB> = biomass (cell) concentration = mass of cells/volume, and <span class="docEmphasis">x</span><SUB>2</SUB> = substrate concentration = mass of substrate/volume.</P>
+<P class="docText">The manipulated input is <span class="docEmphasis">D</span> = dilution rate = <span class="docEmphasis">F</span>/<span class="docEmphasis">V</span> = volumetric flow rate/reactor volume, and the disturbance input is <span class="docEmphasis">x</span><SUB>2f</SUB> = substrate feed concentration.</P>
+<P class="docText">Two possible expressions for the specific growth rate are monod and substrate inhibition kinetics, which include</P>
+<p class="docText"><IMG BORDER="0" WIDTH="250" HEIGHT="73" src="FILES/m07equ02.gif" ALT="graphics/m07equ02.gif"></p><br>
+<P class="docText">Notice that the monod-specific growth rate model is a subset of the substrate inhibition model (<span class="docEmphasis">k</span><SUB>1</SUB> = 0).</P>
+<A NAME="art07lev2sec2"></A><H4 class="docSection2Title"> Scale Up</H4>
+<P class="docText">One motivation for working with the dilution rate as the manipulated input is that the resulting dynamic model is independent of scale. A reactor volume of 1 liter with a flow rate of 0.3 liters/hour has the same dynamic behavior as a reactor volume of 1000 liters with a flow rate of 300 liters/hour. Thus, a small-scale (laboratory or pilot plant) reactor can be used to predict the behavior of a production-scale reactor.</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_art07.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_art07lev1sec2.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

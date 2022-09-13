@@ -1,0 +1,62 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="3.6 Integrating System"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch03lev1sec5.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch03lev1sec7.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch03lev1sec6"></A><H3 class="docSection1Title">3.6 Integrating System</H3>
+<P class="docText">We found in the previous chapter that material balances on liquid surge vessels or gas drums often yielded models with the following form:</P>
+<P><B><A NAME="ch03equ34"></A>Equation 3.32 </B></P><p class="docText"><IMG BORDER="0" WIDTH="51" HEIGHT="36" src="FILES/03equ32.gif" ALT="graphics/03equ32.gif"></p><br>
+<P class="docText">In the Laplace domain, this is</P>
+<P><B><A NAME="ch03equ35"></A>Equation 3.33 </B></P><p class="docText"><IMG BORDER="0" WIDTH="77" HEIGHT="34" src="FILES/03equ33.gif" ALT="graphics/03equ33.gif"></p><br>
+<P class="docText">Consider an integrating process initially at steady state, with <span class="docEmphasis">y</span>(0) = 0.</P>
+<A NAME="ch03lev2sec19"></A><H4 class="docSection2Title"> Step Response</H4>
+<P class="docText">If a step input change of <font face="symbol">D</font><span class="docEmphasis">u</span> is made at <span class="docEmphasis">t</span> = 0,</P>
+<p class="docText"><IMG BORDER="0" WIDTH="117" HEIGHT="39" src="FILES/03equ33a.gif" ALT="graphics/03equ33a.gif"></p><br>
+<P class="docText">and we find the time-domain value</P>
+<P><B><A NAME="ch03equ36"></A>Equation 3.34 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="95" HEIGHT="19" src="FILES/03equ34.gif" ALT="graphics/03equ34.gif"></p><br>
+<P class="docText">That is, the output ramps with a constant slope of <span class="docEmphasis">k</span><font face="symbol">D</font><span class="docEmphasis">u</span>.</P>
+<A NAME="ch03lev2sec20"></A><H4 class="docSection2Title"> Impulse Response</H4>
+<P class="docText">If an impulse input of magnitude <span class="docEmphasis">P</span> is made at <span class="docEmphasis">t</span> = 0,</P>
+<p class="docText"><IMG BORDER="0" WIDTH="67" HEIGHT="32" src="FILES/03equ34a.gif" ALT="graphics/03equ34a.gif"></p><br>
+<P class="docText">then the output immediately changes to a new steady-state value of</P>
+<p class="docText"><IMG BORDER="0" WIDTH="55" HEIGHT="16" src="FILES/03equ34b.gif" ALT="graphics/03equ34b.gif"></p>
+<br>
+<A NAME="ch03lev2sec21"></A><H4 class="docSection2Title"> Example 3.5: Tank-Height Problem</H4>
+<P class="docText">The mathematical model for a liquid surge tank is (see <A class="docLink" HREF="0133536408_ch01lev1sec3.html#ch01lev2sec7">Example 1.3</A>)</P>
+<p class="docText"><IMG BORDER="0" WIDTH="77" HEIGHT="33" src="FILES/03equ34c.gif" ALT="graphics/03equ34c.gif"></p><br>
+<P class="docText">where <span class="docEmphasis">h</span> is the liquid height, <span class="docEmphasis">A</span> is the constant cross-sectional area of the tank, <span class="docEmphasis">F</span><SUB>1</SUB> is the inlet flow rate, and <span class="docEmphasis">F</span><SUB>2</SUB> is the outlet flow rate. Assume that the outlet flow rate remains constant at a steady-state value of <span class="docEmphasis">F</span><SUB>2</SUB><span class="docEmphasis"><SUB>s</SUB></span>. Defining the output and input in deviation variable form as</P>
+<p class="docText"><IMG BORDER="0" WIDTH="73" HEIGHT="34" src="FILES/03equ34d.gif" ALT="graphics/03equ34d.gif"></p><br>
+<P class="docText">For a constant cross-sectional area of 10 m<SUP>2</SUP>, the model is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="105" HEIGHT="38" src="FILES/03equ34e.gif" ALT="graphics/03equ34e.gif"></p><br>
+<A NAME="ch03lev3sec3"></A><H5 class="docSection3Title"> Step Response</H5>
+<P class="docText">For a step input change of 0.25 m<SUP>3</SUP>/min, the output response is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="148" HEIGHT="18" src="FILES/03equ34f.gif" ALT="graphics/03equ34f.gif"></p>
+<br>
+<P class="docText">which is shown in <A class="docLink" HREF="#ch03fig07">Figure 3-7</A>. If the steady-state height is 2 meters, then the height as a function of time is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="166" HEIGHT="16" src="FILES/03equ34g.gif" ALT="graphics/03equ34g.gif"></p>
+<br>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch03fig07"></A>Figure 3-7. Step response of a liquid surge tank. Deviation variables.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="388" src="FILES/03fig07.gif" ALT="graphics/03fig07.gif"></p></CENTER>
+
+<A NAME="ch03lev3sec4"></A><H5 class="docSection3Title"> Impulse Response</H5>
+<P class="docText">For an impulse input of 1 m<SUP>3</SUP>, the output response is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="112" HEIGHT="16" src="FILES/03equ34h.gif" ALT="graphics/03equ34h.gif"></p>
+<br>
+<P class="docText">which makes sense, because the cross-sectional area is 10 m<SUP>3</SUP>.</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch03lev1sec5.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch03lev1sec7.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

@@ -1,0 +1,63 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="M6.4 Ziegler-Nichols Tuning"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_art06lev1sec3.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_art06lev1sec5.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="art06lev1sec4"></A><H3 class="docSection1Title">M6.4 Ziegler-Nichols Tuning</H3>
+<P class="docText">The tuning parameters recommended by <A class="docLink" HREF="0133536408_art06lev1sec7.html#art06biblio01entry01">Ziegler and Nichols (1942)</A> were shown in <A class="docLink" HREF="0133536408_ch06lev1sec2.html#ch06table01">Table 6-1</A>. Generally, these values are not very robust. The objective of this section is for you to calculate the values of the gain and phase margins for each of these recommended values. Tyreus and Luyben modified the suggested Ziegler-Nichols parameters for increased robustness (see <A class="docLink" HREF="0133536408_art06lev1sec7.html#art06biblio01entry02">Luyben and Luyben, 1997</A>); these recommended values were shown in <A class="docLink" HREF="0133536408_ch06lev1sec2.html#ch06table02">Table 6-2</A>.</P>
+<P class="docText">Recall that the P-only controller tuning recommended by <A class="docLink" HREF="0133536408_art06lev1sec7.html#art06biblio01entry01">Ziegler and Nichols (1942)</A> results in a controller that has a gain margin of 2 (since the proportional gain is one half of the ultimate gain). This is also shown by the following M<span class="docEmphSmaller">ATLAB</span> analysis.</P>
+<pre>
+
+</pre><pre>
+&#187; kc = 3.8/2;
+&#187; [mag,phase,w] = bode(kc*fodt);
+&#187; [Gm,Pm,Wco,Wpm] = imargin(squeeze(mag),squeeze(phase),w)
+
+Gm  =  2.00049180434395
+Pm  = 75.49091926803467
+Wco =  0.36655875121677
+Wpm =  0.16127245556240
+</pre>
+<P class="docText">The gain margin is 2 and the phase margin is 75&#176;, indicating that a reasonable amount of uncertainty can be tolerated before the closed-loop system goes unstable. The closed-loop responses (measured output and manipulated input) for <span class="docEmphasis">k</span><SUB>c</SUB> = 1.9 are shown in <A class="docLink" HREF="#art06m6fig07">Figure M6-7</A>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="art06m6fig07"></A>Figure M6-7. Closed-loop response for a setpoint change of 1 at time = 1 minute, with <span class="docEmphasis">k</span><SUB>c</SUB> = 1.9 (Ziegler-Nichols recommended P-only setting). Notice the offset due to the P-only controller.</H5><p class="docText"><IMG BORDER="0" WIDTH="475" HEIGHT="372" src="FILES/m06fig07.gif" ALT="graphics/m06fig07.gif"></p></CENTER>
+<p class="docText"><span class="docEmphasis">Problem 2.</span> 
+Find the gain and phase margins when Ziegler-Nichols PI settings are used. Compare these with the gain and phase margins of the Tyreus-Luyben recommended PI settings. Compare the closed-loop responses (time domain) for both of these controller settings; include plots of the manipulated input action. <span class="docEmphasis">Hint</span>: Create a transfer function for the PI controller and multiply it with the process transfer function. Recall that a PI controller transfer function is</p>
+<p class="docText"><IMG BORDER="0" WIDTH="104" HEIGHT="39" src="FILES/m06equ02.gif" ALT="graphics/m06equ02.gif"></p><br>
+<P class="docText">The Ziegler-Nichols recommended parameters for a PI controller are then</P>
+<p class="docText"><IMG BORDER="0" WIDTH="215" HEIGHT="34" src="FILES/m06equ03.gif" ALT="graphics/m06equ03.gif"></p><br>
+<P class="docText">The commands to M<span class="docEmphSmaller">ATLAB</span> are then</P>
+<pre>
+
+</pre><pre>
+&#187; gc = tf([24.45 1.71],[14.3 0])
+
+Transfer function:
+24.45 s + 1
+-----------
+  14.3 s
+
+&#187; [mag,phase,w] = bode(gc*fodt);
+&#187; [Gm,Pm,Wco,Wpm] = imargin(squeeze(mag),squeeze(phase),w)
+</pre>
+<P class="docText">Thus far, we have used the gain margin to determine either how much the controller gain can be increased before instability occurs, or how much the process gain can increase before instability occurs. Next, we illustrate how the phase margin is related to time-delay uncertainty that can be tolerated.</P>
+<p class="docText"><span class="docEmphasis">Problem 3</span>. 
+Use the Ziegler-Nichols recommended P-only value of <span class="docEmphasis">k</span><SUB>c</SUB> = 0.5 <span class="docEmphasis">k</span><SUB>cu</SUB> = 3.8/2 = 1.9. What is the phase margin for this value of controller gain? What is the frequency associated with this phase margin? Calculate the amount of additional time delay that can be tolerated from</p>
+<p class="docText"><IMG BORDER="0" WIDTH="196" HEIGHT="38" src="FILES/m06equ04.gif" ALT="graphics/m06equ04.gif"></p><br>
+<P class="docText">Add this time delay to the process model and show that the new phase margin is now 0. Show that the time-domain closed-loop simulations have an oscillation with a frequency of <font face="symbol">w</font><span class="docEmphasis"><SUB>pm</SUB></span>. Include plots of the manipulated input action.</P>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_art06lev1sec3.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_art06lev1sec5.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

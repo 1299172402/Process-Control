@@ -1,0 +1,91 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="14.2 Zeros and Performance Limitations"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch14lev1sec1.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch14lev1sec3.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch14lev1sec2"></A><H3 class="docSection1Title">14.2 Zeros and Performance Limitations</H3>
+<P class="docText">Recall that RHP zeros severely limit the performance of SISO processes. For example, a model inverse can not be implemented as the controller, because this would cause the controller to be unstable. A similar problem exists for multivariable processes; RHP <span class="docEmphasis">transmission</span> zeros limit MIMO performance.</P>
+<A NAME="ch14lev2sec1"></A><H4 class="docSection2Title"> SISO Zeros</H4>
+<P class="docText">For a SISO process transfer function with the form</P>
+<P><B><A NAME="ch14equ01"></A>Equation 14.1 </B></P><p class="docText"><IMG BORDER="0" WIDTH="67" HEIGHT="36" src="FILES/14equ01.gif" ALT="graphics/14equ01.gif"></p><br>
+<P class="docText">the zeros are the roots of the numerator polynomial, <span class="docEmphasis">N</span>(<span class="docEmphasis">s</span>). The inverse of the process transfer function is</P>
+<P><B><A NAME="ch14equ02"></A>Equation 14.2 </B></P><p class="docText"><IMG BORDER="0" WIDTH="80" HEIGHT="37" src="FILES/14equ02.gif" ALT="graphics/14equ02.gif"></p><br>
+<P class="docText">That is, the zeros of <span class="docEmphasis">g</span>(s<span class="docEmphasis">)</span> are the poles of <span class="docEmphasis">g</span><SUP>–1</SUP>(<span class="docEmphasis">s</span>). A RHP zero then results in an inverse transfer function with a RHP pole, which is unstable. Some model-based control strategies, such as IMC, make use of a model inverse for control system design. In <A class="docLink" HREF="0133536408_ch08.html#ch08">Chapter 8</A>, we found that the RHP zeros must be factored out, and that only a portion of the model could be inverted for controller design.</P>
+<A NAME="ch14lev2sec2"></A><H4 class="docSection2Title"> Multivariable Transmission Zeros</H4>
+<P class="docText">The <span class="docEmphasis">transmission zeros</span> of a multivariable transfer function matrix are the values of <span class="docEmphasis">s</span> that cause the input-output matrix to lose rank. That is, the transmission zeros are the values of <span class="docEmphasis">s</span> that cause</P>
+<P><B><A NAME="ch14equ03"></A>Equation 14.3 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="80" HEIGHT="17" src="FILES/14equ03.gif" ALT="graphics/14equ03.gif"></p><br>
+<P class="docText">Similar to single variable systems, the multivariable transmission zeros become the poles of the inverse system. RHP transmission zeros for a particular transfer function matrix then become RHP poles for the inverse transfer function matrix (that is, the inverse is unstable). Again, a multivariable controller that simply tries to invert the process model will be unstable.</P>
+<P class="docText">We illustrate these concepts with the following example. Here we use the symbol <span class="docEmphasis">z</span> to represent the zero.</P>
+<A NAME="ch14lev2sec3"></A><H4 class="docSection2Title"> Example 14.1: Calculation of Transmission Zeros</H4>
+<P class="docText">The calculation of transmission zeros are illustrated for two different systems (A and B).</P>
+<P class="docText"><span class="docEmphasis">System A</span></P>
+<P class="docText">Consider the transfer function matrix, where the time unit is minutes</P>
+<p class="docText"><IMG BORDER="0" WIDTH="184" HEIGHT="45" src="FILES/14equ03a.gif" ALT="graphics/14equ03a.gif"></p><br>
+<P class="docText">The determinant of <span class="docEmphasis">G</span>(<span class="docEmphasis">s</span>) is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="157" HEIGHT="42" src="FILES/14equ03b.gif" ALT="graphics/14equ03b.gif"></p><br>
+<P class="docText">and solving for det[<span class="docEmphasis">G</span>(<span class="docEmphasis">s</span>)] = 0,</P>
+<p class="docText"><IMG BORDER="0" WIDTH="77" HEIGHT="19" src="FILES/14equ03c.gif" ALT="graphics/14equ03c.gif"></p>
+<br>
+<P class="docText">We can also see that the rank of the <span class="docEmphasis">G</span> matrix drops to 1 when <span class="docEmphasis">s</span> = 3 min<SUP>-</SUP><SUP>1</SUP>,</P>
+<p class="docText"><IMG BORDER="0" WIDTH="126" HEIGHT="40" src="FILES/14equ03d.gif" ALT="graphics/14equ03d.gif"></p><br>
+<P class="docText">since the first column of the matrix is now a multiplicative factor (3) of the second column. Note that although the zero of the <span class="docEmphasis">g</span><SUB>11</SUB> element is -3 min<SUP>-</SUP><SUP>1</SUP>, the matrix transmission zero is +3 min<SUP>-</SUP><SUP>1</SUP> (that is, a RHP transmission zero)!</P>
+<P class="docText">The inverse<sup class="docFootnote"><A class="docLink" HREF="#ch14fn01">[1]</A></sup> of the transfer function matrix is</P><blockquote><p class="docFootnote"><sup><A NAME="ch14fn01">[1]</A></sup> Recall that the inverse of a 2 x 2 matrix, <IMG BORDER="0" WIDTH="88" HEIGHT="40" src="FILES/14inequ01.gif" ALT="graphics/14inequ01.gif"> , is calculated by</p></blockquote><blockquote><p class="docFootnote"><PRE><p class="docText"><IMG BORDER="0" WIDTH="357" HEIGHT="46" src="FILES/14equ03j.gif" ALT="graphics/14equ03j.gif"></p></PRE></p></blockquote>
+<p class="docText"><IMG BORDER="0" WIDTH="370" HEIGHT="154" src="FILES/14equ03e.gif" ALT="graphics/14equ03e.gif"></p><br>
+<P class="docText">which has an unstable pole of <span class="docEmphasis">p</span> = +3, as expected.</P>
+<P class="docText">It is possible for an individual element to have a RHP (positive) zero while the matrix transmission zero is in the left-half-plane (negative); this is illustrated by the following transfer function matrix.</P>
+<P class="docText"><span class="docEmphasis">System B</span></P>
+<P class="docText">Consider the transfer function matrix</P>
+<p class="docText"><IMG BORDER="0" WIDTH="188" HEIGHT="41" src="FILES/14equ03f.gif" ALT="graphics/14equ03f.gif"></p><br>
+<P class="docText">which differs from system A by the RHP zero in the <span class="docEmphasis">g</span><SUB>11</SUB>(<span class="docEmphasis">s</span>) transfer function. The determinant of <span class="docEmphasis">G</span>(<span class="docEmphasis">s</span>) is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="153" HEIGHT="39" src="FILES/14equ03g.gif" ALT="graphics/14equ03g.gif"></p><br>
+<P class="docText">and solving for det[<span class="docEmphasis">G</span>(<span class="docEmphasis">s</span>)] = 0,</P>
+<p class="docText"><IMG BORDER="0" WIDTH="46" HEIGHT="16" src="FILES/14equ03h.gif" ALT="graphics/14equ03h.gif"></p>
+<br>
+<P class="docText">We can also see that the rank of the G matrix drops to 1 when <span class="docEmphasis">s</span> = -3,</P>
+<p class="docText"><IMG BORDER="0" WIDTH="130" HEIGHT="39" src="FILES/14equ03i.gif" ALT="graphics/14equ03i.gif"></p><br>
+<P class="docText">since the first column of the matrix is (like system A) a multiplicative factor (3) of the second column. Note that although the zero of the <span class="docEmphasis">g</span><SUB>11</SUB> element is +3 (RHP), the matrix transmission zero is -3 min<SUP>-</SUP><SUP>1</SUP> (that is, a left-half-plane transmission zero).</P>
+<P class="docText">It is left to the reader to show that the inverse of this matrix has a stable pole at -3 min<SUP>-</SUP><SUP>1</SUP>.</P>
+<P class="docText">An example of a physical process with a RHP transmission zero is shown in <A class="docLink" HREF="#ch14fig01">Figure 14-1</A>. This is a laboratory-scale system developed by <A class="docLink" HREF="0133536408_ch14lev1sec10.html#ch14biblio01entry01">Johansson (2000)</A> to study the effect of operating condition on the location of the transmission zeros. The inputs are the voltages to the pumps (<span class="docEmphasis">v</span><SUB>1</SUB>, <span class="docEmphasis">v</span><SUB>2</SUB>) and the outputs are the voltage measurements of the height of liquid in tanks 1 and 2 (<span class="docEmphasis">y</span><SUB>1</SUB>, <span class="docEmphasis">y</span><SUB>2</SUB>). The flow from pump 1 is split between tanks 1 and 4, while the flow from pump 2 is split between tanks 2 and 3. Depending on the actual flow splits, it is possible to obtain a positive RHP transmission zero. Numerical details are presented in <A class="docLink" HREF="#ch14lev2sec4">Example 14.2</A>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch14fig01"></A>Figure 14-1. Quadruple tank control problem.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="299" src="FILES/14fig01.gif" ALT="graphics/14fig01.gif"></p></CENTER>
+<P class="docText">Although this is a "toy" problem, you can see how some processes with recycle might have similar behavior.</P>
+<A NAME="ch14lev2sec4"></A><H4 class="docSection2Title"> Example 14.2: Quadruple Tank Problem (<A class="docLink" HREF="0133536408_ch14lev1sec10.html#ch14biblio01entry01">Johansson, 2000</A>)</H4>
+<P class="docText">This tank system can be operating at two operating points. The first one has two transmission zeros that are in the left-half plane (negative), while the second has a RHP transmission zero.</P>
+<P class="docText"><span class="docEmphasis">Operating Point 1</span></P>
+<P class="docText">Operating point 1 has the following steady-state inputs and outputs:</P>
+<p class="docText"><IMG BORDER="0" WIDTH="284" HEIGHT="17" src="FILES/14equ03k.gif" ALT="graphics/14equ03k.gif"></p>
+<br>
+<p class="docText"><IMG BORDER="0" WIDTH="250" HEIGHT="35" src="FILES/14equ03l.gif" ALT="graphics/14equ03l.gif"></p><br>
+<P class="docText">The result is the process transfer function matrix</P>
+<p class="docText"><IMG BORDER="0" WIDTH="268" HEIGHT="77" src="FILES/14equ03m.gif" ALT="graphics/14equ03m.gif"></p><br>
+<P class="docText">where the gains are volts/volt, and the timescale is seconds. The transmission zeros are</P>
+<p class="docText"><IMG BORDER="0" WIDTH="169" HEIGHT="19" src="FILES/14equ03n.gif" ALT="graphics/14equ03n.gif"></p>
+<br>
+<P class="docText">which are both in the left-half-plane (so the matrix inverse will be stable).</P>
+<P class="docText"><span class="docEmphasis">Operating Point 2</span></P>
+<P class="docText">Operating point 2 has the following steady-state inputs and outputs</P>
+<p class="docText"><IMG BORDER="0" WIDTH="303" HEIGHT="74" src="FILES/14equ03o.gif" ALT="graphics/14equ03o.gif"></p><br>
+<P class="docText">This operating point has the transfer function matrix</P>
+<p class="docText"><IMG BORDER="0" WIDTH="267" HEIGHT="75" src="FILES/14equ03p.gif" ALT="graphics/14equ03p.gif"></p><br>
+<P class="docText">The transmission zeros are</P>
+<p class="docText"><IMG BORDER="0" WIDTH="172" HEIGHT="19" src="FILES/14equ03q.gif" ALT="graphics/14equ03q.gif"></p>
+<br>
+<P class="docText">Notice that there is a RHP transmission zero, so the matrix inverse will be unstable. In Exercise 1, you will find that the feedback control performance of this operating point is severely limited compared with the first operating point.</P>
+<P class="docText">The M<span class="docEmphSmaller">ATLAB</span> routine for calculating transmission zeros is discussed in <A class="docLink" HREF="0133536408_ch14lev1sec7.html#ch14lev1sec7">Section 14.7</A>.</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch14lev1sec1.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch14lev1sec3.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

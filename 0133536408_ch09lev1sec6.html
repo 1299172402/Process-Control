@@ -1,0 +1,69 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="9.6 IMC-Based PID Controller Design for Unstable Processes"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch09lev1sec5.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch09lev1sec7.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch09lev1sec6"></A><H3 class="docSection1Title">9.6 IMC-Based PID Controller Design for Unstable Processes</H3>
+<P class="docText">The IMC procedure must be modified for unstable processes. <A class="docLink" HREF="0133536408_ch09lev1sec8.html#ch09biblio01entry04">Rotstein and Lewin (1991)</A> have used the procedure developed by <A class="docLink" HREF="0133536408_ch09lev1sec8.html#ch09biblio01entry02">Morari and Zafiriou (1989)</A> to find IMC-based PID controllers for unstable processes. The modification to the procedure shown in <A class="docLink" HREF="0133536408_ch09lev1sec2.html#ch09lev1sec2">Sections 9.2</A> and <A class="docLink" HREF="0133536408_ch09lev1sec3.html#ch09lev1sec3">9.3</A> is to use a slightly more complicated filter transfer function.</P>
+<A NAME="ch09pr05"></A>
+
+
+
+<span style="font-weight:bold"><OL class="docList" START="1"><LI><span style="font-weight:normal" value="1"><P class="docList">Find the IMC controller transfer function, <span class="docEmphasis">q</span>(<span class="docEmphasis">s</span>), which includes a filter, <span class="docEmphasis">f</span>(<span class="docEmphasis">s</span>), to make <span class="docEmphasis">q</span>(<span class="docEmphasis">s</span>) semiproper. An additional requirement is that the value of <span class="docEmphasis">f</span>(<span class="docEmphasis">s</span>) at <span class="docEmphasis">s</span> = <span class="docEmphasis">p<SUB>u</SUB></span> (where <span class="docEmphasis">p</span><SUB>u</SUB> is an unstable pole) must be 1. That is,</P>
+<p class="docText"><IMG BORDER="0" WIDTH="78" HEIGHT="16" src="FILES/09equ24a.gif" ALT="graphics/09equ24a.gif"></p>
+<br>
+<P class="docList"><A class="docLink" HREF="0133536408_ch09lev1sec8.html#ch09biblio01entry02">Morari and Zafiriou (1989)</A> recommend a filter transfer function that has the form</P>
+<p class="docText"><IMG BORDER="0" WIDTH="93" HEIGHT="37" src="FILES/09equ24b.gif" ALT="graphics/09equ24b.gif"></p><br>
+<P class="docText">where <span class="docEmphasis">n</span> is chosen to make <span class="docEmphasis">q</span>(<span class="docEmphasis">s</span>) proper (usually <span class="docEmphasis">semiproper</span>). A value of <font face="symbol">g</font> is found that satisfies the filter requirement <span class="docEmphasis">f(s</span> = <span class="docEmphasis">p<SUB>u</SUB></span>) = 1.</P></span></LI><LI><span style="font-weight:normal" value="2"><P class="docList">Find the equivalent standard feedback controller using the transformation</P>
+<p class="docText"><IMG BORDER="0" WIDTH="118" HEIGHT="39" src="FILES/09equ24c.gif" ALT="graphics/09equ24c.gif"></p><br>
+<P class="docText">Write this in the form of a ratio between two polynomials.</P></span></LI><LI><span style="font-weight:normal" value="3"><P class="docText">Show this in PID form and find <span class="docEmphasis">k<SUB>c</SUB></span>, <font face="symbol">t</font><span class="docEmphasis"><SUB>I</SUB></span>, <font face="symbol">t</font><span class="docEmphasis"><SUB>D</SUB></span>. Sometimes this procedure results in a PID controller cascaded with a lag term (<font face="symbol">t</font><span class="docEmphasis"><SUB>F</SUB></span>):</P>
+<p class="docText"><IMG BORDER="0" WIDTH="215" HEIGHT="42" src="FILES/09equ24d.gif" ALT="graphics/09equ24d.gif"></p><br></span></LI><LI><span style="font-weight:normal" value="4"><P class="docText">Perform closed-loop simulations for both the perfect model case and cases with model mismatch. Choose the desired value for <font face="symbol">l</font> as a tradeoff between performance and robustness.</P></span></LI></OL></span>
+<P class="docText"><A class="docLink" HREF="#ch09lev2sec12">Example 9.4</A> illustrates this procedure for a first-order unstable process.</P>
+<A NAME="ch09lev2sec12"></A><H4 class="docSection2Title"> Example 9.4: IMC-Based PID Design for a First-Order Unstable Process</H4>
+<P class="docText">Find the IMC-based PID controller for a first-order unstable process</P>
+<P><B><A NAME="ch09equ26"></A>Equation 9.25 </B></P><p class="docText"><IMG BORDER="0" WIDTH="93" HEIGHT="37" src="FILES/09equ25.gif" ALT="graphics/09equ25.gif"></p><br>
+<P class="docText">where <font face="symbol">t</font><span class="docEmphasis"><SUB>u</SUB></span> is given a positive value. The pole, <span class="docEmphasis">p<SUB>u</SUB></span>, is 1/<font face="symbol">t</font><span class="docEmphasis"><SUB>u</SUB></span>, which is positive, indicating instability.</P>
+<A NAME="ch09pr06"></A>
+
+
+<DL class="docList"><DD><B>Step 1. </B>Find the IMC controller transfer function, <span class="docEmphasis">q</span>(<span class="docEmphasis">s</span>),<BR><BR>
+<P><B><A NAME="ch09equ27"></A>Equation 9.26 </B></P><p class="docText"><IMG BORDER="0" WIDTH="278" HEIGHT="41" src="FILES/09equ26.gif" ALT="graphics/09equ26.gif"></p><br>
+Note that we have selected a second-order polynomial filter to make the controller, <span class="docEmphasis">q</span>(<span class="docEmphasis">s</span>), semiproper. Now we solve for <font face="symbol">g</font> so that <span class="docEmphasis">f</span>(<span class="docEmphasis">s</span> = <span class="docEmphasis">p<SUB>u</SUB></span>) = 1.<BR><BR>
+<p class="docText"><IMG BORDER="0" WIDTH="178" HEIGHT="96" src="FILES/09equ26a.gif" ALT="graphics/09equ26a.gif"></p><br>
+so<BR><BR>
+<p class="docText"><IMG BORDER="0" WIDTH="152" HEIGHT="49" src="FILES/09equ26b.gif" ALT="graphics/09equ26b.gif"></p><br>
+Solving for <font face="symbol">g</font>, we find<BR><BR>
+<P><B><A NAME="ch09equ28"></A>Equation 9.27 </B></P><p class="docText"><IMG BORDER="0" WIDTH="84" HEIGHT="42" src="FILES/09equ27.gif" ALT="graphics/09equ27.gif"></p><br></DD><DD><B>Step 2. </B>Find the equivalent standard feedback controller using the transformation<BR><BR>
+<p class="docText"><IMG BORDER="0" WIDTH="122" HEIGHT="42" src="FILES/09equ27a.gif" ALT="graphics/09equ27a.gif"></p><br>
+After a lengthy bit of algebra,<BR><BR>
+<P><B><A NAME="ch09equ29"></A>Equation 9.28 </B></P><p class="docText"><IMG BORDER="0" WIDTH="157" HEIGHT="42" src="FILES/09equ28.gif" ALT="graphics/09equ28.gif"></p><br></DD><DD><B>Step 3. </B>This is in the form of a PI controller, where<BR><BR>
+<P><B><A NAME="ch09equ30"></A>Equation 9.29 </B></P><p class="docText"><IMG BORDER="0" WIDTH="170" HEIGHT="90" src="FILES/09equ29.gif" ALT="graphics/09equ29.gif"></p><br></DD></DL>
+<P class="docText">As a numerical example, consider <IMG BORDER="0" WIDTH="82" HEIGHT="32" src="FILES/09inequ06.gif" ALT="graphics/09inequ06.gif">. The closed loop output responses for various values of <font face="symbol">l</font> are shown in <A class="docLink" HREF="#ch09fig07">Figure 9-7a</A>, while the manipulated variable responses are shown in <A class="docLink" HREF="#ch09fig07">Figure 9-7b</A>. Notice that we do not achieve the nice overdamped-type of closed-loop output responses that we were able to obtain with open-loop stable processes. The reader should show that the closed-loop relationship for this system is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="228" HEIGHT="40" src="FILES/09equ30.gif" ALT="graphics/09equ30.gif"></p><br>
+<P class="docText">which has overshoot if <font face="symbol">g</font> &gt; <font face="symbol">l</font> [this is always the case for this system; see Equation <A class="docLink" HREF="#ch09equ28">9.27</A>)].</P>
+<P class="docText">In <A class="docLink" HREF="#ch09fig07">Figure 9-7</A> we notice that the closed-loop response had overshoot. A response to a setpoint change, without overshoot, can be obtained by including a setpoint filter, as shown in <A class="docLink" HREF="#ch09fig08">Figure 9-8</A>. The setpoint filter is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="83" HEIGHT="35" src="FILES/09equ31.gif" ALT="graphics/09equ31.gif"></p><br>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch09fig07"></A>Figure 9-7. Responses for a step setpoint change, for various values of <font face="symbol">l</font>. (a) Output; (b) manipulated input.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="395" src="FILES/09fig07.gif" ALT="graphics/09fig07.gif"></p></CENTER>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch09fig08"></A>Figure 9-8. FBC with a setpoint filter.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="159" src="FILES/09fig08.gif" ALT="graphics/09fig08.gif"></p></CENTER>
+<P class="docText">which yields the following closed-loop response for a setpoint change.</P>
+<p class="docText"><IMG BORDER="0" WIDTH="259" HEIGHT="41" src="FILES/09equ32.gif" ALT="graphics/09equ32.gif"></p><br>
+<P class="docText">The results for several unstable process transfer functions are shown in <A class="docLink" HREF="0133536408_ch09lev1sec7.html#ch09table03">Table 9-3</A>. See <A class="docLink" HREF="0133536408_ch09lev1sec8.html#ch09biblio01entry04">Rotstein and Lewin (1991)</A> for a discussion of the effect of dead time and model uncertainty on the control of unstable processes.</P>
+<A NAME="ch09lev2sec13"></A><H4 class="docSection2Title"> Summary of IMC-Based PID Controller Design for Unstable Processes</H4>
+<P class="docText">A major tuning consideration by the student is that there are both upper and lower bounds on <font face="symbol">l</font> to assure stability of an unstable process. This is in contrast to stable processes, where the closed loop is guaranteed to be stable under model uncertainty, simply by increasing <font face="symbol">l</font> to a large value (detuning the controller).</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch09lev1sec5.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch09lev1sec7.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

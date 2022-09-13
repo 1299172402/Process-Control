@@ -1,0 +1,37 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="7.6 Robustness"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch07lev1sec5.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch07lev1sec7.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch07lev1sec6"></A><H3 class="docSection1Title">7.6 Robustness</H3>
+<P class="docText">We have noted throughout this text that it is important to tune controllers to be <span class="docEmphasis">robust</span>. By robust, we mean that a controller can tolerate a certain amount of change in the process parameters without causing the feedback system to go unstable. The gain and phase margins presented in <A class="docLink" HREF="0133536408_ch07lev1sec5.html#ch07lev1sec5">Section 7.5</A> quantify the amount of uncertainty that can be tolerated.</P>
+<P class="docText">To illustrate the relationship between gain and phase margins and the model parametric uncertainty that can be tolerated, we consider the following first-order + time-delay process.</P>
+<P class="docText">The nominal process model is</P>
+<P><B><A NAME="ch07equ17"></A>Equation 7.16 </B></P><p class="docText"><IMG BORDER="0" WIDTH="86" HEIGHT="45" src="FILES/07equ16.gif" ALT="graphics/07equ16.gif"></p><br>
+<P class="docText">Let <font face="symbol">D</font><span class="docEmphasis">k</span> and <font face="symbol">D</font><font face="symbol">q</font> represent the additive uncertainty in the process gain and dead time, respectively (<span class="docEmphasis">notice that we are neglecting any uncertainty in the time constant</span>). The actual process is then</P>
+<P><B><A NAME="ch07equ18"></A>Equation 7.17 </B></P><p class="docText"><IMG BORDER="0" WIDTH="152" HEIGHT="54" src="FILES/07equ17.gif" ALT="graphics/07equ17.gif"></p><br>
+<P class="docText">Notice that we could also use the representation</P>
+<P><B><A NAME="ch07equ19"></A>Equation 7.18 </B></P><p class="docText"><IMG BORDER="0" WIDTH="258" HEIGHT="46" src="FILES/07equ18.gif" ALT="graphics/07equ18.gif"></p><br>
+<P class="docText">where <IMG BORDER="0" WIDTH="60" HEIGHT="23" src="FILES/07inequ01a.gif" ALT="graphics/07inequ01a.gif">. The open-loop transfer function used in the frequency response analysis is</P>
+<P><B><A NAME="ch07equ20"></A>Equation 7.19 </B></P><p class="docText"><IMG BORDER="0" WIDTH="196" HEIGHT="22" src="FILES/07equ19.gif" ALT="graphics/07equ19.gif"></p><br>
+<P class="docText">Notice that the gain and time-delay uncertainties are clearly separated from the nominal model and controller <IMG BORDER="0" WIDTH="65" HEIGHT="17" src="FILES/07inequ02.gif" ALT="graphics/07inequ02.gif"> in this equation. Since 1 + <span class="docEmphasis"><font face="symbol">e</font></span> is a constant term, it will only affect the amplitude ratio. Also notice that <span class="docEmphasis">e</span><SUP>–</SUP><SUP><font face="symbol">D</font><font face="symbol">q</font></SUP><span class="docEmphasis"><SUP>s</SUP></span> will only affect the phase angle. This means that we can think of the <span class="docEmphasis">gain margin</span> as being related to the amount of gain uncertainty that can be tolerated, while the <span class="docEmphasis">phase margin</span> is related to the amount of dead-time uncertainty that can be tolerated. The change in phase angle, <font face="symbol">D</font><font face="symbol">f</font>, due to the change in deadtime, <font face="symbol">D</font><font face="symbol">q</font>, can be found from</P>
+<P><B><A NAME="ch07equ21"></A>Equation 7.20 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="83" HEIGHT="18" src="FILES/07equ20.gif" ALT="graphics/07equ20.gif"></p><br>
+<P class="docText">These concepts are shown more clearly in the first-order + dead-time learning module (<A class="docLink" HREF="0133536408_art06.html#art06">Module 6</A>).</P>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch07lev1sec5.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch07lev1sec7.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

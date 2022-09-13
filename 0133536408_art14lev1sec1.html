@@ -1,0 +1,29 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="M14.1 Background"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_art14.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_art14lev1sec2.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="art14lev1sec1"></A><H3 class="docSection1Title">M14.1 Background</H3>
+<P class="docText">The development and implementation of an industrial control strategy is complex and involves a number of steps. A goal of this module is to present a number of interesting important process control problems that require the synthesis of concepts presented in this textbook. One use of this module is for a special project studied during the final few weeks of a typical undergraduate process control course. Students, often working in small groups, select one of the challenge problems discussed in this module. Here we discuss some of the critical steps of the control system development.</P>
+<P class="docText">It is important to consider the control objectives for a particular process; in addition, it one should consider previously developed strategies and understand how successful they were/are. Sometimes this information is available from a currently operating plant in the corporation. In other cases, a literature search can provide important background material. The next step is to develop a process model, either from first principles, or from testing an existing process. In this module we assume that the step testing approach is being used; since we do not have direct access to an operating plant, S<span class="docEmphSmaller">IMULINK</span> modules are used to mimic plant behavior; these can be downloaded from the textbook web page. Models can then be used to develop SISO control loops, and to understand/predict possible multivariable interaction problems when all loops are closed. If the closed-loop performance of multiple SISO loops is not satisfactory, then multivariable techniques can be developed.</P>
+<P class="docText">When working on these problems, use the following steps and answer the following questions:</P>
+<UL><LI><P class="docList">What types of control strategies and objectives have been used on similar processes?</P></LI><LI><P class="docList">What types of input tests should be performed to develop models for control system design? Do the responses of the models adequately match the actual plant responses?</P></LI><LI><P class="docList">Do the orders of magnitudes of the model gains, time constants, and time delays make physical sense?</P></LI><LI><P class="docList">If using independent SISO control loops (MVSISO), what pairings are suggested by the RGA analysis?</P></LI><LI><P class="docList">If an SISO controller is tuned based on the other loops being open, does the tuning need to change when all the other loops are closed?</P></LI><LI><P class="docList">Should a decoupling (steady-state or dynamic) type of control strategy be used for real (MIMO) multivariable control? What about multivariable IMC?</P></LI><LI><P class="docList">Can you think of any other measured or manipulated variables that could be used?</P></LI><LI><P class="docList">What are the important process disturbances?</P></LI></UL>
+<P class="docText">When tuning the independent SISO loops (assuming the other loops are open), it is probably best to use a procedure that you are familiar with, such as IMC-based PI. You will generally use a closed-loop time constant (<font face="symbol">l</font>, the IMC filter factor) of roughly one half of the open-loop time constant (if this satisfies the minimum requirements for <font face="symbol">l</font> based on the dead time).</P>
+<P class="docText">When testing controller performance for these multivariable processes, it is probably best to initially make a step change in one setpoint while keeping all other setpoints constant (for example, change <span class="docEmphasis">r</span><SUB>1</SUB> without changing <span class="docEmphasis">r</span><SUB>2</SUB>). Do this for each loop. Compare how a setpoint change in one output variable affects the other output variables. Also consider the manipulated variable responses.</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_art14.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_art14lev1sec2.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

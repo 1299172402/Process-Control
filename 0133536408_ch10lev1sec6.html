@@ -1,0 +1,39 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="10.6 Feed-Forward Control"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch10lev1sec5.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch10lev1sec7.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch10lev1sec6"></A><H3 class="docSection1Title">10.6 Feed-Forward Control</H3>
+<P class="docText">When a disturbance affects a process under feedback control it is necessary for a measured process output to change before corrective action is taken to change the manipulated input. It would be preferable to have a sensor that measures the disturbance and adjusts the manipulated input before the process output changes. Consider the furnace system studied earlier in this chapter and shown in <A class="docLink" HREF="#ch10fig11">Figure 10-11</A>. One possible disturbance is the process fluid flow rate; if the flow rate increases 20%, then the required heat duty should also increase by 20%. The purpose of the feed-forward control strategy shown is to immediately change the fuel gas flow rate (for simplicity we assume that the fuel gas flow rate is directly manipulated in this diagram) when a change in the process flow rate is sensed.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch10fig11"></A>Figure 10-11. Feed-forward control of temperature based on the measured process fluid flow rate (disturbance input).</H5><p class="docText"><IMG BORDER="0" WIDTH="450" HEIGHT="439" src="FILES/10fig11.gif" ALT="graphics/10fig11.gif"></p></CENTER>
+<P class="docText">For this furnace example, the steady-state energy balance can be used to find the fuel gas flow rate</P>
+<p class="docText"><IMG BORDER="0" WIDTH="158" HEIGHT="34" src="FILES/10equ05c.gif" ALT="graphics/10equ05c.gif"></p><br>
+<P class="docText">where <span class="docEmphasis">F</span> = process stream flow rate, <font face="symbol">r</font> = density, <span class="docEmphasis">c</span><SUB>p</SUB> = heat capacity, <span class="docEmphasis">T</span> = desired outlet temperature, <span class="docEmphasis">T</span><SUB>f</SUB> = feed temperature, <span class="docEmphasis"><font face="symbol">e</font></span> = furnace efficiency, and <font face="symbol">D</font><span class="docEmphasis">H</span><SUP>c</SUP> = heat of combustion of fuel gas. A steady-state feed-forward controller computes the fuel gas flow rate based on the measured process flow rate (and possibly the process feed temperature). Sometimes it is important to also consider dynamic effects, as shown in several examples that follow.</P>
+<P class="docText">The performance of feed-forward control is limited by model uncertainty. Without a perfect process model the controller cannot completely compensate for disturbances and there will generally be offset. In practice, feed-forward control is combined with feedback control, as shown in <A class="docLink" HREF="#ch10fig12">Figure 10-12</A>. Here the feed-forward controller compensates for process flow rate disturbances, while the feedback controller compensates for other disturbances and model uncertainty. The corresponding block diagram is shown in <A class="docLink" HREF="#ch10fig13">Figure 10-13</A>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch10fig12"></A>Figure 10-12. Feed-forward/feedback control of temperature based on the measured process fluid flow rate (disturbance input).</H5><p class="docText"><IMG BORDER="0" WIDTH="400" HEIGHT="390" src="FILES/10fig12.gif" ALT="graphics/10fig12.gif"></p></CENTER>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch10fig13"></A>Figure 10-13. Feed-forward/feedback control block diagram for the furnace example.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="302" src="FILES/10fig13.gif" ALT="graphics/10fig13.gif"></p></CENTER>
+<P class="docText">Consider the feed-forward/feedback block diagram shown in <A class="docLink" HREF="#ch10fig13">Figure 10-13</A>. We can develop the closed-loop transfer function by using the following steps:</P>
+<p class="docText"><IMG BORDER="0" WIDTH="404" HEIGHT="54" src="FILES/10equ05d.gif" ALT="graphics/10equ05d.gif"></p><br>
+<P class="docText">Rearranging, to solve for <span class="docEmphasis">y(s)</span>, we find</P>
+<p class="docText"><IMG BORDER="0" WIDTH="395" HEIGHT="18" src="FILES/10equ05e.gif" ALT="graphics/10equ05e.gif"></p>
+<br>
+<P class="docText">or</P>
+<P><B><A NAME="ch10equ06"></A>Equation 10.6 </B></P><p class="docText"><IMG BORDER="0" WIDTH="350" HEIGHT="40" src="FILES/10equ06.gif" ALT="graphics/10equ06.gif"></p><br>
+<P class="docText">Equation (<A class="docLink" HREF="#ch10equ06">10.6</A>) is the closed-loop relationship for feed-forward/feedback control. Notice that a (stable) feed-forward controller does not affect the closed-loop stability, since the feed-forward controller transfer function does not appear in the closed-loop characteristic equation (denominator polynomial).</P>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch10lev1sec5.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch10lev1sec7.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

@@ -1,0 +1,40 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="4.3 Integrator + Dead Time"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch04lev1sec2.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch04lev1sec4.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch04lev1sec3"></A><H3 class="docSection1Title">4.3 Integrator + Dead Time</H3>
+<P class="docText">An integrator + dead-time process has the input-output transfer function relationship</P>
+<P><B><A NAME="ch04equ03"></A>Equation 4.3 </B></P><p class="docText"><IMG BORDER="0" WIDTH="72" HEIGHT="36" src="FILES/04equ03.gif" ALT="graphics/04equ03.gif"></p><br>
+<P class="docText">and the output response to a step input</P>
+<P><B><A NAME="ch04equ04"></A>Equation 4.4 </B></P><p class="docText"><IMG BORDER="0" WIDTH="149" HEIGHT="38" src="FILES/04equ04.gif" ALT="graphics/04equ04.gif"></p><br>
+<P class="docText">with the response shown in <A class="docLink" HREF="#ch04fig05">Figure 4-5</A>. The gain, <span class="docEmphasis">k</span>, can be found from the slope by solving</P>
+<p class="docText"><IMG BORDER="0" WIDTH="60" HEIGHT="34" src="FILES/04equ04a.gif" ALT="graphics/04equ04a.gif"></p><br>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch04fig05"></A>Figure 4-5. Estimating parameters for an integrator + time-delay model from a step input test.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="337" src="FILES/04fig05.gif" ALT="graphics/04fig05.gif"></p></CENTER>
+<P class="docText">and the time delay is clearly identified by the time required for a change in output.</P>
+<P class="docText">Integrator + dead-time models are good for describing the behavior of "integrating processes," such as vessel liquid levels or gas drum pressures. They can provide a good short-term approximation to the step response behavior of a first-order + dead-time process. Consider the step response of a distillation column, which has a fairly long time constant. We see from <A class="docLink" HREF="#ch04fig06">Figure 4-6</A> that it takes roughly 5–6 hours to obtain good estimates for a FODT model.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch04fig06"></A>Figure 4-6. Distillation column overhead composition response to a step change of 0.01 kmol/min in reflux rate at <span class="docEmphasis">t</span> = 10 minutes.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="381" src="FILES/04fig06.gif" ALT="graphics/04fig06.gif"></p></CENTER>
+<P class="docText">The reader should be able to show that the transfer function is approximately</P>
+<p class="docText"><IMG BORDER="0" WIDTH="92" HEIGHT="41" src="FILES/04equ04b.gif" ALT="graphics/04equ04b.gif"></p><br>
+<P class="docText">where the gain has units of mol%/(kmol/min) and the time unit is minutes.</P>
+<P class="docText">The initial response of <A class="docLink" HREF="#ch04fig06">Figure 4-6</A> is "blown-up" in <A class="docLink" HREF="#ch04fig07">Figure 4-7</A>. Notice that fewer than 20 minutes (the step change is made at <span class="docEmphasis">t</span> = 10 minutes) is required to obtain a satisfactory integrator + time-delay model. Clearly, plant operators (and managers) will be much more willing to tolerate a 20-minute test than a 4- to 5-hour test.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch04fig07"></A>Figure 4-7. Distillation column overhead composition response to a step change of 0.01 kmol/min in reflux rate at <span class="docEmphasis">t</span> = 10 minutes. Focus is on the short-term response.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="380" src="FILES/04fig07.gif" ALT="graphics/04fig07.gif"></p></CENTER>
+<P class="docText">The reader should be able to show that the estimated transfer function is approximately</P>
+<p class="docText"><IMG BORDER="0" WIDTH="78" HEIGHT="36" src="FILES/04equ04c.gif" ALT="graphics/04equ04c.gif"></p><br>
+<a href="0133536408_10971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch04lev1sec2.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch04lev1sec4.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

@@ -1,0 +1,60 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="4.2 First-Order + Dead Time"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch04lev1sec1.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch04lev1sec3.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch04lev1sec2"></A><H3 class="docSection1Title">4.2 First-Order + Dead Time</H3>
+<P class="docText">Recall that a first-order + dead-time process, represented by the transfer function relationship</P>
+<P><B><A NAME="ch04equ01"></A>Equation 4.1 </B></P><p class="docText"><IMG BORDER="0" WIDTH="103" HEIGHT="44" src="FILES/04equ01.gif" ALT="graphics/04equ01.gif"></p><br>
+<P class="docText">has the following output response to a step input change,</P>
+<P><B><A NAME="ch04equ02"></A>Equation 4.2 </B></P><p class="docText"><IMG BORDER="0" WIDTH="247" HEIGHT="42" src="FILES/04equ02.gif" ALT="graphics/04equ02.gif"></p><br>
+<P class="docText">where the measured output is in deviation variable form. The three process parameters can be estimated by performing a single step test on the process input.</P>
+<P class="docText">The gain is found as simply the long-term change in process output divided by the change in process input. Also the time delay is the amount of time, after the input change, before a significant output response is observed. There are several easy ways to estimate the time constant for this type of model.</P>
+<A NAME="ch04lev2sec1"></A><H4 class="docSection2Title"> Time for 63.2% Approach to New Steady State</H4>
+<P class="docText">In Equation (<A class="docLink" HREF="#ch04equ02">4.2</A>), if we set <span class="docEmphasis">t</span> = <font face="symbol">t</font><span class="docEmphasis"><SUB>p</SUB></span> + <font face="symbol">q</font>, we find <span class="docEmphasis">y</span>(<span class="docEmphasis">t</span> = <font face="symbol">t</font><span class="docEmphasis"><SUB>p</SUB></span> + <font face="symbol">q</font>) = <span class="docEmphasis">k<SUB>p</SUB></span><font face="symbol">D</font><span class="docEmphasis">u</span>(1 - exp(–1)) = 0.632<span class="docEmphasis">k<SUB>p</SUB></span><font face="symbol">D</font><span class="docEmphasis">u</span>. Now, since <span class="docEmphasis">k<SUB>p</SUB></span><font face="symbol">D</font><span class="docEmphasis">u</span> is simply the long-term change in the process output, then <span class="docEmphasis">t</span><SUB>63.2%</SUB> = <font face="symbol">t</font><span class="docEmphasis"><SUB>p</SUB></span> + <font face="symbol">q</font> is the amount of time it takes for the output to make 63.2% of its ultimate change. This method of estimating the time constant is illustrated in <A class="docLink" HREF="#ch04fig01">Figure 4-1</A>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch04fig01"></A>Figure 4-1. Estimating the time constant from a response to a step input.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="304" src="FILES/04fig01.gif" ALT="graphics/04fig01.gif"></p></CENTER>
+<A NAME="ch04lev2sec2"></A><H4 class="docSection2Title"> Example 4.1: Numerical Application of 63.2% Method</H4>
+<P class="docText">Consider the response to a step input change at <span class="docEmphasis">t</span> = 1 minute, shown in <A class="docLink" HREF="#ch04fig02">Figure 4-2</A>. The measured output is shown as the noisy solid curve, and a "best fit" first-order + time-delay model is shown as the dashed curve. Here we find the process gain from</P>
+<p class="docText"><IMG BORDER="0" WIDTH="223" HEIGHT="41" src="FILES/04equ02a.gif" ALT="graphics/04equ02a.gif"></p><br>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch04fig02"></A>Figure 4-2. Example of the step response with measurement noise.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="383" src="FILES/04fig02.gif" ALT="graphics/04fig02.gif"></p></CENTER>
+<P class="docText">The time delay is observed to be 1 minute, and the time constant is the time it takes (after the time delay) for the output to change by 0.632(-2) = -1.3&#176;C. That is, the time when <span class="docEmphasis">y</span> = 23.7&#176;C. In this case,</P>
+<p class="docText"><IMG BORDER="0" WIDTH="99" HEIGHT="19" src="FILES/04equ02b.gif" ALT="graphics/04equ02b.gif"></p>
+<br>
+<P class="docText">and the process transfer function is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="94" HEIGHT="38" src="FILES/04equ02c.gif" ALT="graphics/04equ02c.gif"></p><br>
+<A NAME="ch04lev2sec3"></A><H4 class="docSection2Title"> Maximum Slope Method</H4>
+<P class="docText">We can also find (see Exercise 1) that the maximum slope of the output response to a step input change at <span class="docEmphasis">t</span> = 0 occurs at <span class="docEmphasis">t</span> = <font face="symbol">q</font> and is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="116" HEIGHT="44" src="FILES/04equ02d.gif" ALT="graphics/04equ02d.gif"></p><br>
+<P class="docText">So the time constant can be estimated from</P>
+<p class="docText"><IMG BORDER="0" WIDTH="67" HEIGHT="39" src="FILES/04equ02e.gif" ALT="graphics/04equ02e.gif"></p><br>
+<P class="docText">A major disadvantage is that the slope estimate may not be accurate if there is significant measurement noise. This approach is particularly useful for higher-order responses that are approximated as a first-order + time-delay response, as shown in the following example.</P>
+<A NAME="ch04lev2sec4"></A><H4 class="docSection2Title"> Example 4.2: Maximum Slope Method</H4>
+<P class="docText">The response of a high order process is shown in <A class="docLink" HREF="#ch04fig03">Figure 4-3</A>. Here, the dashed line is drawn through the maximum slope of the output response. The slope is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="213" HEIGHT="83" src="FILES/04equ02f.gif" ALT="graphics/04equ02f.gif"></p><br>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch04fig03"></A>Figure 4-3. Example of the slope method for estimation of time constant.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="398" src="FILES/04fig03.gif" ALT="graphics/04fig03.gif"></p></CENTER>
+<P class="docText">Since the process gain is <span class="docEmphasis">k<SUB>p</SUB></span> = <font face="symbol">D</font><span class="docEmphasis">y</span>/<font face="symbol">D</font><span class="docEmphasis">u</span> = 6&#176;C/2 gpm = 3&#176;C/gpm, and the time-delay is 8-1 = 7 min, the first-order + time-delay transfer function is estimated as</P>
+<p class="docText"><IMG BORDER="0" WIDTH="91" HEIGHT="41" src="FILES/04equ02g.gif" ALT="graphics/04equ02g.gif"></p><br>
+<A NAME="ch04lev2sec5"></A><H4 class="docSection2Title"> Two-Point Method for Estimating Time Constant</H4>
+<P class="docText">A technique similar to the first one, but using two points on the output response, is shown in <A class="docLink" HREF="#ch04fig04">Figure 4-4</A>. Here the time required for the process output to make 28.3% and 63.2% of the long-term change is denoted by <span class="docEmphasis">t</span><SUB>28.3%</SUB> and <span class="docEmphasis">t</span><SUB>63.2%</SUB>, respectively. The time constant and time delay can be estimated from (see Exercise 2)</P>
+<p class="docText"><IMG BORDER="0" WIDTH="125" HEIGHT="36" src="FILES/04equ02h.gif" ALT="graphics/04equ02h.gif"></p><br>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch04fig04"></A>Figure 4-4. Example of the two-point method for estimation of time constant.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="280" src="FILES/04fig04.gif" ALT="graphics/04fig04.gif"></p></CENTER>
+
+<A NAME="ch04lev2sec6"></A><H4 class="docSection2Title"> Limitation to FODT Models</H4>
+<P class="docText">The primary limitation to using step responses to identify first-order + dead-time transfer functions is the amount of time required to assure that the process is approaching a new steady state. That is, the major limit is the time required to determine the gain of the process. For large time constant processes it is often desirable to use a simpler model that does not require a long step test time. The integrator + dead-time model shown next will often be good enough for control-system design.</P>
+<a href="0133536408_10971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch04lev1sec1.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch04lev1sec3.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

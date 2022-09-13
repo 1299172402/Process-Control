@@ -1,0 +1,149 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="Student Exercises"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch02lev1sec9.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch02lev1sec11.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch02lev1sec10"></A><H3 class="docSection1Title"> Student Exercises</H3>
+<P><TABLE BORDER="0" cellspacing="16" cellpadding="0"><TR valign="top"><TD align="right" class="docText"><A NAME="qad1e10252"></A><B>1:</B></TD><TD><P class="docText">Consider the gas drum in <A class="docLink" HREF="0133536408_ch02lev1sec3.html#ch02lev2sec6">Example 2.1</A>. Often the outlet flow relationship is actually nonlinear, with the form</P>
+<p class="docText"><IMG BORDER="0" WIDTH="82" HEIGHT="21" src="FILES/02equ106.gif" ALT="graphics/02equ106.gif"></p><br>
+<P class="docText">so the modeling equation is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="164" HEIGHT="34" src="FILES/02equ107.gif" ALT="graphics/02equ107.gif"></p><br>
+<P class="docText">Discuss whether this is now a self-regulating process. Also, sketch the steady-state input (<span class="docEmphasis">q<SUB>is</SUB></span>) -output (<span class="docEmphasis">P<SUB>s</SUB></span>) curve, based on the flow coefficient, <font face="symbol">b</font> = 1 mol &#183; s<SUP>-</SUP><SUP>1</SUP> &#183; atm<SUP>-</SUP><SUP>1/2</SUP> and a constant header pressure, <span class="docEmphasis">P<SUB>h</SUB></span> = 1 atm.</P></TD></TR><TR valign="top"><TD align="right" class="docText"><A NAME="qad1e10301"></A><B>2:</B></TD><TD><P class="docText">Consider the heated mixing tank example, which had the modeling equations</P>
+<p class="docText"><IMG BORDER="0" WIDTH="123" HEIGHT="80" src="FILES/02equ108.gif" ALT="graphics/02equ108.gif"></p><br>
+<P class="docText">For steady-state inlet and outlet flow rates of 100 liters/minute, a liquid volume of 500 liters and inlet and outlet temperatures of 20&#176; and 40&#176;C, respectively:</P>
+<span style="font-weight:bold"><OL class="docList" TYPE="a"><LI><span style="font-weight:normal"><P class="docList">Find the steady-state heating rate, <span class="docEmphasis">Q</span>.</P></span></LI><LI><span style="font-weight:normal"><P class="docList">Consider a step inlet temperature change from 20&#176; to 22&#176;C. Use Euler integration with a integration step size of 0.5 minutes to find the vessel temperature response for the first 2 minutes. Compare this with M<span class="docEmphSmaller">ATLAB</span> ode45 (see the ODE module).</P></span></LI></OL></span></TD></TR><TR valign="top"><TD align="right" class="docText"><A NAME="qad1e10333"></A><B>3:</B></TD><TD><P class="docText">Often liquid surge tanks (particularly those containing hydrocarbons) will have a gas "blanket" of nitrogen or carbon dioxide to prevent the accumulation of explosive vapors above the liquid, as depicted below.</P><p class="docText"><IMG BORDER="0" WIDTH="450" HEIGHT="211" src="FILES/02fig11a.gif" ALT="graphics/02fig11a.gif"></p>
+<P class="docText">Develop the modeling equations with gas pressure and liquid volume as the state variables. Let <span class="docEmphasis">q<SUB>f</SUB></span> and <span class="docEmphasis">q</span> represent the inlet and outlet gas molar flow rates, <span class="docEmphasis">F<SUB>f</SUB></span> and <span class="docEmphasis">F</span> the liquid volumetric flow rates, <span class="docEmphasis">V</span> the constant (total) volume, <span class="docEmphasis">V<SUB>l</SUB></span> the liquid volume, and <span class="docEmphasis">P</span> the gas pressure. Assume the ideal gas law. Show that the modeling equations are</P>
+<p class="docText"><IMG BORDER="0" WIDTH="221" HEIGHT="78" src="FILES/02equ109.gif" ALT="graphics/02equ109.gif"></p><br>
+<P class="docText">and state any other assumptions.</P></TD></TR><TR valign="top"><TD align="right" class="docText"><A NAME="qad1e10379"></A><B>4:</B></TD><TD><P class="docText">Consider the ethylene glycol problem (<A class="docLink" HREF="0133536408_ch02lev1sec3.html#ch02lev2sec8">Example 2.2</A>). If two 800-gallon reactors are placed in series, what volumetric flow rate is necessary to produce 100 million lb/year of ethylene glycol? What percentage savings is this compared with using a single 800-gallon reactor?</P></TD></TR><TR valign="top"><TD align="right" class="docText"><A NAME="qad1e10387"></A><B>5:</B></TD><TD><P class="docText">Consider the ethylene glycol problem (<A class="docLink" HREF="0133536408_ch02lev1sec3.html#ch02lev2sec8">Example 2.2</A>). Solve the dynamic equations using ode45 (see the ODE module), for a step change in space velocity from 0.0778 to 0.0817 min<SUP>-1</SUP>. Compare your plots with those shown in <A class="docLink" HREF="0133536408_ch02lev1sec3.html#ch02fig04">Figure 2-4</A>.</P></TD></TR><TR valign="top"><TD align="right" class="docText"><A NAME="qad1e10405"></A><B>6:</B></TD><TD><P class="docText">Semibatch reactors are operated as a cross between batch and continuous reactors. A semibatch reactor is initially charged with a volume of material, and a continous feed of reactant is started. There is, however, no outlet stream. Develop the modeling equations for a single first-order reaction. The state variables should be volume and concentration of reactant <span class="docEmphasis">A</span>.</P></TD></TR><TR valign="top"><TD align="right" class="docText"><A NAME="qad1e10413"></A><B>7:</B></TD><TD><P class="docText">A stream contains a waste chemical, <span class="docEmphasis">W</span>, with a concentration of 1 mol/liter. To meet Environmental Protection Agency and state standards, at least 90% of the chemical must be removed by reaction. The chemical decomposes by a second-order reaction with a rate constant of 1.5 liter/(mol hr). The stream flow rate is 100 liter/hour and two available reactors (400 and 2000 liters) have been placed in series (the smaller reactor is placed before the larger one).</P>
+<span style="font-weight:bold"><OL class="docList" TYPE="a"><LI><span style="font-weight:normal"><P class="docList">Write the modeling equations for the concentration of the waste chemical. Assume constant volume and constant density. Let</P><P class="docList"><span class="docEmphasis">C</span><SUB>w1</SUB> = concentration in reactor 1, mol/liter</P><P class="docList"><span class="docEmphasis">C</span><SUB>w2</SUB> = concentration in reactor 2, mol/liter</P><P class="docList"><span class="docEmphasis">F</span> = volumetric flow rate, liter/hr</P><P class="docList"><span class="docEmphasis">V</span><SUB>1</SUB> = liquid volume in reactor 1, liters</P><P class="docList"><span class="docEmphasis">V</span><SUB>2</SUB> = liquid volume in reactor 2, liters</P><P class="docList"><span class="docEmphasis">k</span> = second-order rate constant, liter/(mol hr)</P></span></LI><LI><span style="font-weight:normal"><P class="docList">Show that the steady-state concentrations are 0.33333 mol/liter (reactor 1) and 0.09005 mol/liter (reactor 2), so the specification is met.</P><P class="docList">(<span class="docEmphasis">Hint</span>: You need to solve quadratic equations to obtain the concentrations.)</P></span></LI><LI><span style="font-weight:normal"><P class="docList">Linearize at steady state and develop the state space model (analytical) of the form</P><p class="docText"><IMG BORDER="0" WIDTH="80" HEIGHT="17" src="FILES/02equ110.gif" ALT="graphics/02equ110.gif"></p><br><P class="docList">where</P><p class="docText"><IMG BORDER="0" WIDTH="216" HEIGHT="40" src="FILES/02equ110a.gif" ALT="graphics/02equ110a.gif"></p><br></span></LI><LI><span style="font-weight:normal"><P class="docList">Show that the <span class="docEmphasis">A</span> and <span class="docEmphasis">B</span> matrices are</P><p class="docText"><IMG BORDER="0" WIDTH="285" HEIGHT="42" src="FILES/02equ111.gif" ALT="graphics/02equ111.gif"></p><br><P class="docList">(also, show the units associated with each coefficient).</P></span></LI><LI><span style="font-weight:normal"><P class="docList">Assuming that each state is an output, show that the <span class="docEmphasis">C</span> and <span class="docEmphasis">D</span> matrices are</P><p class="docText"><IMG BORDER="0" WIDTH="148" HEIGHT="44" src="FILES/02equ112.gif" ALT="graphics/02equ112.gif"></p><br></span></LI><LI><span style="font-weight:normal"><P class="docList">Find the eigenvalues of <span class="docEmphasis">A</span> using the M<span class="docEmphSmaller">ATLAB</span> <TT>eig</TT> function, and find the eigenvalues by hand, by solving det (<font face="symbol">l</font><span class="docEmphasis">I</span> - <span class="docEmphasis">A</span>) = 0.</P></span></LI><LI><span style="font-weight:normal"><P class="docList">Solve <span class="docEmphStrong">a</span> for the nonlinear differential equations, using ode45. Compare the linear and nonlinear variables on the same plots (make certain you convert from deviation to physical variables for the linear results) for a step change in the flow rate from 100 liters/hour to 110 liters/hour. Assume the initial concentrations are the steady-state values (0.3333 and 0.09005). Compare the linear and nonlinear responses of the reactor concentrations. Is the removal specification still obtained?</P></span></LI><LI><span style="font-weight:normal"><P class="docList">Would better steady-state removal of <span class="docEmphasis">W</span> be obtained if the order of the reaction vessels was reversed? Why or why not? (Show your calculations.)</P></span></LI></OL></span></TD></TR><TR valign="top"><TD align="right" class="docText"><A NAME="qad1e10558"></A><B>8:</B></TD><TD><P class="docText">Consider <A class="docLink" HREF="0133536408_ch02lev1sec7.html#ch02lev2sec26">Example 2.5</A>, the stirred-tank heater example. Read and work through the example. Use the following parameters and steady-state values:</P>
+<P><TABLE CELLSPACING="0" FRAME="void" RULES="none" CELLPADDING="5" WIDTH="100%"><COLGROUP align="left" span="3"><THEAD></THEAD><TR><TD class="docTableCell" valign="top"><P class="docText"><span class="docEmphasis">F<SUB>s</SUB></span> = 1 ft<SUP>3</SUP>/min</P></TD><TD class="docTableCell" valign="top"><P class="docText"><font face="symbol">r</font><span class="docEmphasis">c<SUB>p</SUB></span> = 61.3 Btu/(&#176;F &#183; ft<SUP>3</SUP>)</P></TD><TD class="docTableCell" valign="top"><P class="docText"><font face="symbol">r</font><span class="docEmphasis"><SUB>j</SUB></span>c<span class="docEmphasis"><SUB>pj</SUB></span> = 61.3 Btu/(&#176;F &#183; ft<SUP>3</SUP>)</P></TD></TR><TR><TD class="docTableCell" valign="top"><P class="docText"><span class="docEmphasis">T<SUB>is</SUB></span> = 50<span class="docEmphasis">&#176;</span>F</P></TD><TD class="docTableCell" valign="top"><P class="docText"><span class="docEmphasis">T<SUB>s</SUB></span> = 125<span class="docEmphasis">&#176;</span>F</P></TD><TD class="docTableCell" valign="top"><P class="docText"><span class="docEmphasis">V</span> = 10 ft<SUP>3</SUP></P></TD></TR><TR><TD class="docTableCell" valign="top"><P class="docText"><span class="docEmphasis">T<SUB>jis</SUB></span> = 200<span class="docEmphasis">&#176;</span>F</P></TD><TD class="docTableCell" valign="top"><P class="docText"><span class="docEmphasis">T<SUB>js</SUB></span> = 150<span class="docEmphasis">&#176;</span>F</P></TD><TD class="docTableCell" valign="top"><P class="docText"><span class="docEmphasis">V<SUB>j</SUB></span> = 2.5 ft<SUP>3</SUP></P></TD></TR></COLGROUP></TABLE></P>
+<span style="font-weight:bold"><OL class="docList" TYPE="a"><LI><span style="font-weight:normal"><P class="docList">By solving the steady-state equations, verify that the following values obtained for <span class="docEmphasis">UA</span> (overall heat transfer coefficient * area for heat transfer) and <span class="docEmphasis">F<SUB>js</SUB></span> (steady-state jacket flow rate) are correct:</P><p class="docText"><IMG BORDER="0" WIDTH="152" HEIGHT="36" src="FILES/02equ.gif" ALT="graphics/02equ.gif"></p><br></span></LI><LI><span style="font-weight:normal"><P class="docList">Find the values of the matrices in the state space model.</P></span></LI><LI><span style="font-weight:normal"><P class="docList">Write a function file, <TT>heater.m</TT> (example shown below), to be used with ode45 (<A class="docLink" HREF="0133536408_art03.html#art03">Module 3</A>) to solve the two nonlinear ordinary differential equations.</P></span></LI><LI><span style="font-weight:normal"><P class="docList">First, verify that the steady-state state variable values are correct by simulating the process with no change in the jacket flow rate.</P></span></LI><LI><span style="font-weight:normal"><P class="docList">Now, perform simulations for small and large step changes in the jacket flow rate. Use the M<span class="docEmphSmaller">ATLAB</span> step command to solve for the linear state space model. Realize that the step results are based on deviation variables and for a unit step change in input one (jacket flow rate), and convert the linear states to physical variable form.</P><P class="docList">We now consider the important issue of scale-up: Pilot plants are small-scale (intermediate between lab-scale and full-size manufacturing-scale) chemical processes, used to understand process operating behavior before the manufacturing process is designed. Here we discover the effect of vessel scale on the heat transfer removal capability of a vessel.</P></span></LI><LI><span style="font-weight:normal"><P class="docList">Consider now a vessel that can handle 10 times the throughput of the previous vessel (that is, 10 ft<SUP>3</SUP>/min rather than 1 ft<SUP>3</SUP>/min). Assume that the same residence time is maintained (<span class="docEmphasis">V</span>/<span class="docEmphasis">F</span> = 10 minutes), so the volume of the new vessel is 100 ft<SUP>3</SUP>. Assume that the heat transfer coefficient (<span class="docEmphasis">U</span>) remains constant, but that the heat transfer area changes. Assume that the vessel can be modeled as a cylinder, with the height (<span class="docEmphasis">L</span>) = 2*diameter (<span class="docEmphasis">D</span>). Find the value of <span class="docEmphasis">UA</span> for the larger vessel.</P></span></LI><LI><span style="font-weight:normal"><P class="docList">For the larger vessel, find the new steady-state value of jacket temperature that must be used to maintain the vessel temperature at <span class="docEmphasis">T</span> = 125&#176;F. Also, find the new steady-state jacket flow rate. <span class="docEmphasis">Hint</span>: Solve the two modeling equations at steady state to obtain these values. Discuss the effect of process scale-up on the operating conditions. How large can the vessel become before the jacket temperature is too high (it approaches the inlet jacket temperature)?</P></span></LI><LI><span style="font-weight:normal"><P class="docList">For the larger vessel, find the new state space model, assuming that the jacket volume is 0.25 times the vessel volume. Calculate the eigenvalues of the <span class="docEmphasis">A</span> matrix. How do they compare with the smaller vessel?</P></span></LI><LI><span style="font-weight:normal"><P class="docList">Find the step response for the nonlinear and linear (state space) systems for a step increase of 0.1 ft<SUP>3</SUP>/min in jacket flow rate. How do these compare with the smaller vessel?</P></span></LI><LI><span style="font-weight:normal"><P class="docList">Find the step response for the nonlinear and linear (state space) systems for a step increase of 10% in the jacket flow rate. How do these compare with the smaller vessel?</P></span></LI></OL></span>
+<P class="docText"><span class="docEmphStrong">Example m-file to be used by ode45</span></P>
+<pre>
+
+</pre><pre>
+function xdot = heater(t,x,flag,delFj);
+%
+% Dynamics of a stirred tank heater
+% (c) 1994 - B.W. Bequette
+% 8 July 94
+% 23 Jan 01 - revised for jacket step change in argument list
+%
+% x(1) = T = temperature in tank
+% x(2) = Tj = temperature in jacket
+% delFj = change in jacket flowrate
+% F = Tank flowrate
+% Tin = Tank inlet temperature
+% Tji = Jacket inlet temperature
+% V = Tank volume
+% Vj = Jacket volume
+% rhocp = density*heat capacity
+% rhocpj = density*heat capacity,jacket fluid
+%
+% parameter and steady-state variable values are:
+%
+ F = 1;
+ Fjs = 1.5;
+ Ti = 50;
+ Tji = 200;
+ V = 10;
+ Vj = 2.5;
+ rhocp = 61.3;
+ rhocpj= 61.3;
+ UA = 183.9;
+%
+% step change in jacket flow
+%
+ Fj = Fjs + delFj;
+ T = x(1);
+ Tj= x(2);
+%
+% odes
+%
+ dTdt = (F/V)*(Ti - T) + UA*(Tj - T)/(V*rhocp);
+ dTjdt = (Fj/Vj)*(Tji - Tj) - UA*(Tj - T)/(Vj*rhocpj);
+ xdot = [dTdt; dTjdt];
+%
+% generate simulations using
+% [t,x] = ode45('heater',tspan,x0,[],delFj);
+% where tspan = [0 30], for example
+</pre>
+<P class="docText">To make the runs go faster, you may wish to generate and run the following script file:</P>
+<pre>
+
+</pre><pre>
+%
+% runs stirred tank heater example - 23 Jan 01
+% step changes to stirred tank heater
+%
+% make certain you enter the step change value (delFj)
+% before running this file
+% also, generate function file with the following first line:
+% function xdot = heater(t,x,flag,delFj);
+%
+ options = odeset('RelTol',1e-6,'AbsTol',[1e-6 1e-6]);
+%
+ [t,x] = ode45('heater',tspan,x0,options,delFj);
+%
+ figure(1)
+ subplot(2,1,1),plot(t,x(:,1))
+ title('nonlinear, using ode45')
+ xlabel('time, min')
+ ylabel('temp, deg F')
+ subplot(2,1,2),plot(t,x(:,2))
+ xlabel('time, min')
+ ylabel('jacket temp, deg F')
+%
+% state space model with unit step change
+ a = [-0.4 0.3;1.2 -1.8];
+ b = [0;20];
+ c = [1 0;0 1];
+ d = 0;
+ sys = ss(a,b,c,d);
+ [ylin,tlin] = step(sys);
+%
+ figure(2)
+ subplot(2,1,1),plot(tlin,ylin(:,1))
+ title('linear state space, unit step, deviation')
+ xlabel('time, min')
+ subplot(2,1,2),plot(tlin,ylin(:,2))
+ xlabel('time, min')
+%
+% scale deviation by delFj
+ ylinscale = ylin*delFj;
+% plot in physical variable form
+ figure(3)
+ subplot(2,1,1),plot(tlin,125+ylinscale(:,1))
+ title('linear state space, physical magnitude')
+ xlabel('time, min')
+ subplot(2,1,2),plot(tlin,150+ylinscale(:,2))
+ xlabel('time, min')
+% compare linear and nonlinear on same plot
+ figure(4)
+ subplot(2,1,1),plot(t,x(:,1),tlin,125+ylinscale(:,1),'--')
+ title('nonlinear vs. linear')
+ xlabel('time, min')
+ ylabel('temp, deg F')
+ legend('nonlinear','linear')
+ subplot(2,1,2),plot(t,x(:,2),tlin,150+ylinscale(:,2),'--')
+ xlabel('time, min')
+ ylabel('jacket temp, deg F')
+ legend('nonlinear','linear')
+</pre></TD></TR></TABLE></P><br>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch02lev1sec9.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch02lev1sec11.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

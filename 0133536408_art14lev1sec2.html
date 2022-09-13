@@ -1,0 +1,41 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="M14.2 Reactive Ion Etcher"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_art14lev1sec1.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_art14lev1sec3.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="art14lev1sec2"></A><H3 class="docSection1Title">M14.2 Reactive Ion Etcher</H3>
+<P class="docText">An important process in semiconductor device manufacturing is plasma etching (or reactive ion etching). In this unit operation, reactive ions are used to selectively remove (etch) layers of solid films on a wafer. A major objective of a control system is to achieve relative etch rates (angstroms/second) by manipulating the process inputs. Currently, etch rate measurements are not readily available, so it is assumed that by measuring and controlling other variables, good control of the etch rate can be obtained.</P>
+<P class="docText">Two variables important to control are the voltage bias of the plasma and the fluorine concentration, since they ultimately determine the etch rate. Two important manipulated variables are the RF power and the outlet valve position (throttle). A schematic of a reactive ion etcher is shown in <A class="docLink" HREF="#art14m14fig01">Figure M14-1</A>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="art14m14fig01"></A>Figure M14-1. Reactive ion etcher.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="241" src="FILES/m14fig01.gif" ALT="graphics/m14fig01.gif"></p></CENTER>
+<P class="docText">A reactive ion etcher has power and throttle position inputs (<span class="docEmphasis">P</span> and <span class="docEmphasis">T</span>) and voltage (<span class="docEmphasis">V</span><SUB>bias</SUB>) flourine concentration (<span class="docEmphasis">F</span>) as outputs.</P>
+<p class="docText"><IMG BORDER="0" WIDTH="204" HEIGHT="41" src="FILES/m14equ01.gif" ALT="graphics/m14equ01.gif"></p><br>
+<P class="docText"><span class="docEmphasis">Questions to Answer</span></P>
+<P class="docText">Are fundamental (first principles) models of plasma etchers easy to develop?</P>
+<P class="docText">Will fundamental models or input/output tests (i.e., step tests) normally be used for control system design?</P>
+<P class="docText">The nominal and range of operating conditions for this system are as follows:</P>
+<UL><LI><p class="docText">
+<span class="docEmphRoman">Inputs:</span> 
+power 1000 W, range from 0 to 2000 W; throttle, 50%, range from 0 to 100%.</p></LI><LI><p class="docText">
+<span class="docEmphRoman">Outputs:</span> 
+voltage, 250 V; fluorine, 50% of range.</p></LI></UL>
+<P class="docText">Disturbances of up to &#177;25 W in power are possible.</P>
+<P class="docText">A S<span class="docEmphSmaller">IMULINK</span> block diagram for a reactive ion etcher is shown in <A class="docLink" HREF="#art14m14fig02">Figure M14-2</A>. The inputs and outputs of the etcher are in physical (not deviation) variables.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="art14m14fig02"></A>Figure M14-2. S<span class="docEmphSmaller">IMULINK</span> diagram for reactive ion etcher.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="270" src="FILES/m14fig02.gif" ALT="graphics/m14fig02.gif"></p></CENTER>
+
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_art14lev1sec1.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_art14lev1sec3.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

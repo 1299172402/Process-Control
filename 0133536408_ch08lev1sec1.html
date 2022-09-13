@@ -1,0 +1,66 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="8.1 Introduction to Model-Based Control"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch08.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch08lev1sec2.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch08lev1sec1"></A><H3 class="docSection1Title">8.1 Introduction to Model-Based Control</H3>
+<P class="docText">In the previous chapters we focused on techniques to tune PID controllers. The closed-loop oscillation technique developed by Ziegler and Nichols did not require a model of the process. Direct synthesis, however, was based the use of a process model and a desired closed-loop response to synthesize a control law; often this resulted in a controller with a PID structure. In this chapter we develop a model-based procedure, where a process model is "embedded" in the controller. By explicitly using process knowledge, by virtue of the process model, improved performance can be obtained.</P>
+<P class="docText">Consider the stirred-tank heater control problem shown in <A class="docLink" HREF="#ch08fig01">Figure 8-1</A>. We can use a model of the process to decide the heat flow (<span class="docEmphasis">Q</span>) that needs to be added to the process to obtain a desired temperature (<span class="docEmphasis">T</span>) trajectory, specified by the setpoint (<span class="docEmphasis">T</span><SUB>sp</SUB>). A simple steady-state energy balance provides the steady-state heat flow needed to obtain a new steady-state temperature, for example. By using a dynamic model, we can also find the time-dependent heat profile needed to yield a particular time-dependent temperature profile.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch08fig01"></A>Figure 8-1. Stirred-tank heater.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="219" src="FILES/08fig01.gif" ALT="graphics/08fig01.gif"></p></CENTER>
+<P class="docText">Assume that the chemical process is represented by a linear transfer function model, and that it is open-loop stable. The input-output relationship is shown in <A class="docLink" HREF="#ch08fig02">Figure 8-2</A>, where <span class="docEmphasis">u</span> is the input variable (heat flow) and <span class="docEmphasis">y</span> is the output variable (temperature).</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch08fig02"></A>Figure 8-2. Open-loop process system.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="450" HEIGHT="83" src="FILES/08fig02.gif" ALT="graphics/08fig02.gif"></p></CENTER>
+<P class="docText">When the process is at steady state, and there are no disturbances, then the inputs and outputs are zero (since we are using deviation variables). Consider a desired change in the output <span class="docEmphasis">y</span>; we refer to the desired value of <span class="docEmphasis">y</span> as the setpoint, which is represented by <span class="docEmphasis">r</span>. We wish to design an open-loop controller, <span class="docEmphasis">q</span>(<span class="docEmphasis">s</span>), so that the relationship between <span class="docEmphasis">r</span>(<span class="docEmphasis">s</span>) and <span class="docEmphasis">y</span>(<span class="docEmphasis">s</span>) has <span class="docEmphasis">desirable</span> dynamic characteristics (fast response without much overshoot, no offset, etc.). The open-loop control system is shown in <A class="docLink" HREF="#ch08fig03">Figure 8-3</A> (we may also wish to think of this as a feed-forward controller, based on setpoint). We use <span class="docEmphasis">q</span>(<span class="docEmphasis">s</span>) to represent the open-loop controller transfer function, to emphasize that it is a different type of controller than the feedback controllers of <A class="docLink" HREF="0133536408_ch05.html#ch05">Chapters 5</A> and <A class="docLink" HREF="0133536408_ch06.html#ch06">6</A>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch08fig03"></A>Figure 8-3. Open-loop model-based control system.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="107" src="FILES/08fig03.gif" ALT="graphics/08fig03.gif"></p></CENTER>
+<P class="docText">Using block diagram analysis, we find the following relationship between the setpoint and the output</P>
+<P><B><A NAME="ch08equ01"></A>Equation 8.1 </B></P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="110" HEIGHT="17" src="FILES/08equ01.gif" ALT="graphics/08equ01.gif"></p><br>
+<A NAME="ch08lev2sec1"></A><H4 class="docSection2Title"> Static Control Law</H4>
+<P class="docText">The simplest controller will result if <span class="docEmphasis">q</span>(<span class="docEmphasis">s</span>) is a constant. Let <span class="docEmphasis">k</span><SUB>q</SUB> represent this constant. As an example, consider a first-order process, <span class="docEmphasis">g<SUB>p</SUB></span>(<span class="docEmphasis">s</span>) = <span class="docEmphasis">k<SUB>p</SUB></span>/(<font face="symbol">t</font><span class="docEmphasis"><SUB>p</SUB>s</span> + 1). Then the relationship between <span class="docEmphasis">r</span>(<span class="docEmphasis">s</span>) and <span class="docEmphasis">y</span>(<span class="docEmphasis">s</span>) is</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="102" HEIGHT="40" src="FILES/08equ01a.gif" ALT="graphics/08equ01a.gif"></p><br>
+<P class="docText">To obtain a desirable response, <span class="docEmphasis">k<SUB>q</SUB></span> = 1/<span class="docEmphasis">k<SUB>p</SUB></span>; offset will result otherwise. We can see this from the final-value theorem. Consider a step setpoint change, of magnitude <span class="docEmphasis">R</span>.</P>
+<P><B><A NAME="ch08equ02"></A>Equation 8.2 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="100" HEIGHT="40" src="FILES/08equ02.gif" ALT="graphics/08equ02.gif"></p><br>
+<P class="docText">From the final-value theorem</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="164" HEIGHT="26" src="FILES/08equ02a.gif" ALT="graphics/08equ02a.gif"></p><br>
+<P class="docText">and for no offset, we require that <span class="docEmphasis">k<SUB>q</SUB></span> = 1/<span class="docEmphasis">k<SUB>p</SUB></span>. We can also find the time-domain solution to Equation (<A class="docLink" HREF="#ch08equ02">8.2)</A></P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="135" HEIGHT="33" src="FILES/08equ02b.gif" ALT="graphics/08equ02b.gif"></p><br>
+<P class="docText">Again, we can see that <span class="docEmphasis">k<SUB>q</SUB></span> = 1/<span class="docEmphasis">k<SUB>p</SUB></span> is necessary for offset-free performance. Notice also that the speed of response is the same as the time constant of the open-loop process. In order to "speed up" the response, we must use a dynamic control law, as developed in the next section.</P>
+<A NAME="ch08lev2sec2"></A><H4 class="docSection2Title"> Dynamic Control Law</H4>
+<P class="docText">Better control can be obtained if the controller, <span class="docEmphasis">q</span>(<span class="docEmphasis">s</span>), is dynamic rather than static. Indeed, we find that if</P>
+<P><B><A NAME="ch08equ03"></A>Equation 8.3 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="72" HEIGHT="39" src="FILES/08equ03.gif" ALT="graphics/08equ03.gif"></p><br>
+<P class="docText">then the relationship between <span class="docEmphasis">r</span>(<span class="docEmphasis">s</span>) and <span class="docEmphasis">y</span>(<span class="docEmphasis">s</span>) is</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="252" HEIGHT="40" src="FILES/08equ03a.gif" ALT="graphics/08equ03a.gif"></p><br>
+<P class="docText">That is, we have <span class="docEmphasis">perfect control</span>, since the output perfectly tracks the setpoint! For a first-order process, the controller is</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="129" HEIGHT="44" src="FILES/08equ03b.gif" ALT="graphics/08equ03b.gif"></p><br>
+<P class="docText">Although this is mathematically possible, <span class="docEmphasis">perfect control is unachievable</span> in practical application. Consider the signals in and out of the control block, shown in <A class="docLink" HREF="#ch08fig03">Figure 8-3</A>. Since the transfer function relationship between <span class="docEmphasis">r</span>(<span class="docEmphasis">s</span>) and <span class="docEmphasis">u</span>(<span class="docEmphasis">s</span>) is, for this example,</P>
+<P><B><A NAME="ch08equ04"></A>Equation 8.4 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="265" HEIGHT="43" src="FILES/08equ04.gif" ALT="graphics/08equ04.gif"></p><br>
+<P class="docText">the differential equation that corresponds to Equation (<A class="docLink" HREF="#ch08equ04">8.4)</A> is</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="141" HEIGHT="42" src="FILES/08equ04a.gif" ALT="graphics/08equ04a.gif"></p><br>
+<P class="docText">From a practical point of view, it is <span class="docEmphasis">impossible</span> to take an exact derivative of <span class="docEmphasis">r</span>(<span class="docEmphasis">t</span>), particularly if a discontinuous step setpoint change is made.</P>
+<P class="docText">Here we use the inverse Laplace transform to solve Equation (<A class="docLink" HREF="#ch08equ04">8.4)</A> for <span class="docEmphasis">u</span>(<span class="docEmphasis">t</span>), when there is a step change in <span class="docEmphasis">r</span>.</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="111" HEIGHT="40" src="FILES/08equ04b.gif" ALT="graphics/08equ04b.gif"></p><br>
+<P class="docText">A table of Laplace transforms can be used to find the time-domain solution</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="119" HEIGHT="44" src="FILES/08equ04c.gif" ALT="graphics/08equ04c.gif"></p><br>
+<P class="docText">where <font face="symbol">d</font>(<span class="docEmphasis">t</span>) is the impulse function, which has infinite height, infinitesimal width, and unit area. Since this is hard to understand conceptually, you probably realize that it is impossible to implement exactly. Think about how you would approximate it.</P>
+<p class="docText"><span class="docEmphStrong">The Bottom Line.</span> 
+Equation (<A class="docLink" HREF="#ch08equ04">8.4)</A> is representative of a controller that is not <span class="docEmphasis">physically realizable</span>. Notice that the equation has a numerator polynomial, but not a denominator polynomial. We can state the following general result.</p>
+<p class="docText"><span class="docEmphStrong">Physical Realizability.</span> 
+For a controller to be <span class="docEmphasis">physically realizable</span>, the order of the denominator of the controller transfer function [<span class="docEmphasis">q</span>(<span class="docEmphasis">s</span>)] must be at least as great as the order of the numerator.</p>
+<p class="docText"><span class="docEmphStrong">Definition.</span> 
+A transfer function that satisfies this condition is <span class="docEmphasis">proper</span>. If the order of the denominator is greater than the order of the numerator, then the transfer function is <span class="docEmphasis">strictly proper</span>. If the order of the numerator is equal to the order of the denominator, then the transfer function is often called <span class="docEmphasis">semiproper</span>.</p>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch08.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch08lev1sec2.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

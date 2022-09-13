@@ -1,0 +1,85 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="6.4 Direct Synthesis"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch06lev1sec3.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch06lev1sec5.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch06lev1sec4"></A><H3 class="docSection1Title">6.4 Direct Synthesis</H3>
+<P class="docText">Consider the standard feedback block diagram shown in <A class="docLink" HREF="0133536408_ch06lev1sec1.html#ch06fig01">Figure 6-1</A>. Recall that we could determine the performance or stability of the closed-loop system from the closed-loop transfer function</P>
+<P><B><A NAME="ch06equ12"></A>Equation 6.6 </B></P><p class="docText"><IMG BORDER="0" WIDTH="214" HEIGHT="41" src="FILES/06equ06.gif" ALT="graphics/06equ06.gif"></p><br>
+<P class="docText">In the <span class="docEmphasis">direct synthesis</span> procedure, we select a <span class="docEmphasis">desired closed-loop response</span>, <span class="docEmphasis">g</span><SUB>CL</SUB>(<span class="docEmphasis">s</span>), and, based on the known process, <span class="docEmphasis">g</span><SUB>p</SUB>(<span class="docEmphasis">s</span>), find the controller <span class="docEmphasis">g</span><SUB>c</SUB>(<span class="docEmphasis">s</span>) that will yield this response. Solving Equation (<A class="docLink" HREF="#ch06equ12">6.6</A>) for <span class="docEmphasis">g</span><SUB>c</SUB>(<span class="docEmphasis">s</span>), we obtain</P>
+<P><B><A NAME="ch06equ13"></A>Equation 6.7 </B></P><p class="docText"><IMG BORDER="0" WIDTH="143" HEIGHT="38" src="FILES/06equ07.gif" ALT="graphics/06equ07.gif"></p><br>
+<P class="docText"><span class="docEmphasis">By now you should be able to perform block diagram manipulations to find the relationship between any external signal [such as a setpoint change, r(s)] and any other signal on the control block diagram. For example, it is important to analyze the manipulated variable action required for a setpoint change to make certain that it is not too rapid or that it does not violate constraints. From <A class="docLink" HREF="0133536408_ch06lev1sec1.html#ch06fig01">Figure 6-1</A> we can easily derive the effect of the setpoint change on the manipulated variable action,</span></P>
+<P><B><A NAME="ch06equ14"></A>Equation 6.8 </B></P><p class="docText"><IMG BORDER="0" WIDTH="142" HEIGHT="38" src="FILES/06equ08.gif" ALT="graphics/06equ08.gif"></p><br>
+<P class="docText">The direct synthesis procedure then consists of specifying the desired closed-loop transfer function (e.g., first-order response, second-order underdamped, etc.), <span class="docEmphasis">g</span><SUB>CL</SUB>(<span class="docEmphasis">s</span>), using Equation (<A class="docLink" HREF="#ch06equ13">6.7</A>) to find the feedback controller, and considering the manipulated variable response (usually tested by simulation).</P>
+<p class="docText"><span class="docEmphRoman">The real question is</span>: 
+<span class="docEmphasis">How do we specify the desired closed-loop response</span>?</p>
+<P class="docText">It turns out that we are not limited by the desired closed-loop response, if the system <span class="docEmphasis">is minimum phase</span> (the process does not have RHP zeros or time delays—the terminology becomes clear in <A class="docLink" HREF="0133536408_ch07.html#ch07">Chapter 7</A>). In the following section we present the direct synthesis method for minimum-phase systems, and cover <span class="docEmphasis">non-minimum-phase</span> systems in the subsequent section.</P>
+<A NAME="ch06lev2sec6"></A><H4 class="docSection2Title"> Direct Synthesis for Minimum-Phase Processes</H4>
+<P class="docText">It seems fairly natural to specify a desired closed-loop response that is first order, since we understand the characteristics of a first-order response.</P>
+<P><B><A NAME="ch06equ15"></A>Equation 6.9 </B></P><p class="docText"><IMG BORDER="0" WIDTH="88" HEIGHT="35" src="FILES/06equ09.gif" ALT="graphics/06equ09.gif"></p><br>
+<P class="docText">For a specified first-order response, there is only one tuning parameter, <font face="symbol">l</font>, since we desire a closed-loop gain of 1 (we want the process output to equal the setpoint as the closed-loop system goes to a new steady state); small values of <font face="symbol">l</font> results in fast responses, while large values result in slow responses. One could also argue for a desired closed-loop response that is second order and underdamped, which would lead to specifying two parameters.</P>
+<A NAME="ch06lev2sec7"></A><H4 class="docSection2Title"> Example 6.2: Direct Synthesis For a First-Order Process</H4>
+<P class="docText">Consider a first-order process</P>
+<P><B><A NAME="ch06equ16"></A>Equation 6.10 </B></P><p class="docText"><IMG BORDER="0" WIDTH="87" HEIGHT="40" src="FILES/06equ10.gif" ALT="graphics/06equ10.gif"></p><br>
+<P class="docText">Assume that a first-order closed-loop response is specified. If we desire a fast closed-loop response, we make <font face="symbol">l</font> small; for a slower (more "robust") response, we make <font face="symbol">l</font> large. Solving for <span class="docEmphasis">g</span><SUB>c</SUB>(<span class="docEmphasis">s</span>) from Equation (<A class="docLink" HREF="#ch06equ13">6.7</A>), we find</P>
+<P><B><A NAME="ch06equ17"></A>Equation 6.11 </B></P><p class="docText"><IMG BORDER="0" WIDTH="211" HEIGHT="73" src="FILES/06equ11.gif" ALT="graphics/06equ11.gif"></p><br>
+<P class="docText">which can be written (by multiplying by <font face="symbol">t</font><span class="docEmphasis"><SUB>p</SUB></span>/<font face="symbol">t</font><span class="docEmphasis"><SUB>p</SUB></span>)</P>
+<P><B><A NAME="ch06equ18"></A>Equation 6.12 </B></P><p class="docText"><IMG BORDER="0" WIDTH="118" HEIGHT="41" src="FILES/06equ12.gif" ALT="graphics/06equ12.gif"></p><br>
+<P class="docText">Recall that the form of a PI controller is</P>
+<P><B><A NAME="ch06equ19"></A>Equation 6.13 </B></P><p class="docText"><IMG BORDER="0" WIDTH="99" HEIGHT="37" src="FILES/06equ13.gif" ALT="graphics/06equ13.gif"></p><br>
+<P class="docText">so that our <span class="docEmphasis">direct synthesis</span> controller for a first-order process is simply a <span class="docEmphasis"><span class="docEmphasis">PI</span> controller</span>, where</P>
+<p class="docText"><IMG BORDER="0" WIDTH="54" HEIGHT="60" src="FILES/06equ13a.gif" ALT="graphics/06equ13a.gif"></p><br>
+<P class="docText">Notice that there was only one "tuning parameter" for this direct synthesis example. The desired closed-loop time constant, <font face="symbol">l</font>, was the only adjustable parameter. Given the first-order transfer function parameters (k<SUB>p</SUB> and <font face="symbol">t</font><SUB>p</SUB>) and the desired closed-loop time constant (<font face="symbol">l</font>), we found that the direct synthesis controller was PI, but that we only needed to "adjust" one PI parameter (<span class="docEmphasis">k</span><SUB>c</SUB>). This is a nice result, because once we find the process time constant (<font face="symbol">t</font><SUB>p</SUB>), we can set the integral time (<font face="symbol">t</font><SUB>I</SUB>) equal to the time constant, and tune <span class="docEmphasis">k</span><SUB>c</SUB> on-line until we achieve a desired response. Tuning a single controller parameter is much easier than tuning two or three.</P>
+<A NAME="ch06lev3sec4"></A><H5 class="docSection3Title"> Numerical Example</H5>
+<P class="docText">Consider the following first-order process, with a time constant of 10 minutes and a process gain of 2 %/%</P>
+<p class="docText"><IMG BORDER="0" WIDTH="89" HEIGHT="36" src="FILES/06equ13b.gif" ALT="graphics/06equ13b.gif"></p><br>
+<P class="docText">The output and manipulated variable responses for <font face="symbol">l</font> = 1, 5, and 10 min (<font face="symbol">t</font><SUB>I</SUB> = 10; <span class="docEmphasis">k</span><SUB>c</SUB> = 5, 1, and 0.5, respectively) are shown in <A class="docLink" HREF="#ch06fig05">Figure 6-5</A>. As expected, the manipulated variable response for the faster desired closed-loop time constant is much more aggressive than for the slower closed-loop time constants. Notice that setting the closed-loop time constant equal to the open-loop time constant (<font face="symbol">l</font> = <font face="symbol">t</font><SUB>p</SUB> = 10) results in a single step change in the manipulated variable action.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch06fig05"></A>Figure 6-5. Response to a unit step setpoint change.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="383" src="FILES/06fig05.gif" ALT="graphics/06fig05.gif"></p></CENTER>
+<P class="docText">The same type of procedure shown in <A class="docLink" HREF="#ch06lev2sec7">Example 6.2</A> can be used if a second-order closed-loop response is specified. See Exercise 13.</P>
+<A NAME="ch06lev2sec8"></A><H4 class="docSection2Title"> Direct Synthesis for Nonminimum-Phase Processes</H4>
+<P class="docText">This section presents examples for nonminimum-phase processes, that is, processes that have time delays or RHP zeros. The general technique remains the same for these processes; however, there is a restriction on the type of closed-loop response that can be specified. The next example provides the motivation for specifying different desired closed-loop responses for systems with time delays.</P>
+<A NAME="ch06lev2sec9"></A><H4 class="docSection2Title"> Example 6.3: First-Order + Dead Time Example</H4>
+<P class="docText">Consider the following process transfer function:</P>
+<p class="docText"><IMG BORDER="0" WIDTH="82" HEIGHT="40" src="FILES/06equ13c.gif" ALT="graphics/06equ13c.gif"></p><br>
+<P class="docText">If the desired closed-loop response is first order, <span class="docEmphasis">g<SUB>CL</SUB></span>(<span class="docEmphasis">s</span>) = 1/<font face="symbol">l</font><span class="docEmphasis">s</span> + 1, the resulting controller is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="132" HEIGHT="37" src="FILES/06equ13d.gif" ALT="graphics/06equ13d.gif"></p><br>
+<P class="docText">which is a PI controller with an additional term (<span class="docEmphasis">e</span><SUP>3</SUP><span class="docEmphasis"><SUP>s</SUP></span>). This additional term is not physically realizable because it requires knowledge of future errors to obtain the current control action. This is clearly impossible. Perhaps this is shown more clearly in the time domain</P>
+<p class="docText"><IMG BORDER="0" WIDTH="202" HEIGHT="49" src="FILES/06equ13e.gif" ALT="graphics/06equ13e.gif"></p><br>
+<P class="docText">where the control action at time <span class="docEmphasis">t</span> depends on the error at time <span class="docEmphasis">t</span> + 3, which is clearly impossible to implement.</P>
+<P class="docText">The next example shows how a system with a <span class="docEmphasis"><span class="docEmphasis">RHP</span> zero</span> must have a modified desired closed-loop response.</P>
+<A NAME="ch06lev2sec10"></A><H4 class="docSection2Title"> Example 6.4: Process with a RHP Zero</H4>
+<P class="docText">Consider a process with the following transfer function, where the time unit is minutes</P>
+<P><B><A NAME="ch06equ20"></A>Equation 6.14 </B></P><p class="docText"><IMG BORDER="0" WIDTH="134" HEIGHT="35" src="FILES/06equ14.gif" ALT="graphics/06equ14.gif"></p><br>
+<P class="docText">The direct synthesis procedure with <span class="docEmphasis">g<SUB>CL</SUB></span>(<span class="docEmphasis">s</span>) = 1/<font face="symbol">l</font><span class="docEmphasis">s</span> + 1 yields the controller</P>
+<p class="docText"><IMG BORDER="0" WIDTH="134" HEIGHT="39" src="FILES/06equ15.gif" ALT="graphics/06equ15.gif"></p><br>
+<P class="docText">which is unstable because of the RHP pole. The RHP pole in the controller is due to the <span class="docEmphasis">inversion</span> of the process zero. This <span class="docEmphasis">inversion</span> occurs because of the specification of a first-order closed-loop response. The output and manipulated variable responses are shown in <A class="docLink" HREF="#ch06fig06">Figure 6-6</A> for <font face="symbol">l</font> = 5 minutes. Notice that the inverse response does not appear in the output variable but that the manipulated variable is unbounded (unstable). This is often called <span class="docEmphasis">internal instability</span>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch06fig06"></A>Figure 6-6. Response to a unit step setpoint change when the controller is unstable.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="384" src="FILES/06fig06.gif" ALT="graphics/06fig06.gif"></p></CENTER>
+<P class="docText">Clearly, the manipulated variable for any physical system will eventually hit a constraint, making the closed-loop system effectively open-loop, since the controller is no longer functioning.</P>
+<P class="docText">It is easy to understand the behavior shown in <A class="docLink" HREF="#ch06fig06">Figure 6-6</A>. On a short timescale, the process appears to the controller to have a negative gain, since a step change in the manipulated variable yields an output that initially dips before going in the positive direction. The controller is acting on this effective "negative gain" to continually force the manipulated variable in a negative direction. The reader should verify that once the manipulated variable hits a lower bound, the process output will begin to decrease.</P>
+<P class="docText"><span class="docEmphasis">Specifying a desired first-order closed-loop response for a system with a <span class="docEmphasis">RHP</span> zero resulted in an unstable controller and unbounded manipulated variable action. A stable controller can be obtained if the desired closed-loop response has the same <span class="docEmphasis">RHP</span> zero as the process.</span></P>
+<A NAME="ch06lev2sec11"></A><H4 class="docSection2Title"> Reformulation of the Desired Response</H4>
+<P class="docText">Including the right-half-plane zero desired closed-loop transfer function specified as</P>
+<p class="docText"><IMG BORDER="0" WIDTH="104" HEIGHT="38" src="FILES/06equ16.gif" ALT="graphics/06equ16.gif"></p><br>
+<P class="docText">using the direct synthesis procedure, you should find the following controller,</P>
+<p class="docText"><IMG BORDER="0" WIDTH="270" HEIGHT="76" src="FILES/06equ17.gif" ALT="graphics/06equ17.gif"></p><br>
+<P class="docText">which is an ideal PID controller cascaded with a first-order filter. The parameters are</P>
+<p class="docText"><IMG BORDER="0" WIDTH="245" HEIGHT="38" src="FILES/06equ18.gif" ALT="graphics/06equ18.gif"></p><br>
+<P class="docText">The output and input responses for a step setpoint change with <font face="symbol">l</font> = 5 minutes are shown in <A class="docLink" HREF="#ch06fig07">Figure 6-7</A>. The closed-loop system has inverse response (as specified by the closed-loop transfer function) and reasonable manipulated variable action.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch06fig07"></A>Figure 6-7. Responses to a unit step setpoint change at <span class="docEmphasis">t</span> = 0 minute, when RHP zero is in the desired response (<font face="symbol">l</font> = 5).</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="383" src="FILES/06fig07.gif" ALT="graphics/06fig07.gif"></p></CENTER>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch06lev1sec3.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch06lev1sec5.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

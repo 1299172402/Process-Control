@@ -1,0 +1,68 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="4.5 Parameter Estimation"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch04lev1sec4.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch04lev1sec6.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch04lev1sec5"></A><H3 class="docSection1Title">4.5 Parameter Estimation</H3>
+<P class="docText">Often when discrete linear models are developed, they are based on experimental system responses rather than on converting a continuous model to a discrete model. The estimation of parameters for discrete dynamic models is no different from linear regression (least squares) analysis.</P>
+<P class="docText">The measured inputs and outputs are the independent variables, and the dependent variables are the outputs. For simplicity, consider the following model where two previous values of the input and output are used to predict the next value. This model has four parameters</P>
+<P><B><A NAME="ch04equ14"></A>Equation 4.14 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="342" HEIGHT="22" src="FILES/04equ14.gif" ALT="graphics/04equ14.gif"></p><br>
+<P class="docText">For the system of <span class="docEmphasis">N</span> data points we can write the following</P>
+<p class="docText"><IMG BORDER="0" WIDTH="332" HEIGHT="85" src="FILES/04equ14a.gif" ALT="graphics/04equ14a.gif"></p><br>
+<P class="docText">Notice that <span class="docEmphasis">k</span> = 1 is an arbitrary starting point for calculating the output, and that two previous data points for the output and the input are needed to start the algorithm. To make it clear that we are performing a model-based prediction of <span class="docEmphasis">y<SUB>k</SUB></span>, we will use the notation <span class="docEmphasis"><img src="FILES/U0177.GIF" border=0><SUB>k</SUB></span> to indicate a model prediction</P>
+<P><B><A NAME="ch04equ15"></A>Equation 4.15 </B></P><p class="docText"><IMG BORDER="0" WIDTH="331" HEIGHT="86" src="FILES/04equ15.gif" ALT="graphics/04equ15.gif"></p><br>
+<P class="docText">or, using matrix-vector notation</P>
+<P><B><A NAME="ch04equ16"></A>Equation 4.16 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="51" HEIGHT="20" src="FILES/04equ16.gif" ALT="graphics/04equ16.gif"></p><br>
+<P class="docText">where</P>
+<P><B><A NAME="ch04equ17"></A>Equation 4.17 </B></P><p class="docText"><IMG BORDER="0" WIDTH="421" HEIGHT="86" src="FILES/04equ17.gif" ALT="graphics/04equ17.gif"></p><br>
+<P class="docText">The objective is to choose a set of parameters (<span class="docEmphasis">a</span><SUB>1</SUB>, <span class="docEmphasis">a</span><SUB>2</SUB>, <span class="docEmphasis">b</span><SUB>1</SUB>, <span class="docEmphasis">b</span><SUB>2</SUB>) to minimize the square of the <span class="docEmphasis">residuals</span> (the differences between the model outputs and measured outputs).</P>
+<P><B><A NAME="ch04equ18"></A>Equation 4.18 </B></P><p class="docText"><IMG BORDER="0" WIDTH="125" HEIGHT="45" src="FILES/04equ18.gif" ALT="graphics/04equ18.gif"></p><br>
+<P class="docText">The sum of the squares of the residuals can be written in matrix notation as</P>
+<P><B><A NAME="ch04equ19"></A>Equation 4.19 </B></P><p class="docText"><IMG BORDER="0" WIDTH="306" HEIGHT="46" src="FILES/04equ19.gif" ALT="graphics/04equ19.gif"></p><br>
+<P class="docText">where <span class="docEmphasis">Y</span> is the vector of measured outputs, <span class="docEmphasis">Y</span> = [<span class="docEmphasis">y</span>(1) . . . <span class="docEmphasis">y</span>(<span class="docEmphasis">N</span>)]<span class="docEmphasis"><SUP>T</SUP></span>.</P>
+<P class="docText">The solution to this optimization problem is (<A class="docLink" HREF="0133536408_ch04lev1sec8.html#ch04biblio01entry01">Ljung, 1996</A>)</P>
+<P><B><A NAME="ch04equ20"></A>Equation 4.20 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="103" HEIGHT="19" src="FILES/04equ20.gif" ALT="graphics/04equ20.gif"></p><br>
+<A NAME="ch04lev2sec12"></A><H4 class="docSection2Title"> Example 4.4: Process Identification</H4>
+<P class="docText">Although the response to a step input has often been used for process identification, here we apply a pseudo-random binary sequence of inputs (the input changes randomly between two values) to estimate parameters in a discrete time model. The input and output responses are shown in <A class="docLink" HREF="#ch04fig08">Figure 4-8</A>; the open circles represent the measured outputs obtained with a sample time of 0.25 minutes. The variables are in deviation form.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch04fig08"></A>Figure 4-8. Output response to a pseudo-random binary input sequence. Open circles represent output data obtained with a sample time of 0.25 minutes.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="411" src="FILES/04fig08.gif" ALT="graphics/04fig08.gif"></p></CENTER>
+<P class="docText">The output and input data as a function of the discrete time index are:</P>
+<pre>
+
+</pre><pre>
+k   -1          0          1          2         3         4         5
+y    0         -0.0889     0.0137     0.1564    0.4618    0.1771    0.3446
+u    1.0000     1.0000     1.0000    -1.0000    1.0000   -1.0000   -1.0000
+k    6          7          8          9         10        11        12
+y    0.2171    -0.1558     0.0485    -0.1879   -0.1123    0.0463    0.2003
+u    1.0000    -1.0000     1.0000     1.0000    1.0000    1.0000   -1.0000
+k    13         14         15         16        17        18        19
+y    0.5007     0.3846    -0.0172     0.1513   -0.1162    0.1134    0.0502
+u   -1.0000     1.0000    -1.0000     1.0000   -1.0000   -1.0000   -1.0000
+</pre>
+<P class="docText">The <font face="symbol">F</font> (input-output data) matrix, <font face="symbol">Q</font> parameter vector, and discrete transfer functions are shown below.</P>
+<p class="docText"><IMG BORDER="0" WIDTH="327" HEIGHT="658" src="FILES/04equ21.gif" ALT="graphics/04equ21.gif"></p><br>
+<P class="docText">The M<span class="docEmphSmaller">ATLAB</span> and S<span class="docEmphSmaller">IMULINK</span> <TT>.m</TT> and <TT>.mdl</TT> files used to generate this example are shown in the Appendix. It should be noted that the discrete transfer function can be converted to a continuous transfer function using <TT>d2c</TT> to find</P>
+<p class="docText"><IMG BORDER="0" WIDTH="160" HEIGHT="36" src="FILES/04equ22.gif" ALT="graphics/04equ22.gif"></p><br>
+<P class="docText">This is virtually identical to the continuous transfer function used to generate the original data.</P>
+<P class="docText">This example illustrated the response of a perfectly modeled system (no measurement noise). The approach can also be applied to a system with arbitrary inputs, and with noisy measurements. See Exercise 8 for the same process, with output data corrupted by measurement noise. To verify model parameter estimates it is common to use a portion of experimental data to estimate parameters, then another portion of the data in "simulation" mode to see how well the model predicted outputs match the data.</P>
+<P class="docText">The data was analyzed in a batchwise fashion, that is, all of the data were collected before the parameter estimation was performed. For on-line (real-time) estimation and control, we would prefer to re-estimate parameters each time we obtain a new data point. This can be done by using a "moving horizon" of past data points (each time a new data point is collected, the oldest one is thrown out), or by using recursive identification techniques. Recursive techniques are commonly applied in adaptive control, where the model is updated at each time step and a control calculation is performed based on the updated model.</P>
+<a href="0133536408_10971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch04lev1sec4.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch04lev1sec6.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

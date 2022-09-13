@@ -1,0 +1,124 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="16.3 Dynamic Matrix Control"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch16lev1sec2.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch16lev1sec4.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch16lev1sec3"></A><H3 class="docSection1Title" id="225793-810">16.3 Dynamic Matrix Control</H3>
+<P class="docText">DMC was developed by Shell Oil Company in the 1960s and 1970s (see <A class="docLink" HREF="0133536408_ch16lev1sec8.html#ch16biblio02entry03">Cutler and Ramaker, 1980</A>). It is based on a step response model, which has the form (see <A class="docLink" HREF="0133536408_ch16lev1sec10.html#ch16lev1sec10">Appendix 16.1</A> for a derivation)</P>
+<P><B><A NAME="ch16equ06"></A>Equation 16.6 </B></P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="313" HEIGHT="17" src="FILES/16equ06.gif" ALT="graphics/16equ06.gif"></p><br>
+<P class="docText">which is written in the form</P>
+<P><B><A NAME="ch16equ07"></A>Equation 16.7 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="148" HEIGHT="42" src="FILES/16equ07.gif" ALT="graphics/16equ07.gif"></p><br>
+<P class="docText">where <span class="docEmphasis"><img src="FILES/U0177.GIF" border=0><SUB>k</SUB></span> is the model prediction at time step <span class="docEmphasis">k</span>, and <span class="docEmphasis">uk</span> – <span class="docEmphasis">N</span> is the manipulated input <span class="docEmphasis">N</span> steps in the past.</P>
+<P class="docText">Note that the model-predicted output is unlikely to be equal to the actual measured output at time step <span class="docEmphasis">k</span>. The difference between the measured output (y<SUB>k</SUB>) and the model prediction is called the additive disturbance.</P>
+<P><B><A NAME="ch16equ08"></A>Equation 16.8 </B></P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="63" HEIGHT="15" src="FILES/16equ08.gif" ALT="graphics/16equ08.gif"></p><br>
+<P class="docText">The "corrected prediction" is then equal to the actual measured output at step <span class="docEmphasis">k</span>,</P>
+<P><B><A NAME="ch16equ09"></A>Equation 16.9 </B></P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="64" HEIGHT="17" src="FILES/16equ09.gif" ALT="graphics/16equ09.gif"></p><br>
+<P class="docText">Similarly, the corrected predicted output at the first time step in the future can be found from</P>
+<P><B><A NAME="ch16equ10"></A>Equation 16.10 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="262" HEIGHT="116" src="FILES/16equ10.gif" ALT="graphics/16equ10.gif"></p><br>
+<P class="docText">So, for the <span class="docEmphasis">j</span>th step into the future, we find</P>
+<P><B><A NAME="ch16equ11"></A>Equation 16.11 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="324" HEIGHT="96" src="FILES/16equ11.gif" ALT="graphics/16equ11.gif"></p><br>
+<P class="docText">and we can separate the effects of past and future control moves</P>
+<P><B><A NAME="ch16equ12"></A>Equation 16.12 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="466" HEIGHT="96" src="FILES/16equ12.gif" ALT="graphics/16equ12.gif"></p><br>
+<P class="docText">The most common assumption is that the correction term is constant in the future (this is the "constant additive disturbance assumption"):</P>
+<P><B><A NAME="ch16equ13"></A>Equation 16.13 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="186" HEIGHT="22" src="FILES/16equ13.gif" ALT="graphics/16equ13.gif"></p><br>
+<P class="docText">Also, realize that there are no control moves beyond the control horizon of M steps, so</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="224" HEIGHT="21" src="FILES/16equ13a.gif" ALT="graphics/16equ13a.gif"></p>
+<br>
+<P class="docText">In matrix-vector form, a prediction horizon of <span class="docEmphasis">P</span> steps and a control horizon of <span class="docEmphasis">M</span> steps, yields</P>
+<P><B><A NAME="ch16equ14"></A>Equation 16.14 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="365" HEIGHT="442" src="FILES/16equ14.gif" ALT="graphics/16equ14.gif"></p><br>
+<P class="docText">which we write using matrix-vector notation</P>
+<P><B><A NAME="ch16equ15"></A>Equation 16.15 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="283" HEIGHT="57" src="FILES/16equ15.gif" ALT="graphics/16equ15.gif"></p><br>
+<P class="docText">In Equation (<A class="docLink" HREF="#ch16equ15">16.15</A>) the corrected-predicted output response is naturally composed of a "forced response" (contributions of the current and future control moves) and a "free response" (the output changes that are predicted if there are no future control moves). The difference between the setpoint trajectory, r, and the future predictions is</P>
+<P><B><A NAME="ch16equ16"></A>Equation 16.16 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="257" HEIGHT="57" src="FILES/16equ16.gif" ALT="graphics/16equ16.gif"></p><br>
+<P class="docText">which can be written</P>
+<P><B><A NAME="ch16equ17"></A>Equation 16.17 </B></P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="84" HEIGHT="19" src="FILES/16equ17.gif" ALT="graphics/16equ17.gif"></p><br>
+<P class="docText">where the future predicted errors are composed of "free response" (<span class="docEmphasis">E</span>) and "forced response" (–<span class="docEmphasis">S<SUB>f</SUB></span><font face="symbol">D</font><span class="docEmphasis">u<SUB>f</SUB></span>) contributions.</P>
+<P class="docText">The least-squares objective function (16.1) is</P>
+<P><B><A NAME="ch16equ18"></A>Equation 16.18 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="178" HEIGHT="45" src="FILES/16equ18.gif" ALT="graphics/16equ18.gif"></p><br>
+<P class="docText">Notice that the quadratic terms can written in matrix-vector form as</P>
+<P><B><A NAME="ch16equ19"></A>Equation 16.19 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="253" HEIGHT="122" src="FILES/16equ19.gif" ALT="graphics/16equ19.gif"></p><br>
+<P class="docText">and</P>
+<P><B><A NAME="ch16equ20"></A>Equation 16.20 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="404" HEIGHT="198" src="FILES/16equ20.gif" ALT="graphics/16equ20.gif"></p><br>
+<P class="docText">Therefore the objective function can be written in the form</P>
+<P><B><A NAME="ch16equ21"></A>Equation 16.21 </B></P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="148" HEIGHT="19" src="FILES/16equ21.gif" ALT="graphics/16equ21.gif"></p><br>
+<P class="docText">subject to the modeling equation equality constraint (16.17)</P>
+<P><B><A NAME="ch16equ22"></A>Equation 16.17 </B></P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="84" HEIGHT="19" src="FILES/16equ17.gif" ALT="graphics/16equ17.gif"></p><br>
+<P class="docText">Substituting (16.17) into (16.21), the objective function can be written</P>
+<P><B><A NAME="ch16equ23"></A>Equation 16.22 </B></P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="228" HEIGHT="22" src="FILES/16equ22.gif" ALT="graphics/16equ22.gif"></p><br>
+<P class="docText">The solution for the minimization of this objective function is (see <A class="docLink" HREF="0133536408_ch16lev1sec11.html#ch16lev1sec11">Appendix 16.2</A>)</P>
+<P><B><A NAME="ch16equ24"></A>Equation 16.23 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="169" HEIGHT="44" src="FILES/16equ23.gif" ALT="graphics/16equ23.gif"></p><br>
+<P class="docText">Notice that the current and future control move vector (<font face="symbol">D</font><span class="docEmphasis">u<SUB>f</SUB></span>) is proportional to the unforced error vector (<span class="docEmphasis">E</span>). That is, a controller gain matrix, <span class="docEmphasis">K</span>, multiplies the unforced error vector (the future errors that would occur if there were no control move changes implemented).</P>
+<P class="docText">Because only the current control move is actually implemented, we use the first row of the <span class="docEmphasis">K</span> matrix, and</P>
+<P><B><A NAME="ch16equ25"></A>Equation 16.24 </B></P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="60" HEIGHT="16" src="FILES/16equ24.gif" ALT="graphics/16equ24.gif"></p><br>
+<P class="docText">where <span class="docEmphasis">K</span><SUB>1</SUB> represents the first row of the <span class="docEmphasis">K</span> matrix, where <IMG BORDER="0" id="129022115118" WIDTH="114" HEIGHT="22" src="FILES/16inequ01.gif" ALT="graphics/16inequ01.gif"></P>
+<P class="docText">Perhaps it is worth summarizing the steps involved in implementing DMC on a process.</P>
+<A NAME="ch16pr01"></A>
+
+
+
+<span style="font-weight:bold"><OL class="docList" START="1"><LI><span style="font-weight:normal" value="1"><P class="docText">Develop a discrete step response model with length <span class="docEmphasis">N</span> (16.4), based on a sample time <font face="symbol">D</font>t.</P></span></LI><LI><span style="font-weight:normal" value="2"><P class="docText">Specify the prediction (<span class="docEmphasis">P</span>) and control (<span class="docEmphasis">M</span>) horizons. <span class="docEmphasis">N</span> <img src="FILES/U2265.GIF" border=0> <span class="docEmphasis">P</span> <img src="FILES/U2265.GIF" border=0> <span class="docEmphasis">M</span></P></span></LI><LI><span style="font-weight:normal" value="3"><P class="docText">Specify the weighting on the control action (<span class="docEmphasis">w</span> = 0 if no weighting).</P></span></LI><LI><span style="font-weight:normal" value="4"><P class="docText">All calculations assume deviation variable form, so remember to convert to/from physical units.</P></span></LI></OL></span>
+<P class="docText">The effect of all of these tuning parameters is now discussed for SISO systems.</P>
+<P class="docText"><span class="docEmphasis">Model-length and sample-time</span> selection are not independent. The model length should be approximately the "settling time" of the process, that is, the time required to reach a new steady state after a step input change. For most systems, the model length will be roughly 50 coefficients. The sample time is usually on the order of one tenth the dominant time constant, so the model length is roughly the settling time of the process.</P>
+<P class="docText"><span class="docEmphasis">Prediction and control horizons</span> differ in length. Usually, the prediction horizon is selected to be much longer than the control horizon. This is particularly true if the control weighting factor is selected to be zero. Usually, if the prediction horizon is much longer than the control horizon, the control system is less sensitive to model error. Often <span class="docEmphasis">P</span> = 20 or so, while <span class="docEmphasis">M</span> = 1–3.</P>
+<P class="docText"><span class="docEmphasis">Control weighting</span> is often set to zero if the prediction horizon is much longer than the control horizon. As the control horizon is increased, the control moves tend to become more aggressive so a larger weight is needed to penalize the control moves.</P>
+<A NAME="ch16lev2sec4"></A><H4 class="docSection2Title"> Example 16.1: First-Order Process</H4>
+<P class="docText">Here we study the first-order process, where the time unit is minutes,</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="79" HEIGHT="32" src="FILES/16equ24a.gif" ALT="graphics/16equ24a.gif"></p><br>
+<P class="docText">Ordinarily, we would select a sample time of roughly 0.5 minutes, and a model horizon of 50. Here we select a sample time of 1 minute to study the effect of other tuning parameters. The step response coefficients generated from this plant are shown in <A class="docLink" HREF="#ch16fig05">Figure 16-5</A>. We can see that a model length of at least 20 should be used, since that is when the output is reasonably close to steady state.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch16fig05"></A>Figure 16-5. Step response coefficients for the first-order example. Sample time = 1 minute; model length, <span class="docEmphasis">N</span> = 25.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="406" src="FILES/16fig05.gif" ALT="graphics/16fig05.gif"></p></CENTER>
+<P class="docText">The importance of prediction horizon is shown clearly in <A class="docLink" HREF="#ch16fig06">Figure 16-6</A>. In both simulations a control horizon of 1 is used. A prediction horizon of 1 results in the setpoint being achieved in 1 time step, while a prediction horizon of 5 yields a much slower response. Notice, however, that <span class="docEmphasis">P</span> = 1 requires much more control action than <span class="docEmphasis">P</span> = 5. Although not shown here, the shorter prediction horizon is more sensitive to model uncertainty; these simulations have assumed a perfect model.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch16fig06"></A>Figure 16-6. Closed-loop responses to a step setpoint change at t = 1 min, first-order example. Sample time = 1 minute; model length, <span class="docEmphasis">N</span> = 25; control horizon, <span class="docEmphasis">M</span> = 1; no weighting on input. Comparison of prediction horizons, <span class="docEmphasis">P</span> = 5 and <span class="docEmphasis">P</span> = 1.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="385" src="FILES/16fig06.gif" ALT="graphics/16fig06.gif"></p></CENTER>
+<P class="docText">The importance of the model length is shown in <A class="docLink" HREF="#ch16fig07">Figure 16-7</A>. Since a model length of 6 does not capture the complete dynamics of the process (see <A class="docLink" HREF="#ch16fig05">Figure 16-5</A>), it effectively results in a model error and poor performance compared with a model length of 25.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch16fig07"></A>Figure 16-7. Closed-loop responses to a step setpoint change at t = 1 min, first-order example. Sample time = 1 minute; prediction horizon, <span class="docEmphasis">P</span> = 5; control horizon, <span class="docEmphasis">M</span> = 1; no weighting on input. Comparison of model lengths, <span class="docEmphasis">N</span> = 25 and <span class="docEmphasis">N</span> = 6.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="450" HEIGHT="347" src="FILES/16fig07.gif" ALT="graphics/16fig07.gif"></p></CENTER>
+<P class="docText">From Equation (<A class="docLink" HREF="#ch16equ14">16.14</A>), for <span class="docEmphasis">N</span> = 6, <span class="docEmphasis">P</span> = 5, <span class="docEmphasis">M</span> = 1, we find (see <A class="docLink" HREF="#ch16fig05">Figure 16-5</A> for the step response coefficients) the following dynamic (<span class="docEmphasis">S<SUB>f</SUB></span>) and past move (<span class="docEmphasis">S<SUB>past</SUB></span>) matrices.</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="334" HEIGHT="254" src="FILES/16equ24b.gif" ALT="graphics/16equ24b.gif"></p><br>
+<P class="docText">also, selecting a control move weight of 0</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="40" HEIGHT="19" src="FILES/16equ24c.gif" ALT="graphics/16equ24c.gif"></p><br>
+<P class="docText">we calculate the feedback gain matrix from Equation (<A class="docLink" HREF="#ch16equ24">16.23</A>)</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="113" HEIGHT="22" src="FILES/16equ24d.gif" ALT="graphics/16equ24d.gif"></p><br>
+<P class="docText">and <span class="docEmphasis">K</span><SUB>1</SUB> = <span class="docEmphasis">K</span> since the control horizon (<span class="docEmphasis">M</span>) is 1 (the reader should verify these numerical results using M<span class="docEmphSmaller">ATLAB</span>), the feedback gain matrix is:</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="251" HEIGHT="17" src="FILES/16equ24e.gif" ALT="graphics/16equ24e.gif"></p>
+<br>
+<P class="docText">in the simulations shown, the process is initially at steady state when the unit step setpoint change at t = 1 minute is made. Since deviation variables are used, the values of all previous manipulated inputs and outputs are 0. The unforced error vector, <span class="docEmphasis">E</span>, from Equation (<A class="docLink" HREF="#ch16equ16">16.16</A>) is (we have transposed it to a row vector to save space)</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="157" HEIGHT="19" src="FILES/16equ24f.gif" ALT="graphics/16equ24f.gif"></p>
+<br>
+<P class="docText">so the first control move, after the setpoint change is made is</P>
+<P class="docText"><IMG BORDER="0" id="129022115118" WIDTH="360" HEIGHT="104" src="FILES/16equ24g.gif" ALT="graphics/16equ24g.gif"></P>
+<P class="docText">which is consistent with the first control move shown in <A class="docLink" HREF="#ch16fig07">Figure 16-7</A>.</P>
+<A NAME="ch16lev2sec5"></A><H4 class="docSection2Title"> Example 16.2: Van de Vusse Reactor</H4>
+<P class="docText">Consider the van de Vusse reactor problem covered in <A class="docLink" HREF="0133536408_art05.html#art05">Module 5</A>. The continuous state space model is</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="226" HEIGHT="65" src="FILES/16equ24h.gif" ALT="graphics/16equ24h.gif"></p><br>
+<P class="docText">where the measured state (output) is the concentration of the second component and the manipulated input is the dilution rate. The manipulated input-output process transfer function for the reactor is</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="315" HEIGHT="35" src="FILES/16equ24i.gif" ALT="graphics/16equ24i.gif"></p><br>
+<A NAME="ch16lev3sec3"></A><H5 class="docSection3Title"> Step Response Model</H5>
+<P class="docText">The discrete step response model is shown in <A class="docLink" HREF="#ch16fig08">Figure 16-8</A>, for a sample time of 0.1 minute. Notice that a model length of at least 35 is needed to capture the complete dynamic behavior.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch16fig08"></A>Figure 16-8. Step response coefficients for the van de Vusse example. Sample time = 0.1 minutes, model length, <span class="docEmphasis">N</span> = 50.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="450" HEIGHT="367" src="FILES/16fig08.gif" ALT="graphics/16fig08.gif"></p></CENTER>
+<A NAME="ch16lev3sec4"></A><H5 class="docSection3Title"> Effect of Prediction Horizon</H5>
+<P class="docText">A sample time of 0.1 minute, a model length of <span class="docEmphasis">N</span> = 50, and a control horizon of <span class="docEmphasis">M</span> = 1 are used in the following simulations. For this particular example, the prediction horizon does not appear to have an appreciable effect, as shown in <A class="docLink" HREF="#ch16fig09">Figure 16-9</A>; the setpoint tracking performance is roughly the same for prediction horizons of <span class="docEmphasis">P</span> = 10 and 25. There is a lower limit, however, to the length of the prediction horizon that can be used. A prediction horizon of 7 or less results in an unstable closed-loop system, as shown in <A class="docLink" HREF="#ch16fig10">Figure 16-10</A>. This is not due to any model error, since we have assumed a perfect model in these simulations. If the prediction horizon is too short, the initial step response coefficients dominate. Since these are negative while the later coefficients are positive (corresponding to a positive process gain), the prediction is really in error. The effect is the same as using a PID controller with a controller gain that is the wrong sign.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch16fig09"></A>Figure 16-9. Closed-loop responses to a step setpoint change, van de Vusse example. Sample time = 0.1 minute; model length, <span class="docEmphasis">N</span> = 50; control horizon, <span class="docEmphasis">M</span> = 1; no weighting on input. Comparison of prediction horizons, <span class="docEmphasis">P</span> = 10 and <span class="docEmphasis">P</span> = 25.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="450" HEIGHT="351" src="FILES/16fig09.gif" ALT="graphics/16fig09.gif"></p></CENTER>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch16fig10"></A>Figure 16-10. Closed-loop responses to a step setpoint change, van de Vusse example. Sample time = 0.1 minute; model length, <span class="docEmphasis">N</span> = 50; control horizon, <span class="docEmphasis">M</span> = 1; no weighting on input. Comparison of prediction horizons, <span class="docEmphasis">P</span> = 7 and <span class="docEmphasis">P</span> = 8.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="475" HEIGHT="377" src="FILES/16fig10.gif" ALT="graphics/16fig10.gif"></p></CENTER>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch16lev1sec2.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch16lev1sec4.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

@@ -1,0 +1,37 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="M7.2 Steady-State and Dynamic Behavior"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_art07lev1sec1.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_art07lev1sec3.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="art07lev1sec2"></A><H3 class="docSection1Title">M7.2 Steady-State and Dynamic Behavior</H3>
+<P class="docText">We use the following parameters for a substrate inhibition model for this control study:</P>
+<p class="docText"><IMG BORDER="0" WIDTH="111" HEIGHT="68" src="FILES/m07equ03.gif" ALT="graphics/m07equ03.gif"></p><br>
+<P class="docText">The steady-state dilution rate is <span class="docEmphasis">D</span><SUB>s</SUB> = 0.3 hr<SUP>-1</SUP> (and the residence time is 3.33 hours) and the feed substrate concentration is <span class="docEmphasis">x</span><SUB>2fs</SUB> = 4.0 g/liter.</P>
+<A NAME="art07lev2sec3"></A><H4 class="docSection2Title"> Steady-State Conditions</H4>
+<P class="docText">The nonlinear process has the following three steady-state solutions (operating points) to <A class="docLink" HREF="0133536408_art07lev1sec1.html#art07equ01">Equation M7.1</A> for a dilution rate of 0.3 hr<SUP>-1</SUP>:</P>
+<P><TABLE CELLSPACING="0" FRAME="hsides" RULES="none" CELLPADDING="5" WIDTH="100%"><COLGROUP align="left" span="4"><THEAD></THEAD><TR><TD class="docTableCell" valign="top"><P class="docText"><span class="docEmphBoldItalic">Steady state</span></P></TD><TD class="docTableCell" valign="top"><P class="docText"><span class="docEmphBoldItalic">Biomass concentration</span></P></TD><TD class="docTableCell" valign="top" colspan="2"><P class="docText"><span class="docEmphBoldItalic">Substrate concentration stability</span></P></TD></TR><TR><TD class="docTableCell" valign="top"><P class="docText">Equilibrium 1—wash out</P></TD><TD class="docTableCell" valign="top"><P class="docText"><span class="docEmphasis">x</span><SUB>1s</SUB> = 0</P></TD><TD class="docTableCell" valign="top"><P class="docText"><span class="docEmphasis">x</span><SUB>2s</SUB> = 4.0</P></TD><TD class="docTableCell" valign="top"><P class="docText">stable</P></TD></TR><TR><TD class="docTableCell" valign="top"><P class="docText">Equilibrium 2—nontrivial</P></TD><TD class="docTableCell" valign="top"><P class="docText"><span class="docEmphasis">x</span><SUB>1s</SUB> = 0.995103</P></TD><TD class="docTableCell" valign="top"><P class="docText"><span class="docEmphasis">x</span><SUB>2s</SUB> = 1.512243</P></TD><TD class="docTableCell" valign="top"><P class="docText">unstable</P></TD></TR><TR><TD class="docTableCell" valign="top"><P class="docText">Equilibrium 3—nontrivial</P></TD><TD class="docTableCell" valign="top"><P class="docText"><span class="docEmphasis">x</span><SUB>1s</SUB> = 1.530163</P></TD><TD class="docTableCell" valign="top"><P class="docText"><span class="docEmphasis">x</span><SUB>2s</SUB> = 0.174593</P></TD><TD class="docTableCell" valign="top"><P class="docText">stable</P></TD></TR></COLGROUP></TABLE></P>
+<P class="docText">Notice that we definitely do not want to operate a equilibrium point 1. Here there is no reaction occurring because the cells have been washed out of the reactor. The outlet substrate concentration is the same as the inlet substrate concentration under these conditions.</P>
+<A NAME="art07lev2sec4"></A><H4 class="docSection2Title"> Linear Model</H4>
+<P class="docText">The state-space model matrices are</P>
+<p class="docText"><IMG BORDER="0" WIDTH="280" HEIGHT="50" src="FILES/m07equ04.gif" ALT="graphics/m07equ04.gif"></p><br>
+<P class="docText">where the partial derivative of the specific growth rate with respect to the substrate concentration is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="140" HEIGHT="40" src="FILES/m07equ05.gif" ALT="graphics/m07equ05.gif"></p><br>
+<P class="docText">and where dilution rate is the manipulated input. Different control strategies have been used to control continuous biochemical reactors. One is based on measuring the biomass concentration and manipulating the dilution rate. Another is based on measuring the substrate concentration and manipulating the dilution rate.</P>
+<P class="docText">In the following two problems, the biomass concentration is the measured output and the dilution rate is the manipulated input. You will be performing your control simulations using the nonlinear process, so the inputs and outputs from the process are in physical variable form, while the linear controller design is based on the use of deviation variables. Assume that the dilution rate is physically constrained between 0 and 0.6 hr<SUP>-1</SUP>.</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_art07lev1sec1.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_art07lev1sec3.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

@@ -1,0 +1,50 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="8.12 Summary"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch08lev1sec11.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch08lev1sec13.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch08lev1sec12"></A><H3 class="docSection1Title">8.12 Summary</H3>
+<P class="docText">The IMC design procedure is exactly the same as the open-loop control design procedure. Unlike open-loop control, the IMC structure compensates for disturbances and model uncertainty. The IMC tuning (filter) factor, <font face="symbol">l</font>, is used to detune for model uncertainty. It should be noted that the standard IMC design procedure is focused on setpoint responses, but good setpoint responses do not guarantee good disturbance rejection, particularly for disturbances that occur at process inputs. A modification of the IMC design procedure was developed to improve input disturbance rejection. Tolerance of model uncertainty is called <span class="docEmphasis">robustness</span> and was discussed in more detail in <A class="docLink" HREF="0133536408_ch07.html#ch07">Chapter 7</A>.</P>
+<P class="docText">Like open-loop control, the disadvantage compared with standard feedback control is that IMC does not handle integrating or open-loop unstable systems. In <A class="docLink" HREF="0133536408_ch09.html#ch09">Chapter 9</A>, we develop a procedure, based on IMC, to form a standard feedback control system that can handle open-loop unstable systems. We call this IMC-based PID.</P>
+<A NAME="ch08lev2sec20"></A><H4 class="docSection2Title"> Terms</H4>
+<BLOCKQUOTE><P><p class="docText"><span class="docEmphasis">All-pass</span>: 
+Property of a transfer function (detailed in <A class="docLink" HREF="0133536408_ch07.html#ch07">Chapter 7</A>).</p></P><P><p class="docText"><span class="docEmphasis">Factorization</span>: 
+Factoring a transfer function into invertible (good stuff) and noninvertible (bad stuff) portions.</p></P><P><p class="docText"><span class="docEmphasis">Minimum phase</span>: 
+No RHP zeros or time delays.</p></P><P><p class="docText"><span class="docEmphasis">Nonminimum phase</span>: 
+Contains RHP zeros and/or time delays.</p></P><P><p class="docText"><span class="docEmphasis">Physical realizability</span>: 
+A controller can be physically implemented if it is proper.</p></P><P><p class="docText"><span class="docEmphasis">Proper</span>: 
+A transfer function is proper if the order of the denominator is at least as great as the order of the numerator. If they are exactly the same order, the transfer function is <span class="docEmphasis">semiproper</span>. If the order of the denominator is greater than the numerator, the transfer function is <span class="docEmphasis">strictly proper.</span></p></P></BLOCKQUOTE>
+<A NAME="ch08lev2sec21"></A><H4 class="docSection2Title"> Summary of Internal Model Control System Design Procedure</H4>
+<A NAME="ch08pr03"></A>
+
+
+
+<span style="font-weight:bold"><OL class="docList" START="1"><LI><span style="font-weight:normal" value="1"><P class="docText">Develop a process model.</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="29" HEIGHT="18" src="FILES/08equ59.gif" ALT="graphics/08equ59.gif"></p><br></span></LI><LI><span style="font-weight:normal" value="2"><P class="docList">Factor the process model into invertible (good) and noninvertible (bad) portions,</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="115" HEIGHT="18" src="FILES/08equ60.gif" ALT="graphics/08equ60.gif"></p><br>
+<P class="docText">usually using an all-pass factorization.</P></span></LI><LI><span style="font-weight:normal" value="3"><P class="docList">Invert the invertible portion of the process model (the good stuff) and cascade with a filter that makes the controller <span class="docEmphasis">q(s)</span> proper.</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="103" HEIGHT="26" src="FILES/08equ61.gif" ALT="graphics/08equ61.gif"></p><br>
+<P class="docList">For a focus on step setpoint changes, the following form is often used:</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="93" HEIGHT="38" src="FILES/08equ62.gif" ALT="graphics/08equ62.gif"></p><br>
+<P class="docList">Although not discussed in detail in the chapter, for good tracking of ramp setpoint changes, the following form for the filter should be used:</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="95" HEIGHT="41" src="FILES/08equ63.gif" ALT="graphics/08equ63.gif"></p><br>
+<P class="docList">For good rejection of step input load disturbances, the form used is</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="91" HEIGHT="39" src="FILES/08equ64.gif" ALT="graphics/08equ64.gif"></p><br>
+<P class="docText">where <font face="symbol">g</font> is selected to cancel the slow process time constant.</P></span></LI><LI><span style="font-weight:normal" value="4"><P class="docText">Implement in the form of <A class="docLink" HREF="0133536408_ch08lev1sec11.html#ch08fig20">Figure 8-20</A> to handle constraints on the manipulated input.</P></span></LI></OL></span>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch08lev1sec11.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch08lev1sec13.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

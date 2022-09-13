@@ -1,0 +1,61 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="13.7 RGA and Sensitivity"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch13lev1sec6.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch13lev1sec8.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch13lev1sec7"></A><H3 class="docSection1Title">13.7 RGA and Sensitivity</H3>
+<P class="docText">The previous sections have introduced the concept of the RGA, to help determine which input should be paired with which output to form a multivariable control system composed of a number of single input–single output controllers (we refer to this as a MVSISO system). The purpose of this section is to discuss the relationship between relative gain and controller tuning. It should become clear that the RGA gives valuable insight into the failure sensitivity of a control system. We also present numerous examples to illustrate the important concepts.</P>
+<A NAME="ch13lev2sec18"></A><H4 class="docSection2Title"> Failure Sensitivity</H4>
+<P class="docText">When tuning a set of SISO controllers to form a MVSISO strategy, it is important to consider the <span class="docEmphasis">failure sensitivity</span> of the system. For example, consider a two input–two output system. If loop 1 is tuned to operate well when loop 2 is closed, we must also consider what happens when loop 2 is opened. It is possible for loop 2 to be opened in a number of ways. The most obvious way is for an operator to put loop 2 on manual control (i.e., open loop). Another way is if the second manipulated variable hits a constraint, say if the valve goes all the way open or closed—this means that the second input can no longer affect the second output, which is equivalent to being open loop.</P>
+<A NAME="ch13lev3sec1"></A><H5 class="docSection3Title"> Relative Gain as a Perturbation of the Nominal Process</H5>
+<P class="docText">Consider a system where loop one has output 1 paired with input 1. The relative gain is defined as</P>
+<P><B><A NAME="ch13equ26"></A>Equation 13.26 </B></P><p class="docText"><IMG BORDER="0" WIDTH="376" HEIGHT="35" src="FILES/13equ26.gif" ALT="graphics/13equ26.gif"></p><br>
+<P class="docText">Using <span class="docEmphasis">k</span><SUB>11</SUB> to represent the steady-state gain between input 1 and output 1,</P>
+<P><B><A NAME="ch13equ27"></A>Equation 13.27 </B></P><p class="docText"><IMG BORDER="0" WIDTH="68" HEIGHT="37" src="FILES/13equ27.gif" ALT="graphics/13equ27.gif"></p><br>
+<P class="docText">From Equation (<A class="docLink" HREF="#ch13equ27">13.27</A>), we can represent the effective gain as</P>
+<P><B><A NAME="ch13equ28"></A>Equation 13.28 </B></P><p class="docText"><IMG BORDER="0" WIDTH="68" HEIGHT="34" src="FILES/13equ28.gif" ALT="graphics/13equ28.gif"></p><br>
+<P class="docText">where</P>
+<p class="docText"><IMG BORDER="0" WIDTH="113" HEIGHT="35" src="FILES/13equ29.gif" ALT="graphics/13equ29.gif"></p><br>
+<P class="docText">We can really represent the effect of the relative gain by comparing the two block diagrams shown in <A class="docLink" HREF="#ch13fig12">Figures 13-12a</A> and <A class="docLink" HREF="#ch13fig12">b</A>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch13fig12"></A>Figure 13-12. Process gain between input 1 and output 1 when loop 2 is open versus when loop 2 is closed. (a) Process gain between input 1 and output 1 when loop 2 is open. (b) Effective process gain between input 1 and output 1 when loop 2 is closed.</H5><p class="docText"><IMG BORDER="0" WIDTH="450" HEIGHT="356" src="FILES/13fig12.gif" ALT="graphics/13fig12.gif"></p></CENTER>
+<P class="docText">Comparing <A class="docLink" HREF="#ch13fig12">Figures 13-12a</A> and <A class="docLink" HREF="#ch13fig12">b</A>, we see that the effective process gain between input 1 and output 1 with loop 2 is closed is simply a perturbation of the open-loop gain between input 1 and output 1 by a multiplicative factor of 1/<font face="symbol">l</font><SUB>11</SUB>.</P>
+<A NAME="ch13lev3sec2"></A><H5 class="docSection3Title"> Relative Gains Between 0 and 1</H5>
+<P class="docText">If a relative gain is less than 1, this means that <span class="docEmphasis">k</span><SUB>11,eff</SUB> &gt; <span class="docEmphasis">k</span><SUB>11</SUB>. If a controller for loop 1 is based on <span class="docEmphasis">k</span><SUB>11</SUB> (implicitly assuming that loop 2 is open), then when loop 2 is closed, the controller gain for loop 1 (<span class="docEmphasis">k</span><SUB>c1</SUB>) should be detuned approximately by a factor of <font face="symbol">l</font><SUB>11</SUB>, otherwise the control system will respond too rapidly and there will be a chance of instability. If, on the other hand, the controller for loop 1 is tuned based on loop 2 being closed, then <span class="docEmphasis">k</span><SUB>c1</SUB> can probably be increased by a factor of 1/<font face="symbol">l</font><SUB>11</SUB> when loop 2 is opened. The problem is, if the <span class="docEmphasis">k</span><SUB>c1</SUB> is kept at this new larger value when loop 2 is closed again, there is again a potential for instability.</P>
+<P class="docText">This analysis indicates that for safety purposes, if the relative gain is less than 1, then loop 1 should be tuned based on loop 2 closed.</P>
+<A NAME="ch13lev3sec3"></A><H5 class="docSection3Title"> Relative Gains Greater than 1</H5>
+<P class="docText">If a relative gain is greater than 1, this means that <span class="docEmphasis">k</span><SUB>11,eff</SUB> &lt; <span class="docEmphasis">k</span><SUB>11</SUB>. If a controller for loop 1 is based on <span class="docEmphasis">k</span><SUB>11</SUB> (implicitly assuming that loop 2 is open), then when loop 2 is closed, the controller gain for loop 1 (<span class="docEmphasis">k</span><SUB>c1</SUB>) can be increased approximately by a factor of <font face="symbol">l</font><SUB>11</SUB>. The problem is, if loop 2 is then opened again, the controller gain will be too high, and there is a chance of instability. If, on the other hand, the controller for loop 1 is tuned based on loop 2 being closed, then <span class="docEmphasis">k</span><SUB>c1</SUB> should be decreased by a factor of 1/<font face="symbol">l</font><SUB>11</SUB> when loop 2 is opened.</P>
+<P class="docText">This analysis indicates that for safety purposes, if the relative gain is greater than 1, then loop 1 should be tuned based on loop 2 open.</P>
+<A NAME="ch13lev3sec4"></A><H5 class="docSection3Title"> Negative Relative Gains</H5>
+<P class="docText">Think about the ramifications of having a negative relative gain. If <font face="symbol">l</font><SUB>11</SUB> is negative, this means that the gain between <span class="docEmphasis">u</span><SUB>1</SUB> and <span class="docEmphasis">y</span><SUB>1</SUB> with loop 2 closed (<span class="docEmphasis">k</span><SUB>11,eff</SUB>) has the opposite sign compared with the gain between <span class="docEmphasis">u</span><SUB>1</SUB> and <span class="docEmphasis">y</span><SUB>1</SUB> with loop 2 open (<span class="docEmphasis">k</span><SUB>11</SUB>). This has the following ramifications. First of all, assume that the process is open-loop stable. For open-loop stable processes that have a controller with integral action, the controller gain must have the same sign as the process gain. If the controller for loop 1 is designed with loop 2 open, it will have a controller gain with a certain sign. Then, when loop 2 is closed, it must have an opposite sign in order to be stable! This is certainly not a desirable situation and is unacceptable in practice. A controller for loop 1 designed based on g<SUB>11</SUB> (loop 2 open) will be destabilized when loop 2 is closed. If the controller for loop 1 is designed based on <span class="docEmphasis">g</span><SUB>11,eff</SUB> (loop 2 closed), the controller will be destabilized when loop 2 is opened. This leads to the following statement regarding failure sensitivity.</P>
+<A NAME="ch13lev3sec5"></A><H5 class="docSection3Title"> Failure Sensitivity</H5>
+<P class="docText">A control strategy that is based on pairing on a negative relative gain is <span class="docEmphasis">failure sensitive</span> and is <span class="docEmphasis">unacceptable</span>. Never select input-output pairings based on a negative relative gain.</P>
+<A NAME="ch13lev3sec6"></A><H5 class="docSection3Title"> Implication for Subsystems</H5>
+<P class="docText">Many control strategies have more than two control loops. Consider a case where there are three control loops, for example. If the variable pairings have been performed so that the corresponding relative gains are positive (and hopefully close to 1.0), then we need to consider the failure sensitivity of all possible controller failures. For example, if loop 1 fails, it is important then to make certain that the RGA of the subsystem with loop 1 removed still satisfies the requirement of positive relative gains on all paired inputs and outputs.</P>
+<A NAME="ch13lev2sec19"></A><H4 class="docSection2Title"> Sensitivity to Model Uncertainty</H4>
+<A NAME="ch13lev3sec7"></A><H5 class="docSection3Title"> Large Relative Gains (&gt;&gt;1)</H5>
+<P class="docText">Large relative gains correspond to a high sensitivity to uncertainty. This is shown in the following example.</P>
+<A NAME="ch13lev2sec20"></A><H4 class="docSection2Title"> Example 13.3: Model Uncertainty and the RGA</H4>
+<P class="docText">Consider a steady-state process <span class="docEmphasis">model</span> with the corresponding RGA:</P>
+<p class="docText"><IMG BORDER="0" WIDTH="229" HEIGHT="39" src="FILES/13equ30.gif" ALT="graphics/13equ30.gif"></p><br>
+<P class="docText">The actual <span class="docEmphasis">process</span> could very easily have a minor error of 5% in the gain relating <span class="docEmphasis">u</span><SUB>1</SUB> to <span class="docEmphasis">y</span><SUB>2</SUB>, as shown in the actual process gain matrix and RGA:</P>
+<p class="docText"><IMG BORDER="0" WIDTH="215" HEIGHT="40" src="FILES/13equ31.gif" ALT="graphics/13equ31.gif"></p><br>
+<P class="docText">Notice that the model requires that input 1 be paired with output 1, while the relative gain for the actual plant (model + uncertainty) indicates that input 1 must be paired with output 2. In this case, we have no choice but to use only one control loop. In this case we would use physical insight and dynamic considerations to select the loop to close.</P>
+<A NAME="ch13lev3sec8"></A><H5 class="docSection3Title"> Sensitivity to Model Uncertainty</H5>
+<P class="docText">A large relative gain (the order of 25 and higher) corresponds to an extreme sensitivity to model uncertainty and indicates that some loop should be opened; that is, not all outputs should be under feedback control. One process that can have multivariable control, even with a large relative gain, is distillation, where nonlinear effects dominate.</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch13lev1sec6.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch13lev1sec8.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

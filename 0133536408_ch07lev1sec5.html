@@ -1,0 +1,68 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="7.5 Bode and Nyquist Stability"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch07lev1sec4.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch07lev1sec6.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch07lev1sec5"></A><H3 class="docSection1Title">7.5 Bode and Nyquist Stability</H3>
+<P class="docText">In the previous section we used a thought experiment based on the open-loop (controller + process) response to a sinusoidal setpoint input. We found that if the amplitude ratio of the open-loop transfer function [<span class="docEmphasis">g</span><SUB>c</SUB>(<span class="docEmphasis">s</span>)<span class="docEmphasis">g</span><SUB>p</SUB>(<span class="docEmphasis">s</span>)] is less than 1 when the phase angle is -180&#176;, then the system will be stable when the loop is closed. This requirement is also known as the <span class="docEmphasis">Bode stability criterion</span>. Notice that we are assuming no valve and measurement effects [or lumping them into <span class="docEmphasis">g</span><SUB>p</SUB>(<span class="docEmphasis">s</span>)]. If these effects are included, then <span class="docEmphasis">g</span><SUB>c</SUB>(<span class="docEmphasis">s</span>)<span class="docEmphasis">g</span><SUB>p</SUB>(<span class="docEmphasis">s</span>)<span class="docEmphasis">g</span><SUB>v</SUB>(<span class="docEmphasis">s</span>)<span class="docEmphasis">g</span><SUB>m</SUB>(s) should be used in the analysis.</P>
+<A NAME="ch07lev2sec7"></A><H4 class="docSection2Title"> Bode Stability Criterion</H4>
+<P class="docText">Assume that the process is stable [<span class="docEmphasis">g</span><SUB>p</SUB>(<span class="docEmphasis">s</span>) has no poles in the RHP] and the controller is stable [<span class="docEmphasis">g</span><SUB>c</SUB>(<span class="docEmphasis">s</span>) has no poles in the RHP]. Also assume that the phase angle (<font face="symbol">f</font>) crosses –180&#176; only once on a Bode plot. The system will be closed-loop stable if and only if the amplitude ratio of <span class="docEmphasis">g</span><SUB>c</SUB><span class="docEmphasis">g</span><SUB>p</SUB> is less than 1 at the crossover frequency.</P>
+<P><B><A NAME="ch07equ12"></A>Equation 7.11 </B></P><p class="docText"><IMG BORDER="0" WIDTH="171" HEIGHT="25" src="FILES/07equ11.gif" ALT="graphics/07equ11.gif"></p><br>
+<P class="docText">where <font face="symbol">w</font><SUB>co</SUB> is known as the <span class="docEmphasis">crossover frequency</span>, which is defined as the frequency where the phase angle is –180&#176;.</P>
+<P class="docText">The requirements placed by the Bode stability criterion are not that restrictive for most chemical processes. For processes where the phase angle crosses –180&#176; more than once, it is necessary to use the Nyquist stability criterion.</P>
+<A NAME="ch07lev2sec8"></A><H4 class="docSection2Title"> Nyquist Stability Criterion</H4>
+<P class="docText">A system will be closed-loop stable if a Nyquist plot of <span class="docEmphasis">g</span><SUB>c</SUB>(<span class="docEmphasis">s</span>)<span class="docEmphasis">g</span><SUB>p</SUB>(<span class="docEmphasis">s</span>) does not encircle the critical point (-1,0). Examples of closed-loop stable and unstable systems are shown in <A class="docLink" HREF="#ch07fig13">Figure 7-13</A>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch07fig13"></A>Figure 7-13. Illustration of Nyquist stability criterion. (Left) Stable system, critical point is not encircled. (Right) Unstable system, critical point is encircled.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="239" src="FILES/07fig13.gif" ALT="graphics/07fig13.gif"></p></CENTER>
+<P class="docText">The Bode and Nyquist stability criteria indicate whether a closed-loop system will be stable or not, but they do not indicate how "close to instability" a system is. That is, the Bode and Nyquist stability criteria alone do not indicate the <span class="docEmphasis">robustness</span> of a feedback system to model uncertainty. Gain and phase margins, defined below, will provide an indication of the robustness of a feedback system.</P>
+<A NAME="ch07lev2sec9"></A><H4 class="docSection2Title"> Gain Margin</H4>
+<P class="docText">Let AR<SUB>co</SUB> represent the amplitude of <span class="docEmphasis">g</span><SUB>c</SUB>(<span class="docEmphasis">s</span>)<span class="docEmphasis">g</span><SUB>p</SUB>(<span class="docEmphasis">s</span>) at the crossover frequency (<font face="symbol">w</font><SUB>co</SUB>, where <font face="symbol">f</font> = -180&#176;). The <span class="docEmphasis">gain margin</span> is defined as</P>
+<P><B><A NAME="ch07equ13"></A>Equation 7.12 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="77" HEIGHT="14" src="FILES/07equ12.gif" ALT="graphics/07equ12.gif"></p><br>
+<P class="docText">and the Bode stability requirement is that <span class="docEmphasis">AR</span><span class="docEmphasis"><SUB>co</SUB></span> &lt; 1, so for stability</P>
+<P><B><A NAME="ch07equ14"></A>Equation 7.13 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="45" HEIGHT="12" src="FILES/07equ13.gif" ALT="graphics/07equ13.gif"></p><br>
+<P class="docText"><span class="docEmphasis">The gain margin is the multiplicative factor that the gain can be increased by before the system becomes unstable.</span></P>
+<A NAME="ch07lev2sec10"></A><H4 class="docSection2Title"> Phase Margin</H4>
+<P class="docText">Let <font face="symbol">f</font><SUB>pm</SUB> represent the phase angle when the amplitude of <span class="docEmphasis">g</span><SUB>c</SUB>(<span class="docEmphasis">s</span>)<span class="docEmphasis">g</span><SUB>p</SUB>(<span class="docEmphasis">s</span>) is 1. This occurs at a frequency <font face="symbol">w</font><SUB>pm</SUB>. The phase margin is defined as</P>
+<P><B><A NAME="ch07equ15"></A>Equation 7.14 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="205" HEIGHT="20" src="FILES/07equ14.gif" ALT="graphics/07equ14.gif"></p><br>
+<P class="docText">The closed-loop system will be stable if <font face="symbol">f</font> &gt; -180&#176; when AR = 1, so the stability requirement is</P>
+<P><B><A NAME="ch07equ16"></A>Equation 7.15 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="47" HEIGHT="17" src="FILES/07equ15.gif" ALT="graphics/07equ15.gif"></p><br>
+<P class="docText"><span class="docEmphasis">The phase margin is the amount that the phase angle can decrease (in magnitude, at</span> <font face="symbol">w</font><span class="docEmphasis"><SUB>pm</SUB></span>) <span class="docEmphasis">before the system becomes unstable.</span></P>
+<P class="docText">We have developed the Bode and Nyquist stability criteria and defined the gain and phase margins. Next we use an example to illustrate the techniques.</P>
+<A NAME="ch07lev2sec11"></A><H4 class="docSection2Title"> Example 7.3: Nonminimum-Phase Process</H4>
+<P class="docText">Consider the Van de Vusse reactor (<A class="docLink" HREF="0133536408_art05.html#art05">Module 5</A>) controlled using a P-only controller.</P>
+<p class="docText"><IMG BORDER="0" WIDTH="187" HEIGHT="43" src="FILES/07equ15a.gif" ALT="graphics/07equ15a.gif"></p><br>
+<P class="docText">where time unit is minutes. The Bode plots for <span class="docEmphasis">g</span><SUB>p</SUB>(<span class="docEmphasis">s</span>)<span class="docEmphasis">g</span><SUB>c</SUB>(<span class="docEmphasis">s</span>) with <span class="docEmphasis">k</span><SUB>c</SUB> = 2.5 are shown in <A class="docLink" HREF="#ch07fig14">Figures 7-14</A> and <A class="docLink" HREF="#ch07fig15">7-15</A>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch07fig14"></A>Figure 7-14. Bode plot for <A class="docLink" HREF="#ch07lev2sec11">Example 7.3</A>. Calculation of the gain margin.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="390" src="FILES/07fig14.gif" ALT="graphics/07fig14.gif"></p></CENTER>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch07fig15"></A>Figure 7-15. Bode plot for <A class="docLink" HREF="#ch07lev2sec11">Example 7.3</A>. Phase margin calculation.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="409" src="FILES/07fig15.gif" ALT="graphics/07fig15.gif"></p></CENTER>
+<P class="docText">We can use the following steps and the Bode plot in <A class="docLink" HREF="#ch07fig14">Figure 7-14</A> to calculate the gain margin.</P>
+<A NAME="ch07pr02"></A>
+
+
+<span style="font-weight:bold"><OL class="docList" START="1"><LI><span style="font-weight:normal" value="1"><P class="docText">Find the frequency where the phase angle for <span class="docEmphasis">g</span><SUB>p</SUB><span class="docEmphasis">g</span><SUB>c</SUB> = –180&#176;. Here, <font face="symbol">w</font><span class="docEmphasis"><SUB>co</SUB></span> = 4.3 rad/min.</P></span></LI><LI><span style="font-weight:normal" value="2"><P class="docText">At this frequency, find the amplitude ratio for <span class="docEmphasis">g</span><SUB>p</SUB><span class="docEmphasis">g</span><SUB>c</SUB>. Here, AR = 0.60.</P></span></LI><LI><span style="font-weight:normal" value="3"><P class="docText">The gain margin is 1/AR. Here, the gain margin = 1/0.60 = 1.67.</P></span></LI></OL></span>
+<P class="docText">We can use the following steps and the plot in <A class="docLink" HREF="#ch07fig15">Figure 7-15</A> to find the phase margin.</P>
+<A NAME="ch07pr03"></A>
+
+
+<span style="font-weight:bold"><OL class="docList" START="1"><LI><span style="font-weight:normal" value="1"><P class="docText">Find the frequency where the <span class="docEmphasis">g</span><SUB>p</SUB><span class="docEmphasis">g</span><SUB>c</SUB> amplitude ratio is 1.0. Here, <font face="symbol">w</font><SUB>pm</SUB> = 2.1 rad/minute.</P></span></LI><LI><span style="font-weight:normal" value="2"><P class="docText">At this frequency, find the <span class="docEmphasis">g</span><SUB>p</SUB><span class="docEmphasis">g</span><SUB>c</SUB> phase angle. Here, <font face="symbol">f</font><SUB>pm</SUB> = –121&#176;.</P></span></LI><LI><span style="font-weight:normal" value="3"><P class="docText">The phase margin is <font face="symbol">f</font> – (–180). Here, the phase margin = –121 + 180 = 59&#176;.</P></span></LI></OL></span>
+<P class="docText">The Nyquist plot is shown in <A class="docLink" HREF="#ch07fig16">Figure 7-16</A>. The unit circle is plotted on this diagram so that it is easy to determine where the amplitude is equal to one. Notice that the Nyquist diagram is consistent with the Bode diagram, since the amplitude ratio is 0.60 when the phase angle is –180&#176;, and the phase angle is –121&#176; when the amplitude ratio is 1.0.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch07fig16"></A>Figure 7-16. Nyquist plot for <A class="docLink" HREF="#ch07lev2sec11">Example 7.3</A>. The unit circle (dashed line) is included for convenience. The points for the gain margin and phase margin calculations are shown as the open circle and star, respectively.</H5><p class="docText"><IMG BORDER="0" WIDTH="400" HEIGHT="378" src="FILES/07fig16.gif" ALT="graphics/07fig16.gif"></p></CENTER>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch07lev1sec4.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch07lev1sec6.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

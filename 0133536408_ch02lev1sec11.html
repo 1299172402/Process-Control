@@ -1,0 +1,36 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="Appendix 2.1: Solving Algebraic Equations"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch02lev1sec10.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch02lev1sec12.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch02lev1sec11"></A><H3 class="docSection1Title"> Appendix 2.1: Solving Algebraic Equations</H3>
+<P class="docText">Fortunately, the M<span class="docEmphSmaller">ATLAB</span> <TT>fsolve</TT> function is easy to use for solving algebraic equations. For a simplified presentation, we use the form</P>
+<P><B><A NAME="ch02equ86"></A>Equation A.1 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="52" HEIGHT="17" src="FILES/02equ113.gif" ALT="graphics/02equ113.gif"></p><br>
+<P class="docText">obtained from Equation (<A class="docLink" HREF="0133536408_ch02lev1sec6.html#ch02equ70">2.66</A>) with a fixed <span class="docEmphasis">p</span> and <span class="docEmphasis">u</span>. The most commonly used numerical techniques are related to Newton-Raphson iteration. The "guess" for iteration <span class="docEmphasis">k</span> + 1 is determined from the value at iteration k, using</P>
+<P><B><A NAME="ch02equ87"></A>Equation A.2 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="183" HEIGHT="19" src="FILES/02equ114.gif" ALT="graphics/02equ114.gif"></p><br>
+<P class="docText">where <span class="docEmphasis">f</span>[<span class="docEmphasis">x</span>(<span class="docEmphasis">k</span>)] is the vector of function evaluations at <span class="docEmphasis">iteration k</span>, and <span class="docEmphasis">J</span>(<span class="docEmphasis">k</span>) is the Jacobian matrix</P>
+<P><B><A NAME="ch02equ88"></A>Equation A.3 </B></P><p class="docText"><IMG BORDER="0" WIDTH="90" HEIGHT="42" src="FILES/02equ115.gif" ALT="graphics/02equ115.gif"></p><br>
+<P class="docText">The <span class="docEmphasis">ij</span> element of the Jacobian represents the partial derivative of equation <span class="docEmphasis">i</span> with respect to variable <span class="docEmphasis">j</span>. If analytical derivatives are not available, elements of the Jacobian are obtained by perturbation of the state variable, requiring <span class="docEmphasis">n</span> + 1 function evaluations for an <span class="docEmphasis">n</span>-equation system of equations. Various quasi-Newton techniques provide approximations to the Jacobian and do not require as many function evaluations, reducing computational time.</P>
+<P class="docText">In practice, the Jacobian matrix in Equation (<A class="docLink" HREF="#ch02equ87">A.2</A>) is not inverted. Rather, a set of linear algebraic equations is solved for <span class="docEmphasis">x</span>(<span class="docEmphasis">k</span>+1),</P>
+<P><B><A NAME="ch02equ89"></A>Equation A.4 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="190" HEIGHT="20" src="FILES/02equ116.gif" ALT="graphics/02equ116.gif"></p><br>
+<P class="docText">In this text we do not focus on the solution of algebraic equations. See the text by <A class="docLink" HREF="0133536408_ch02lev1sec9.html#ch02biblio01entry05">Bequette (1998</A>) for more details on these techniques.</P>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch02lev1sec10.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch02lev1sec12.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

@@ -1,0 +1,74 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="M1.3 The M'ATLAB' Workspace"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_art01lev1sec2.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_art01lev1sec4.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="art01lev1sec3"></A><H3 class="docSection1Title" id="225793-822">M1.3 The M<span class="docEmphSmaller">ATLAB</span> Workspace</H3>
+<P class="docText">We can view the variables currently in the Workspace by typing</P>
+<pre>
+
+</pre><pre>
+&#187; who
+Your variables are:
+ans       x         y         z
+leaving 621420 bytes of memory free.
+</pre>
+<P class="docText">More detail about the size of the matrices can be obtained by typing <TT>whos.</TT></P>
+<P class="docText">We can find the size of a matrix or vector by typing</P>
+<pre>
+
+</pre><pre>
+&#187; [m,n]=size(x)
+m =
+     1
+n =
+     6
+</pre>
+<P class="docText">where <TT>m</TT> represents the number of rows and <TT>n</TT> represents the number of columns.</P>
+<P class="docText">If we do not put place arguments for the rows and columns, we find</P>
+<pre>
+
+</pre><pre>
+&#187; size(x)
+ans =
+     1     6
+</pre>
+<P class="docText">Since <TT>x</TT> is a vector, we can also use the length command</P>
+<pre>
+
+</pre><pre>
+&#187; length(x)
+ans =
+     6
+</pre>
+<P class="docText">It should be noted that M<span class="docEmphSmaller">ATLAB</span> is case sensitive with respect to variable names. An <TT>X</TT> matrix can coexist with an <TT>x</TT> matrix.</P>
+<P class="docText">Sometimes it is desirable to clear all of the variables in a Workspace. This is done by simply entering</P>
+<pre>
+
+</pre><pre>
+&#187; clear
+</pre>
+<P class="docText">in the command window. More frequently you may wish to clear a particular variable, such as x</P>
+<pre>
+
+</pre><pre>
+&#187; clear x
+</pre>
+<P class="docText">This is particularly true if you are performing a new calculation of <TT>x</TT> and the new vector is shorter than the old vector. If the new vector has length n, then all of the elements of the new x greater than x(n) will contain values of the previous x vector.</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_art01lev1sec2.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_art01lev1sec4.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

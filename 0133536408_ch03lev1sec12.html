@@ -1,0 +1,50 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="3.12 Converting State Space Models to Transfer Functions"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch03lev1sec11.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch03lev1sec13.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch03lev1sec12"></A><H3 class="docSection1Title">3.12 Converting State Space Models to Transfer Functions</H3>
+<P class="docText">A general state space model can be converted to transfer function form, using the following steps. Starting with the state space model</P>
+<p class="docText"><IMG BORDER="0" WIDTH="89" HEIGHT="36" src="FILES/03equ62.gif" ALT="graphics/03equ62.gif"></p><br>
+<P class="docText">Take the Laplace transform of each term, assuming zero initial conditions</P>
+<p class="docText"><IMG BORDER="0" WIDTH="124" HEIGHT="33" src="FILES/03equ63.gif" ALT="graphics/03equ63.gif"></p><br>
+<P class="docText">Solving for <span class="docEmphasis">x(s)</span>, then <span class="docEmphasis">y(s)</span> (it should be noted that often <span class="docEmphasis">D</span> = 0)</P>
+<p class="docText"><IMG BORDER="0" WIDTH="177" HEIGHT="57" src="FILES/03equ64.gif" ALT="graphics/03equ64.gif"></p><br>
+<P class="docText">where <span class="docEmphasis">G(s)</span> is a transfer function matrix. For example, the transfer function relating input <span class="docEmphasis">j</span> and output <span class="docEmphasis">i</span> is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="99" HEIGHT="18" src="FILES/03equ65.gif" ALT="graphics/03equ65.gif"></p>
+<br>
+<P class="docText">or in matrix form (with <span class="docEmphasis">m</span> inputs and <span class="docEmphasis">r</span> outputs)</P>
+<p class="docText"><IMG BORDER="0" WIDTH="215" HEIGHT="62" src="FILES/03equ66.gif" ALT="graphics/03equ66.gif"></p><br>
+<A NAME="ch03lev2sec28"></A><H4 class="docSection2Title"> Example 3.9: Isothermal CSTR</H4>
+<P class="docText">Consider the isothermal CSTR shown in <A class="docLink" HREF="0133536408_ch03lev1sec3.html#ch03lev2sec15">Example 3.3</A> and <A class="docLink" HREF="0133536408_art05.html#art05">Module 5</A>. The state space model is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="284" HEIGHT="68" src="FILES/03equ67.gif" ALT="graphics/03equ67.gif"></p><br>
+<P class="docText">The first input (<span class="docEmphasis">u</span><SUB>1</SUB>, manipulated) is the dilution rate (<span class="docEmphasis">F</span>/<span class="docEmphasis">V</span>), the second input (<span class="docEmphasis">u</span><SUB>2</SUB>, disturbance) is the feed concentration (<span class="docEmphasis">C<SUB>Af</SUB></span>), and the output is the concentration of the intermediate component, <span class="docEmphasis">B</span>. The eigenvalues of <span class="docEmphasis">A</span> (obtained by solving det(<font face="symbol">l</font>I – <span class="docEmphasis">A</span>) = 0) are –2.4048 and –2.2381 min<SUP>-1</SUP>.</P>
+<P class="docText">The sequence of steps used to find the transfer function matrix is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="452" HEIGHT="210" src="FILES/03equ68.gif" ALT="graphics/03equ68.gif"></p><br>
+<P class="docText">and multiplying,</P>
+<p class="docText"><IMG BORDER="0" WIDTH="348" HEIGHT="120" src="FILES/03equ68a.gif" ALT="graphics/03equ68a.gif"></p><br>
+<P class="docText">Also,</P>
+<p class="docText"><IMG BORDER="0" WIDTH="455" HEIGHT="90" src="FILES/03equ68b.gif" ALT="graphics/03equ68b.gif"></p><br>
+<P class="docText">The manipulated input-output process transfer function for the reactor is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="487" HEIGHT="42" src="FILES/03equ69.gif" ALT="graphics/03equ69.gif"></p><br>
+<P class="docText">and the disturbance input-output transfer function is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="472" HEIGHT="41" src="FILES/03equ70.gif" ALT="graphics/03equ70.gif"></p><br>
+<P class="docText">The transfer function poles (–2.2381 and –2.4048) are equal to the eigenvalues of the <span class="docEmphasis">A</span> matrix. Also, the positive zero (1/0.3549) in <span class="docEmphasis">g</span><SUB>11</SUB>(<span class="docEmphasis">s</span>) yields the inverse response shown in <A class="docLink" HREF="0133536408_ch03lev1sec3.html#ch03fig05">Figure 3-5</A>.</P>
+<P class="docText">We see that it is straightforward to convert state space models to transfer function models. An <span class="docEmphasis">n</span>-state system results in transfer functions that have a denominator polynomial that is <span class="docEmphasis">n</span>th order in <span class="docEmphasis">s</span>, that is, with <span class="docEmphasis">n</span> poles. Sometimes the resulting transfer functions can be factored into lower order transfer functions because of pole-zero cancellation (a value of a pole is equal to a value of a zero). An example of pole-zero cancellation is shown in Exercise 13.</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch03lev1sec11.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch03lev1sec13.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

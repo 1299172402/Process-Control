@@ -1,0 +1,32 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="M13.1 Description of Distillation Control"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_art13.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_art13lev1sec2.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="art13lev1sec1"></A><H3 class="docSection1Title">M13.1 Description of Distillation Control</H3>
+<P class="docText">A schematic diagram of a typical binary distillation column control strategy is shown in <A class="docLink" HREF="#art13m13fig01">Figure M13-1</A>. Notice that there are five measured variables (pressure, distillate receiver level, base level, distillate composition, and bottoms composition) and five manipulated variables (condenser heat duty, reflux flow rate, distillate flow rate, bottoms flow rate, and reboiler heat duty). In addition, if the feed to the column is regulated, then there is an additional measurement (feed flow rate) and manipulated input (also feed flow rate or valve position). Normally, it is assumed that the pressure is controlled by manipulating the condenser heat duty (or the flow of cooling water to the condenser), that the distillate receiver level is controlled by manipulating the distillate product flow rate, and that the base level is controlled by manipulating the bottoms product flow rate. It is also assumed that these loops are tightly tuned, and the process outputs are "perfectly controlled" at their setpoint values.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="art13m13fig01"></A>Figure M13-1. Dual composition control of a distillation column.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="450" HEIGHT="500" src="FILES/m13fig01.gif" ALT="graphics/m13fig01.gif"></p></CENTER>
+<P class="docText">For a number of reasons, composition sensors may not be installed or many not be in service. The distillate and bottoms streams compositions can be inferred by measuring the temperatures of trays near each end of the column, as shown in <A class="docLink" HREF="#art13m13fig02">Figure M13-2</A>. The tray temperature measurement dynamics are typically more rapid than the product stream composition measurements, so tighter disturbance rejection may be possible with this strategy. For convenience, we assume throughout the rest of this module that composition measurements are available. The analysis and design techniques presented in this module can easily be used for the temperature-control system shown in <A class="docLink" HREF="#art13m13fig02">Figure M13-2</A>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="art13m13fig02"></A>Figure M13-2. Dual temperature control of a distillation column.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="450" HEIGHT="503" src="FILES/m13fig02.gif" ALT="graphics/m13fig02.gif"></p></CENTER>
+<A NAME="art13lev2sec1"></A><H4 class="docSection2Title"> Simplified Model</H4>
+<P class="docText">The column studied is a 41-stage binary separation. For ease of modeling, it is assumed that the manipulated inputs are reflux flow rate and vapor boil-up rate. In practice, the steam flow rate to the reboiler would be manipulated, but it is related to the vapor boil-up by the heats of vaporization of the bottoms stream and the steam.</P>
+<P class="docText">An input-output transfer function model for the dual composition control strategy is</P>
+<P><B><A NAME="art13equ01"></A>Equation M13.1 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="362" HEIGHT="65" src="FILES/m13equ01.gif" ALT="graphics/m13equ01.gif"></p><br>
+<P class="docText">The outputs are the distillate (<span class="docEmphasis">x</span><SUB>D</SUB>) and bottoms (<span class="docEmphasis">x</span><SUB>B</SUB>) composition, in mole fraction of light component. The manipulated inputs are the reflux (<span class="docEmphasis">L</span>) and vapor boil-up (<span class="docEmphasis">V</span>) rates, in kilomoles per minute. The disturbance inputs are feed flow rate (<span class="docEmphasis">F</span>, kmol/minute) and feed light component mole fraction (<span class="docEmphasis">z</span>F). The unit of time is minutes. The steady-state compositions are 0.99 and 0.01 mole fraction light component for the distillate and bottoms product streams, respectively. The steady-state manipulated inputs (reflux and vapor flow rates) are 2.706 and 3.206 kmol/minute, respectively. The feed to the column is 1 kmol/minute, with a feed composition of 0.5 mole fraction light component and a feed quality of 1.</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_art13.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_art13lev1sec2.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

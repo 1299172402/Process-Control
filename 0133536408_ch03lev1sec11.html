@@ -1,0 +1,39 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="3.11 Pad&eacute; Approximation for Dead Time"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch03lev1sec10.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch03lev1sec12.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch03lev1sec11"></A><H3 class="docSection1Title">3.11 Pad&eacute; Approximation for Dead Time</H3>
+<P class="docText">As discussed in the previous section the transfer function for a pure time delay is <span class="docEmphasis">e<SUP>–</SUP></span><SUP><font face="symbol">q</font></SUP><span class="docEmphasis"><SUP>s</SUP></span>, where <font face="symbol">q</font> is the time delay. Some control system design techniques require a rational transfer function; the Pad&eacute; approximation for dead time is often used in this case.</P>
+<P class="docText">A first-order Pad&eacute; approximation is</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="89" HEIGHT="67" src="FILES/03equ57.gif" ALT="graphics/03equ57.gif"></p><br>
+<P class="docText">A second-order Pad&eacute; approximation is</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="125" HEIGHT="71" src="FILES/03equ58.gif" ALT="graphics/03equ58.gif"></p><br>
+<A NAME="ch03lev2sec27"></A><H4 class="docSection2Title"> Example 3.8: Application of the Pad&eacute; Approximations for Dead Time</H4>
+<P class="docText">Consider the first-order + dead time transfer function, where the time-delay dominates the time constant</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="76" HEIGHT="39" src="FILES/03equ59.gif" ALT="graphics/03equ59.gif"></p><br>
+<P class="docText">The first-order Pad&eacute; approximation yields the transfer function</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="228" HEIGHT="38" src="FILES/03equ60.gif" ALT="graphics/03equ60.gif"></p><br>
+<P class="docText">and the second-order Pad&eacute; approximation yields</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="369" HEIGHT="67" src="FILES/03equ61.gif" ALT="graphics/03equ61.gif"></p><br>
+<P class="docText">A comparison of the step responses of <span class="docEmphasis">g</span>(<span class="docEmphasis">s</span>), <span class="docEmphasis">g</span><SUB>1</SUB>(<span class="docEmphasis">s</span>), and <span class="docEmphasis">g</span><SUB>2</SUB>(<span class="docEmphasis">s</span>) is shown in <A class="docLink" HREF="#ch03fig16">Figure 3-16</A>. Notice that the first-order approximation has an inverse response, while the second-order approximation has a "double inverse response." The reader should find that there is a single positive zero for <span class="docEmphasis">g</span><SUB>1</SUB>(<span class="docEmphasis">s</span>), and there are two positive, complex-conjugate zeros of the numerator transfer function of <span class="docEmphasis">g</span><SUB>2</SUB>(<span class="docEmphasis">s</span>).</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch03fig16"></A>Figure 3-16. Comparison of first-order + dead time response with first and second-order Pad&eacute; approximations for dead time.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="388" src="FILES/03fig16.gif" ALT="graphics/03fig16.gif"></p></CENTER>
+<P class="docText">Most ordinary differential equation numerical integrators require pure differential equations (with no time delays). If you have a system of differential equations that has time delays, the Pad&eacute; approximation can be used to convert them to delay-free differential equations, which can then be numerically integrated.</P>
+<P class="docText">One of the many advantages to using S<span class="docEmphSmaller">IMULINK</span> is that time delays are easily handled so that no approximation is required.</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch03lev1sec10.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch03lev1sec12.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

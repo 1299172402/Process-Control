@@ -1,0 +1,49 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="9.2 The Equivalent Feedback Form to IMC"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch09lev1sec1.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch09lev1sec3.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch09lev1sec2"></A><H3 class="docSection1Title" id="225793-880">9.2 The Equivalent Feedback Form to IMC</H3>
+<P class="docText">In this section we derive the standard feedback equivalence to IMC by using block- diagram manipulation. Begin with the IMC structure shown in <A class="docLink" HREF="#ch09fig01">Figure 9-1</A>; the point of comparison between the model and process output can be moved as shown in <A class="docLink" HREF="#ch09fig02">Figure 9-2</A>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch09fig01"></A>Figure 9-1. IMC structure.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="202" src="FILES/09fig01.gif" ALT="graphics/09fig01.gif"></p></CENTER>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch09fig02"></A>Figure 9-2. Cosmetic change in IMC structure.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="191" src="FILES/09fig02.gif" ALT="graphics/09fig02.gif"></p></CENTER>
+<P class="docText"><A class="docLink" HREF="#ch09fig02">Figure 9-2</A> can be rearranged to the form of <A class="docLink" HREF="#ch09fig03">Figure 9-3</A>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch09fig03"></A>Figure 9-3. Rearrangement of IMC structure.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="166" src="FILES/09fig03.gif" ALT="graphics/09fig03.gif"></p></CENTER>
+<P class="docText">The arrangement shown inside the dotted line of <A class="docLink" HREF="#ch09fig03">Figure 9-3</A> is shown in <A class="docLink" HREF="#ch09fig04">Figure 9-4</A>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch09fig04"></A>Figure 9-4. Inner loop of the rearranged IMC structure shown in <A class="docLink" HREF="#ch09fig03">Figure 9-3</A>.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="154" src="FILES/09fig04.gif" ALT="graphics/09fig04.gif"></p></CENTER>
+<P class="docText"><A class="docLink" HREF="#ch09fig04">Figure 9-4</A> can be rearranged to the form of <A class="docLink" HREF="#ch09fig05">Figure 9-5</A>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch09fig05"></A>Figure 9-5. Equivalent block to <A class="docLink" HREF="#ch09fig04">Figure 9-4</A>.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="104" src="FILES/09fig05.gif" ALT="graphics/09fig05.gif"></p></CENTER>
+<P class="docText">Notice that <span class="docEmphasis">r</span>(<span class="docEmphasis">s</span>) – <span class="docEmphasis">y</span>(<span class="docEmphasis">s</span>) is simply the error term used by a standard feedback controller. Therefore, we have found that the IMC structure can be rearranged to the feedback control (FBC) structure, as shown in <A class="docLink" HREF="#ch09fig06">Figure 9-6</A>. This reformulation is advantageous because we find that a PID controller often results when the IMC design procedure is used. Also, the standard IMC block diagram cannot be used for unstable systems, so this feedback form must be used for those cases.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch09fig06"></A>Figure 9-6. Standard feedback diagram illustrating the equivalence with IMC. The feedback controller, <span class="docEmphasis">g<SUB>c</SUB></span>(<span class="docEmphasis">s</span>), contains both the internal model, <IMG BORDER="0" id="129022115118" WIDTH="32" HEIGHT="18" src="FILES/gtildeps.gif" ALT="graphics/gtildeps.gif">, and the internal model controller, <span class="docEmphasis">q</span>(<span class="docEmphasis">s</span>).</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="138" src="FILES/09fig06.gif" ALT="graphics/09fig06.gif"></p></CENTER>
+<P class="docText">Now, we can use the IMC design procedure to help us design a standard feedback controller. The standard feedback controller is a function of the internal model, <IMG BORDER="0" id="129022115118" WIDTH="31" HEIGHT="20" src="FILES/gtildes.gif" ALT="graphics/gtildes.gif">, and internal model controller, <span class="docEmphasis">q</span>(<span class="docEmphasis">s</span>), as shown in Equation (<A class="docLink" HREF="#ch09equ01">9.1</A>).</P>
+<P class="docText">The standard feedback controller which is equivalent to IMC is</P>
+<P><B><A NAME="ch09equ01"></A>Equation 9.1 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="118" HEIGHT="39" src="FILES/09equ01.gif" ALT="graphics/09equ01.gif"></p><br>
+<P class="docText">We refer to Equation (<A class="docLink" HREF="#ch09equ01">9.1</A>) as the <span class="docEmphasis">IMC-based PID</span> relationship because the form of <span class="docEmphasis">g<SUB>c</SUB></span>(<span class="docEmphasis">s</span>) is often that of a PID controller. The <span class="docEmphasis">IMC-based PID</span> procedure is similar to the IMC procedure of the previous chapter, with some additional steps. One major difference is that the IMC-based procedure will, many times, not require that the controller be <span class="docEmphasis">proper</span>. Also, the process dead time will be approximated using the Pad&eacute; procedure, in order to arrive at an equivalent PID-type controller. Because of the Pad&eacute; approximation for dead time, the IMC-based PID controller may not perform as well as IMC for processes with significant time delays.</P>
+<A NAME="ch09lev2sec1"></A><H4 class="docSection2Title"> The IMC-Based PID Control Design Procedure</H4>
+<P class="docText">The following steps are used in the IMC-based PID control system design.</P>
+<A NAME="ch09pr01"></A>
+
+
+
+<span style="font-weight:bold"><OL class="docList" START="1"><LI><span style="font-weight:normal" value="1"><P class="docText">Find the IMC controller transfer function, <span class="docEmphasis">q</span>(<span class="docEmphasis">s</span>), which includes a filter, <span class="docEmphasis">f</span>(<span class="docEmphasis">s</span>), to make <span class="docEmphasis">q</span>(<span class="docEmphasis">s</span>) semiproper or to give it derivative action [the order of the numerator of <span class="docEmphasis">q</span>(<span class="docEmphasis">s</span>) is one order greater that the denominator of <span class="docEmphasis">q</span>(<span class="docEmphasis">s</span>)]. Notice that this is a major difference from the IMC procedure. Here, we may allow <span class="docEmphasis">q</span>(<span class="docEmphasis">s</span>) to be <span class="docEmphasis">improper</span>, in order to find an equivalent PID controller. For integrating or unstable processes, or for better disturbance rejection, a filter with the following form will often be used</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="92" HEIGHT="37" src="FILES/09equ01a.gif" ALT="graphics/09equ01a.gif"></p><br></span></LI><LI><span style="font-weight:normal" value="2"><P class="docList">Find the equivalent standard feedback controller using the transformation</P>
+<P><B><A NAME="ch09equ02"></A>Equation 9.1 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="120" HEIGHT="39" src="FILES/09equ01b.gif" ALT="graphics/09equ01b.gif"></p><br>
+<P class="docText">Write this in the form of a ratio between two polynomials.</P></span></LI><LI><span style="font-weight:normal" value="3"><P class="docText">Show this in PID form and find <span class="docEmphasis">k<SUB>c</SUB></span>, <font face="symbol">t</font><span class="docEmphasis"><SUB>I</SUB></span>, <font face="symbol">t</font><span class="docEmphasis"><SUB>D</SUB></span>. Sometimes this procedure results in an ideal PID controller cascaded with a first-order filter, with a filter time constant (<font face="symbol">t</font><span class="docEmphasis"><SUB>F</SUB></span>):</P>
+<P><B><A NAME="ch09equ03"></A>Equation 9.2 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="215" HEIGHT="43" src="FILES/09equ02.gif" ALT="graphics/09equ02.gif"></p><br></span></LI><LI><span style="font-weight:normal" value="4"><P class="docText">Perform closed-loop simulations for both the perfect model case and cases with model mismatch. Adjust <font face="symbol">l</font> considering a tradeoff between performance and <span class="docEmphasis">robustness</span> (sensitivity to model error). Initial values for <font face="symbol">l</font> will generally be around 1/3 to 1/2 the dominant time constant.</P></span></LI></OL></span>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch09lev1sec1.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch09lev1sec3.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

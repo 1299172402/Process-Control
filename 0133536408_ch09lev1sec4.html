@@ -1,0 +1,66 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="9.4 IMC-Based Feedback Design for Processes with a Time Delay"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch09lev1sec3.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch09lev1sec5.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch09lev1sec4"></A><H3 class="docSection1Title" id="225793-1000">9.4 IMC-Based Feedback Design for Processes with a Time Delay</H3>
+<P class="docText">In order to arrive at a PID equivalent form for processes with a time delay, we must make some approximation to the dead time. (Please note that we do not use an approximation for dead time when implementing the "pure" IMC strategy developed in <A class="docLink" HREF="0133536408_ch08.html#ch08">Chapter 8</A>. We are doing this only for the <span class="docEmphasis">IMC-based PID</span> procedure presented in this chapter; this is only done to yield a PID-type controller.) We use either a <span class="docEmphasis">first-order Pad&eacute; approximation</span> for dead time or neglect dead time entirely and use the first-order transfer function results.</P>
+<A NAME="ch09lev2sec8"></A><H4 class="docSection2Title"> First-Order + Dead Time</H4>
+<P class="docText">Since first-order + dead time is the most common representation of chemical process dynamics, the PID equivalent form developed here is useful for a large number of process control loops. We develop the procedure by way of example.</P>
+<A NAME="ch09lev2sec9"></A><H4 class="docSection2Title"> Example 9.3: IMC-Based PID Design for a First-Order + Dead Time Process</H4>
+<P class="docText">Find the PID controller which approximates IMC for a first-order + time-delay process</P>
+<P><B><A NAME="ch09equ14"></A>Equation 9.13 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="87" HEIGHT="43" src="FILES/09equ13.gif" ALT="graphics/09equ13.gif"></p><br>
+<A NAME="ch09pr04"></A>
+
+
+
+<DL class="docList"><DD><B>Step 1. </B>Use a first-order Pad&eacute; approximation for dead time <IMG BORDER="0" id="129022115118" WIDTH="112" HEIGHT="35" src="FILES/09inequ01.gif" ALT="graphics/09inequ01.gif">,<BR><BR>
+<P><B><A NAME="ch09equ15"></A>Equation 9.14 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="209" HEIGHT="47" src="FILES/09equ14.gif" ALT="graphics/09equ14.gif"></p><br></DD><DD><B>Step 2. </B>Factor out the noninvertible elements (this time do not make the bad part all-pass),<BR><BR>
+<P><B><A NAME="ch09equ16"></A>Equation 9.15 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="162" HEIGHT="68" src="FILES/09equ15.gif" ALT="graphics/09equ15.gif"></p><br></DD><DD><B>Step 3. </B>Form the idealized controller,<BR><BR>
+<P><B><A NAME="ch09equ17"></A>Equation 9.16 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="150" HEIGHT="47" src="FILES/09equ16.gif" ALT="graphics/09equ16.gif"></p><br></DD><DD><B>Step 4. </B>Add the filter—this time we will not make <span class="docEmphasis">q</span>(<span class="docEmphasis">s</span>) proper because a PID controller will not result. We use the "derivative" option, where we allow the numerator of <span class="docEmphasis">q</span>(<span class="docEmphasis">s</span>) to be one order higher than the denominator (NOTE: <span class="docEmphasis">This is done only so that we will obtain an ideal <span class="docEmphasis">PID</span> controller</span>).<BR><BR>
+<P><B><A NAME="ch09equ18"></A>Equation 9.17 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="321" HEIGHT="51" src="FILES/09equ17.gif" ALT="graphics/09equ17.gif"></p><br></DD></DL>
+<P class="docText">Now, find the PID equivalent. Recall that</P>
+<P><B><A NAME="ch09equ19"></A>Equation 9.18 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="451" HEIGHT="93" src="FILES/09equ18.gif" ALT="graphics/09equ18.gif"></p><br>
+<P class="docText">We can expand the numerator term to find</P>
+<P><B><A NAME="ch09equ20"></A>Equation 9.19 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="230" HEIGHT="48" src="FILES/09equ19.gif" ALT="graphics/09equ19.gif"></p><br>
+<P class="docText">We can multiply Equation (<A class="docLink" HREF="#ch09equ20">9.19</A>) by (<font face="symbol">t</font><span class="docEmphasis"><SUB>p</SUB></span> + 0.5)/(<font face="symbol">q</font>/<font face="symbol">t</font><span class="docEmphasis"><SUB>p</SUB></span> + 0.5<font face="symbol">q</font>) to find the PID parameters</P>
+<P><B><A NAME="ch09equ21"></A>Equation 9.20 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="104" HEIGHT="113" src="FILES/09equ20.gif" ALT="graphics/09equ20.gif"></p><br>
+<P class="docText">The IMC-based PID controller design procedure has resulted in a PID controller, when the process is first-order + dead time. Remember that a Pad&eacute; approximation for dead time was used in this development, meaning that the filter factor (<font face="symbol">l</font>) cannot be made arbitrarily small; therefore, there will be performance limitations to the IMC-based PID strategy that do not occur in the IMC strategy. <A class="docLink" HREF="0133536408_ch09lev1sec8.html#ch09biblio01entry03">Rivera et al. (1986)</A> recommend that <font face="symbol">l</font> &gt; 0.8<font face="symbol">q</font> because of the model uncertainty due to the Pad&eacute; approximation.</P>
+<P class="docText">In <A class="docLink" HREF="#ch09lev2sec9">Example 9.3</A> the all-pass formulation was <span class="docEmphasis">not</span> used. The reader should show that the use of an all-pass in the factorization will lead to a PID controller in series with a first-order lag. The parameters, in this case, are shown as the first entry in <A class="docLink" HREF="0133536408_ch09lev1sec5.html#ch09table02">Table 9-2</A>. <A class="docLink" HREF="0133536408_ch09lev1sec8.html#ch09biblio01entry02">Morari and Zafiriou (1989)</A> recommend <font face="symbol">l</font> &gt; 0.25<font face="symbol">q</font> for the PID + lag formulation. The third and fourth entries neglect the time delay in forming the PI controller.</P>
+<A NAME="ch09lev3sec1"></A><H5 class="docSection3Title"> Summary of PI(D) Control of First-Order <span class="docEmphasis">+</span> Time-Delay Processes</H5>
+<P class="docText">Different assumptions are used to derive the PI and PID controllers shown in <A class="docLink" HREF="0133536408_ch09lev1sec5.html#ch09table02">Table 9-2</A>. A zeroth-order Pad&eacute; approximation leads to a PI controller while a first-order Pad&eacute; approximation leads to PID + lag (when an all-pass filter is used) and PID (when the all-pass is not used) controllers. Generally, the PID + lag controller will be easier to tune for robustness and will certainly be less sensitive to noise than the PID controller. The PID + filter perfomance is almost identical to the "pure" IMC. This shows that the powerful IMC framework can be used to design PID-type controllers that can be implemented in industrial processes using existing (PID) control equipment.</P>
+<A NAME="ch09lev2sec10"></A><H4 class="docSection2Title"> Integrator + Dead Time</H4>
+<P class="docText">For processes where the time constant is dominant, the step response behavior can be approximated as integrator + dead time, as characterized by the following transfer function.</P>
+<P><B><A NAME="ch09equ22"></A>Equation 9.21 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="78" HEIGHT="34" src="FILES/09equ21.gif" ALT="graphics/09equ21.gif"></p><br>
+<P class="docText">Here, assume that a Taylor series approximation for dead time is used. Also, the special filter form for integrating systems is used.</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="180" HEIGHT="101" src="FILES/09equ21a.gif" ALT="graphics/09equ21a.gif"></p><br>
+<P class="docText">Using the IMC-based PID procedure,</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="119" HEIGHT="40" src="FILES/09equ21b.gif" ALT="graphics/09equ21b.gif"></p><br>
+<P class="docText">the reader should show that a PI controller results with the following parameters:</P>
+<P><B><A NAME="ch09equ23"></A>Equation 9.22 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="88" HEIGHT="62" src="FILES/09equ22.gif" ALT="graphics/09equ22.gif"></p><br>
+<A NAME="ch09lev2sec11"></A><H4 class="docSection2Title"> Gain + Dead Time</H4>
+<P class="docText">For processes where the time delay is dominant, the step response behavior can be approximated as gain + dead time, as characterized by the following transfer function.</P>
+<P><B><A NAME="ch09equ24"></A>Equation 9.23 </B></P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="72" HEIGHT="19" src="FILES/09equ23.gif" ALT="graphics/09equ23.gif"></p><br>
+<P class="docText">Using a second-order Pad&eacute; approximation for the time delay,</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="349" HEIGHT="209" src="FILES/09equ23a.gif" ALT="graphics/09equ23a.gif"></p><br>
+<P class="docText">the reader should find that a PID + filter controller results, with</P>
+<P><B><A NAME="ch09equ25"></A>Equation 9.24 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="101" HEIGHT="172" src="FILES/09equ24.gif" ALT="graphics/09equ24.gif"></p><br>
+<P class="docText">with the condition that <IMG BORDER="0" id="129022115118" WIDTH="51" HEIGHT="34" src="FILES/09inequ02.gif" ALT="graphics/09inequ02.gif">.</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch09lev1sec3.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch09lev1sec5.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

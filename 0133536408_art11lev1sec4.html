@@ -1,0 +1,36 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="M11.4 Batch Model 3: Cascade Control"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_art11lev1sec3.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_art11lev1sec5.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="art11lev1sec4"></A><H3 class="docSection1Title" id="225793-926">M11.4 Batch Model 3: Cascade Control</H3>
+<P class="docText">The process model, if the jacket make-up flow rate is the manipulated input, is</P>
+<P><B><A NAME="art11equ13"></A>Equation M11.12 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="396" HEIGHT="72" src="FILES/m11equ12.gif" ALT="graphics/m11equ12.gif"></p><br>
+<P class="docText">As written, this assumes that the jacket is a "once through" flow and that there are cold and hot jacket feed streams. It can also be shown that a jacket recirculating heat-transfer system has the same model equations, where the jacket mass flow rate is simply the make-up flow to the recirculating jacket heat-transfer system [compare Equations (<A class="docLink" HREF="0133536408_art08lev1sec5.html#art08equ14">M8.11</A>) and (<A class="docLink" HREF="0133536408_art08lev1sec5.html#art08equ18">M8.12</A>) for a CSTR]. Here a split-range control strategy would be used, with either the cold or hot fluid stream admitted to the jacket, depending on the split-range controller output.</P>
+<P class="docText">Linearizing Equation (<A class="docLink" HREF="#art11equ13">M11.12</A>), we find the following state space model matrices</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="272" HEIGHT="189" src="FILES/m11equ12a.gif" ALT="graphics/m11equ12a.gif"></p><br>
+<P class="docText">where inputs 1 and 2 (corresponding to columns 1 and 2 of the B matrix) are the cold and hot jacket feedstreams, respectively. The third input is the disturbance (reaction heat flow), <span class="docEmphasis">q</span><SUB>gen</SUB>. Since the measured outputs are the reactor and jacket temperature,</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="85" HEIGHT="83" src="FILES/m11equ12b.gif" ALT="graphics/m11equ12b.gif"></p><br>
+<P class="docText"><span class="docEmphStrong">Problem M11.8</span> Simulation Model for Intermediate Scale Reactor</P>
+<P class="docText">For the 0.5 m<SUP>3</SUP> reactor, assuming that both the reactor and jacket fluids are water, and the jacket volume is 25% of the reactor volume (and neglecting the thermal mass of the non-fluid components), find the state space model. For the initial steady-state assume that there is no reaction heat flow, so the cold and hot fluid flow rates are zero initially. What do you notice about the eigenvalues of the <span class="docEmphasis">A</span> matrix? Find the transfer functions relating the manipulated inputs to the outputs; what do you notice about one of the poles? Observe the responses to step changes in the manipulated inputs. Are these realistic? (<span class="docEmphasis">Hint:</span> You should find that the responses are integrating in nature; this is expected for the initial responses, but not for the long-term behavior.)</P>
+<P class="docText"><span class="docEmphStrong">Problem M11.9</span> Cascade Control with Split-Range Jacket Temperature Controller (this problem is better for a longer-term project)</P>
+<P class="docText">Develop a jacket temperature controller that has a split-range output (see <A class="docLink" HREF="0133536408_ch12.html#ch12">Chapter 12</A> for an example S<span class="docEmphSmaller">IMULINK</span> model for a stirred-tank heater). The controller output should be similar to <A class="docLink" HREF="0133536408_art11lev1sec1.html#art11m11fig02">Figure M11-2</A>. Design the jacket temperature (secondary) controller using any method that you desire. Next, design the reactor temperature (primary) controller.</P>
+<P class="docText">Perform simulations where the reactor temperature setpoint is changed from 20&#176;C to 50&#176;C. Compare responses to step setpoint changes, for each size reactor. Discuss the practical limitations to the expected dynamic performance for each size reactor, especially considering the constraints on jacket inlet temperature (–10 to 150&#176;C).</P>
+<P class="docText">It is recommended that both the primary and secondary controllers include antireset windup (<A class="docLink" HREF="0133536408_ch11.html#ch11">Chapter 11</A>) strategies.</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_art11lev1sec3.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_art11lev1sec5.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

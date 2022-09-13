@@ -1,0 +1,86 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="M15.1 Motivating Example"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_art15.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_art15lev1sec2.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="art15lev1sec1"></A><H3 class="docSection1Title" id="225793-806">M15.1 Motivating Example</H3>
+<P class="docText">Consider the control schematic diagram for the flow control loop shown in <A class="docLink" HREF="#art15m15fig01">Figure M15-1</A>. In practice, this loop contains a number of components, as detailed in <A class="docLink" HREF="#art15m15fig02">Figure M15-2</A>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="art15m15fig01"></A>Figure M15-1. Schematic instrumentation diagram for a flow controller.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="450" HEIGHT="257" src="FILES/m15fig01.gif" ALT="graphics/m15fig01.gif"></p></CENTER>
+<CENTER><H5 class="docFigureTitle"><A NAME="art15m15fig02"></A>Figure M15-2. More detailed instrumentation diagram for a flow controller.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="232" src="FILES/m15fig02.gif" ALT="graphics/m15fig02.gif"></p></CENTER>
+<P class="docText">We can see that this loop consists of the following components.</P>
+<UL><LI><p class="docText">
+<span class="docEmphRoman">Flowmeter</span>— 
+often an orifice plate meter. The volumetric flow rate is proportional to the square root of the pressure drop across the orifice plate</p></LI><LI><p class="docText">
+<span class="docEmphRoman">DP (differential pressure) cell</span>— 
+measures the pressure drop across the orifice plate</p></LI><LI><p class="docText">
+<span class="docEmphRoman">P/I (pressure to current) transducer</span>— 
+converts the pressure signal to a 4- to 20-mA current signal</p></LI><LI><p class="docText">
+<span class="docEmphRoman">Controller</span>— 
+the input to the controller is a 4- to 20-mA current signal. The output of the controller is a 4- to 20-mA current signal</p></LI><LI><p class="docText">
+<span class="docEmphRoman">I/P (current to pressure) transducer</span>— 
+converts the 4- to 20-mA signal to a 3- to 15-psig pressure signal</p></LI><LI><p class="docText">
+<span class="docEmphRoman">Control valve actuator</span>— 
+translates the 3- to 15-psig pressure signal to a valve position</p></LI></UL>
+<P class="docText">Notice that this control loop is based on having an electronic analog controller. In practice, there are still a number of pneumatic analog controllers, where the input and output signals are pressure signals (typically 3–15 psig). Also, more of the "field equipment" (flow transmitters, etc.) are microprocessor-based, so often the signals to and from the controller are digital in nature.</P>
+<P class="docText">Now we further analyze each component of instrumentation in terms of its transfer function.</P>
+<A NAME="art15lev2sec1"></A><H4 class="docSection2Title"> Flowmeter</H4>
+<P class="docText">We can think of the input to the flowmeter as the actual flow rate of the process fluid. The output of the flowmeter is the pressure drop across the orifice plate. Here, we determine the gain of the flowmeter by simply considering the minimum and maximum flows and how they relate to the pressure drop</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="171" HEIGHT="35" src="FILES/m15equ01a.gif" ALT="graphics/m15equ01a.gif"></p><br>
+<P class="docText">Consider a flowmeter where the flow rate varies from 0 to 5 gpm, while the pressure drop varies over a range of 0–2 psig. The flowmeter gain is then</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="74" HEIGHT="35" src="FILES/m15equ01b.gif" ALT="graphics/m15equ01b.gif"></p><br>
+<P class="docText">The dynamics of flowmeters are so fast compared with the process dynamics that we can normally neglect the time constant and assume that the transfer function is represented as a static gain. Also, in practice the gain is <span class="docEmphasis">not constant</span> because the pressure drop is a nonlinear function of the flow rate. This is discussed in depth in <A class="docLink" HREF="0133536408_art15lev1sec2.html#art15lev1sec2">Section M15.2</A>.</P>
+<A NAME="art15lev2sec2"></A><H4 class="docSection2Title"> DP Cell</H4>
+<P class="docText">The DP cell measures the pressure drop across the orifice plate. We can think of the gain as being part of the flowmeter gain. The dynamics of differential pressure cells are so fast compared with the process dynamics that we can normally neglect the time constant and assume that the transfer function is represented as a static gain.</P>
+<A NAME="art15lev2sec3"></A><H4 class="docSection2Title"> Pressure to Current Transducer</H4>
+<P class="docText">The input to the P/I transducer is the pressure drop across the orifice plate. Assume that input to the P/I transducer is scaled so that 0–2 psig is 0–100% of the input range. The range of the output is 4–20 mA, so the gain for the P/I transducer is</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="180" HEIGHT="35" src="FILES/m15equ01c.gif" ALT="graphics/m15equ01c.gif"></p><br>
+<P class="docText">Again, the dynamics are so fast that they are normally neglected.</P>
+<A NAME="art15lev2sec4"></A><H4 class="docSection2Title"> Controller—Concept of Proportional Band</H4>
+<P class="docText">The input to the controller ranges from 4 to 20 mA and the output of the controller ranges from 4 to 20 mA. This might lead us to believe that the controller gain is one. We must recognize, however, that the controller gain, <span class="docEmphasis">k</span><SUB>c</SUB>, is a tuning parameter. Remember that the proportional gain does not act on the actual input to the controller; it acts on the error [the difference between setpoint and the process measured variable (input to the controller)].</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="182" HEIGHT="34" src="FILES/m15equ01d.gif" ALT="graphics/m15equ01d.gif"></p><br>
+<P class="docText">Often a controller uses <span class="docEmphasis">proportional band</span> (PB) as a tuning parameter, rather than proportional gain. The PB is defined as the range of error that causes the controller output to change by the full range (100%). We see that relationship can be written</P>
+<P><B><A NAME="art15equ01"></A>Equation M15.1 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="89" HEIGHT="33" src="FILES/m15equ01.gif" ALT="graphics/m15equ01.gif"></p><br>
+<P class="docText">For example, if a change in error (<font face="symbol">D</font><span class="docEmphasis">e</span>) of 10% causes a 50% change in controller output (<font face="symbol">D</font><span class="docEmphasis">u</span>), then the PB is 20.</P>
+<P class="docText">We recognize that the controller gain we are familiar with can be written</P>
+<P><B><A NAME="art15equ02"></A>Equation M15.2 </B></P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="62" HEIGHT="15" src="FILES/m15equ02.gif" ALT="graphics/m15equ02.gif"></p><br>
+<P class="docText">Notice also that Equation (<A class="docLink" HREF="#art15equ01">M15.1</A>) can be written</P>
+<P><B><A NAME="art15equ03"></A>Equation M15.3 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="77" HEIGHT="31" src="FILES/m15equ03.gif" ALT="graphics/m15equ03.gif"></p><br>
+<P class="docText">Comparing Equations (<A class="docLink" HREF="#art15equ03">M15.3</A>) and (<A class="docLink" HREF="#art15equ02">M15.2</A>), we see that</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="51" HEIGHT="31" src="FILES/m15equ03a.gif" ALT="graphics/m15equ03a.gif"></p><br>
+<P class="docText">which leads to the following definition of PB:</P>
+<P><B><A NAME="art15equ04"></A>Equation M15.4 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="55" HEIGHT="35" src="FILES/m15equ04.gif" ALT="graphics/m15equ04.gif"></p><br>
+<P class="docText">We have always used a simplified representation for a controller for analysis purposes. In practice, a controller performs the computations shown in <A class="docLink" HREF="#art15m15fig03">Figure M15-3</A>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="art15m15fig03"></A>Figure M15-3. Schematic of computations and scaling performed by a controller.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="189" src="FILES/m15fig03.gif" ALT="graphics/m15fig03.gif"></p></CENTER>
+<P class="docText">We see that the controller transfer function operates on signals that are scaled from 0 to 100% of range. The following scaling factors are used:</P>
+<UL><LI><P class="docList"><span class="docEmphasis">S<SUB>ei</SUB></span> converts electronic signal to physical units (e.g., gpm/mA)</P></LI><LI><P class="docList"><span class="docEmphasis">S<SUB>i</SUB></span> converts engineering units to percentage of range of measured variables</P></LI><LI><P class="docList"><span class="docEmphasis">S<SUB>o</SUB></span> converts percentage of range of controller output to control signal</P></LI></UL>
+<A NAME="art15lev2sec5"></A><H4 class="docSection2Title"> Current-to-Pressure Transducer</H4>
+<P class="docText">The input to the I/P transducer is a 4- to 20-mA signal and the output is a 3- to 15-psig signal. The I/P gain is then</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="203" HEIGHT="32" src="FILES/m15equ04a.gif" ALT="graphics/m15equ04a.gif"></p><br>
+<A NAME="art15lev2sec6"></A><H5 class="docSection3Title"> Control Valve</H5>
+<P class="docText">Control valves will be covered in more depth in <A class="docLink" HREF="0133536408_art15lev1sec3.html#art15lev1sec3">Section M15.3</A>. Consider here the two cases: a fail-closed valve and a fail-open valve.</P>
+<A NAME="art15lev3sec1"></A><H5 class="docSection3Title"> Fail-Closed Valve</H5>
+<P class="docText">If the pressure signal to the valve changed, this valve would close, hence the term fail-closed. These valves are also called <span class="docEmphasis">air-to-open</span>. Consider a case where flow rate through the valve is 5 gpm when it is fully open (15-psig signal). Assuming that the valve is fully closed at 3 psig (or less), the valve gain is</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="206" HEIGHT="35" src="FILES/m15equ04b.gif" ALT="graphics/m15equ04b.gif"></p><br>
+<A NAME="art15lev3sec2"></A><H5 class="docSection3Title"> Fail-Open Valve</H5>
+<P class="docText">If the pressure signal to the valve changed, this valve would open, hence the term fail-open. These valves are also called <span class="docEmphasis">air-to-close</span>. Consider a case where the flow rate through the valve is 5 gpm when it is fully open (3-psig signal). Assuming that the valve is fully closed at 15 psig (or more), the valve gain is</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="218" HEIGHT="35" src="FILES/m15equ04c.gif" ALT="graphics/m15equ04c.gif"></p><br>
+<P class="docText">One of the most important things that a process engineer can do is to specify whether a valve is air-to-open or air-to-close. For example, if the control valve was manipulating the cooling water flow to a nuclear reactor, then a fail-open valve should be specified.</P>
+<P class="docText">Valve dynamics can become significant for larger valves. A laboratory valve may have a time constant of perhaps 1–2 seconds, a valve on a 3-inch process pipe may have a time constant of 3–10 seconds, and a valve on the Alaska pipeline may have a time constant of minutes.</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_art15.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_art15lev1sec2.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

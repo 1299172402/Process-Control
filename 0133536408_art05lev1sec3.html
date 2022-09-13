@@ -1,0 +1,56 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="M5.3 Steady-State and Dynamic Behavior ( Chapter 3 )"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_art05lev1sec2.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_art05lev1sec4.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="art05lev1sec3"></A><H3 class="docSection1Title">M5.3 Steady-State and Dynamic Behavior (<A class="docLink" HREF="0133536408_ch03.html#ch03">Chapter 3</A>)</H3>
+<P class="docText">At steady state, the component <span class="docEmphasis">A</span> balance yields a quadratic expression,</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="215" HEIGHT="35" src="FILES/m05equ05.gif" ALT="graphics/m05equ05.gif"></p><br>
+<P class="docText">where the subscript <span class="docEmphasis">s</span> is used to indicate the steady state value. Solving this quadratic and using the positive root (clearly, there cannot be negative concentrations), we find</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="265" HEIGHT="62" src="FILES/m05equ06.gif" ALT="graphics/m05equ06.gif"></p><br>
+<P class="docText">and solving for the steady-state concentration of <span class="docEmphasis">B</span>,</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="80" HEIGHT="48" src="FILES/m05equ07.gif" ALT="graphics/m05equ07.gif"></p><br>
+<P class="docText">Using these two expressions, we can find the steady-state input-output curve relating <span class="docEmphasis">C</span><SUB>Bs</SUB> and <span class="docEmphasis">F</span><SUB>s</SUB>/<span class="docEmphasis">V</span>. Here we consider the dilution rate (<span class="docEmphasis">F</span>/<span class="docEmphasis">V</span>) to be the manipulated input. The main advantage is that it is independent of scale (reactor volume). Whether the reactor is 1 or 10,000 liters, the same dilution rate will yield the same concentrations (assuming the feed stream is the same composition).</P>
+<P class="docText">For the particular reaction under consideration, the rate constants are</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="176" HEIGHT="81" src="FILES/m05equ08.gif" ALT="graphics/m05equ08.gif"></p><br>
+<P class="docText">and the steady-state feed concentration is C<SUB>Afs</SUB> = 10 gmol/liter.</P>
+<A NAME="art05lev2sec1"></A><H4 class="docSection2Title"> Steady-State Input-Output Curve</H4>
+<P class="docText">Notice that this process has a nonlinear relationship between the steady-state dilution rate (<span class="docEmphasis">F</span>/<span class="docEmphasis">V</span>) and the steady-state concentration of <span class="docEmphasis">B</span> (<A class="docLink" HREF="#art05m5fig02">Figure M5-2</A>). There exists a maximum concentration of <span class="docEmphasis">B</span> that can be achieved. It is interesting to note that the reactor can not be controlled at this maximum point because the process gain is zero. For a given desired value of the concentration of <span class="docEmphasis">B</span> (as long as it is less than the maximum possible value), there are two dilution rates that can achieve the concentration. This is known as input multiplicity.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="art05m5fig02"></A>Figure M5-2. Steady-state input-output curve. The dotted lines indicate two possible flow rates to achieve a concentration of 1.117 gmol of <span class="docEmphasis">B</span>/liter.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="457" HEIGHT="360" src="FILES/m05fig02.gif" ALT="graphics/m05fig02.gif"></p></CENTER>
+<P class="docText">In this example, a steady-state concentration of <span class="docEmphasis">B</span> of 1.117 gmol/liter can be obtained with either <span class="docEmphasis">F</span><SUB>s</SUB>/<span class="docEmphasis">V</span> = 0.5714 min<SUP>-1</SUP> (case 1) or <span class="docEmphasis">F</span><SUB>s</SUB>/<span class="docEmphasis">V</span> = 2.8744 min<SUP>-1</SUP> (case 2). Notice that the process gain (slope of the steady-state input-output curve) is positive for case 1 and negative for case 2. For controller design, it is clearly important to know whether you are operating on the left-hand side (e.g., case 1) or right-hand side (e.g., case 2) of the "peak," since the sign of the controller gain must be the same sign as the process gain. Also notice that a steady-state concentration greater than 1.266 gmol/liter cannot be achieved regardless of the controller used.</P>
+<A NAME="art05lev2sec2"></A><H4 class="docSection2Title"> Linear Analysis</H4>
+<P class="docText">The linear state space model is</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="74" HEIGHT="33" src="FILES/m05equ09.gif" ALT="graphics/m05equ09.gif"></p><br>
+<P class="docText">where the states, inputs, and output are in deviation variable form. The first input (dilution rate) is manipulated and the second (feed concentration of <span class="docEmphasis">A</span>) is a disturbance input.</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="127" HEIGHT="113" src="FILES/m05equ10.gif" ALT="graphics/m05equ10.gif"></p><br>
+<P class="docText">You should linearize the two modeling equations at steady-state solution to find the following state space matrices:</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="205" HEIGHT="170" src="FILES/m05equ11.gif" ALT="graphics/m05equ11.gif"></p><br>
+<A NAME="art05lev2sec3"></A><H4 class="docSection2Title"> Case 1—Operation on the "Left-Hand Side" of the Peak Concentration</H4>
+<P class="docText">Based on the steady-state operating point of <span class="docEmphasis">C</span><SUB>As</SUB> = 3 gmol/liter, <span class="docEmphasis">C</span><SUB>Bs</SUB> = 1.117 gmol/liter, and <span class="docEmphasis">F</span><SUB>s</SUB>/<span class="docEmphasis">V</span> = 0.5714 min<SUP>-1</SUP>, the state space model is</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="141" HEIGHT="132" src="FILES/m05equ12.gif" ALT="graphics/m05equ12.gif"></p><br>
+<P class="docText">The manipulated input-output process transfer function for the reactor is [you can find this analytically, using <span class="docEmphasis">G</span>(<span class="docEmphasis">s</span>) = <span class="docEmphasis">C</span>(<span class="docEmphasis">sI</span>-<span class="docEmphasis">A</span>)<SUP>-1</SUP>B, or numerically, using <A class="docLink" HREF="0133536408_art04.html#art04">Module 4</A>]</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="314" HEIGHT="34" src="FILES/m05equ13.gif" ALT="graphics/m05equ13.gif"></p><br>
+<P class="docText">and the disturbance input-output transfer function is</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="313" HEIGHT="33" src="FILES/m05equ14.gif" ALT="graphics/m05equ14.gif"></p><br>
+<P class="docText">The responses of the linear and nonlinear models to a step change in <span class="docEmphasis">F</span>/<span class="docEmphasis">V</span> of 0.1 min<SUP>-1</SUP> are compared in <A class="docLink" HREF="#art05m5fig03">Figure M5-3</A>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="art05m5fig03"></A>Figure M5-3. Comparison of concentration of <span class="docEmphasis">B</span> response to step change in <span class="docEmphasis">F/V</span> of 0.1 min<SUP>-1</SUP>. Nonlinear (solid) vs. linear (dashed).</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="475" HEIGHT="384" src="FILES/m05fig03.gif" ALT="graphics/m05fig03.gif"></p></CENTER>
+<p class="docText"><span class="docEmphasis">Note:</span> 
+A motivated reader may wish to demonstrate that the linear and nonlinear models have the same response for a step change of 0.01 min<SUP>-1</SUP>, while the differences in response to a step change of 0.5 min<SUP>-1</SUP> are substantial. Function files for integration of the nonlinear model are presented in <A class="docLink" HREF="0133536408_art03.html#art03">Module 3</A>. The focus of the current module is on responses of the linear model.</p>
+
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_art05lev1sec2.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_art05lev1sec4.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

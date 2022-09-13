@@ -1,0 +1,28 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="16.1 Motivation"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch16.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch16lev1sec2.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch16lev1sec1"></A><H3 class="docSection1Title">16.1 Motivation</H3>
+<P class="docText">Most of the techniques presented in this textbook have been based on continuous-time models. The controllers are normally implemented by microprocessors and, therefore, must be converted to discrete time before implementation. We have focused on continuous time because few changes in the techniques are needed for the discrete-time case. One advanced control technique that has solely had discrete-time application is <span class="docEmphasis">model predictive control</span> (MPC). MPC is by far the most commonly applied advanced control technique in the chemical process industry, so it is worth devoting a chapter to it. One major contributor to the success of MPC is the ability to handle constraints in an optimal fashion. The optimization-based procedure is intuitive and is also a natural way of handling multivariable systems.</P>
+<A NAME="ch16lev2sec1"></A><H4 class="docSection2Title"> Basic Description</H4>
+<P class="docText">The basic idea behind MPC is shown in <A class="docLink" HREF="#ch16fig01">Figure 16-1</A>. At each time step, <span class="docEmphasis">k</span>, an optimization problem is solved, as illustrated on the top half of the figure. An objective function (usually quadratic) based on output predictions over a <span class="docEmphasis">prediction horizon</span> of <span class="docEmphasis">P</span> time steps is minimized by a selection of manipulated variable moves over a <span class="docEmphasis">control horizon</span> of <span class="docEmphasis">M</span> control moves. Although <span class="docEmphasis">M</span> moves are optimized, only the first move is implemented. After <span class="docEmphasis">u</span><SUB>k</SUB> is implemented, the measurement at the next time step, <span class="docEmphasis">y</span><SUB>k+1</SUB> is obtained, as shown in the bottom half of the figure. A correction for model error is performed, since the measured output <span class="docEmphasis">y</span><SUB>k+1</SUB> will, in general, not be equal to the model predicted value. A new optimization problem is then solved, again, over a prediction horizon of <span class="docEmphasis">P</span> steps by adjusting <span class="docEmphasis">M</span> control moves. This approach is also known as receding horizon control.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch16fig01"></A>Figure 16-1. Basic concept of MPC.</H5><p class="docText"><IMG BORDER="0" WIDTH="400" HEIGHT="603" src="FILES/16fig01.gif" ALT="graphics/16fig01.gif"></p></CENTER>
+<P class="docText">For clarity, we initially focus on unconstrained SISO systems. Several questions naturally arise. What type of objective function should be used for optimization? What type of model should be used to predict the output? How should the model be initialized to predict the future output values? What is the desired setpoint trajectory? How should constraints be implemented? Some of these topics are discussed in the next section.</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch16.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch16lev1sec2.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

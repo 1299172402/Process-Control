@@ -1,0 +1,30 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="Student Exercises"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch16lev1sec8.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch16lev1sec10.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch16lev1sec9"></A><H3 class="docSection1Title"> Student Exercises</H3>
+<P><TABLE BORDER="0" cellspacing="16" cellpadding="0"><TR valign="top"><TD align="right" class="docText"><A NAME="qad1e49627"></A><B>1:</B></TD><TD><P class="docText">Reproduce the DMC simulations for the van de Vusse reactor shown in <A class="docLink" HREF="0133536408_ch16lev1sec3.html#ch16fig09">Figures 16-9</A> and <A class="docLink" HREF="0133536408_ch16lev1sec3.html#ch16fig10">16-10</A> using the files shown in <A class="docLink" HREF="0133536408_ch16lev1sec12.html#ch16lev1sec12">Appendix 16.3</A> (also, you may download these files from the book web page).</P></TD></TR><TR valign="top"><TD align="right" class="docText"><A NAME="qad1e49645"></A><B>2:</B></TD><TD><P class="docText">Run the DMC simulations for the van de Vusse reactor, for a prediction horizon of 10 (and a model length of 50). Vary the control horizon and discuss the effect; for example, if <span class="docEmphasis">M</span> = 5, the manipulated input resembles a "<A class="docLink" HREF="0133536408_ch03lev1sec3.html#ch03lev2sec9">pulse</A>" change. Also, try different weighting on the manipulated input and discuss the effect.</P></TD></TR><TR valign="top"><TD align="right" class="docText"><A NAME="qad1e49659"></A><B>3:</B></TD><TD><P class="docText">Consider a biochemical reactor operated at a stable operating condition (<A class="docLink" HREF="0133536408_art07.html#art07">Module 7</A>), with the state space model</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="220" HEIGHT="64" src="FILES/16equ39a.gif" ALT="graphics/16equ39a.gif"></p><br>
+<P class="docText">where the input is the dilution rate (units = min<SUP>-1</SUP>) and the output is the biomass concentration (gmol/L). Modify the DMC simulation code presented in <A class="docLink" HREF="0133536408_ch16lev1sec12.html#ch16lev1sec12">Appendix 16.3</A> to simulate the MPC applied to this system. Use a sample time of 0.05 hours and discuss the effect of model length, prediction horizon, and control horizon on the performance for setpoint changes of 0.02 gmol/L. Consider the effect of these parameters on the magnitude of manipulated input changes. What are your recommended tuning parameters if the maximum manipulated input change is 0.2 min<SUP>-1</SUP>?</P></TD></TR><TR valign="top"><TD align="right" class="docText"><A NAME="qad1e49690"></A><B>4:</B></TD><TD><P class="docText">Consider a jacketed chemical reactor, where jacket temperature is the manipulated input and reactor temperature is the measured output. For the 100 ft<SUP>3</SUP> propylene glycol reactor presented in <A class="docLink" HREF="0133536408_art08.html#art08">Module 8</A>, the state space model is</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="242" HEIGHT="67" src="FILES/16equ39b.gif" ALT="graphics/16equ39b.gif"></p><br>
+<P class="docText">Modify the DMC simulation code presented in <A class="docLink" HREF="0133536408_ch16lev1sec12.html#ch16lev1sec12">Appendix 16.3</A> to simulate MPC applied to this system. Use a sample time of 0.05 hours and discuss the effect of model length, prediction horizon, and control horizon (remember that <span class="docEmphasis">N</span> &gt; <span class="docEmphasis">P</span> &gt; <span class="docEmphasis">M</span>) on the performance for setpoint changes of 5&#176;F. Consider the effect of the tuning parameters on the manipulated input changes (that is, is the change in jacket temperature reasonable?).</P></TD></TR><TR valign="top"><TD align="right" class="docText"><A NAME="qad1e49727"></A><B>5:</B></TD><TD><P class="docText">Consider a discrete state space model with the following form</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="99" HEIGHT="35" src="FILES/16equ39c.gif" ALT="graphics/16equ39c.gif"></p><br>
+<P class="docText">Assume that the state vector is perfectly known at the current time step (k), the model is perfect, and there are no disturbances. Predict the output up to P time steps in the future, based on M current and future control moves (<font face="symbol">D</font><span class="docEmphasis">u</span><SUB>k</SUB>, ..., <font face="symbol">D</font>uk+M-1). Realize that <span class="docEmphasis">u</span><SUB>k</SUB> = <span class="docEmphasis">u</span><SUB>k-1</SUB> + <font face="symbol">D</font><span class="docEmphasis">u</span><SUB>k</SUB>, etc. Show how the output prediction is naturally composed of free and forced response contributions.</P></TD></TR></TABLE></P><br>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch16lev1sec8.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch16lev1sec10.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

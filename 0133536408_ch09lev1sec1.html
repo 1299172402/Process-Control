@@ -1,0 +1,29 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="9.1 Background"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch09.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch09lev1sec2.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch09lev1sec1"></A><H3 class="docSection1Title">9.1 Background</H3>
+<P class="docText">As we show in this chapter, the IMC structure can be rearranged to the standard feedback structure.</P>
+<p class="docText"><span class="docEmphStrong">Question</span>: 
+Why do we care about IMC, if we can show that it can be rearranged into the standard feedback (PID) structure?</p>
+<p class="docText"><span class="docEmphStrong">Answer</span>: 
+Because the process model is <span class="docEmphasis">explicitly</span> used in the control-system design procedure. The standard feedback structure uses the process model in an <span class="docEmphasis">implicit</span> fashion; that is, PID tuning parameters are often "tweaked" based on a transfer function model, but it is not always clear how the process model affects the tuning decision. In the IMC formulation, the controller, <span class="docEmphasis">q</span>(<span class="docEmphasis">s</span>), is based directly on the "good" part of the process transfer function. The IMC formulation generally results in only one tuning parameter, the closed-loop time constant (<font face="symbol">l</font>, the IMC filter factor). The IMC-based PID tuning parameters are then a function of this closed-loop time constant. The selection of the closed-loop time constant is directly related to the robustness (sensitivity to model error) of the closed-loop system. Also, for open-loop unstable processes, it is necessary to implement the IMC strategy in standard feedback form, because the IMC suffers internal stability problems.</p>
+<P class="docText">The reader should realize that the <span class="docEmphasis">IMC-based PID</span> controller presented in this chapter will not give the same results as the IMC strategy when there are process time delays, because the IMC-based PID procedure uses an approximation for dead time, while the IMC strategy uses the exact representation for dead time.</P>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch09.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch09lev1sec2.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

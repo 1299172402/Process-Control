@@ -1,0 +1,56 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="M16.2 PID Controllers"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_art16lev1sec1.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_art16lev1sec3.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="art16lev1sec2"></A><H3 class="docSection1Title">M16.2 PID Controllers</H3>
+<P class="docText">Consider the continuous (analog) form of an ideal PID controller,</P>
+<P><B><A NAME="art16equ01"></A>Equation M16.1 </B></P><p class="docText"><IMG BORDER="0" WIDTH="227" HEIGHT="48" src="FILES/m16equ01.gif" ALT="graphics/m16equ01.gif"></p><br>
+<P class="docText">We use a constant sample time, <font face="symbol">D</font><span class="docEmphasis">t</span>, and the index <span class="docEmphasis">k</span> to represent the value of the continuous time signal at discrete step <span class="docEmphasis">k</span>. For example, the error at discrete sample time <span class="docEmphasis">k</span> is equal to the continuous system value at time <span class="docEmphasis">t</span> = <span class="docEmphasis">t</span><SUB>k</SUB>.</P>
+<P><B><A NAME="art16equ02"></A>Equation M16.2 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="64" HEIGHT="15" src="FILES/m16equ02.gif" ALT="graphics/m16equ02.gif"></p><br>
+<P class="docText">We approximate the integral term</P>
+<P><B><A NAME="art16equ03"></A>Equation M16.3 </B></P><p class="docText"><IMG BORDER="0" WIDTH="249" HEIGHT="92" src="FILES/m16equ03.gif" ALT="graphics/m16equ03.gif"></p><br>
+<P class="docText">and the derivative term is approximated using backward finite differences:</P>
+<P><B><A NAME="art16equ04"></A>Equation M16.4 </B></P><p class="docText"><IMG BORDER="0" WIDTH="132" HEIGHT="36" src="FILES/m16equ04.gif" ALT="graphics/m16equ04.gif"></p><br>
+<P class="docText">Substituting Equations (<A class="docLink" HREF="#art16equ02">M16.2</A>)–(<A class="docLink" HREF="#art16equ04">M16.4</A>) into Equation (<A class="docLink" HREF="#art16equ01">M16.1</A>), we find</P>
+<P><B><A NAME="art16equ05"></A>Equation M16.5 </B></P><p class="docText"><IMG BORDER="0" WIDTH="302" HEIGHT="44" src="FILES/m16equ05.gif" ALT="graphics/m16equ05.gif"></p><br>
+<P class="docText">Notice that the manipulated variable action is calculated at discrete intervals. The most common way of implementing the discrete control actions on a continuous process is to assume <span class="docEmphasis">a zero-order hold</span>. A zero-order hold means that the control action is held constant between the sample times, and that the manipulated variable changes instantly at each sample time.</P>
+<P class="docText">Equation (<A class="docLink" HREF="#art16equ05">M16.5</A>) is known as the position form of the discrete PID controller equation. The "velocity form" can be found by subtracting the position form at step <span class="docEmphasis">k</span> - 1 from that at step <span class="docEmphasis">k</span>:</P>
+<P><B><A NAME="art16equ06"></A>Equation M16.6 </B></P><p class="docText"><IMG BORDER="0" WIDTH="418" HEIGHT="43" src="FILES/m16equ06.gif" ALT="graphics/m16equ06.gif"></p><br>
+<P class="docText">One of the major advantages to the velocity form of Equation (<A class="docLink" HREF="#art16equ06">M16.6</A>) is that it is naturally "<A class="docLink" HREF="0133536408_ch11lev1sec2.html#ch11lev1sec2">antireset windup</A>" (see <A class="docLink" HREF="0133536408_ch11.html#ch11">Chapter 11</A> for a discussion of reset windup and procedures to prevent it). If the manipulated input saturates, the position form of Equation (<A class="docLink" HREF="#art16equ05">M16.5</A>) has an integral term that continues to accumulate, causing a potential windup problem.</P>
+<P class="docText">Most of the PID control system design techniques covered earlier in this text (direct synthesis, IMC-based PID, etc.) should yield successful tuning parameters for the discrete PID version, if the sample time is sufficiently small. Generally, the sample time should be 0.01 to 0.1 times the dominant time constant. In practice, most digital control loops are sampled several times per second, which is far more frequently than is actually needed for most process systems.</P>
+<A NAME="art16lev2sec1"></A><H4 class="docSection2Title"> Z-Transform Representation of PID Control</H4>
+<P class="docText">In the same way that Laplace transforms are used to characterize continuous-time systems, <span class="docEmphasis">Z</span>-transforms are used to represent the input-output relationships for discrete-time systems. Consider the discrete PID algorithm in Equation (<A class="docLink" HREF="#art16equ06">M16.6</A>). This can be written as</P>
+<P><B><A NAME="art16equ07"></A>Equation M16.7 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="275" HEIGHT="15" src="FILES/m16equ07.gif" ALT="graphics/m16equ07.gif"></p><br>
+<P class="docText">where <IMG BORDER="0" WIDTH="303" HEIGHT="38" src="FILES/m16inequ01.gif" ALT="graphics/m16inequ01.gif"></P>
+<P class="docText">In an analogy to continuous-time systems, where we let <span class="docEmphasis">u</span>(<span class="docEmphasis">s</span>) represent the Laplace transform of <span class="docEmphasis">u</span>(<span class="docEmphasis">t</span>), we let <span class="docEmphasis">u</span>(<span class="docEmphasis">z</span>) represent the <span class="docEmphasis">Z</span>-transform of <span class="docEmphasis">u</span>(<span class="docEmphasis">k</span>). It is common to refer to <span class="docEmphasis">z</span><SUP>-1</SUP> as the backward shift operator:</P>
+<p class="docText"><IMG BORDER="0" WIDTH="117" HEIGHT="51" src="FILES/m16equ07a.gif" ALT="graphics/m16equ07a.gif"></p><br>
+<P class="docText">handling e(k), etc., similarly, we can write Equation (<A class="docLink" HREF="#art16equ07">M16.7</A>) as</P>
+<p class="docText"><IMG BORDER="0" WIDTH="217" HEIGHT="16" src="FILES/m16equ07b.gif" ALT="graphics/m16equ07b.gif"></p>
+<br>
+<P class="docText">which can be written</P>
+<P><B><A NAME="art16equ08"></A>Equation M16.8 </B></P><p class="docText"><IMG BORDER="0" WIDTH="173" HEIGHT="41" src="FILES/m16equ08.gif" ALT="graphics/m16equ08.gif"></p><br>
+<P class="docText">We can also multiply the numerator and denominator polynomials by z<SUP>2</SUP>/z<SUP>2</SUP>, to write</P>
+<P><B><A NAME="art16equ09"></A>Equation M16.9 </B></P><p class="docText"><IMG BORDER="0" WIDTH="157" HEIGHT="42" src="FILES/m16equ09.gif" ALT="graphics/m16equ09.gif"></p><br>
+<P class="docText">Note that we can view this as an input-output block</P><p class="docText"><IMG BORDER="0" WIDTH="350" HEIGHT="100" src="FILES/m16fig01a.gif" ALT="graphics/m16fig01a.gif"></p>
+<P class="docText">A discrete closed-loop block diagram is similar to that of a continuous block diagram. The closed-loop relationship for a setpoint change is</P>
+<P><B><A NAME="art16equ10"></A>Equation M16.10 </B></P><p class="docText"><IMG BORDER="0" WIDTH="147" HEIGHT="41" src="FILES/m16equ10.gif" ALT="graphics/m16equ10.gif"></p><br>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_art16lev1sec1.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_art16lev1sec3.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

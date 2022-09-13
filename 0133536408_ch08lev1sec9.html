@@ -1,0 +1,42 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="8.9 Effect of Model Uncertainty and Disturbances"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch08lev1sec8.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch08lev1sec10.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch08lev1sec9"></A><H3 class="docSection1Title" id="225793-915">8.9 Effect of Model Uncertainty and Disturbances</H3>
+<P class="docText">For controller design purposes, we assumed that the model was perfect. In practice there is model uncertainty. Model uncertainty will be handled by detuning the filter parameter, <font face="symbol">l</font>, for robustness.</P>
+<A NAME="ch08lev2sec16"></A><H4 class="docSection2Title"> The Effect of Model Uncertainty on Setpoint Response</H4>
+<P class="docText">Consider a <span class="docEmphasis">setpoint change only</span>; then</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="187" HEIGHT="44" src="FILES/08equ46m.gif" ALT="graphics/08equ46m.gif"></p><br>
+<P class="docText">We can see immediately that if the model is perfect <IMG BORDER="0" id="129022115118" WIDTH="85" HEIGHT="17" src="FILES/08inequ08.gif" ALT="graphics/08inequ08.gif">, then we have the open-loop "control" formulation. When the model is not perfect, then the closed-loop response is much more complicated and can even be unstable if the filter [<span class="docEmphasis">f</span>(<span class="docEmphasis">s</span>)] is not detuned sufficiently.</P>
+<A NAME="ch08lev2sec17"></A><H4 class="docSection2Title"> Disturbance Rejection</H4>
+<P class="docText">Consider a <span class="docEmphasis">disturbance only</span>; then</P>
+<P><B><A NAME="ch08equ47"></A>Equation 8.47 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="200" HEIGHT="52" src="FILES/08equ47.gif" ALT="graphics/08equ47.gif"></p><br>
+<P class="docText">Assume a load disturbance transfer function of the following form</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="87" HEIGHT="15" src="FILES/08equ47a.gif" ALT="graphics/08equ47a.gif"></p>
+<br>
+<P class="docText">Indeed, often the load disturbance is really a disturbance to the process input, so the disturbance transfer function has dynamic behavior similar to the process transfer function. It turns out that a controller that is tightly tuned and works well for setpoint changes may fail miserably on handling disturbance rejection. This is shown by the following example.</P>
+<A NAME="ch08lev2sec18"></A><H4 class="docSection2Title"> Example 8.7: First-Order Process</H4>
+<P class="docText">Here we consider a first-order process model transfer function, with a time unit of minutes</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="96" HEIGHT="36" src="FILES/08equ47b.gif" ALT="graphics/08equ47b.gif"></p><br>
+<P class="docText">For simplicity, we assume a perfect model (<IMG BORDER="0" id="129022115118" WIDTH="85" HEIGHT="17" src="FILES/08inequ08.gif" ALT="graphics/08inequ08.gif">) and that the disturbance transfer function is the same as the process (<IMG BORDER="0" id="129022115118" WIDTH="85" HEIGHT="17" src="FILES/08inequ08.gif" ALT="graphics/08inequ08.gif">). The IMC controller design procedure leads to the response for a step setpoint change shown in <A class="docLink" HREF="#ch08fig16">Figure 8-16</A>, with <font face="symbol">l</font> = 2 min. Although the response is unrealistically fast (<font face="symbol">l</font> is too small compared with the process time constant), we wish to show that good setpoint tracking does not necessarily lead to good disturbance rejection.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch08fig16"></A>Figure 8-16. Setpoint response for <A class="docLink" HREF="#ch08lev2sec18">Example 8.7</A>, with <font face="symbol">l</font> = 2 min.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="415" src="FILES/08fig16.gif" ALT="graphics/08fig16.gif"></p></CENTER>
+<P class="docText">Disturbance rejection results are shown in <A class="docLink" HREF="#ch08fig17">Figure 8-17</A>. Notice that there is a very slow response to the step load disturbance. This result is perhaps the greatest criticism of the standard IMC design procedure; it tends to lead to slow responses to load disturbances that occur at the process input. An improved IMC procedure for disturbance rejection is presented in the next section.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch08fig17"></A>Figure 8-17. Disturbance response for <A class="docLink" HREF="#ch08lev2sec18">Example 8.7</A>, with <font face="symbol">l</font> = 2 min.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="397" src="FILES/08fig17.gif" ALT="graphics/08fig17.gif"></p></CENTER>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch08lev1sec8.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch08lev1sec10.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

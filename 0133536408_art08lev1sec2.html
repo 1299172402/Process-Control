@@ -1,0 +1,66 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="M8.2 Simplified Modeling Equations"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_art08lev1sec1.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_art08lev1sec3.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="art08lev1sec2"></A><H3 class="docSection1Title" id="225793-807">M8.2 Simplified Modeling Equations</H3>
+<P class="docText">Here we make the following assumptions</P>
+<span style="font-weight:bold"><OL class="docList" TYPE="1"><LI><span style="font-weight:normal"><P class="docList">Perfect mixing in reactor and jacket</P></span></LI><LI><span style="font-weight:normal"><P class="docList">Constant volume reactor and jacket</P></span></LI><LI><span style="font-weight:normal"><P class="docList">Constant parameter values</P></span></LI></OL></span>
+<P class="docText">In addition, to develop a simplified model, we assume that the <span class="docEmphasis">jacket temperature</span> can be directly (and nearly instantaneously) manipulated. This assumption is very good if a boiling heat transfer fluid is used, for example; changing the pressure on the jacket side would result in near instantaneous change in jacket temperature (note that a recirculating jacket system would not be used in this scenario). Even for the recirculating heat transfer system, the assumption of the jacket temperature being directly manipulated can be good if the jacket dynamics are rapid compared to the reactor dynamics.</P>
+<A NAME="art08lev2sec1"></A><H4 class="docSection2Title"> Overall Reactor Material Balance</H4>
+<P class="docText">The reactor overall material balance equation is</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="113" HEIGHT="32" src="FILES/m08equ00.gif" ALT="graphics/m08equ00.gif"></p><br>
+<P class="docText">where V is the constant liquid reactor volume, <font face="symbol">r</font> is the density of reactor fluid and <font face="symbol">r</font><span class="docEmphasis"><SUB>in</SUB></span> is the density of the inlet stream. <span class="docEmphasis">F<SUB>in</SUB></span> and <span class="docEmphasis">F<SUB>out</SUB></span> are the flow rates of the inlet and outlet streams. Assuming a constant density (<font face="symbol">r</font><span class="docEmphasis"><SUB>in</SUB></span> = <font face="symbol">r</font>) and volume, it is easy to show that <span class="docEmphasis">F<SUB>out</SUB></span> = <span class="docEmphasis">F<SUB>in</SUB></span> = <span class="docEmphasis">F</span>; this will be used in the component balance.</P>
+<A NAME="art08lev2sec2"></A><H4 class="docSection2Title"> Balance on Component A</H4>
+<P class="docText">Here we consider, for simplicity, the simple reaction <span class="docEmphasis">A</span><img src="FILES/U2192.GIF" border=0><span class="docEmphasis">B</span>. The balance on component A is</P>
+<P><B><A NAME="art08equ01"></A>Equation M8.1 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="156" HEIGHT="32" src="FILES/m08equ01.gif" ALT="graphics/m08equ01.gif"></p><br>
+<P class="docText">where <span class="docEmphasis">C<SUB>A</SUB></span> is the concentration of component A in the reactor and <span class="docEmphasis">r<SUB>A</SUB></span> is the rate of reaction per unit volume. The Arrhenius expression is normally used for the rate of reaction. A first-order reaction results in the following</P>
+<P><B><A NAME="art08equ02"></A>Equation M8.2 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="119" HEIGHT="34" src="FILES/m08equ02.gif" ALT="graphics/m08equ02.gif"></p><br>
+<P class="docText">where <span class="docEmphasis">k</span><SUB>0</SUB> is the frequency factor, <span class="docEmphasis">E</span><SUB>a</SUB> is the activation energy, <span class="docEmphasis">R</span> is the ideal gas constant, and <span class="docEmphasis">T</span> is the reactor temperature on an absolute scale (R, Rankine or K, Kelvin).</P>
+<A NAME="art08lev2sec3"></A><H4 class="docSection2Title"> Reactor Energy Balance</H4>
+<P class="docText">The reactor energy balance, assuming constant volume, heat capacity (c<SUB>p</SUB>) and density (<font face="symbol">r</font>), and neglecting changes in the kinetic and potential energy is</P>
+<P><B><A NAME="art08equ03"></A>Equation M8.3 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="310" HEIGHT="54" src="FILES/m08equ03.gif" ALT="graphics/m08equ03.gif"></p><br>
+<P class="docText">where -<font face="symbol">D</font>H is the heat of reaction, <span class="docEmphasis">U</span> is the heat transfer coefficient, <span class="docEmphasis">A</span> is the heat transfer area, <span class="docEmphasis">T</span><SUB>f</SUB> is the feed temperature, and <span class="docEmphasis">T</span><SUB>j</SUB> is the jacket temperature.</P>
+<A NAME="art08lev2sec4"></A><H4 class="docSection2Title"> State Variable Form of the Equations</H4>
+<P class="docText">We can write Equations (<A class="docLink" HREF="#art08equ01">M8.1</A>-<A class="docLink" HREF="#art08equ03">M8.3</A>) in the standard state variable form</P>
+<P><B><A NAME="art08equ04"></A>Equation M8.4a </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="288" HEIGHT="34" src="FILES/m08equ04a.gif" ALT="graphics/m08equ04a.gif"></p><br>
+<P><B><A NAME="art08equ05"></A>Equation M8.4b </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="400" HEIGHT="41" src="FILES/m08equ04b.gif" ALT="graphics/m08equ04b.gif"></p><br>
+<A NAME="art08lev2sec5"></A><H4 class="docSection2Title"> Steady-State Solution</H4>
+<P class="docText">The steady-state solution is obtained when the two state derivatives are set equal to zero</P>
+<P><B><A NAME="art08equ06"></A>Equation M8.5a </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="310" HEIGHT="35" src="FILES/m08equ05a.gif" ALT="graphics/m08equ05a.gif"></p><br>
+<P><B><A NAME="art08equ07"></A>Equation M8.5b </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="422" HEIGHT="40" src="FILES/m08equ05b.gif" ALT="graphics/m08equ05b.gif"></p><br>
+<P class="docText">Here, all of the inputs and parameters must be specified, allowing the two equations to be solved for steady-state values of the two states. For these equations, a nonlinear technique, such as Newton Raphson, would need to be used. It should be noted, however, that there is an easier selection of the two <span class="docEmphasis">unknowns</span> to solve for. For a given steady-state temperature, solve Equation (<A class="docLink" HREF="#art08equ06">M8.5a</A>) for the steady-state concentration. Then, solve Equation (<A class="docLink" HREF="#art08equ07">M8.5b</A>) for the value of the jacket temperature (perform this in the following exercise).</P>
+<P class="docText"><span class="docEmphStrong">Problem M8.1</span> Steady-State Concentration and Jacket Temperature for a Specified Reactor Temperature</P>
+<span style="font-weight:bold"><OL class="docList" TYPE="a"><LI><span style="font-weight:normal"><P class="docList">Solve for the steady-state concentration as a function of the specified steady-state temperature, from Equation (<A class="docLink" HREF="#art08equ06">M8.5a</A>). Use a subscript s to indicate a steady-state value.</P><P class="docList"><span class="docEmphasis">Result</span>:</P><P><B><A NAME="art08equ08"></A>Equation M8.6a </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="184" HEIGHT="41" src="FILES/m08equ06a.gif" ALT="graphics/m08equ06a.gif"></p><br></span></LI><LI><span style="font-weight:normal"><P class="docList">Solve for the steady-state jacket temperature as a function of the steady-state reactor temperature and concentration from Equation (<A class="docLink" HREF="#art08equ07">M8.5b</A>).</P><P class="docList"><span class="docEmphasis">Result</span>:</P><P><B><A NAME="art08equ09"></A>Equation M8.6b </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="353" HEIGHT="32" src="FILES/m08equ06b.gif" ALT="graphics/m08equ06b.gif"></p><br></span></LI></OL></span>
+<P class="docText">Alternatively, one could specify the desired concentration, solve for the required reactor temperature (from <A class="docLink" HREF="#art08equ06">M8.5a</A>), and then solve for the required jacket temperature (from <A class="docLink" HREF="#art08equ07">M8.5b</A>). Again, this assumes that the residence time and all other parameters are fixed.</P>
+<A NAME="art08lev2sec6"></A><H4 class="docSection2Title"> Linearization</H4>
+<P class="docText">The goal of the linearization procedure is to find a model with the form</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="75" HEIGHT="33" src="FILES/m08equ06c.gif" ALT="graphics/m08equ06c.gif"></p><br>
+<P class="docText">Here we define the states, output, and inputs in deviation variable form</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="133" HEIGHT="154" src="FILES/m08equ06d.gif" ALT="graphics/m08equ06d.gif"></p><br>
+<P class="docText">Notice that the first input (jacket temperature, <span class="docEmphasis">T</span><SUB>j</SUB>) is manipulated, while the last three inputs are disturbances.</P>
+<P class="docText">The Jacobian matrix is</P>
+<P><B><A NAME="art08equ10"></A>Equation M8.7 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="418" HEIGHT="75" src="FILES/m08equ07.gif" ALT="graphics/m08equ07.gif"></p><br>
+<P class="docText">where <span class="docEmphasis">k<SUB>s</SUB></span> = <span class="docEmphasis">k</span><SUB>0</SUB> exp(–<span class="docEmphasis">E<SUB>a</SUB></span>/<span class="docEmphasis">RT<SUB>s</SUB></span>) and <IMG BORDER="0" id="129022115118" WIDTH="318" HEIGHT="23" src="FILES/m08inequ02.gif" ALT="graphics/m08inequ02.gif">.</P>
+<P class="docText">The first column (related to the manipulated input, <span class="docEmphasis">T</span><SUB>j</SUB>) of the B matrix is</P>
+<P><B><A NAME="art08equ11"></A>Equation M8.8 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="205" HEIGHT="41" src="FILES/m08equ08.gif" ALT="graphics/m08equ08.gif"></p><br>
+<P class="docText">The output matrix is, since we consider temperature (second state) to be measured,</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="58" HEIGHT="18" src="FILES/m08equ08a.gif" ALT="graphics/m08equ08a.gif"></p><br>
+<P class="docText">Also, the input is not measured, so D = 0.</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_art08lev1sec1.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_art08lev1sec3.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

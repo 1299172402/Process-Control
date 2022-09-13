@@ -1,0 +1,1728 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.0">
+    
+    
+      
+        <title>Process Control Modeling, Design and Simulation (B. Wayne Bequette)</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.2e8b5541.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#process-control" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Process Control Modeling, Design and Simulation (B. Wayne Bequette)" class="md-header__button md-logo" aria-label="Process Control Modeling, Design and Simulation (B. Wayne Bequette)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Process Control Modeling, Design and Simulation (B. Wayne Bequette)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Process Control
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Process Control Modeling, Design and Simulation (B. Wayne Bequette)" class="md-nav__button md-logo" aria-label="Process Control Modeling, Design and Simulation (B. Wayne Bequette)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Process Control Modeling, Design and Simulation (B. Wayne Bequette)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Process Control
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        Process Control
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preface" class="md-nav__link">
+    Preface
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-1-introduction" class="md-nav__link">
+    Chapter 1. Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-2-fundamental-models" class="md-nav__link">
+    Chapter 2. Fundamental Models
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-3-dynamic-behavior" class="md-nav__link">
+    Chapter 3. Dynamic Behavior
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-4-empirical-models" class="md-nav__link">
+    Chapter 4. Empirical Models
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-5-introduction-to-feedback-control" class="md-nav__link">
+    Chapter 5. Introduction to Feedback Control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-6-pid-controller-tuning" class="md-nav__link">
+    Chapter 6. PID Controller Tuning
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-7-frequency-response-analysis" class="md-nav__link">
+    Chapter 7. Frequency-Response Analysis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-8-internal-model-control" class="md-nav__link">
+    Chapter 8. Internal Model Control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-9-the-imc-based-pid-procedure" class="md-nav__link">
+    Chapter 9. The IMC-Based PID Procedure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-10-cascade-and-feed-forward-control" class="md-nav__link">
+    Chapter 10. Cascade and Feed-Forward Control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-11-pid-enhancements" class="md-nav__link">
+    Chapter 11. PID Enhancements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-12-ratio-selective-and-split-range-control" class="md-nav__link">
+    Chapter 12. Ratio, Selective, and Split-Range Control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-13-control-loop-interaction" class="md-nav__link">
+    Chapter 13. Control-Loop Interaction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-14-multivariable-control" class="md-nav__link">
+    Chapter 14. Multivariable Control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-15-plantwide-control" class="md-nav__link">
+    Chapter 15. Plantwide Control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-16-model-predictive-control" class="md-nav__link">
+    Chapter 16. Model Predictive Control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-17-summary" class="md-nav__link">
+    Chapter 17. Summary
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-1-introduction-to-matlab" class="md-nav__link">
+    Module 1. Introduction to M'ATLAB'
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-2-introduction-to-simulink" class="md-nav__link">
+    Module 2. Introduction to S'IMULINK'
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-3-ordinary-differential-equations" class="md-nav__link">
+    Module 3. Ordinary Differential Equations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-4-matlab-lti-models" class="md-nav__link">
+    Module 4. M'ATLAB' LTI Models
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-5-isothermal-chemical-reactor" class="md-nav__link">
+    Module 5. Isothermal Chemical Reactor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-6-first-order-time-delay-processes" class="md-nav__link">
+    Module 6. First-Order + Time-Delay Processes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-7-biochemical-reactors" class="md-nav__link">
+    Module 7. Biochemical Reactors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-8-cstr" class="md-nav__link">
+    Module 8. CSTR
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-9-steam-drum-level" class="md-nav__link">
+    Module 9. Steam Drum Level
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-10-surge-vessel-level-control" class="md-nav__link">
+    Module 10. Surge Vessel Level Control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-11-batch-reactor" class="md-nav__link">
+    Module 11. Batch Reactor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-12-biomedical-systems" class="md-nav__link">
+    Module 12. Biomedical Systems
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-13-distillation-control" class="md-nav__link">
+    Module 13. Distillation Control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-14-case-study-problems" class="md-nav__link">
+    Module 14. Case Study Problems
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-15-flow-control" class="md-nav__link">
+    Module 15. Flow Control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-16-digital-control" class="md-nav__link">
+    Module 16. Digital Control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#about-the-author" class="md-nav__link">
+    About the Author
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="process-control">Process Control</h1>
+<ul>
+<li>
+<p><a href="0133536408_main.html">Main Page</a></p>
+</li>
+<li>
+<p><a href="0133536408_toc.html">Table of content</a></p>
+</li>
+<li>
+<p><a href="0133536408_copyrightpg.html">Copyright</a></p>
+</li>
+<li>
+<p><a href="0133536408_pref01.html">PRENTICE HALL INTERNATIONAL SERIES IN THE PHYSICAL AND CHEMICAL ENGINEERING SCIENCES</a></p>
+</li>
+<li>
+<p><a href="0133536408_pref02.html">About Prentice Hall Professional Technical Reference</a></p>
+</li>
+</ul>
+<h2 id="preface">Preface</h2>
+<ul>
+<li>
+<p><a href="0133536408_pref03.html">Preface</a></p>
+</li>
+<li>
+<p><a href="0133536408_fm01lev1sec1.html">Background</a></p>
+</li>
+<li>
+<p><a href="0133536408_fm01lev1sec2.html">Textbook Goals</a></p>
+</li>
+<li>
+<p><a href="0133536408_fm01lev1sec3.html">Chapters</a></p>
+</li>
+<li>
+<p><a href="0133536408_fm01lev1sec4.html">Learning Modules</a></p>
+</li>
+<li>
+<p><a href="0133536408_fm01lev1sec5.html">Textbook Web Page</a></p>
+</li>
+<li>
+<p><a href="0133536408_fm01lev1sec6.html">Acknowledgments</a></p>
+</li>
+</ul>
+<h2 id="chapter-1-introduction">Chapter 1. Introduction</h2>
+<ul>
+<li>
+<p><a href="0133536408_ch01.html">Chapter 1. Introduction</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch01lev1sec1.html">1.1 Introduction</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch01lev1sec2.html">1.2 Instrumentation</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch01lev1sec3.html">1.3 Process Models and Dynamic Behavior</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch01lev1sec4.html">1.4 Control Textbooks and Journals</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch01lev1sec5.html">1.5 A Look Ahead</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch01lev1sec6.html">1.6 Summary</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch01lev1sec7.html">Student Exercises</a></p>
+</li>
+</ul>
+<h2 id="chapter-2-fundamental-models">Chapter 2. Fundamental Models</h2>
+<ul>
+<li>
+<p><a href="0133536408_ch02.html">Chapter 2. Fundamental Models</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch02lev1sec1.html">2.1 Background</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch02lev1sec2.html">2.2 Balance Equations</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch02lev1sec3.html">2.3 Material Balances</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch02lev1sec4.html">2.4 Constitutive Relationships</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch02lev1sec5.html">2.5 Material and Energy Balances</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch02lev1sec6.html">2.6 Form of Dynamic Models</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch02lev1sec7.html">2.7 Linear Models and Deviation Variables</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch02lev1sec8.html">2.8 Summary</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch02lev1sec9.html">Suggested Reading</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch02lev1sec10.html">Student Exercises</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch02lev1sec11.html">Appendix 2.1: Solving Algebraic Equations</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch02lev1sec12.html">Appendix 2.2: Integrating Ordinary Differential Equations</a></p>
+</li>
+</ul>
+<h2 id="chapter-3-dynamic-behavior">Chapter 3. Dynamic Behavior</h2>
+<ul>
+<li>
+<p><a href="0133536408_ch03.html">Chapter 3. Dynamic Behavior</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch03lev1sec1.html">3.1 Background</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch03lev1sec2.html">3.2 Linear State Space Models</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch03lev1sec3.html">3.3 Introduction to Laplace Transforms</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch03lev1sec4.html">3.4 Transfer Functions</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch03lev1sec5.html">3.5 First-Order Behavior</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch03lev1sec6.html">3.6 Integrating System</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch03lev1sec7.html">3.7 Second-Order Behavior</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch03lev1sec8.html">3.8 Lead-Lag Behavior</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch03lev1sec9.html">3.9 Poles and Zeros</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch03lev1sec10.html">3.10 Processes with Dead Time</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch03lev1sec11.html">3.11 Pad&eacute; Approximation for Dead Time</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch03lev1sec12.html">3.12 Converting State Space Models to Transfer Functions</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch03lev1sec13.html">3.13 M'ATLAB' and S'IMULINK'</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch03lev1sec14.html">3.14 Summary</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch03lev1sec15.html">References</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch03lev1sec16.html">Student Exercises</a></p>
+</li>
+</ul>
+<h2 id="chapter-4-empirical-models">Chapter 4. Empirical Models</h2>
+<ul>
+<li>
+<p><a href="0133536408_ch04.html">Chapter 4. Empirical Models</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch04lev1sec1.html">4.1 Introduction</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch04lev1sec2.html">4.2 First-Order + Dead Time</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch04lev1sec3.html">4.3 Integrator + Dead Time</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch04lev1sec4.html">4.4 Discrete-Time Autoregressive Models</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch04lev1sec5.html">4.5 Parameter Estimation</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch04lev1sec6.html">4.6 Discrete Step and Impulse Response Models</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch04lev1sec7.html">4.7 Summary</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch04lev1sec8.html">References</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch04lev1sec9.html">Student Exercises</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch04lev1sec10.html">Appendix 4.1: Files Used to Generate Example 4.4</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch04lev1sec11.html">Appendix 4.2</a></p>
+</li>
+</ul>
+<h2 id="chapter-5-introduction-to-feedback-control">Chapter 5. Introduction to Feedback Control</h2>
+<ul>
+<li>
+<p><a href="0133536408_ch05.html">Chapter 5. Introduction to Feedback Control</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch05lev1sec1.html">5.1 Motivation</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch05lev1sec2.html">5.2 Development of Control Block Diagrams</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch05lev1sec3.html">5.3 Response to Setpoint Changes</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch05lev1sec4.html">5.4 PID Controller Algorithms</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch05lev1sec5.html">5.5 Routh Stability Criterion</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch05lev1sec6.html">5.6 Effect of Tuning Parameters</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch05lev1sec7.html">5.7 Response to Disturbances</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch05lev1sec8.html">5.8 Open-Loop Unstable Systems</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch05lev1sec9.html">5.9 S'IMULINK' Block Diagrams</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch05lev1sec10.html">5.10 Summary</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch05lev1sec11.html">References</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch05lev1sec12.html">Student Exercises</a></p>
+</li>
+</ul>
+<h2 id="chapter-6-pid-controller-tuning">Chapter 6. PID Controller Tuning</h2>
+<ul>
+<li>
+<p><a href="0133536408_ch06.html">Chapter 6. PID Controller Tuning</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch06lev1sec1.html">6.1 Introduction</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch06lev1sec2.html">6.2 Closed-Loop Oscillation-Based Tuning</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch06lev1sec3.html">6.3 Tuning Rules for First-Order + Dead Time Processes</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch06lev1sec4.html">6.4 Direct Synthesis</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch06lev1sec5.html">6.5 Summary</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch06lev1sec6.html">References</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch06lev1sec7.html">Student Exercises</a></p>
+</li>
+</ul>
+<h2 id="chapter-7-frequency-response-analysis">Chapter 7. Frequency-Response Analysis</h2>
+<ul>
+<li>
+<p><a href="0133536408_ch07.html">Chapter 7. Frequency-Response Analysis</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch07lev1sec1.html">7.1 Motivation</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch07lev1sec2.html">7.2 Bode and Nyquist Plots</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch07lev1sec3.html">7.3 Effect of Process Parameters on Bode and Nyquist Plots</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch07lev1sec4.html">7.4 Closed-Loop Stability Concepts</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch07lev1sec5.html">7.5 Bode and Nyquist Stability</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch07lev1sec6.html">7.6 Robustness</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch07lev1sec7.html">7.7 M'ATLAB' Control Toolbox: Bode and Nyquist Functions</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch07lev1sec8.html">7.8 Summary</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch07lev1sec9.html">Reference</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch07lev1sec10.html">Student Exercises</a></p>
+</li>
+</ul>
+<h2 id="chapter-8-internal-model-control">Chapter 8. Internal Model Control</h2>
+<ul>
+<li>
+<p><a href="0133536408_ch08.html">Chapter 8. Internal Model Control</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch08lev1sec1.html">8.1 Introduction to Model-Based Control</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch08lev1sec2.html">8.2 Practical Open-Loop Controller Design</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch08lev1sec3.html">8.3 Generalization of the Open-Loop Control Design Procedure</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch08lev1sec4.html">8.4 Model Uncertainty and Disturbances</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch08lev1sec5.html">8.5 Development of the IMC Structure</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch08lev1sec6.html">8.6 IMC Background</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch08lev1sec7.html">8.7 The IMC Structure</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch08lev1sec8.html">8.8 The IMC Design Procedure</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch08lev1sec9.html">8.9 Effect of Model Uncertainty and Disturbances</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch08lev1sec10.html">8.10 Improved Disturbance Rejection Design</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch08lev1sec11.html">8.11 Manipulated Variable Saturation</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch08lev1sec12.html">8.12 Summary</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch08lev1sec13.html">References</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch08lev1sec14.html">Student Exercises</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch08lev1sec15.html">Appendix 8.1: Derivation of Closed-Loop Relationships for IMC</a></p>
+</li>
+</ul>
+<h2 id="chapter-9-the-imc-based-pid-procedure">Chapter 9. The IMC-Based PID Procedure</h2>
+<ul>
+<li>
+<p><a href="0133536408_ch09.html">Chapter 9. The IMC-Based PID Procedure</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch09lev1sec1.html">9.1 Background</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch09lev1sec2.html">9.2 The Equivalent Feedback Form to IMC</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch09lev1sec3.html">9.3 IMC-Based Feedback Design for Delay-Free Processes</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch09lev1sec4.html">9.4 IMC-Based Feedback Design for Processes with a Time Delay</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch09lev1sec5.html">9.5 Summary of IMC-Based PID Controller Design for Stable Processes</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch09lev1sec6.html">9.6 IMC-Based PID Controller Design for Unstable Processes</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch09lev1sec7.html">9.7 Summary</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch09lev1sec8.html">References</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch09lev1sec9.html">Student Exercises</a></p>
+</li>
+</ul>
+<h2 id="chapter-10-cascade-and-feed-forward-control">Chapter 10. Cascade and Feed-Forward Control</h2>
+<ul>
+<li>
+<p><a href="0133536408_ch10.html">Chapter 10. Cascade and Feed-Forward Control</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch10lev1sec1.html">10.1 Background</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch10lev1sec2.html">10.2 Introduction to Cascade Control</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch10lev1sec3.html">10.3 Cascade-Control Analysis</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch10lev1sec4.html">10.4 Cascade-Control Design</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch10lev1sec5.html">10.5 Cascade IMC</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch10lev1sec6.html">10.6 Feed-Forward Control</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch10lev1sec7.html">10.7 Feed-Forward Controller Design</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch10lev1sec8.html">10.8 Feed-Forward Control in the IMC Structure</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch10lev1sec9.html">10.9 Summary of Feed-Forward Control</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch10lev1sec10.html">10.10 Combined Feed-Forward and Cascade</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch10lev1sec11.html">10.11 Summary</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch10lev1sec12.html">References</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch10lev1sec13.html">Student Exercises—Cascade Control</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch10lev1sec14.html">Student Exercises—Feed-Forward Control</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch10lev1sec15.html">Student Exercises—Feed-Forward and Cascade</a></p>
+</li>
+</ul>
+<h2 id="chapter-11-pid-enhancements">Chapter 11. PID Enhancements</h2>
+<ul>
+<li>
+<p><a href="0133536408_ch11.html">Chapter 11. PID Enhancements</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch11lev1sec1.html">11.1 Background</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch11lev1sec2.html">11.2 Antireset Windup</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch11lev1sec3.html">11.3 Autotuning Techniques</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch11lev1sec4.html">11.4 Nonlinear PID Control</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch11lev1sec5.html">11.5 Controller Parameter (Gain) Scheduling</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch11lev1sec6.html">11.6 Measurement/Actuator Selection</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch11lev1sec7.html">11.7 Implementing PID Enhancements in Simulink</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch11lev1sec8.html">11.8 Summary</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch11lev1sec9.html">References</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch11lev1sec10.html">Student Exercises</a></p>
+</li>
+</ul>
+<h2 id="chapter-12-ratio-selective-and-split-range-control">Chapter 12. Ratio, Selective, and Split-Range Control</h2>
+<ul>
+<li>
+<p><a href="0133536408_ch12.html">Chapter 12. Ratio, Selective, and Split-Range Control</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch12lev1sec1.html">12.1 Motivation</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch12lev1sec2.html">12.2 Ratio Control</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch12lev1sec3.html">12.3 Selective and Override Control</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch12lev1sec4.html">12.4 Split-Range Control</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch12lev1sec5.html">12.5 Simulink Functions</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch12lev1sec6.html">12.6 Summary</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch12lev1sec7.html">References</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch12lev1sec8.html">Student Exercises</a></p>
+</li>
+</ul>
+<h2 id="chapter-13-control-loop-interaction">Chapter 13. Control-Loop Interaction</h2>
+<ul>
+<li>
+<p><a href="0133536408_ch13.html">Chapter 13. Control-Loop Interaction</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch13lev1sec1.html">13.1 Introduction</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch13lev1sec2.html">13.2 Motivation</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch13lev1sec3.html">13.3 The General Pairing Problem</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch13lev1sec4.html">13.4 The Relative Gain Array</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch13lev1sec5.html">13.5 Properties and Application of the RGA</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch13lev1sec6.html">13.6 Return to the Motivating Example</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch13lev1sec7.html">13.7 RGA and Sensitivity</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch13lev1sec8.html">13.8 Using the RGA to Determine Variable Pairings</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch13lev1sec9.html">13.9 M'ATLAB' RGA Function File</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch13lev1sec10.html">13.10 Summary</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch13lev1sec11.html">References</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch13lev1sec12.html">Student Exercises</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch13lev1sec13.html">Appendix 13.1: Derivation of the Relative Gain for an 'n'-Input–'n'-Output System</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch13lev1sec14.html">Appendix 13.2: m-File to Calculate the RGA</a></p>
+</li>
+</ul>
+<h2 id="chapter-14-multivariable-control">Chapter 14. Multivariable Control</h2>
+<ul>
+<li>
+<p><a href="0133536408_ch14.html">Chapter 14. Multivariable Control</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch14lev1sec1.html">14.1 Background</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch14lev1sec2.html">14.2 Zeros and Performance Limitations</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch14lev1sec3.html">14.3 Scaling Considerations</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch14lev1sec4.html">14.4 Directional Sensitivity and Operability</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch14lev1sec5.html">14.5 Block-Diagram Analysis</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch14lev1sec6.html">14.6 Decoupling</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch14lev1sec7.html">14.7 IMC</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch14lev1sec8.html">14.8 M'ATLAB' 'tzero', 'svd', and LTI Functions</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch14lev1sec9.html">14.9 Summary</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch14lev1sec10.html">References</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch14lev1sec11.html">Student Exercises</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch14lev1sec12.html">Appendix 14.1</a></p>
+</li>
+</ul>
+<h2 id="chapter-15-plantwide-control">Chapter 15. Plantwide Control</h2>
+<ul>
+<li>
+<p><a href="0133536408_ch15.html">Chapter 15. Plantwide Control</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch15lev1sec1.html">15.1 Background</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch15lev1sec2.html">15.2 Steady-State and Dynamic Effects of Recycle</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch15lev1sec3.html">15.3 Unit Operations Not Previously Covered</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch15lev1sec4.html">15.4 The Control and Optimization Hierarchy</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch15lev1sec5.html">15.5 Further Plantwide Control Examples</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch15lev1sec6.html">15.6 Simulations</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch15lev1sec7.html">15.7 Summary</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch15lev1sec8.html">References</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch15lev1sec9.html">Student Exercises</a></p>
+</li>
+</ul>
+<h2 id="chapter-16-model-predictive-control">Chapter 16. Model Predictive Control</h2>
+<ul>
+<li>
+<p><a href="0133536408_ch16.html">Chapter 16. Model Predictive Control</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch16lev1sec1.html">16.1 Motivation</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch16lev1sec2.html">16.2 Optimization Problem</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch16lev1sec3.html">16.3 Dynamic Matrix Control</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch16lev1sec4.html">16.4 Constraints and Multivariable Systems</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch16lev1sec5.html">16.5 Other MPC Methods</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch16lev1sec6.html">16.6 Matlab</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch16lev1sec7.html">16.7 Summary</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch16lev1sec8.html">References and Relevant Literature</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch16lev1sec9.html">Student Exercises</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch16lev1sec10.html">Appendix 16.1: Derivation of the Step Response Formulation</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch16lev1sec11.html">Appendix 16.2: Derivation of the Least Squares Solution for Control Moves</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch16lev1sec12.html">Appendix 16.3</a></p>
+</li>
+</ul>
+<h2 id="chapter-17-summary">Chapter 17. Summary</h2>
+<ul>
+<li>
+<p><a href="0133536408_ch17.html">Chapter 17. Summary</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch17lev1sec1.html">17.1 Overview of Topics Covered in This Textbook</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch17lev1sec2.html">17.2 Process Engineering in Practice</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch17lev1sec3.html">17.3 Suggested Further Reading</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch17lev1sec4.html">17.4 Notation</a></p>
+</li>
+<li>
+<p><a href="0133536408_ch17lev1sec5.html">Student Exercises</a></p>
+</li>
+</ul>
+<h2 id="module-1-introduction-to-matlab">Module 1. Introduction to M'ATLAB'</h2>
+<ul>
+<li>
+<p><a href="0133536408_art01.html">Module 1. Introduction to M'ATLAB'</a></p>
+</li>
+<li>
+<p><a href="0133536408_art01lev1sec1.html">M1.1 Background</a></p>
+</li>
+<li>
+<p><a href="0133536408_art01lev1sec2.html">M1.2 Matrix Operations</a></p>
+</li>
+<li>
+<p><a href="0133536408_art01lev1sec3.html">M1.3 The M'ATLAB' Workspace</a></p>
+</li>
+<li>
+<p><a href="0133536408_art01lev1sec4.html">M1.4 Complex Variables</a></p>
+</li>
+<li>
+<p><a href="0133536408_art01lev1sec5.html">M1.5 Plotting</a></p>
+</li>
+<li>
+<p><a href="0133536408_art01lev1sec6.html">M1.6 More Matrix Stuff</a></p>
+</li>
+<li>
+<p><a href="0133536408_art01lev1sec7.html">M1.7 For Loops</a></p>
+</li>
+<li>
+<p><a href="0133536408_art01lev1sec8.html">M1.8 m-Files</a></p>
+</li>
+<li>
+<p><a href="0133536408_art01lev1sec9.html">M1.9 Summary of Commonly Used Commands</a></p>
+</li>
+<li>
+<p><a href="0133536408_art01lev1sec10.html">M1.10 Frequently Used M'ATLAB' Functions</a></p>
+</li>
+<li>
+<p><a href="0133536408_art01lev1sec11.html">Additional Exercises</a></p>
+</li>
+</ul>
+<h2 id="module-2-introduction-to-simulink">Module 2. Introduction to S'IMULINK'</h2>
+<ul>
+<li>
+<p><a href="0133536408_art02.html">Module 2. Introduction to S'IMULINK'</a></p>
+</li>
+<li>
+<p><a href="0133536408_art02lev1sec1.html">M2.1 Background</a></p>
+</li>
+<li>
+<p><a href="0133536408_art02lev1sec2.html">M2.2 Open-Loop Simulations</a></p>
+</li>
+<li>
+<p><a href="0133536408_art02lev1sec3.html">M2.3 Feedback-Control Simulations</a></p>
+</li>
+<li>
+<p><a href="0133536408_art02lev1sec4.html">M2.4 Developing Alternative Controller Icons</a></p>
+</li>
+<li>
+<p><a href="0133536408_art02lev1sec5.html">M2.5 Summary</a></p>
+</li>
+<li>
+<p><a href="0133536408_art02lev1sec6.html">Additional Exercises</a></p>
+</li>
+</ul>
+<h2 id="module-3-ordinary-differential-equations">Module 3. Ordinary Differential Equations</h2>
+<ul>
+<li>
+<p><a href="0133536408_art03.html">Module 3. Ordinary Differential Equations</a></p>
+</li>
+<li>
+<p><a href="0133536408_art03lev1sec1.html">M3.1 M'ATLAB' ode—Basic</a></p>
+</li>
+<li>
+<p><a href="0133536408_art03lev1sec2.html">M3.2 M'ATLAB' ode—Options</a></p>
+</li>
+<li>
+<p><a href="0133536408_art03lev1sec3.html">M3.3 S'IMULINK' sfun (.mdl Files)</a></p>
+</li>
+<li>
+<p><a href="0133536408_art03lev1sec4.html">M3.4 S'IMULINK' sfun (.mdl Files)—Advanced</a></p>
+</li>
+<li>
+<p><a href="0133536408_art03lev1sec5.html">M3.5 Summary</a></p>
+</li>
+</ul>
+<h2 id="module-4-matlab-lti-models">Module 4. M'ATLAB' LTI Models</h2>
+<ul>
+<li>
+<p><a href="0133536408_art04.html">Module 4. M'ATLAB' LTI Models</a></p>
+</li>
+<li>
+<p><a href="0133536408_art04lev1sec1.html">M4.1 Forming Continuous-Time Models</a></p>
+</li>
+<li>
+<p><a href="0133536408_art04lev1sec2.html">M4.2 Forming Discrete-Time Models</a></p>
+</li>
+<li>
+<p><a href="0133536408_art04lev1sec3.html">M4.3 Converting Continuous Models to Discrete</a></p>
+</li>
+<li>
+<p><a href="0133536408_art04lev1sec4.html">M4.4 Converting Discrete Models to Continuous</a></p>
+</li>
+<li>
+<p><a href="0133536408_art04lev1sec5.html">M4.5 Step and Impulse Responses</a></p>
+</li>
+<li>
+<p><a href="0133536408_art04lev1sec6.html">M4.6 Summary</a></p>
+</li>
+<li>
+<p><a href="0133536408_art04lev1sec7.html">Reference</a></p>
+</li>
+<li>
+<p><a href="0133536408_art04lev1sec8.html">Additional Exercises</a></p>
+</li>
+</ul>
+<h2 id="module-5-isothermal-chemical-reactor">Module 5. Isothermal Chemical Reactor</h2>
+<ul>
+<li>
+<p><a href="0133536408_art05.html">Module 5. Isothermal Chemical Reactor</a></p>
+</li>
+<li>
+<p><a href="0133536408_art05lev1sec1.html">M5.1 Background</a></p>
+</li>
+<li>
+<p><a href="0133536408_art05lev1sec2.html">M5.2 Model ( Chapter 2 )</a></p>
+</li>
+<li>
+<p><a href="0133536408_art05lev1sec3.html">M5.3 Steady-State and Dynamic Behavior ( Chapter 3 )</a></p>
+</li>
+<li>
+<p><a href="0133536408_art05lev1sec4.html"></a></p>
+</li>
+<li>
+<p><a href="0133536408_art05lev1sec5.html">M5.5 Internal Model Control ( Chapter 8 )</a></p>
+</li>
+<li>
+<p><a href="0133536408_art05lev1sec6.html">Reference</a></p>
+</li>
+<li>
+<p><a href="0133536408_art05lev1sec7.html">Additional Exercises</a></p>
+</li>
+</ul>
+<h2 id="module-6-first-order-time-delay-processes">Module 6. First-Order + Time-Delay Processes</h2>
+<ul>
+<li>
+<p><a href="0133536408_art06.html">Module 6. First-Order + Time-Delay Processes</a></p>
+</li>
+<li>
+<p><a href="0133536408_art06lev1sec1.html">M6.1 Motivation</a></p>
+</li>
+<li>
+<p><a href="0133536408_art06lev1sec2.html">M6.2 Closed-Loop Time-Domain Simulation</a></p>
+</li>
+<li>
+<p><a href="0133536408_art06lev1sec3.html">M6.3 Bode Analysis</a></p>
+</li>
+<li>
+<p><a href="0133536408_art06lev1sec4.html">M6.4 Ziegler-Nichols Tuning</a></p>
+</li>
+<li>
+<p><a href="0133536408_art06lev1sec5.html">M6.5 IMC-Based PID Control</a></p>
+</li>
+<li>
+<p><a href="0133536408_art06lev1sec6.html">M6.6 Summary</a></p>
+</li>
+<li>
+<p><a href="0133536408_art06lev1sec7.html">References</a></p>
+</li>
+<li>
+<p><a href="0133536408_art06lev1sec8.html">Additional Exercises</a></p>
+</li>
+<li>
+<p><a href="0133536408_art06lev1sec9.html">Appendix M6.1</a></p>
+</li>
+</ul>
+<h2 id="module-7-biochemical-reactors">Module 7. Biochemical Reactors</h2>
+<ul>
+<li>
+<p><a href="0133536408_art07.html">Module 7. Biochemical Reactors</a></p>
+</li>
+<li>
+<p><a href="0133536408_art07lev1sec1.html">M7.1 Background</a></p>
+</li>
+<li>
+<p><a href="0133536408_art07lev1sec2.html">M7.2 Steady-State and Dynamic Behavior</a></p>
+</li>
+<li>
+<p><a href="0133536408_art07lev1sec3.html">M7.3 Stable Steady-State Operating Point</a></p>
+</li>
+<li>
+<p><a href="0133536408_art07lev1sec4.html">M7.4 Unstable Steady-State Operating Point</a></p>
+</li>
+<li>
+<p><a href="0133536408_art07lev1sec5.html">M7.5 S'IMULINK' Model File</a></p>
+</li>
+<li>
+<p><a href="0133536408_art07lev1sec6.html">Reference</a></p>
+</li>
+<li>
+<p><a href="0133536408_art07lev1sec7.html">Additional Exercises</a></p>
+</li>
+</ul>
+<h2 id="module-8-cstr">Module 8. CSTR</h2>
+<ul>
+<li>
+<p><a href="0133536408_art08.html">Module 8. CSTR</a></p>
+</li>
+<li>
+<p><a href="0133536408_art08lev1sec1.html">M8.1 Background</a></p>
+</li>
+<li>
+<p><a href="0133536408_art08lev1sec2.html">M8.2 Simplified Modeling Equations</a></p>
+</li>
+<li>
+<p><a href="0133536408_art08lev1sec3.html">M8.3 Example Chemical Process—Propylene Glycol Production</a></p>
+</li>
+<li>
+<p><a href="0133536408_art08lev1sec4.html">M8.4 Effect of Reactor Scale</a></p>
+</li>
+<li>
+<p><a href="0133536408_art08lev1sec5.html">M8.5 For Further Study: Detailed Model</a></p>
+</li>
+<li>
+<p><a href="0133536408_art08lev1sec6.html">M8.6 Other Considerations</a></p>
+</li>
+<li>
+<p><a href="0133536408_art08lev1sec7.html">M8.7 Summary</a></p>
+</li>
+<li>
+<p><a href="0133536408_art08lev1sec8.html">References</a></p>
+</li>
+<li>
+<p><a href="0133536408_art08lev1sec9.html">Additional Exercises</a></p>
+</li>
+<li>
+<p><a href="0133536408_art08lev1sec10.html">Appendix M8.1</a></p>
+</li>
+</ul>
+<h2 id="module-9-steam-drum-level">Module 9. Steam Drum Level</h2>
+<ul>
+<li>
+<p><a href="0133536408_art09.html">Module 9. Steam Drum Level</a></p>
+</li>
+<li>
+<p><a href="0133536408_art09lev1sec1.html">M9.1 Background</a></p>
+</li>
+<li>
+<p><a href="0133536408_art09lev1sec2.html">M9.2 Process Model</a></p>
+</li>
+<li>
+<p><a href="0133536408_art09lev1sec3.html">M9 Feedback Controller Design</a></p>
+</li>
+<li>
+<p><a href="0133536408_art09lev1sec4.html">M9.4 Feed-Forward Controller Design</a></p>
+</li>
+<li>
+<p><a href="0133536408_art09lev1sec5.html">M9.5 Three-Mode Level Control</a></p>
+</li>
+<li>
+<p><a href="0133536408_art09lev1sec6.html">Appendix M9.1: S'IMULINK' Diagram for Feed-Forward/Feedback Control of Steam Drum Level</a></p>
+</li>
+<li>
+<p><a href="0133536408_art09lev1sec7.html">Appendix M9.2: S'IMULINK' Diagram for 3-Mode Control of Steam Drum Level</a></p>
+</li>
+</ul>
+<h2 id="module-10-surge-vessel-level-control">Module 10. Surge Vessel Level Control</h2>
+<ul>
+<li>
+<p><a href="0133536408_art10.html">Module 10. Surge Vessel Level Control</a></p>
+</li>
+<li>
+<p><a href="0133536408_art10lev1sec1.html">M10.1 Background</a></p>
+</li>
+<li>
+<p><a href="0133536408_art10lev1sec2.html">M10.2 Process Model</a></p>
+</li>
+<li>
+<p><a href="0133536408_art10lev1sec3.html">M10.3 Controller Design</a></p>
+</li>
+<li>
+<p><a href="0133536408_art10lev1sec4.html">M10.4 Numerical Example</a></p>
+</li>
+<li>
+<p><a href="0133536408_art10lev1sec5.html">M10.5 Summary</a></p>
+</li>
+<li>
+<p><a href="0133536408_art10lev1sec6.html">Reference</a></p>
+</li>
+<li>
+<p><a href="0133536408_art10lev1sec7.html">Additional Exercises</a></p>
+</li>
+<li>
+<p><a href="0133536408_art10lev1sec8.html">Appendix M10.1: The S'IMULINK' Block Diagram</a></p>
+</li>
+</ul>
+<h2 id="module-11-batch-reactor">Module 11. Batch Reactor</h2>
+<ul>
+<li>
+<p><a href="0133536408_art11.html">Module 11. Batch Reactor</a></p>
+</li>
+<li>
+<p><a href="0133536408_art11lev1sec1.html">M11.1 Background</a></p>
+</li>
+<li>
+<p><a href="0133536408_art11lev1sec2.html">M11.2 Batch Model 1: Jacket Temperature Manipulated</a></p>
+</li>
+<li>
+<p><a href="0133536408_art11lev1sec3.html">M11.3 Batch Model 2: Jacket Inlet Temperature Manipulated</a></p>
+</li>
+<li>
+<p><a href="0133536408_art11lev1sec4.html">M11.4 Batch Model 3: Cascade Control</a></p>
+</li>
+<li>
+<p><a href="0133536408_art11lev1sec5.html">M11.5 Summary</a></p>
+</li>
+<li>
+<p><a href="0133536408_art11lev1sec6.html">Reference</a></p>
+</li>
+<li>
+<p><a href="0133536408_art11lev1sec7.html">Additional Exercises</a></p>
+</li>
+</ul>
+<h2 id="module-12-biomedical-systems">Module 12. Biomedical Systems</h2>
+<ul>
+<li>
+<p><a href="0133536408_art12.html">Module 12. Biomedical Systems</a></p>
+</li>
+<li>
+<p><a href="0133536408_art12lev1sec1.html">M12.1 Overview</a></p>
+</li>
+<li>
+<p><a href="0133536408_art12lev1sec2.html">M12.2 Pharmacokinetic Models</a></p>
+</li>
+<li>
+<p><a href="0133536408_art12lev1sec3.html">M12.3 Intravenous Delivery of Anesthetic Drugs</a></p>
+</li>
+<li>
+<p><a href="0133536408_art12lev1sec4.html">M12.4 Blood Glucose Control in Diabetic Patients</a></p>
+</li>
+<li>
+<p><a href="0133536408_art12lev1sec5.html">M12.5 Blood Pressure Control in Post-Operative Patients</a></p>
+</li>
+<li>
+<p><a href="0133536408_art12lev1sec6.html">M12.6 Critical Care Patients</a></p>
+</li>
+<li>
+<p><a href="0133536408_art12lev1sec7.html">M12.7 Summary</a></p>
+</li>
+<li>
+<p><a href="0133536408_art12lev1sec8.html">References</a></p>
+</li>
+<li>
+<p><a href="0133536408_art12lev1sec9.html">Additional Exercises</a></p>
+</li>
+</ul>
+<h2 id="module-13-distillation-control">Module 13. Distillation Control</h2>
+<ul>
+<li>
+<p><a href="0133536408_art13.html">Module 13. Distillation Control</a></p>
+</li>
+<li>
+<p><a href="0133536408_art13lev1sec1.html">M13.1 Description of Distillation Control</a></p>
+</li>
+<li>
+<p><a href="0133536408_art13lev1sec2.html">M13.2 Open-Loop Behavior</a></p>
+</li>
+<li>
+<p><a href="0133536408_art13lev1sec3.html">M13.3 SISO Control</a></p>
+</li>
+<li>
+<p><a href="0133536408_art13lev1sec4.html">M13.4 RGA Analysis</a></p>
+</li>
+<li>
+<p><a href="0133536408_art13lev1sec5.html">M13.5 Multiple SISO Controllers</a></p>
+</li>
+<li>
+<p><a href="0133536408_art13lev1sec6.html">M13.6 Singular Value Analysis</a></p>
+</li>
+<li>
+<p><a href="0133536408_art13lev1sec7.html">M13.7 Nonlinear Effects</a></p>
+</li>
+<li>
+<p><a href="0133536408_art13lev1sec8.html">M13.8 Other Issues in Distillation Column Control</a></p>
+</li>
+<li>
+<p><a href="0133536408_art13lev1sec9.html">M13.9 Summary</a></p>
+</li>
+<li>
+<p><a href="0133536408_art13lev1sec10.html">References</a></p>
+</li>
+<li>
+<p><a href="0133536408_art13lev1sec11.html">Additional Exercises</a></p>
+</li>
+<li>
+<p><a href="0133536408_art13lev1sec12.html">Appendix M13.1</a></p>
+</li>
+</ul>
+<h2 id="module-14-case-study-problems">Module 14. Case Study Problems</h2>
+<ul>
+<li>
+<p><a href="0133536408_art14.html">Module 14. Case Study Problems</a></p>
+</li>
+<li>
+<p><a href="0133536408_art14lev1sec1.html">M14.1 Background</a></p>
+</li>
+<li>
+<p><a href="0133536408_art14lev1sec2.html">M14.2 Reactive Ion Etcher</a></p>
+</li>
+<li>
+<p><a href="0133536408_art14lev1sec3.html">M14.3 Rotary Lime Kiln Temperature Control</a></p>
+</li>
+<li>
+<p><a href="0133536408_art14lev1sec4.html">M14.4 Fluidized Catalytic Cracking Unit</a></p>
+</li>
+<li>
+<p><a href="0133536408_art14lev1sec5.html">M14.5 Anaerobic Sludge Digester</a></p>
+</li>
+<li>
+<p><a href="0133536408_art14lev1sec6.html">M14.6 Drug Infusion System</a></p>
+</li>
+<li>
+<p><a href="0133536408_art14lev1sec7.html">M14.7 Suggested Case Study Schedule</a></p>
+</li>
+<li>
+<p><a href="0133536408_art14lev1sec8.html">M14.8 Summary</a></p>
+</li>
+<li>
+<p><a href="0133536408_art14lev1sec9.html">Additional Exercises</a></p>
+</li>
+</ul>
+<h2 id="module-15-flow-control">Module 15. Flow Control</h2>
+<ul>
+<li>
+<p><a href="0133536408_art15.html">Module 15. Flow Control</a></p>
+</li>
+<li>
+<p><a href="0133536408_art15lev1sec1.html">M15.1 Motivating Example</a></p>
+</li>
+<li>
+<p><a href="0133536408_art15lev1sec2.html">M15.2 Flowmeters</a></p>
+</li>
+<li>
+<p><a href="0133536408_art15lev1sec3.html">M15.3 Control Valves</a></p>
+</li>
+<li>
+<p><a href="0133536408_art15lev1sec4.html">M15.4 Pumping and Piping Systems</a></p>
+</li>
+<li>
+<p><a href="0133536408_art15lev1sec5.html">M15.5 Summary</a></p>
+</li>
+<li>
+<p><a href="0133536408_art15lev1sec6.html">References</a></p>
+</li>
+<li>
+<p><a href="0133536408_art15lev1sec7.html">Additional Exercises</a></p>
+</li>
+</ul>
+<h2 id="module-16-digital-control">Module 16. Digital Control</h2>
+<ul>
+<li>
+<p><a href="0133536408_art16.html">Module 16. Digital Control</a></p>
+</li>
+<li>
+<p><a href="0133536408_art16lev1sec1.html">M16.1 Background</a></p>
+</li>
+<li>
+<p><a href="0133536408_art16lev1sec2.html">M16.2 PID Controllers</a></p>
+</li>
+<li>
+<p><a href="0133536408_art16lev1sec3.html">M16.3 Stability Analysis for Digital Control Systems</a></p>
+</li>
+<li>
+<p><a href="0133536408_art16lev1sec4.html">M16.4 Performance of Digital Control Systems</a></p>
+</li>
+<li>
+<p><a href="0133536408_art16lev1sec5.html">M16.5 Discrete IMC</a></p>
+</li>
+<li>
+<p><a href="0133536408_art16lev1sec6.html">M16.6 Summary</a></p>
+</li>
+<li>
+<p><a href="0133536408_art16lev1sec7.html">References</a></p>
+</li>
+<li>
+<p><a href="0133536408_art16lev1sec8.html">Additional Exercises</a></p>
+</li>
+<li>
+<p><a href="0133536408_art16lev1sec9.html">Appendix M16.1: S'IMULINK' .mdl File for Example M16.2</a></p>
+</li>
+<li>
+<p><a href="0133536408_art16lev1sec10.html">Appendix M16.2: S'IMULINK' .m and .mdl Files for Example M16.3</a></p>
+</li>
+</ul>
+<h2 id="about-the-author">About the Author</h2>
+<ul>
+<li><a href="0133536408_art17.html">About the Author</a></li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.instant", "navigation.tracking", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.48f2be22.min.js"></script>
+      
+    
+  </body>
+</html>

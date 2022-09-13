@@ -1,0 +1,728 @@
+.a1 a:hover { 
+	text-decoration : underline;
+	color : #000000;
+}
+
+.a1 a:link, .a1 a:visisted { 
+	text-decoration : underline;
+	color : #666666;
+}
+
+.a1 { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 7.5pt;
+	color : #666666;
+}
+
+.a2 a:hover { 
+	text-decoration : underline;
+	color : #000000;
+}
+
+.a2 a:link { 
+	text-decoration : underline;
+	color : #666666;
+}
+
+.a2 { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 7.5pt;
+	color : #666666;
+	text-decoration : none;
+}
+
+.a3 { 
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 7.5pt;
+	color : #4B4B4B;
+	text-decoration : none;
+}
+
+.a3:hover { 
+	text-decoration : underline;
+	color : #9E0B0E;
+}
+
+.a3:link { 
+	text-decoration : underline;
+	color : #4B4B4B;
+}
+
+.a4 { 
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color : #222222;
+	line-height: 18px;
+}
+
+.AdvancedSearchTextHighlight { 
+	background-color: #f7e583;
+}
+	
+.bg { 
+	background-color: #ffffff;
+}
+
+BODY { 
+	background-color: white;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+.DefaultPageHeadline { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12pt;
+	line-height: 14pt;
+	font-weight: bold;
+}
+
+.DefaultPageText { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+}
+
+/* SETS THE BACKGROUND COLOR FOR DIALOG BOXES SUCH AS ADVANCED SEARCH */
+.dlg { 
+	background-color: #EEEEEE;
+}
+
+.entrybox1 { 
+	border: 1px solid #E7D68E;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+.FAQBoxHeadline { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	color : #CC0033;
+	text-decoration : none;
+	font-weight: bold;
+	line-height: 10pt 
+}
+
+.FAQBoxQuestion { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color : #303030;
+	line-height: 10pt;
+	text-decoration : none;
+	font-weight: bold 
+}
+
+.FAQBoxAnswer { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	text-decoration : none;
+	color : #4B4B4B;
+	line-height: 10pt;
+	font-weight: normal 
+}
+
+.GroupNotesBorder { 
+	background-color: #666666;
+}
+
+.GroupNotesEvenRows { 
+}
+
+.GroupNotesOddRows { 
+}
+
+
+.GroupNotesTableHeading { 
+	background-color: #EEEEEE;
+}
+
+.hdr1 { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight: bold;
+	padding-left: 2px;
+	text-align: left;
+	border-top-width: 1px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #999999;
+	border-left-color: #999999;
+	color: #0A0A0A;
+	vertical-align: middle;
+	line-height: 12px;
+}
+
+.ListByCatBorder { 
+	background-color: #666666;
+}
+
+.ListByCatEvenRows { 
+	background-color: #EEEEEE;
+}
+
+.ListByCatOddRows { 
+	background-color: #FFFFFF;
+}
+
+.ListByCatTableHeading { 
+	background-color: #999999;
+}
+
+/* SETS THE BACKGROUND AND TEXT COLORS FOR THE NAV BAR LOGOUT CELL IN TOP.XSL */
+.logout { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color : #FFFFFF;
+	text-decoration : none;
+	background-color: #BA8600;
+}
+
+.logout:hover { 
+}
+
+.menuborder { 
+	background-color: #666666;
+}
+
+.menuLeft { 
+	background-color: #EEEEEE;
+}
+
+.menuRight { 
+	background-color: #EEEEEE;
+}
+
+/* SETS THE BACKGROUND AND TEXT PROPERTIES FOR THE HEADER BARS IN THE RIGHT MENU OF HOME.XSL */
+.menuRightHeader { 
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight : bold;
+	text-decoration : none;
+	color: #FFFFFF;
+	background-color: #333366;
+}
+
+/* SETS THE BACKGROUND AND TEXT PROPERTIES FOR THE LOGIN AND WELCOME BARS IN THE RIGHT MENU OF HOME.XSL */
+.menuRightLoginHeader { 
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-weight : bold;
+	text-decoration : none;
+	background-color: #B5121B;
+	color: #FFD200;
+}	
+
+.MyBookmarksBorder { 
+	background-color:#666666;
+}
+
+.MyBookmarksEvenRows { 
+	background-color: #EEEEEE;
+}
+
+.MyBookmarksOddRows { 
+	
+}
+
+.MyBookmarksTableHeading { 
+	background-color: #EEEEEE;
+}
+
+.MyBookshelfBorder { 
+	background-color: #666666;
+}
+
+.MyBookshelfSpacer { 
+	background-color: #666666;
+}
+
+.MyBookshelfEvenRows { 
+}
+
+.MyBookshelfOddRows { 
+}
+
+.MyBookshelfTableHeading { 
+}
+
+.MyNotesBorder { 
+	background-color: #666666;
+}
+
+.MyNotesEvenRows { 
+}
+
+.MyNotesOddRows { 
+}
+
+.MyNotesTableHeading { 
+	background-color: #EEEEEE;
+}
+
+.MyRecentPagesBorder { 
+	background-color: #666666;
+}
+
+.MyRecentPagesEvenRows { 
+}
+
+.MyRecentPagesOddRows { 
+}
+
+.MyRecentPagesTableHeading { 
+	background-color: #EEEEEE;
+}
+
+.MyRecentSearchesBorder { 
+	background-color: #666666;
+}
+
+.MyRecentSearchesEvenRows { 
+}
+
+.MyRecentSearchesOddRows { 
+}
+
+.MyRecentSearchesTableHeading { 
+	background-color: #EEEEEE;
+}
+
+.n1 { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color : #303030;
+	line-height: 16px;
+	text-decoration : none;
+	padding: 7px;
+}
+
+/* SETS THE TEXT AND BACKGROUND COLORS FOR THE NAVIGATION BUTTONS ON TOP.XSL */
+.navbtn { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight : bold;
+	color : #FFFFFF;
+	text-decoration : none;
+	background-color: #BA8600;
+}
+
+/* SETS THE TEXT COLOR FOR THE SELECTED NAVIGATION BUTTON ON TOP.XSL WHEN HOVERING */
+.navbtn:hover { 
+	color:#000000;
+	text-decoration: none;
+}
+
+/* SETS THE TEXT AND BACKGROUND COLORS FOR THE SELECTED NAVIGATION BUTTON ON TOP.XSL */
+.navbtnSel { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight : bold;
+	color : #FFFFFF;
+	text-decoration : none;
+	background-color: #000000;
+}
+
+/* SETS THE BACKGROUND COLOR FOR THE EXTRA NAVIGATION BUTTON TO THE LEFT OF HOME ON TOP.XSL */
+.navbtnLeft { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight : bold;
+	color : #FFFFFF;
+	text-decoration : none;
+	background-color: #FFD200;
+}
+
+.NewThisWeekBorder { 
+	background-color: #666666;
+}
+
+.NewThisWeekEvenRows { 
+}
+
+.NewThisWeekOddRows { 
+}
+
+.NewThisWeekTableHeading { 
+}
+
+.PreviewTableTitleBackground { 
+	color: #F3E583;
+	font-weight: bold;
+	font-size: 9pt;
+	line-height: 20px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	background-color: #CC0000;
+	text-align: left;
+	font-weither: bold 
+}
+
+.PreviewTableBodyBackground { 
+	color: #303030;
+	font-weight: normal;
+	font-size: 8pt;
+	line-height: 16px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	background-color: #FFD2D3 
+}
+
+.printhdr { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12pt;
+}
+
+.PublicNotesBorder { 
+	background-color: #666666;
+}
+
+.PublicNotesEvenRows { 
+}
+
+.PublicNotesOddRows { 
+}
+
+.PublicNotesTableHeading { 
+	background-color: #EEEEEE;
+}
+
+.RecommendedTitlesBorder { 
+	background-color: #666666;
+}
+
+.RecommendedTitlesEvenRows { 
+}
+
+.RecommendedTitlesOddRows { 
+}
+
+.RecommendedTitlesTableHeading { 
+}
+
+.SearchResultBorder { 
+	background-color:#666666;
+}
+
+.SearchResultEvenRows { 
+	background-color:#EEEEEE;
+}
+
+.SearchResultOddRows { 
+	background-color:#FFFFFF;
+}
+
+.SearchResultTableHeading { 
+	background-color: #CCCCCC;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 7.5pt;
+	padding-left: 2px;
+	text-align: center;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	color: #000000;
+	vertical-align: middle;
+	line-height: 12px;
+}
+
+.SectionSearchResultBorder { 
+	background-color:#666666;
+}
+
+.SectionSearchResultEvenRows { 
+	background-color:#ffffff;
+}
+
+.SectionSearchResultOddRows { 
+	background-color:#EEEEEE;
+}
+
+.SectionSearchResultTableHeading { 
+	background-color: #CCCCCC;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 7.5pt;
+	padding-left: 2px;
+	text-align: center;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	color: #000000;
+	vertical-align: middle;
+	line-height: 12px;
+}
+
+.t1 { 
+	color:#000000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12pt;
+	font-weight:bold;
+}
+
+.t2 a { 
+	color:#003399;
+}
+
+.t2 a:hover { 
+	color:#000033;
+}
+
+.t2 a:visited { 
+	color:#003399;
+}
+
+.t2 { 
+	color:#000000;
+	font-size: 7.5pt;
+}
+
+.t3 { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8.5pt;
+	font-weight : bold;
+	background-color: #BA8600;
+	color: #FFFFFF;
+}
+
+.t4 { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight : bold;
+	text-decoration : none;
+	background-color: #BA8600;
+	color: #FFFFFF;
+}
+
+.t5 { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 7.5pt;
+	font-weight : bold;
+	text-decoration : none;
+	color: #000000;
+	background-color: #EDB933;
+}
+
+.TextFrame { 
+	background-color: #d1c8a1;
+}
+
+.toc { 
+	background-color: #F6DD99;
+}
+
+.Top5Border { 
+	background-color: #666666;
+}
+
+.Top5EvenRows { 
+}
+
+.Top5OddRows { 
+}
+
+.Top5TableHeading { 
+}
+
+/* SETS THE BACKGROUND COLOR FOR THE TOP BAR OF TOP.XSL */
+.toplogo { 
+	background-color: #A3A8B1;
+}
+
+/* SETS THE BORDER BACKGROUND COLOR FOR THE NAVBAR OF TOP.XSL */
+.topmenu { 
+	background-color: #000000;
+}
+
+.v1 a:hover { 
+	color : #000033;
+}
+
+.v1 a:link { 
+	color : #003399;
+}
+
+.v1 { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color : #000000;
+}
+
+.v2 a:hover { 
+	color : #000033;
+}
+
+.v2 a:link, .v2 a:visited { 
+	color : #003399;
+}
+
+.v2 { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 7.5pt;
+	color : #000000;
+	line-height: 16px;
+}
+
+.v3 { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	text-decoration : none;
+	color : #4B4B4B;
+}
+
+.v3:hover { 
+	text-decoration : underline;
+	color : #9E0B0E;
+}
+
+.v3:link { 
+	text-decoration : none;
+	color : #303030;
+}
+
+.v4 a:hover { 
+	font-weight: bold;
+	text-decoration : underline;
+	color : #000000;
+}
+
+.v4 a:link, .v4 a:visited { 
+	font-weight: bold;
+	text-decoration : none;
+	color : #000000;
+}
+
+.v4 { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 7.5pt;
+	font-weight: bold;
+	color : #000000;
+}
+
+/* BEGIN New InformIT Styles */
+
+.HelpHeaderBar { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 7.5pt;
+	font-style: normal;
+	font-weight: bold;
+	background-color: #EDB933;
+	color: #000000;
+	text-align: left;
+	text-indent: 5pt;
+	vertical-align: middle;
+	padding-left: 5px;
+}
+
+.HelpNavLinks a:hover { 
+	color : #000033;
+}
+
+.HelpNavLinks a:link { 
+	color : #003399;
+}
+
+.HelpNavLinks { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 7.5pt;
+	color : #000000;
+	line-height: 12px;
+	font-weight: bold;
+	list-style-image: none;
+	list-style-type: none;
+	list-style-position: inside;
+}
+
+.HelpNavLinks2 a:hover { 
+	color : #000033;
+}
+
+.HelpNavLinks2 a:link { 
+	color : #003399;
+}
+
+.HelpNavLinks2 { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 7.5pt;
+	font-weight: normal;
+	color: #000000;
+	list-style-image: none;
+	list-style-type: none;
+	list-style-position: inside;
+	text-indent: 5pt;
+}
+
+.HelpSectionHead { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-style: normal;
+	font-weight: bold;
+	color: #000000;
+	text-align: left;
+}
+
+.HelpSectionSubHead { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 7.5pt;
+	font-style: normal;
+	font-weight: bold;
+	color: #000000;
+	text-align: left;
+}
+
+.HelpText { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 7.5pt;
+	list-style-position: inside;
+	list-style-image: none;
+	list-style-type: disc;
+	color: #000000;
+}
+
+.copyright a, .copyright a:visited { 
+	color:#FFFFFF 
+}
+
+.copyright a:hover { 
+	color:#000000 
+}
+
+.copyright { 
+	color:#FFFFFF;
+	font-size: 7.5pt 
+}
+
+.navbtnSel:hover { 
+	color:#BA8600;
+	text-decoration: none;
+}
+
+.networklink a, .networklink a:visited { 
+	color:#454B55 
+}
+
+.networklink a:hover { 
+	color:#000000 
+}
+
+.networklink { 
+	color: #454B55;
+	font-size: 7.5pt 
+}
+
+.td { 
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #000000;
+}
+	
+/* END New InformIT Styles */

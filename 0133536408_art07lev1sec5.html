@@ -1,0 +1,35 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="M7.5 S'IMULINK' Model File"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_art07lev1sec4.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_art07lev1sec6.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="art07lev1sec5"></A><H3 class="docSection1Title">M7.5 S<span class="docEmphSmaller">IMULINK</span> Model File</H3>
+<P class="docText">In order to save time on constructing your block diagram, copy the block for the bioreactor from the textbook web page (see <A class="docLink" HREF="#art07m7fig02">Figure M7-2</A>)</P>
+<pre>
+
+</pre><pre>
+biofbc.mdl
+</pre>
+<CENTER><H5 class="docFigureTitle"><A NAME="art07m7fig02"></A>Figure M7-2. S<span class="docEmphSmaller">IMULINK</span> block diagram for bioreactor.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="295" src="FILES/m07fig02.gif" ALT="graphics/m07fig02.gif"></p></CENTER>
+<P class="docText">I recommend that you make your proportional and integral terms in the PID controller a function of lambda (<font face="symbol">l</font>). Then, before each simulation run, you merely have to type in a new lambda in the M<span class="docEmphSmaller">ATLAB</span> window, rather than typing in new PI parameters. Always realize that the integral term in the default S<span class="docEmphSmaller">IMULINK</span> PID block is our <span class="docEmphasis">k</span><SUB>c</SUB>/<font face="symbol">t</font><SUB>I</SUB>.</P>
+<P class="docText">Notice that the S<span class="docEmphSmaller">IMULINK</span> diagram contains two extra blocks. The transport delay block can be inserted in the feedback loop to illustrate the effects of a measurement time delay. The PID controller for the open-loop unstable point can be inserted when Additional Exercise 2 is being solved.</P>
+<P class="docText">The following must be entered into the M<span class="docEmphSmaller">ATLAB</span> command window: initial conditions, <span class="docEmphasis">x</span>1i and <span class="docEmphasis">x</span>2i; setpoint for biomass concentration, <span class="docEmphasis">x</span>1sp; final simulation time, tfinal; substrate feed concentration, x2f; and the IMC filter factor, lambda.</P>
+<UL><LI><P class="docList">The transfer function parameters are used by the PID controller block. The IMC-based PID parameters are different depending on whether the process is open-loop stable (Additional Exercise 1) or open-loop unstable (Additional Exercise 2). This is also seen by comparing <A class="docLink" HREF="0133536408_ch09lev1sec5.html#ch09table01">Tables 9-1</A> and <A class="docLink" HREF="0133536408_ch09lev1sec7.html#ch09table03">9-3</A>.</P></LI><LI><P class="docList">Notice that a saturation block is used so that the dilution rate is bounded between 0.0 and 0.6. This is consistent with "real-world" constraints on manipulated variable action.</P></LI><LI><P class="docList">The typical rule-of-thumb for <font face="symbol">l</font> for open-loop stable systems is roughly one third to one half of the dominant time constant. There are no good rules-of-thumb for open-loop unstable systems.</P></LI></UL>
+<P class="docText">When performing your simulations, plot the dilution rate to see if it is hitting a constraint.</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_art07lev1sec4.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_art07lev1sec6.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

@@ -1,0 +1,67 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="M3.2 M'ATLAB' ode—Options"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_art03lev1sec1.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_art03lev1sec3.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="art03lev1sec2"></A><H3 class="docSection1Title">M3.2 M<span class="docEmphSmaller">ATLAB</span> ode—Options</H3>
+<P class="docText">The M<span class="docEmphSmaller">ATLAB</span> integration routines have additional options (such as changing the default tolerances for integration) that can be set by the user. Also, parameters for the differential equations may be passed through the argument list to the function m-file.</P>
+<pre>
+
+</pre><pre>
+[t,x]= ode45('xprime',tspan,x0,options,P1,P2,...)
+[t,x]= ode23('xprime',tspan,x0,options,P1,P2,...)
+[t,x]= ode113('xprime',tspan,x0,options,P1,P2,...)
+[t,x]= ode15s('xprime',tspan,x0,options,P1,P2,...)
+[t,x]= ode23s('xprime',tspan,x0,options,P1,P2,...)
+[t,x]= ode23t('xprime',tspan,x0,options,P1,P2,...)
+[t,x]= ode23tb('xprime',tspan,x0,options,P1,P2,...)
+</pre>
+<P class="docText">To use the default options (generally recommended) and pass through parameter values, simply enter <TT>[ ]</TT> for the options element in the argument list. For example, create an <TT>'xprime.m'</TT> m-file for the differential equation</P>
+<pre>
+
+</pre><pre>
+function xdot = xprime(t,x,P1,P2,...)
+...
+</pre>
+<P class="docText">and enter</P>
+<pre>
+
+</pre><pre>
+[t,x]= ode45('xprime',tspan,x0,[ ],P1,P2,...);
+</pre>
+<P class="docText">in the M<span class="docEmphSmaller">ATLAB</span> command window.</P>
+<P class="docText">A typical application might be to be able to change the magnitude of an input variable. For example, consider the van de Vusse reactor shown in <A class="docLink" HREF="0133536408_art03lev1sec1.html#art03lev2sec1">Example M3.1</A>. The first line of the vdv_ode.m file could be modified in the fashion</P>
+<pre>
+
+</pre><pre>
+function xdot = vdv_ode(t,x,delstep);
+</pre>
+<P class="docText">where <TT>delstep</TT> represents the change in the manipulated input. The file is further modified by changing the following line</P>
+<pre>
+
+</pre><pre>
+fov = 4/7 + delstep;   % dilution rate (min^-1)
+</pre>
+<P class="docText">so that <TT>delstep</TT> represents a change from the nominal input value of 4/7 min<SUP>-1</SUP>. If the magnitude of the step change is 0.1, then the line entered in the M<span class="docEmphSmaller">ATLAB</span> command window is</P>
+<pre>
+
+</pre><pre>
+[t,x]= ode45('vdv_ode',[0 5],x0,[ ],0.1)
+</pre>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_art03lev1sec1.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_art03lev1sec3.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

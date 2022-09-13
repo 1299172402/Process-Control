@@ -1,0 +1,149 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="M1.2 Matrix Operations"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_art01lev1sec1.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_art01lev1sec3.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="art01lev1sec2"></A><H3 class="docSection1Title">M1.2 Matrix Operations</H3>
+<A NAME="art01lev2sec1"></A><H4 class="docSection2Title"> Matrix Notation Review</H4>
+<P class="docText">Matrices are ordered arrays of one or more dimensions. A one-dimensional matrix that can be either a column or a row is known as a vector. In this text, we normally use subscripts to denote the element numbers. Consider the following vectors of length 3, where c is a column vector and r is a row vector.</P>
+<p class="docText"><IMG BORDER="0" WIDTH="243" HEIGHT="62" src="FILES/m01equ01.gif" ALT="graphics/m01equ01.gif"></p><br>
+<P class="docText">Transposing each vector results in the following, where the superscript 'T' represents a transpose:</P>
+<p class="docText"><IMG BORDER="0" WIDTH="141" HEIGHT="60" src="FILES/m01equ02.gif" ALT="graphics/m01equ02.gif"></p><br>
+<P class="docText">A 3 x 2 matrix has three rows and two columns, as shown by the matrix <span class="docEmphasis">G</span>:</P>
+<p class="docText"><IMG BORDER="0" WIDTH="141" HEIGHT="62" src="FILES/m01equ03.gif" ALT="graphics/m01equ03.gif"></p><br>
+<P class="docText">Notice that the <span class="docEmphasis">ij</span> subscript refers to the element in the <span class="docEmphasis">i</span>th row and <span class="docEmphasis">j</span>th column.</P>
+<P class="docText">Dimensional consistency is very important in matrix operations. Consider the matrix operation</P>
+<p class="docText"><IMG BORDER="0" WIDTH="47" HEIGHT="12" src="FILES/m01equ04.gif" ALT="graphics/m01equ04.gif"></p>
+<br>
+<P class="docText">To be dimensionally consistent, the number of columns in <span class="docEmphasis">G</span> must be equal to the number of rows in <span class="docEmphasis">H</span>. When considering matrix multiplication, it is convenient to write the dimensions underneath the matrices. For a <span class="docEmphasis">G</span> matrix with <span class="docEmphasis">mg</span> rows and <span class="docEmphasis">ng</span> columns, and an <span class="docEmphasis">H</span> matrix with <span class="docEmphasis">nh</span> columns, then the rest of the dimensions must be</P>
+<p class="docText"><IMG BORDER="0" WIDTH="113" HEIGHT="25" src="FILES/m01equ16.gif" ALT="graphics/m01equ16.gif"></p><br>
+<P class="docText">The <span class="docEmphasis">ij</span>th element of <span class="docEmphasis">F</span> is found in the following fashion:</P>
+<p class="docText"><IMG BORDER="0" WIDTH="237" HEIGHT="18" src="FILES/m01equ05.gif" ALT="graphics/m01equ05.gif"></p>
+<br>
+<P class="docText">For the following <span class="docEmphasis">F</span> and <span class="docEmphasis">G</span> matrices,</P>
+<p class="docText"><IMG BORDER="0" WIDTH="182" HEIGHT="64" src="FILES/m01equ06.gif" ALT="graphics/m01equ06.gif"></p><br>
+<P class="docText">you should be able to calculate that</P>
+<p class="docText"><IMG BORDER="0" WIDTH="132" HEIGHT="61" src="FILES/m01equ07.gif" ALT="graphics/m01equ07.gif"></p><br>
+<A NAME="art01lev2sec2"></A><H4 class="docSection2Title"> M<span class="docEmphSmaller">ATLAB</span> Matrix Operations</H4>
+<P class="docText">The basic entity in M<span class="docEmphSmaller">ATLAB</span> is a rectangular matrix; the entries can be real or complex. Commas or spaces are used to delineate the separate values in a matrix. Consider the following vector, <TT>x</TT> (recall that a vector is simply a matrix with only one row or column), with six elements</P>
+<pre>
+
+</pre><pre>
+&#187; x = [1,3,5,7,9,11]
+x =
+     1     3     5     7     9    11
+</pre>
+<P class="docText">Notice that a row vector is the default in M<span class="docEmphSmaller">ATLAB</span> (in contrast to the default column vector used by this and most other textbooks). Instead of commas, we could have used spaces as the delimiter between columns</P>
+<pre>
+
+</pre><pre>
+&#187; x = [1  3  5  7  9  11]
+</pre>
+<P class="docText">There is a faster way to enter matrices or vectors that have a consistent pattern. For example, the following command creates the previous row vector</P>
+<pre>
+
+</pre><pre>
+&#187; x = 1:2:11
+</pre>
+<P class="docText">where the first element is 1, the increment is 2, up to the final element of 11. Transposing a row vector yields a column vector (<TT>'</TT> is the transpose command in M<span class="docEmphSmaller">ATLAB</span>),</P>
+<pre>
+
+</pre><pre>
+&#187; y = x'
+y =
+     1
+     3
+     5
+     7
+     9
+    11
+</pre>
+<P class="docText">If we want to make <TT>x</TT> a column vector, we use a semicolon as the delimeter between rows:</P>
+<pre>
+
+</pre><pre>
+  &#187; x = [1;3;5;7;9;11]
+x =
+     1
+     3
+     5
+     7
+     9
+    11
+</pre>
+<P class="docText">To make <TT>x</TT> a row vector again, we use the transpose</P>
+<pre>
+
+</pre><pre>
+&#187; x = x'
+</pre>
+<P class="docText">Say that we want to create a vector <TT>z</TT>, which has elements from 5 to 30, by increments of 5. To suppress the listing of vector elements, we add a semicolon at the end (<TT>;</TT>):</P>
+<pre>
+
+</pre><pre>
+&#187; z = 5:5:30;
+</pre>
+<P class="docText">The <TT>z</TT> vector is generated but not printed in the command window. We can find the value of the third element in the <TT>z</TT> vector, <TT>z(3)</TT>, by typing</P>
+<pre>
+
+</pre><pre>
+&#187; z(3)
+ans =
+    15
+</pre>
+<P class="docText">Matrix multiplication is straightforward. First, enter the two-dimensional matrix (here a semicolon is used to begin a new row):</P>
+<pre>
+
+</pre><pre>
+&#187;a = [1 2;3 4; 5 6]
+a =
+     1     2
+     3     4
+     5     6
+&#187; b = [1 2 3;4 5 6]
+b =
+     1     2     3
+     4     5     6
+</pre>
+<P class="docText">Remember that the order of multiplication of matrices is important (<span class="docEmphasis">AB</span> <img src="FILES/U2260.GIF" border=0> <span class="docEmphasis">BA</span>, in general)</P>
+<pre>
+
+</pre><pre>
+&#187; c = a*b
+c =
+     9    12    15
+    19    26    33
+    29    40    51
+&#187; d = b*a
+d =
+    22    28
+    49    64
+</pre>
+<P class="docText">Sometimes it is desirable to perform an <span class="docEmphasis">element-by-element</span> multiplication rather than matrix multiplication. For example, e(i,j) = a(i,j)*a(i,j) is performed by using the .* command</P>
+<pre>
+
+</pre><pre>
+&#187; e = a.*a
+e =
+     1     4
+     9    16
+    25    36
+</pre>
+<P class="docText">Similarly, element-by-element division, b(i,j)/c(i,j), can be performed using<TT> ./</TT></P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_art01lev1sec1.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_art01lev1sec3.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

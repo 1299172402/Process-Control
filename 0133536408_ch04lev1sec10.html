@@ -1,0 +1,59 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="Appendix 4.1: Files Used to Generate Example 4.4 "-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch04lev1sec9.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch04lev1sec11.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch04lev1sec10"></A><H3 class="docSection1Title" id="225793-881"> Appendix 4.1: Files Used to Generate <A class="docLink" HREF="0133536408_ch04lev1sec5.html#ch04lev2sec12">Example 4.4</A></H3>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch04a4fig01"></A>Figure A4-1. Simulink File <TT>est_vdv.mdl</TT>.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="287" src="FILES/04fig11e.gif" ALT="graphics/04fig11e.gif"></p></CENTER>
+<pre>
+
+</pre><pre>
+% use PRBS to estimate a discrete model of the vdv reactor
+%
+  T  = 0:0.25:5;       % time vector (row)
+  T  = T';             % time vector (column)
+  seed = [3;0.5];      % seed for noise generation
+  randn('state',seed); % using the same seed each time
+  uu = 0.5 1 0.25*randn(length(T),1); % mean of 0.5 with variance
+%                       of 0.25
+  U  = 2*round(uu)-1;  % creates PRBS with -1 and 1 values
+%
+  sim('est_vdv');      % runs simulation of linear van de vusse
+%                        diagram
+  figure(1);           % plot input-output data
+  subplot(2,1,1),plot(tp,yp,'k',t,y,'ko');
+  xlabel('time, min'), ylabel('y')
+  title('PRBS estimation example')
+  subplot(2,1,2),plot(tp,up,'k'); xlabel('time, min'),ylabel('u')
+  axis([0 5 -1.1 1.1])
+%                      % generate phi matrix for estimation
+  for j = 4:22;
+   phi(j-3,:) = [y(j-2) y(j-3) u(j-2) u(j-3)];
+  end
+%
+  theta = inv(phi'*phi)*phi'*y(3:21)  % estimate parameters
+%
+  num = [theta(3) theta(4)];     % numerator of discrete transfer function
+  den = [1 -theta(1) -theta(2)]; % denominator of discrete transfer function
+  sysd = tf(num,den,0.25)        % create discrete tf object
+  tzero(sysd)                    % calculate zeros
+  pole(sysd)                     % calculate poles
+  syszpk = zpk(sysd)             % zero-pole-k form
+</pre>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch04lev1sec9.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch04lev1sec11.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

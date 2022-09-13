@@ -1,0 +1,43 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="11.5 Controller Parameter (Gain) Scheduling"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch11lev1sec4.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch11lev1sec6.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch11lev1sec5"></A><H3 class="docSection1Title">11.5 Controller Parameter (Gain) Scheduling</H3>
+<P class="docText">Perhaps the most widely mentioned technique for controlling nonlinear processes is gain scheduling. Let <font face="symbol">a</font> represent the scheduling variable, which will often be the measured output, <span class="docEmphasis">y</span>. A gain-scheduled PID controller is then represented by</P>
+<P><B><A NAME="ch11equ16"></A>Equation 11.16 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="239" HEIGHT="49" src="FILES/11equ16.gif" ALT="graphics/11equ16.gif"></p><br>
+<P class="docText">Notice that the primary difference between this algorithm and the nonlinear PID controllers of the previous section is that <font face="symbol">a</font> is a general scheduling variable, whereas the controllers in the previous section were based on error as the scheduling variable. Although all of the controller parameters can be scheduled, controller gain is commonly scheduled because processes are often characterized as a changing gain with relatively constant dynamics. Typically, the controller gain, <span class="docEmphasis">k</span><SUB>c</SUB>, is varied to keep <span class="docEmphasis">k</span><SUB>c</SUB><span class="docEmphasis">k</span><SUB>p</SUB> constant, which then keeps the stability margin constant. If the process gain can be characterized as a function of the scheduling parameter, <span class="docEmphasis">k<SUB>p</SUB></span>(<font face="symbol">a</font>), then the controller gain can be scheduled as</P>
+<P><B><A NAME="ch11equ17"></A>Equation 11.17 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="124" HEIGHT="42" src="FILES/11equ17.gif" ALT="graphics/11equ17.gif"></p><br>
+<P class="docText">where the subscript 0 indicates a nominal operating point.</P>
+<P class="docText">An important step in developing a gain-scheduled controller is determining the proper scheduling variable. Rules of thumb such as scheduling on a "slow variable" or using a variable that "captures the nonlinearities" are often used. It is most common, then, to schedule based on either the setpoint or measured output, since the process input (manipulated variable) will vary more rapidly than the output. When there are additional measurements, then a measured or inferred "auxiliary" variable can be used for scheduling. The four basic steps in developing a parameter-scheduled controller are as follows:</P>
+<A NAME="ch11pr01"></A>
+
+
+
+<span style="font-weight:bold"><OL class="docList" START="1"><LI><span style="font-weight:normal" value="1"><P class="docText">Develop a linear process model for a set of operating conditions</P></span></LI><LI><span style="font-weight:normal" value="2"><P class="docText">Design linear controllers for each operating condition (model)</P></span></LI><LI><span style="font-weight:normal" value="3"><P class="docText">Develop a schedule for the controller parameters</P></span></LI><LI><span style="font-weight:normal" value="4"><P class="docText">Implement the parameter-scheduled controller on the nonlinear plant</P></span></LI></OL></span>
+<P class="docText">Note that steps 1 and 2 will often be combined by using some form of closed-loop tuning at discrete operating points. This is particularly true if the autotune feature of commercial controllers is used; the use of three operating points appears to be common.</P>
+<P class="docText">There are several different options for the scheduling of the controller parameters.</P>
+<UL><LI><P class="docList">Switch parameters at discrete values of the scheduling variable</P></LI><LI><P class="docList">Interpolate parameters as a function of the scheduling variable</P></LI><LI><P class="docList">Vary parameters continuously with the scheduling variable</P></LI></UL>
+<P class="docText">A major advantage of a parameter-scheduled controller is that linear control system design procedures can be used, and at least the local control system behavior can be understood. A problem can occur in steps three and four, where parameter scheduling is developed and implemented. If the dynamic effect of the scheduling variable is not included in the design process, then even the local linearized closed-loop behavior may not be predicted correctly.</P>
+<P class="docText">A general representation of a gain-scheduled controller is shown in <A class="docLink" HREF="#ch11fig15">Figure 11-15</A>, where <font face="symbol">a</font> represents the scheduling variable. The double lines on the process and controller blocks indicate that these are nonlinear.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch11fig15"></A>Figure 11-15. Parameter-scheduled control strategy.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="450" HEIGHT="140" src="FILES/11fig15.gif" ALT="graphics/11fig15.gif"></p></CENTER>
+<P class="docText">An example application of gain scheduling is distillation. Since the process gain is a function of the product composition, it makes sense to schedule the controller gain as a function of composition. This approach was taken by <A class="docLink" HREF="0133536408_ch11lev1sec9.html#ch11biblio01entry05">Tsogas and McAvoy (1985)</A> in the control of distillation composition, with distillate flow rate as the manipulated variable. The scheduling algorithm used was</P>
+<P><B><A NAME="ch11equ18"></A>Equation 11.18 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="212" HEIGHT="60" src="FILES/11equ18.gif" ALT="graphics/11equ18.gif"></p><br>
+<P class="docText">Notice that this is a "one-way" algorithm. Since the process gain increases with lower purity, maintaining a constant controller gain speeds up the response when the distillate is less pure.</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch11lev1sec4.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch11lev1sec6.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

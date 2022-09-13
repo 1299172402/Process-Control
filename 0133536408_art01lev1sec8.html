@@ -1,0 +1,123 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="M1.8 m-Files"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_art01lev1sec7.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_art01lev1sec9.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="art01lev1sec8"></A><H3 class="docSection1Title">M1.8 m-Files</H3>
+<P class="docText">Thus far we have shown the interactive features of M<span class="docEmphSmaller">ATLAB</span> by entering one command at a time. One reason that M<span class="docEmphSmaller">ATLAB</span> is powerful is that it is a language, and programs of M<span class="docEmphSmaller">ATLAB</span> code can be saved for later use. There are two ways of generating your own M<span class="docEmphSmaller">ATLAB</span> code: script files and function routines.</P>
+<A NAME="art01lev2sec3"></A><H4 class="docSection2Title"> Script Files</H4>
+<P class="docText">A script file is simply a sequence of commands that could have been entered interactively in the M<span class="docEmphSmaller">ATLAB</span> command window. When the sequence is long or must be performed a number of times, it is much easier to generate a script file.</P>
+<P class="docText">The following example is for the so-called quadratic map (population model)</P>
+<p class="docText"><IMG BORDER="0" WIDTH="109" HEIGHT="15" src="FILES/m01equ09.gif" ALT="graphics/m01equ09.gif"></p>
+<br>
+<P class="docText">where <span class="docEmphasis">x</span><SUB>k</SUB> represents the value of the population (dimensionless) at the <span class="docEmphasis">k</span>th time step. We have titled the file <TT>popmod.m</TT>. Use the M<span class="docEmphSmaller">ATLAB</span> text editor to generate this file and save it in a working directory as <TT>popmod.m</TT>.</P>
+<pre>
+
+</pre><pre>
+% popmod.m
+% population model, script file example
+%
+  clear x,k
+  n      = input('input final time step ');
+  alpha  = input('input alpha ');
+  xinit  = input('input initial population ');
+  x(1)   = xinit;
+  time(1)= 0;
+  for  k = 2:n+1;
+    time(k) = k-1;
+    x(k)    = alpha*x(k-1)*(1-x(k-1));
+  end
+  plot(time,x)
+%  end of script file example
+</pre>
+<P class="docText">Notice that we have used the M<span class="docEmphSmaller">ATLAB</span> input function to prompt the user for data. Also note that a percent sign (<TT>%</TT>) may be used to put comments in a script or function file. Any text after a <TT>%</TT> is ignored by the program.</P>
+<P class="docText">The file is run by simply entering</P>
+<pre>
+
+</pre><pre>
+ &#187; popmod
+</pre>
+<P class="docText">in the M<span class="docEmphSmaller">ATLAB</span> command window.</P>
+<A NAME="art01lev2sec4"></A><H4 class="docSection2Title"> Function Routines</H4>
+<P class="docText">A more powerful way of solving problems is to write M<span class="docEmphSmaller">ATLAB</span> function routines. Function routines are similar to subroutines in FORTRAN. Consider the previous example.</P>
+<pre>
+
+</pre><pre>
+  function [time,x] = pmod(alpha,xinit,n)
+% population model example, pmod.m
+  clear time; clear x; clear k;
+  x(1)   = xinit;
+  time(1)= 0;
+  for  k = 2:n+1;
+    time(k) = k-1;
+    x(k)    = alpha*x(k-1)*(1-x(k-1));
+  end
+%  end of function file example
+</pre>
+<P class="docText">where we generate and save a file titled <TT>pmod.m</TT>. We can now "run" this function routine (using <TT>alpha</TT> = 2.8, <TT>xinit</TT> = 0.1, <TT>n</TT> = 30) by typing the following in the M<span class="docEmphSmaller">ATLAB</span> command window:</P>
+<pre>
+
+</pre><pre>
+&#187; [tstep,xpop]=pmod(2.8,0.1,30);
+&#187; plot(tstep,xpop)
+</pre>
+<P class="docText">This function routine can also be called by other function routines. This feature leads to "structured programming"; structured programs are easy to follow and debug.</P>
+<A NAME="art01lev2sec5"></A><H4 class="docSection2Title"> Commonly Used M<span class="docEmphSmaller">ATLAB</span> Functions</H4>
+<P class="docText">M<span class="docEmphSmaller">ATLAB</span> has many built-in function routines that you will use throughout this text. The most commonly used routines are <TT>fzero</TT>, <TT>fsolve</TT>, and <TT>ode45</TT>, used to solve a single nonlinear algebraic equation, multiple nonlinear algebraic equations, and a set of nonlinear differential equations, respectively. The optimization toolbox is required to use <TT>fzero</TT> and <TT>fsolve</TT>.</P>
+<A NAME="art01lev3sec1"></A><H5 class="docSection3Title"> Single Nonlinear Algebraic Equation</H5>
+<P class="docText"><TT>fzero</TT> is used to solve a single nonlinear algebraic equation. As an example, consider</P>
+<p class="docText"><IMG BORDER="0" WIDTH="83" HEIGHT="16" src="FILES/m01equ10.gif" ALT="graphics/m01equ10.gif"></p>
+<br>
+<P class="docText">The first step is to generate a function file, which we will call <TT>fcn</TT> (any name can be used). For this simple example, the function file can consist of two lines,</P>
+<pre>
+
+</pre><pre>
+function y = fcn(x)
+y = x^2 - 2*x -3;
+</pre>
+<P class="docText">and can be saved as <TT>fcn.m</TT>. The user must enter the following command in the command window, where 0 is the initial guess. Notice that <TT>fzero</TT> calls the <TT>fcn</TT> routine, using an initial guess for the solution,</P>
+<pre>
+
+</pre><pre>
+&#187;  y = fzero(@fcn,0)
+</pre>
+<P class="docText">and the following answer is returned</P>
+<pre>
+
+</pre><pre>
+y =  -1
+</pre>
+<P class="docText">We know that there will be two solutions, since this is a quadratic equation. Indeed, an initial guess of x = 2 yields the following result:</P>
+<pre>
+
+</pre><pre>
+&#187; y = fzero(@fcn,2)
+  y =   3.0000
+</pre>
+<P class="docText">Since the function is a polynomial, we can use a function developed for polynomial solutions. The M<span class="docEmphSmaller">ATLAB</span> function <TT>roots</TT> finds the solution to the quadratic equation, using</P>
+<pre>
+
+</pre><pre>
+&#187;  roots([1 -2 -3])
+   ans =
+        3
+       -1
+</pre>
+<P class="docText">which yields the two solutions expected.</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_art01lev1sec7.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_art01lev1sec9.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

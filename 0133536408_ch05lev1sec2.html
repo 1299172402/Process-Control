@@ -1,0 +1,54 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="5.2 Development of Control Block Diagrams"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch05lev1sec1.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch05lev1sec3.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch05lev1sec2"></A><H3 class="docSection1Title" id="225793-935">5.2 Development of Control Block Diagrams</H3>
+<P class="docText">Control block diagrams are used to analyze the dynamic effect of feedback control loops. All dynamic elements in a control loop are combined, using their Laplace transfer function representation. In this section we use the control strategy from <A class="docLink" HREF="0133536408_ch05lev1sec1.html#ch05fig01">Figure 5-1</A> (where the inlet flow rate is manipulated) for illustration. Block diagrams are based on Laplace domain signals, which are assumed to be in deviation variable (perturbations from steady state) form. The block diagram for <A class="docLink" HREF="0133536408_ch05lev1sec1.html#ch05fig01">Figure 5-1</A> has the following components:</P>
+<UL><LI><P class="docList">Level controller (relates error to controller output)</P></LI><LI><P class="docList">Valve (relates controller output signal to flow-through valve)</P></LI><LI><P class="docList">Process (relates manipulated input to process output)</P></LI><LI><P class="docList">Disturbance (relates the disturbance input to the process output)</P></LI><LI><P class="docList">Sensor (measures tank level)</P></LI></UL>
+<A NAME="ch05lev2sec4"></A><H4 class="docSection2Title"> Controller Transfer Function</H4>
+<P class="docText">Notice first that the level controller compares the measured tank level (<span class="docEmphasis">h</span><SUB>m</SUB>) to the desired tank level (<span class="docEmphasis">h</span><SUB>sp</SUB>). The desired tank level is known as the <span class="docEmphasis">setpoint</span>, and the difference between the setpoint and the measured process output is the <span class="docEmphasis">error</span>.</P>
+<P class="docText">From the proportional control law (algorithm) for this system [Equation (<A class="docLink" HREF="0133536408_ch05lev1sec1.html#ch05equ02">5.2</A>)], realizing that <span class="docEmphasis">b</span> = <span class="docEmphasis">P</span><SUB>v1s</SUB> (steady-state pressure to valve), we find the controller input-output relationship</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="144" HEIGHT="19" src="FILES/05equ04h.gif" ALT="graphics/05equ04h.gif"></p>
+<br>
+<P class="docText">where the controller input signal is the <span class="docEmphasis">error</span>, which is the difference between the <span class="docEmphasis">setpoint</span> and measured process output. We write the equation [where <span class="docEmphasis">c</span>(<span class="docEmphasis">s</span>) is the <span class="docEmphasis">controller output</span>, the pressure to the valve]</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="138" HEIGHT="19" src="FILES/05equ04i.gif" ALT="graphics/05equ04i.gif"></p>
+<br>
+<P class="docText">which is the transfer function form for a proportional-only controller.</P>
+<P><B><A NAME="ch05equ05"></A>Equation 5.5 </B></P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="136" HEIGHT="19" src="FILES/05equ05.gif" ALT="graphics/05equ05.gif"></p><br>
+<P class="docText">A block diagram for the controller is shown in <A class="docLink" HREF="#ch05fig04">Figure 5-4</A>, where <span class="docEmphasis">g</span><SUB>c</SUB>(<span class="docEmphasis">s</span>) = <span class="docEmphasis">k</span><SUB>c</SUB>. For convenience when analyzing block diagrams, the comparator is shown outside the controller transfer function block. The block diagram uses <span class="docEmphasis">r</span>(<span class="docEmphasis">s</span>) to represent the setpoint, and <span class="docEmphasis">y</span><SUB>m</SUB>(<span class="docEmphasis">s</span>) to represent the measured process output.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch05fig04"></A>Figure 5-4. Block diagram relationship for controller transfer function. The orientation for the transfer function representation of the controller is slightly different from that of the physical system.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="240" src="FILES/05fig04.gif" ALT="graphics/05fig04.gif"></p></CENTER>
+<A NAME="ch05lev2sec5"></A><H4 class="docSection2Title"> Valve Transfer Function</H4>
+<P class="docText">The block diagram for the valve is shown in <A class="docLink" HREF="#ch05fig05">Figure 5-5</A>. The input signal is the pressure to the valve top and the output is the flow rate of fluid through the valve.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch05fig05"></A>Figure 5-5. Block diagram of valve and the physical system.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="190" src="FILES/05fig05.gif" ALT="graphics/05fig05.gif"></p></CENTER>
+<A NAME="ch05lev2sec6"></A><H4 class="docSection2Title"> Process Transfer Function</H4>
+<P class="docText">This process block diagram is shown in <A class="docLink" HREF="#ch05fig06">Figure 5-6</A>. The input to the block is the flow rate to the tank, and the output is the tank level.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch05fig06"></A>Figure 5-6. Block diagram of the manipulated input effect on the process.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="141" src="FILES/05fig06.gif" ALT="graphics/05fig06.gif"></p></CENTER>
+<A NAME="ch05lev2sec7"></A><H4 class="docSection2Title"> Disturbance Transfer Function</H4>
+<P class="docText">This disturbance (outlet flow rate) block diagram is shown in <A class="docLink" HREF="#ch05fig07">Figure 5-7</A>. The disturbance input is the flow rate from the tank (which may be due to changes in a downstream control valve not shown), and the output is the tank level.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch05fig07"></A>Figure 5-7. Block diagram of the disturbance input effect on the process.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="163" src="FILES/05fig07.gif" ALT="graphics/05fig07.gif"></p></CENTER>
+<A NAME="ch05lev2sec8"></A><H4 class="docSection2Title"> Measurement (Sensor) Transfer Function</H4>
+<P class="docText">This measurement block diagram is shown in <A class="docLink" HREF="#ch05fig08">Figure 5-8</A>. The input to the block is the tank level and the output is the actual measurement of tank level.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch05fig08"></A>Figure 5-8. Block diagram of sensor.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="120" src="FILES/05fig08.gif" ALT="graphics/05fig08.gif"></p></CENTER>
+<A NAME="ch05lev2sec9"></A><H4 class="docSection2Title"> Control Block Diagram</H4>
+<P class="docText">We can combine <A class="docLink" HREF="#ch05fig04">Figures 5-4</A> to <A class="docLink" HREF="#ch05fig08">5-8</A> to obtain the feedback control system block diagram shown in <A class="docLink" HREF="#ch05fig09">Figure 5-9</A>. This is similar to the conceptual block diagram developed in <A class="docLink" HREF="0133536408_ch01.html#ch01">Chapter 1</A> (<A class="docLink" HREF="0133536408_ch01lev1sec1.html#ch01fig04">Figure 1-4</A>). There are two externally supplied signals, the setpoint (desired tank height) and the load disturbance (flow rate to downstream process).</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch05fig09"></A>Figure 5-9. Control system block diagram.</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="290" src="FILES/05fig09.gif" ALT="graphics/05fig09.gif"></p></CENTER>
+<P class="docText">We often assume that the output variable can be perfectly measured, and that process input (usually a flow rate) is directly manipulated; in this case we do not include the valve and measurement transfer functions in the closed-loop block diagram. Equivalently, we can "lump" the valve and measurement dynamics into the process transfer function, again allowing us to neglect the valve and measurement transfer functions. Similarly, the measurement device can be lumped into the disturbance transfer function.</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch05lev1sec1.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch05lev1sec3.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

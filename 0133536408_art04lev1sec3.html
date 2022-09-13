@@ -1,0 +1,57 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="M4.3 Converting Continuous Models to Discrete"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_art04lev1sec2.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_art04lev1sec4.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="art04lev1sec3"></A><H3 class="docSection1Title">M4.3 Converting Continuous Models to Discrete</H3>
+<P class="docText">The Control Toolbox can also easily convert continuous models to discrete, using the <TT>c2d</TT> command.</P>
+<pre>
+
+</pre><pre>
+sysd =  c2d(sysc,Ts,method)  % continuous to discrete
+</pre>
+<P class="docText">where <TT>sysc</TT> is the LTI object for a continuous model, <TT>sysd</TT> is the discrete object to be created, <TT>Ts</TT> is the sample time, and <TT>method</TT> is the type of hold placed on the input variable. We always assume a zero-order hold (<TT>'zoh'</TT>); this is also the default if no entry is made for <TT>method</TT>.</P>
+<P class="docText">Consider the continuous state space model for the van de Vusse reactor, <TT>vdv_ss</TT>. It can be converted to the discrete-time model using the following M<span class="docEmphSmaller">ATLAB</span> commands:</P>
+<pre>
+
+</pre><pre>
+&#187; vdv_ssd = c2d(vdv_ss,0.1,'zoh')
+
+a =
+                        x1           x2
+           x1      0.78625            0
+           x2     0.066067      0.79947
+
+b =
+                        u1
+           x1      0.62219
+           x2    -0.075061
+
+c =
+                        x1           x2
+           y1            0            1
+
+d =
+                        u1
+           y1            0
+
+Sampling time: 0.1
+Discrete-time system.
+</pre>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_art04lev1sec2.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_art04lev1sec4.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

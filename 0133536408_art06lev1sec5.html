@@ -1,0 +1,51 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="M6.5 IMC-Based PID Control"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_art06lev1sec4.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_art06lev1sec6.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="art06lev1sec5"></A><H3 class="docSection1Title">M6.5 IMC-Based PID Control</H3>
+<P class="docText">Recall from <A class="docLink" HREF="0133536408_ch09.html#ch09">Chapter 9</A> that Pad&eacute; approximations for dead time could be used to develop a IMC-based PI and PID controllers for first-order + time-delay systems. Here, we compare the gain and phase margins for an IMC-based PI controller (using the "improved" settings) for various values of <font face="symbol">l</font>.</P>
+<P class="docText">The improved IMC-based PI settings are as follows:</P>
+<p class="docText"><IMG BORDER="0" WIDTH="84" HEIGHT="62" src="FILES/m06equ05.gif" ALT="graphics/m06equ05.gif"></p><br>
+<p class="docText"><span class="docEmphasis">Problem 4</span>. 
+For the IMC-based PI (improved) settings, find the value of <font face="symbol">l</font> that leads to a gain margin of 2.5. Also, find the value of <font face="symbol">l</font> that leads to a phase margin of 75&#176;. Compare the time-domain closed-loop responses for these two systems (always include plots of the manipulated inputs). <span class="docEmphasis">Hint</span>: Recall that the improved IMC-based PI settings for first-order + time-delays systems are</p>
+<p class="docText"><IMG BORDER="0" WIDTH="191" HEIGHT="45" src="FILES/m06equ06.gif" ALT="graphics/m06equ06.gif"></p><br>
+<P class="docText">For <font face="symbol">l</font> = 10, we find</P>
+<pre>
+
+</pre><pre>
+&#187; gc = tf([1.25*12.5 1.25],[12.5 0])
+
+Transfer function:
+15.62 s + 1.25
+--------------
+    12.5 s
+
+&#187; [mag,phase,w] = bode(gc*fodt);
+&#187; [Gm,Pm,Wco,Wpm] = imargin(squeeze(mag),squeeze(phase),w)
+
+Gm  =  2.63261419901939
+Pm  = 63.19455846288847
+Wco =  0.32379172211747
+Wpm =  0.11488259758305
+</pre>
+<P class="docText">Here, we see that the gain margin requirement is satisfied. Increase <font face="symbol">l</font> until the phase margin is satisfied.</P>
+<p class="docText"><span class="docEmphasis">Problem 5</span>. 
+Compare the Ziegler-Nichols PI, Tyreus-Luyben PI and IMC-based improved PI (with <font face="symbol">l</font> = 10 minutes) control performance in time-domain simulations.</p>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_art06lev1sec4.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_art06lev1sec6.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

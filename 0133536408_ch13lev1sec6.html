@@ -1,0 +1,47 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="13.6 Return to the Motivating Example"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch13lev1sec5.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch13lev1sec7.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch13lev1sec6"></A><H3 class="docSection1Title">13.6 Return to the Motivating Example</H3>
+<P class="docText">Consider <A class="docLink" HREF="0133536408_ch13lev1sec12.html#ch13lev1sec12">Example 13-1</A>, where 40% ethanol (stream 1) is being blended with pure water (stream 2) to produce a product of 30% ethanol. Here we wish to use the RGA to help us develop the control structure (pair inputs and outputs).</P>
+<P class="docText">We first develop the steady-state model, then linearize to find the process gain matrix, and finally calculate the RGA to decide on variable pairing. For simplicity we neglect density differences between the streams and components.</P>
+<A NAME="ch13lev2sec16"></A><H4 class="docSection2Title"> Total Material Balance</H4>
+<P class="docText">Neglecting density differences between the streams and components, the total blend product volumetric flow rate is equal the sum of the volumetric flow rates of the two feed streams,</P>
+<p class="docText"><IMG BORDER="0" WIDTH="64" HEIGHT="15" src="FILES/13equ25c.gif" ALT="graphics/13equ25c.gif"></p>
+<br>
+<A NAME="ch13lev2sec17"></A><H4 class="docSection2Title"> Component Material Balance on Ethanol</H4>
+<P class="docText">Assume a binary system with <span class="docEmphasis">z</span><SUB>1</SUB> = volume fraction of ethanol in stream 1. Let <span class="docEmphasis">z</span> = volume fraction of ethanol in the blend stream. Since there is no ethanol in the water stream, we find</P>
+<p class="docText"><IMG BORDER="0" WIDTH="52" HEIGHT="15" src="FILES/13equ25d.gif" ALT="graphics/13equ25d.gif"></p>
+<br>
+<P class="docText">Solving these equations for the volume fraction of ethanol in the blend stream,</P>
+<p class="docText"><IMG BORDER="0" WIDTH="65" HEIGHT="35" src="FILES/13equ25e.gif" ALT="graphics/13equ25e.gif"></p><br>
+<P class="docText">Let the volume fraction of ethanol be output 1 and total flow rate output 2. Also, inputs 1 and 2 are the flow rates of the whiskey and water feedstreams, respectively. The following steady-state values were used in <A class="docLink" HREF="0133536408_ch13lev1sec3.html#ch13lev2sec4">Example 13.1</A>: <span class="docEmphasis">F</span><SUB>1</SUB> = 3 gpm, <span class="docEmphasis">F</span><SUB>2</SUB> = 1 gpm, <span class="docEmphasis">z</span> = 0.3 mole fraction ethanol, and <span class="docEmphasis">F</span> = 4 gpm.</P>
+<P class="docText">The steady-state input-output gains are</P>
+<p class="docText"><IMG BORDER="0" WIDTH="322" HEIGHT="85" src="FILES/13equ25g.gif" ALT="graphics/13equ25g.gif"></p><br>
+<p class="docText"><IMG BORDER="0" WIDTH="139" HEIGHT="77" src="FILES/13equ25h.gif" ALT="graphics/13equ25h.gif"></p><br>
+<P class="docText">which yields the process gain matrix</P>
+<p class="docText"><IMG BORDER="0" WIDTH="120" HEIGHT="39" src="FILES/13equ25i.gif" ALT="graphics/13equ25i.gif"></p><br>
+<P class="docText">The relative gain relating input 1 to output 1 is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="228" HEIGHT="52" src="FILES/13equ25j.gif" ALT="graphics/13equ25j.gif"></p><br>
+<P class="docText">This value of 0.25 indicates that the effective gain relating input 1 to output 1 with loop 2 closed is four times the value of the gain with loop 2 open. This explains the result shown in <A class="docLink" HREF="0133536408_ch13lev1sec3.html#ch13fig11">Figure 13-11</A>.</P>
+<P class="docText">The RGA is then</P>
+<p class="docText"><IMG BORDER="0" WIDTH="99" HEIGHT="38" src="FILES/13equ25k.gif" ALT="graphics/13equ25k.gif"></p><br>
+<P class="docText">which indicates that the blend total flow (<span class="docEmphasis">y</span><SUB>2</SUB>) should be paired with the whiskey flow rate (<span class="docEmphasis">u</span><SUB>1</SUB>) and the blend ethanol concentration (<span class="docEmphasis">y</span><SUB>1</SUB>) should be paired with the water flow (<span class="docEmphasis">u</span><SUB>2</SUB>). Notice that the largest component stream flow rate then controls the total flow.</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch13lev1sec5.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch13lev1sec7.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

@@ -1,0 +1,61 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="13.5 Properties and Application of the RGA"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch13lev1sec4.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch13lev1sec6.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch13lev1sec5"></A><H3 class="docSection1Title" id="225793-869">13.5 Properties and Application of the RGA</H3>
+<A NAME="ch13lev2sec10"></A><H4 class="docSection2Title"> Sum of Rows and Columns Property of the RGA</H4>
+<P class="docText">Notice that Equation (<A class="docLink" HREF="0133536408_ch13lev1sec4.html#ch13equ24">13.24</A>) yields the following relationships</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="168" HEIGHT="33" src="FILES/13equ24a.gif" ALT="graphics/13equ24a.gif"></p><br>
+<P class="docText">This property for 2 x 2 systems is general for n x n systems. That is, each row of the RGA sums to 1.0 and each column of the RGA sums to 1.0.</P>
+<P class="docText">Then, for a 2 x 2 system, only one relative gain must be calculated to find the entire array,</P>
+<P><B><A NAME="ch13equ25"></A>Equation 13.25 </B></P><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="123" HEIGHT="39" src="FILES/13equ25.gif" ALT="graphics/13equ25.gif"></p><br>
+<P class="docText">For a 3 x 3 system, only four of the nine elements would need to be calculated. In practice, they are all calculated simultaneously using (<A class="docLink" HREF="0133536408_ch13lev1sec4.html#ch13equ23">13.23</A>).</P>
+<A NAME="ch13lev2sec11"></A><H4 class="docSection2Title"> Use of RGA to Determine Variable Pairing</H4>
+<P class="docText">It is desirable to pair output <span class="docEmphasis">i</span> and input <span class="docEmphasis">j</span> such that <font face="symbol">l</font><SUB>ij</SUB> is as close to 1 as possible.</P>
+<A NAME="ch13lev2sec12"></A><H4 class="docSection2Title"> Example 13.2: RGA for Variable Pairing</H4>
+<P class="docText">Consider a relative gain array, <IMG BORDER="0" id="129022115118" WIDTH="98" HEIGHT="39" src="FILES/13inequ05.gif" ALT="graphics/13inequ05.gif"></P>
+<P class="docText">We would pair <span class="docEmphasis">y</span><SUB>1</SUB> with <span class="docEmphasis">u</span><SUB>1</SUB> and <span class="docEmphasis">y</span><SUB>2</SUB> with <span class="docEmphasis">u</span><SUB>2</SUB> in this case.</P>
+<P class="docText">However, if <IMG BORDER="0" id="129022115118" WIDTH="98" HEIGHT="38" src="FILES/13inequ06.gif" ALT="graphics/13inequ06.gif"></P>
+<P class="docText">we would pair <span class="docEmphasis">y</span><SUB>1</SUB> with <span class="docEmphasis">u</span><SUB>2</SUB> and <span class="docEmphasis">y</span><SUB>2</SUB> with <span class="docEmphasis">u</span><SUB>1</SUB>.</P>
+<A NAME="ch13lev2sec13"></A><H4 class="docSection2Title"> Two Input–Two Output Systems</H4>
+<P class="docText">It is easy to show the two possible cases for the relative gain array of a 2 x 2 system. If there are an <span class="docEmphasis">odd</span> number of positive elements in <span class="docEmphStrong">G</span>(0), then</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="57" HEIGHT="19" src="FILES/13equ25a.gif" ALT="graphics/13equ25a.gif"></p><br>
+<P class="docText">That is, for an odd number of positive elements in the process gain matrix, all the relative gains will be between 0 and 1. If there are an <span class="docEmphasis">even</span> number of positive elements in <span class="docEmphStrong">G</span>(0), then</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="115" HEIGHT="19" src="FILES/13equ25b.gif" ALT="graphics/13equ25b.gif"></p><br>
+<P class="docText">This means that for an even number of positive elements in the process gain array, all the relative gains will be outside the 0–1 range.</P>
+<A NAME="ch13lev2sec14"></A><H4 class="docSection2Title"> Implications for the Sign of a Relative Gain</H4>
+<P class="docText">First of all, we can state that if <font face="symbol">l</font><SUB>11</SUB> was negative, we would not want to pair input 1 with output 1. Let us use the following reasoning. Assume that the open-loop gain between input 1 and output 1 (<span class="docEmphasis">g</span><SUB>11</SUB>) is positive; this implies that the controller gain is also positive. A negative relative gain tells us that the gain between input 1 and output 1 with output 2 perfectly controlled (that is, loop 2 closed) is negative. This means that if loop 2 is closed, we need a negative controller gain on loop 1. However, we noted before that if loop 2 is open, we need a positive controller gain on loop 1. It is not desirable to have a control system where you have to change the sign of the controller gain depending on whether the other loops are open or closed, so the bottom line is the following:</P>
+<P class="docText"><span class="docEmphasis">We do not want to pair output i and input j if</span> <font face="symbol">l</font><span class="docEmphasis"><SUB>ij</SUB> is negative.</span></P>
+<P class="docText">The results for a 2 x 2 system indicate that if <font face="symbol">l</font><SUB>11</SUB> &gt; 1 then <font face="symbol">l</font><SUB>12</SUB> = <font face="symbol">l</font><SUB>21</SUB> &lt; 0. Also, if 0 &lt; <font face="symbol">l</font><SUB>11</SUB> &lt; 1, then 0 &lt; <font face="symbol">l</font><SUB>12</SUB> &lt; 1. Let us think about the differences between having a <font face="symbol">l</font><SUB>11</SUB> greater than 1 and having a <font face="symbol">l</font><SUB>11</SUB> less then 1.</P>
+<P class="docText">If <font face="symbol">l</font><SUB>11</SUB> &gt; 1, then <IMG BORDER="0" id="129022115118" WIDTH="85" HEIGHT="45" src="FILES/13inequ07.gif" ALT="graphics/13inequ07.gif">.</P>
+<P class="docText">This tells us that the gain between <span class="docEmphasis">u</span><SUB>1</SUB> and <span class="docEmphasis">y</span><SUB>1</SUB> is larger with loop 2 open than with loop 2 closed.</P>
+<UL><LI><P class="docList">If we design the <span class="docEmphasis">u</span><SUB>1</SUB>-<span class="docEmphasis">y</span><SUB>1</SUB> controller with loop 2 open, then close loop 2, we expect somewhat sluggish behavior, since the effective process gain will be lower than the <span class="docEmphasis">u</span><SUB>1</SUB>-<span class="docEmphasis">y</span><SUB>1</SUB> gain.</P></LI></UL>
+<P class="docText"><span class="docEmphasis">However,</span></P>
+<BLOCKQUOTE><P><P class="docList">If we design the <span class="docEmphasis">u</span><SUB>1</SUB>-<span class="docEmphasis">y</span><SUB>1</SUB> controller with loop 2 closed, then if we have to open loop 2 for some reason, we could have destabilizing behavior, since the <span class="docEmphasis">u</span><SUB>1</SUB>-<span class="docEmphasis">y</span><SUB>1</SUB> gain will be higher than when the controller was tuned.</P></P></BLOCKQUOTE>
+<P class="docText">If 0 &lt; <font face="symbol">l</font><SUB>11</SUB> &lt; 1, then <IMG BORDER="0" id="129022115118" WIDTH="85" HEIGHT="45" src="FILES/13inequ08.gif" ALT="graphics/13inequ08.gif">.</P>
+<P class="docText">This tells us that the gain between <span class="docEmphasis">u</span><SUB>1</SUB> and <span class="docEmphasis">y</span><SUB>1</SUB> is smaller with loop 2 open than with loop 2 closed.</P>
+<BLOCKQUOTE><P><P class="docList">If we design the <span class="docEmphasis">u</span><SUB>1</SUB>-<span class="docEmphasis">y</span><SUB>1</SUB> controller with loop 2 open, then close loop 2, we expect more aggressive behavior, since the effective process gain will be higher than the <span class="docEmphasis">u</span><SUB>1</SUB>-<span class="docEmphasis">y</span><SUB>1</SUB> gain.</P></P></BLOCKQUOTE>
+<P class="docText"><span class="docEmphasis">However,</span></P>
+<BLOCKQUOTE><P><P class="docList">If we design the <span class="docEmphasis">u</span><SUB>1</SUB>-<span class="docEmphasis">y</span><SUB>1</SUB> controller with loop 2 closed, then if we have to open loop 2 for some reason, we expect sluggish behavior, since the <span class="docEmphasis">u</span><SUB>1</SUB>-<span class="docEmphasis">y</span><SUB>1</SUB> gain will be lower than when the controller was tuned.</P></P></BLOCKQUOTE>
+<A NAME="ch13lev2sec15"></A><H4 class="docSection2Title"> Midchapter Summarizing Remarks</H4>
+<P class="docText">You must be careful when tuning SISO loops in a multiple input–multiple output (MIMO) system, because the other loops in the system can greatly affect the gain between the input-output variables under consideration.</P>
+<P class="docText">Also, note that we have only been concerned with static (steady-state) effects. <span class="docEmphasis">Dynamic</span> interaction has a major effect when control systems are tuned. Our experience is that one rarely reverses a pairing decision based on the steady-state relative gain, when one considers the dynamic effects.</P>
+<P class="docText">The primary result from a dynamic interaction analysis is to recognize additional interaction affects above the steady-state ones and either accept the degradation in control system performance, or use a "true" multivariable control system design technique rather than separate SISO controllers. Sometimes the interaction and other problems will be so severe that only one loop can be closed.</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch13lev1sec4.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch13lev1sec6.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

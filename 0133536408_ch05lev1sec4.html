@@ -1,0 +1,80 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="5.4 PID Controller Algorithms"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch05lev1sec3.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch05lev1sec5.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch05lev1sec4"></A><H3 class="docSection1Title">5.4 PID Controller Algorithms</H3>
+<P class="docText">Here we continue to work in deviation variable form. Recall that a proportional-only controller could lead to <span class="docEmphasis">offset</span> between the desired setpoint and the actual output. This happened because the controller output (process input) and process output came to new equilibrium values before the error went to zero. The next step is to add a term where the controller output is proportional to the <span class="docEmphasis">integral of the error</span>, in addition to the term that is proportional to the error. This is known as <span class="docEmphasis">proportional-integral</span> (PI) control. As long as there continues to be an error signal to the controller, the controller output (process input) will continue to change. Therefore, the integral of the error forces the error signal to zero. Notice that this type of controller implicitly accounts for the past system response. A proportional-only controller does not account for this "process history."</P>
+<A NAME="ch05lev2sec12"></A><H4 class="docSection2Title"> PI Control</H4>
+<P class="docText">A PI controller has two terms (and two tuning parameters), one proportional to the error (k<SUB>c</SUB>) and the other proportional to the integral of the error (k<SUB>I</SUB>).</P>
+<p class="docText"><IMG BORDER="0" WIDTH="144" HEIGHT="45" src="FILES/05equ06k.gif" ALT="graphics/05equ06k.gif"></p><br>
+<P class="docText">This is more commonly written in the form</P>
+<P><B><A NAME="ch05equ07"></A>Equation 5.7 </B></P><p class="docText"><IMG BORDER="0" WIDTH="166" HEIGHT="52" src="FILES/05equ07.gif" ALT="graphics/05equ07.gif"></p><br>
+<P class="docText">where <font face="symbol">t</font><span class="docEmphStrong"><SUB>I</SUB></span> is known as the integral time. Both the proportional gain and integral time are tuning parameters that can be adjusted by the control instrument technician or process operator. Notice that <span class="docEmphasis">k<SUB>I</SUB></span> = <span class="docEmphasis">k<SUB>c</SUB></span>/<font face="symbol">t</font><span class="docEmphasis"><SUB>I</SUB></span>. The transform of an integral is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="112" HEIGHT="52" src="FILES/05equ07a.gif" ALT="graphics/05equ07a.gif"></p><br>
+<P class="docText">Taking the Laplace transform of Equation (<A class="docLink" HREF="#ch05equ07">5.7</A>), we find as representation for a PI controller</P>
+<P><B><A NAME="ch05equ08"></A>Equation 5.8 </B></P><p class="docText"><IMG BORDER="0" WIDTH="230" HEIGHT="46" src="FILES/05equ08.gif" ALT="graphics/05equ08.gif"></p><br>
+<P class="docText">and the controller transfer function for PI control is</P>
+<P><B><A NAME="ch05equ09"></A>Equation 5.9 </B></P><p class="docText"><IMG BORDER="0" WIDTH="184" HEIGHT="42" src="FILES/05equ09.gif" ALT="graphics/05equ09.gif"></p><br>
+<P class="docText">The following example is an application of PI control to a first-order process.</P>
+<A NAME="ch05lev2sec13"></A><H4 class="docSection2Title"> Example 5.2: First-Order Process with a PI Controller</H4>
+<P class="docText">A first-order process with a PI controller has the closed-loop transfer function</P>
+<p class="docText"><IMG BORDER="0" WIDTH="270" HEIGHT="91" src="FILES/05equ09a.gif" ALT="graphics/05equ09a.gif"></p><br>
+<P class="docText">which can be rearranged to the form</P>
+<p class="docText"><IMG BORDER="0" WIDTH="208" HEIGHT="62" src="FILES/05equ09b.gif" ALT="graphics/05equ09b.gif"></p><br>
+<P class="docText">Notice that there is <span class="docEmphasis">no offset</span>, because the closed-loop gain is 1. The quadratic formula can be used to show that for a second-order characteristic polynomial, if all the coefficients are positive, the roots are negative (stable). In this case, we have the conditions</P>
+<p class="docText"><IMG BORDER="0" WIDTH="96" HEIGHT="89" src="FILES/05equ09c.gif" ALT="graphics/05equ09c.gif"></p><br>
+<P class="docText">Assuming that the process is open-loop stable (<font face="symbol">t</font><SUB>p</SUB> &gt; 0) and realizing that <font face="symbol">t</font><SUB>I</SUB> &gt; 0 by definition, we see that from the first condition,</P>
+<p class="docText"><IMG BORDER="0" WIDTH="44" HEIGHT="17" src="FILES/05equ09d.gif" ALT="graphics/05equ09d.gif"></p>
+<br>
+<P class="docText">that is, k<SUB>p</SUB> and k<SUB>c</SUB> must be the same sign. The second condition requires that 1 + <span class="docEmphasis">k<SUB>p</SUB>k<SUB>c</SUB></span> &gt; 0, or</P>
+<p class="docText"><IMG BORDER="0" WIDTH="54" HEIGHT="23" src="FILES/05equ09e.gif" ALT="graphics/05equ09e.gif"></p>
+<br>
+<P class="docText">which is less restrictive than the first condition. The first condition, <span class="docEmphasis">k<SUB>p</SUB>k<SUB>c</SUB></span> &gt; 0, then must be met for closed-loop stability of this system.</P>
+<P class="docText">We must realize that there are two controller tuning parameters, <span class="docEmphasis">k<SUB>c</SUB></span> and <font face="symbol">t</font><span class="docEmphasis"><SUB>I</SUB></span>, that can be adjusted to give a desired closed-loop response. The process parameters are not available for adjustment, since they are physical parameters based on the process under consideration.</P>
+<P class="docText">We have already found the conditions for stability but have not discussed the expected dynamic behavior of a stable closed-loop system. If some poles of the closed-loop system are complex, the response will consist of damped oscillations (underdamped), and if all the poles are real, the response will be critically damped or overdamped. The reader has the opportunity (see Exercise 16) to show that the closed-loop behavior will be underdamped if the following condition is satisfied</P>
+<p class="docText"><IMG BORDER="0" WIDTH="97" HEIGHT="50" src="FILES/05equ09f.gif" ALT="graphics/05equ09f.gif"></p><br>
+<P class="docText">The reader should also show that if the integral time, <font face="symbol">t</font><span class="docEmphasis"><SUB>I</SUB></span>, is equal to the process time constant, <font face="symbol">t</font><span class="docEmphasis"><SUB>p</SUB></span>, the closed-loop response will be first order with a closed-loop time constant of <font face="symbol">t</font><span class="docEmphasis"><SUB>p</SUB></span>/(<span class="docEmphasis">k<SUB>p</SUB>k<SUB>c</SUB></span>). These results can be illustrated by simulation for a first-order process with the following parameter values (see <A class="docLink" HREF="0133536408_ch05lev1sec3.html#ch05lev2sec11">Example 5.1</A>)</P>
+<p class="docText"><IMG BORDER="0" WIDTH="82" HEIGHT="33" src="FILES/05equ09g.gif" ALT="graphics/05equ09g.gif"></p><br>
+<P class="docText">Simulations for a setpoint change of 1&#176;C are shown in <A class="docLink" HREF="#ch05fig14">Figure 5-14</A>, for <font face="symbol">t</font><span class="docEmphasis"><SUB>I</SUB></span> = 0.25 minutes and <font face="symbol">t</font><span class="docEmphasis"><SUB>I</SUB></span> = 5 minutes. In both cases the proportional gain is <span class="docEmphasis">k</span><SUB>c</SUB> = 5 kW/&#176;C. For the smaller integral time there is oscillatory performance in both the controlled output (temperature) and manipulated input (heater power). This oscillatory performance is often viewed as unfavorable to process operators. An oscillatory closed-loop system is usually more sensitive to parameter uncertainty; that is, if the process operating conditions changed the closed-loop system could go unstable.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch05fig14"></A>Figure 5-14. Closed-loop response of a first-order system under PI-control. Effect of integral time on offset and speed of response. The proportional gain, <span class="docEmphasis">k</span><SUB>c</SUB>, is 5 kW/&#176;C in both cases.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="393" src="FILES/05fig14.gif" ALT="graphics/05fig14.gif"></p></CENTER>
+<P class="docText">In <A class="docLink" HREF="#ch05lev2sec13">Example 5.2</A>, a first-order process with PI control, we showed that the controller gain and the process gain must be the same sign for closed-loop stability. This result holds true for any open-loop stable process with integral control. Just remember that the requirement <span class="docEmphasis">k<SUB>p</SUB>k<SUB>c</SUB></span> &gt; 0 is necessary and sufficient for stability of PI control of a <span class="docEmphasis">first-order</span> system only, because the closed-loop transfer function is second-order and positive coefficients for the second-order transfer function are necessary and sufficient for stability. For higher order, open-loop stable systems, <span class="docEmphasis">k</span><SUB>p</SUB><span class="docEmphasis">k<SUB>c</SUB></span> &gt; 0 is <span class="docEmphasis">necessary</span> for closed-loop stability <span class="docEmphasis">but not sufficient</span>. <span class="docEmphasis">The Routh array</span> (<A class="docLink" HREF="0133536408_ch05lev1sec5.html#ch05lev1sec5">Section 5.5</A>) must be checked for the sufficient conditions.</P>
+<A NAME="ch05lev2sec14"></A><H4 class="docSection2Title"> PID Control</H4>
+<P class="docText">The next level of controller complexity is to add a term that accounts for the current rate of change (derivative) of the error. Using knowledge of the derivative of the error allows the controller to "predict" where the future error is heading and compensate for it. The time-domain representation of PID control is</P>
+<P><B><A NAME="ch05equ10"></A>Equation 5.10 </B></P><p class="docText"><IMG BORDER="0" WIDTH="207" HEIGHT="47" src="FILES/05equ10.gif" ALT="graphics/05equ10.gif"></p><br>
+<P class="docText">which is often written (<span class="docEmphasis">k</span><SUB>D</SUB> = <span class="docEmphasis">k</span><SUB>c</SUB><font face="symbol">t</font><SUB>D</SUB>)</P>
+<P><B><A NAME="ch05equ11"></A>Equation 5.11 </B></P><p class="docText"><IMG BORDER="0" WIDTH="223" HEIGHT="51" src="FILES/05equ11.gif" ALT="graphics/05equ11.gif"></p><br>
+<P class="docText">where <font face="symbol">t</font><span class="docEmphasis"><SUB>D</SUB></span> is called the <span class="docEmphasis">derivative time</span>. In the Laplace domain, Equation (<A class="docLink" HREF="#ch05equ11">5.11</A>) is written</P>
+<P><B><A NAME="ch05equ12"></A>Equation 5.12 </B></P><p class="docText"><IMG BORDER="0" WIDTH="317" HEIGHT="46" src="FILES/05equ12.gif" ALT="graphics/05equ12.gif"></p><br>
+<P><B><A NAME="ch05equ13"></A>Equation 5.13 </B></P><p class="docText"><IMG BORDER="0" WIDTH="291" HEIGHT="45" src="FILES/05equ13.gif" ALT="graphics/05equ13.gif"></p><br>
+<P class="docText">It turns out that the "ideal" PID algorithm is not physically realizable, that is, no instrument can take a perfect derivative, so most "practical" PID algorithms have one of the following forms</P>
+<P><B><A NAME="ch05equ14"></A>Equation 5.14a </B></P><p class="docText"><IMG BORDER="0" WIDTH="293" HEIGHT="44" src="FILES/05equ14a.gif" ALT="graphics/05equ14a.gif"></p><br>
+<P class="docText">or</P>
+<P><B><A NAME="ch05equ15"></A>Equation 5.14b </B></P><p class="docText"><IMG BORDER="0" WIDTH="286" HEIGHT="42" src="FILES/05equ14b.gif" ALT="graphics/05equ14b.gif"></p><br>
+<P class="docText">where <font face="symbol">t</font><span class="docEmphasis"><SUB>F</SUB></span> + <font face="symbol">a</font><font face="symbol">t</font><span class="docEmphasis"><SUB>D</SUB></span>. A typical value for <font face="symbol">a</font> is 0.1 or less. Even if the ideal PID controller of Equation (<A class="docLink" HREF="#ch05equ13">5.13</A>) could be implemented, it would not be desirable. A step setpoint change, for example, would cause the derivative of the error to be infinity and cause a spike in the manipulated variable; this behavior is known as derivative "kick." For this reason the derivative action is often based on the process output rather than the error. That is, Equation (<A class="docLink" HREF="#ch05equ11">5.11</A>) is implemented as</P>
+<P><B><A NAME="ch05equ16"></A>Equation 5.15 </B></P><p class="docText"><IMG BORDER="0" WIDTH="222" HEIGHT="49" src="FILES/05equ15.gif" ALT="graphics/05equ15.gif"></p><br>
+<P class="docText">The transfer function representation is</P>
+<P><B><A NAME="ch05equ17"></A>Equation 5.16 </B></P><p class="docText"><IMG BORDER="0" WIDTH="400" HEIGHT="44" src="FILES/05equ16.gif" ALT="graphics/05equ16.gif"></p><br>
+<P class="docText">Again, since an ideal derivative cannot be implemented, the following filtered derivative of the output can be used</P>
+<P><B><A NAME="ch05equ18"></A>Equation 5.17 </B></P><p class="docText"><IMG BORDER="0" WIDTH="441" HEIGHT="45" src="FILES/05equ17.gif" ALT="graphics/05equ17.gif"></p><br>
+<A NAME="ch05lev2sec15"></A><H4 class="docSection2Title"> Proportional Band</H4>
+<P class="docText">We have been using a controller formulation based on proportional gain. Some industrial controllers use proportional band, rather than proportional gain. The proportional band is the range of error that causes the controller output (manipulated input) to change over its full range. The proportional band is related to the proportional gain by</P>
+<P><B><A NAME="ch05equ19"></A>Equation 5.18 </B></P><p class="docText"><IMG BORDER="0" WIDTH="59" HEIGHT="38" src="FILES/05equ18.gif" ALT="graphics/05equ18.gif"></p><br>
+<P class="docText">as shown in <A class="docLink" HREF="0133536408_art15.html#art15">Module 15</A>.</P>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch05lev1sec3.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch05lev1sec5.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

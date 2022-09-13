@@ -1,0 +1,62 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="M16.5 Discrete IMC"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_art16lev1sec4.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_art16lev1sec6.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="art16lev1sec5"></A><H3 class="docSection1Title">M16.5 Discrete IMC</H3>
+<P class="docText">The design of discrete IMCs is similar to that of the continuous IMC design procedure detailed in <A class="docLink" HREF="0133536408_ch08.html#ch08">Chapter 8</A>. The primary difference is that the factorization is performed on a discrete-time (<span class="docEmphasis">Z</span>-domain) model.</P>
+<P class="docText">Factorize into good stuff and bad stuff the discrete model</P>
+<P><B><A NAME="art16equ11"></A>Equation M16.11 </B></P><p class="docText"><IMG BORDER="0" WIDTH="117" HEIGHT="17" src="FILES/m16equ11.gif" ALT="graphics/m16equ11.gif"></p><br>
+<P class="docText">where <IMG BORDER="0" WIDTH="38" HEIGHT="19" src="FILES/m16inequ02.gif" ALT="graphics/m16inequ02.gif"> contains zeros outside the unit circle and zeros inside the unit circle that negative. The reason for this is that negative zeros inside the unit circle cause oscillatory poles in the controller if not removed. Make certain that the numerator of <IMG BORDER="0" WIDTH="36" HEIGHT="16" src="FILES/m16inequ03.gif" ALT="graphics/m16inequ03.gif"> is one order less than the denominator polynomial. Also, form an "all-pass" in <IMG BORDER="0" WIDTH="37" HEIGHT="17" src="FILES/m16inequ04.gif" ALT="graphics/m16inequ04.gif"> by including a pole at 1/<span class="docEmphasis">z</span><SUB>i</SUB> for each <span class="docEmphasis">z</span><SUB>i</SUB> outside the unit circle. Make certain that "gain" (found by setting <span class="docEmphasis">z</span> = 1) of the "bad stuff" is equal to one, while the gain of the "good stuff" is equal to the gain of the unfactored transfer function.</P>
+<P class="docText">The design procedure is then analogous to that developed for continuous IMC in <A class="docLink" HREF="0133536408_ch08.html#ch08">Chapter 8</A>. The controller is the inverse of the "good stuff" times a discrete filter to make the controller physically realizable (numerator and denominator polynomials are the same order).</P>
+<P><B><A NAME="art16equ12"></A>Equation M16.12 </B></P><p class="docText"><IMG BORDER="0" WIDTH="106" HEIGHT="21" src="FILES/m16equ12.gif" ALT="graphics/m16equ12.gif"></p><br>
+<P class="docText">where <span class="docEmphasis">f</span>(z) has the following form</P>
+<P><B><A NAME="art16equ13"></A>Equation M16.13 </B></P><p class="docText"><IMG BORDER="0" WIDTH="149" HEIGHT="36" src="FILES/m16equ13.gif" ALT="graphics/m16equ13.gif"></p><br>
+<P class="docText">where <font face="symbol">a</font> is a discrete tuning parameter. It is related to the continuous IMC filter factor by</P>
+<P><B><A NAME="art16equ14"></A>Equation M16.14 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="55" HEIGHT="15" src="FILES/m16equ14.gif" ALT="graphics/m16equ14.gif"></p><br>
+<P class="docText">where <font face="symbol">D</font>t is the sample time. The discrete IMC procedure is slightly more complex than the continuous-time case for a couple of reasons. First of all, the continuous system parameters such as time constants are much easier to interpret than the discrete-time parameters; discrete parameters are a function of the sample time of the digital system. Also, it is easier to keep mental track of gains in continuous-time, since setting s = 0 normally eliminates most terms in a transfer function. In discrete-time, setting z = 1 results in the sum of a number of coefficients, and is simply not as natural to handle.</P>
+<P class="docText">The following example presents a step-by-step application of the discrete IMC procedure.</P>
+<A NAME="art16lev2sec4"></A><H4 class="docSection2Title"> Example M16.3</H4>
+<P class="docText">Consider the van de Vusse reactor model studied in <A class="docLink" HREF="0133536408_art05.html#art05">Module 5</A>; this was also used as an example for the conversion between model types in <A class="docLink" HREF="0133536408_art04.html#art04">Module 4</A>. The continuous transfer function is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="313" HEIGHT="35" src="FILES/m16equ14a.gif" ALT="graphics/m16equ14a.gif"></p><br>
+<P class="docText">The discrete-time model (for a sample time of 0.1 minutes) is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="322" HEIGHT="37" src="FILES/m16equ14b.gif" ALT="graphics/m16equ14b.gif"></p><br>
+<P class="docText">This can be written in discrete pole-zero form as</P>
+<p class="docText"><IMG BORDER="0" WIDTH="182" HEIGHT="38" src="FILES/m16equ14c.gif" ALT="graphics/m16equ14c.gif"></p><br>
+<P class="docText">and it is easy to verify that the gain (found by setting <span class="docEmphasis">z</span> = 1) is 0.5851, which is consistent with the continuous time model (found by setting s = 0).</P>
+<P class="docText">Now, the first step of the factorization procedure is to remove the zeros that are outside the unit circle (there is a zero at 1.334), as well as the negative zeros inside the unit circle (there are none in this particular problem)</P>
+<p class="docText"><IMG BORDER="0" WIDTH="248" HEIGHT="60" src="FILES/m16equ14d.gif" ALT="graphics/m16equ14d.gif"></p><br>
+<P class="docText">The next step is to form the "all-pass"</P>
+<p class="docText"><IMG BORDER="0" WIDTH="259" HEIGHT="95" src="FILES/m16equ14e.gif" ALT="graphics/m16equ14e.gif"></p><br>
+<P class="docText">Next, make certain that the gain of the "bad stuff" is 1 and that the gain of the "good stuff" is the same as the gain of the original transfer function</P>
+<p class="docText"><IMG BORDER="0" WIDTH="380" HEIGHT="139" src="FILES/m16equ14f.gif" ALT="graphics/m16equ14f.gif"></p><br>
+<P class="docText">The IMC is obtained by inverting the good stuff</P>
+<p class="docText"><IMG BORDER="0" WIDTH="175" HEIGHT="37" src="FILES/m16equ14g.gif" ALT="graphics/m16equ14g.gif"></p><br>
+<P class="docText">and using a first-order filter to make it realizable:</P>
+<p class="docText"><IMG BORDER="0" WIDTH="221" HEIGHT="36" src="FILES/m16equ14h.gif" ALT="graphics/m16equ14h.gif"></p><br>
+<P class="docText">where the discrete tuning parameter, <font face="symbol">a</font>, is related to the continuous tuning parameter, <font face="symbol">l</font>, by</P>
+<p class="docText"><IMG BORDER="0" WIDTH="173" HEIGHT="14" src="FILES/m16equ14i.gif" ALT="graphics/m16equ14i.gif"></p>
+<br>
+<P class="docText">Here, we compare the responses of the discrete control system with the continuous system. For this sample time and choice of <font face="symbol">l</font> = 0.2 min, there is virtually no difference, as shown in <A class="docLink" HREF="#art16m16fig03">Figure M16-3</A>. The block diagram and <span class="docEmphasis">m</span>-file used for this simulation is presented in <A class="docLink" HREF="0133536408_art16lev1sec10.html#art16lev1sec10">Appendix M16.2</A>.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="art16m16fig03"></A>Figure M16-3. Comparison of continuous and discrete IMC for <font face="symbol">l</font> = 0.2 minutes. Discrete sample time, <font face="symbol">D</font>t = 0.1 minutes.</H5><p class="docText"><IMG BORDER="0" WIDTH="475" HEIGHT="374" src="FILES/m16fig03.gif" ALT="graphics/m16fig03.gif"></p></CENTER>
+<P class="docText"><span class="docEmphStrong">Problem M16.3</span></P>
+<P class="docText">Choose Exercise 2, 3, or 4 from the Additional Exercises at the end of this module for further study of the IMC design procedure. Exercise 2 is a straightforward first-order example where there are no particular performance limitations. Exercise 3 illustrates the importance of factoring out negative zeros inside the unit circle. Exercise 4 is an example where the continuous-time transfer function is third-order, but minimum-phase (no RHP zeros or time delays) so there is no limitation to achievable IMC performance. The discrete-time model, however, has a zero outside the unit circle. This poses substantial performance limitations for the discrete-time system.</P>
+
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_art16lev1sec4.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_art16lev1sec6.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

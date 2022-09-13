@@ -1,0 +1,80 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="8.3 Generalization of the Open-Loop Control Design Procedure"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch08lev1sec2.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch08lev1sec4.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch08lev1sec3"></A><H3 class="docSection1Title">8.3 Generalization of the Open-Loop Control Design Procedure</H3>
+<P class="docText">So far we have used two example processes: (i) first-order and (ii) second-order with a RHP zero. Now is the time to generalize our results to any process system.</P>
+<P class="docText">First of all, we have been using the inverse of the process transfer function, <span class="docEmphasis">g</span><SUB>p</SUB>(<span class="docEmphasis">s</span>), in our control law. We must realize that the actual process transfer function is never known exactly. We now use two transfer function representations of the process. One is considered the <span class="docEmphasis">process</span> (sometimes we use the term <span class="docEmphasis">plant</span>), which is never known exactly. The other is considered the <span class="docEmphasis">process model</span>, which we do know exactly.</P>
+<P><B><A NAME="ch08equ23"></A>Equation 8.23 </B></P>
+<p class="docText"><IMG BORDER="0" WIDTH="177" HEIGHT="19" src="FILES/08equ23.gif" ALT="graphics/08equ23.gif"></p><br>
+<P><B><A NAME="ch08equ24"></A>Equation 8.24 </B></P><p class="docText"><IMG BORDER="0" WIDTH="181" HEIGHT="22" src="FILES/08equ24.gif" ALT="graphics/08equ24.gif"></p><br>
+<P class="docText">Recall that when the process had a RHP zero, we performed a <span class="docEmphasis">factorization</span>, so that the RHP zero did not form a RHP pole in the controller. In general, we factor the process model in the following fashion,</P>
+<P><B><A NAME="ch08equ25"></A>Equation 8.25 </B></P><p class="docText"><IMG BORDER="0" WIDTH="119" HEIGHT="21" src="FILES/08equ25.gif" ALT="graphics/08equ25.gif"></p><br>
+<P class="docText">where <IMG BORDER="0" WIDTH="32" HEIGHT="17" src="FILES/08inequ05.gif" ALT="graphics/08inequ05.gif"> contains the invertible elements and <IMG BORDER="0" WIDTH="35" HEIGHT="17" src="FILES/08inequ06.gif" ALT="graphics/08inequ06.gif"> contains the noninvertible elements. One easy way to remember this is to recall that if RHP zeros are "inverted" (the RHP is the positive side of the complex plane), they become RHP poles, which are unstable.</P>
+<p class="docText"><span class="docEmphStrong">Question 8.3.1</span>: 
+Is dead time invertible?</p>
+<p class="docText"><span class="docEmphStrong">Answer 8.3.1</span>: 
+The reader should verify that dead time is not invertible. If there is dead time in the process, it cannot be removed by any physically realizable controller.</p>
+<P class="docText">Our controller design will consist of inverting the invertible part of the process model and cascading this with a filter that is of high enough order to make the controller proper.</P>
+<P><B><A NAME="ch08equ26"></A>Equation 8.26 </B></P><p class="docText"><IMG BORDER="0" WIDTH="99" HEIGHT="23" src="FILES/08equ26.gif" ALT="graphics/08equ26.gif"></p><br>
+<P class="docText">In the next section, we see that there are a number of ways to factor the same transfer function into invertible and noninvertible parts.</P>
+<A NAME="ch08lev2sec7"></A><H4 class="docSection2Title"> Controller Factorization</H4>
+<P class="docText">There are a number of ways to factor the same transfer function,</P>
+<p class="docText"><IMG BORDER="0" WIDTH="121" HEIGHT="21" src="FILES/08equ26a.gif" ALT="graphics/08equ26a.gif"></p><br>
+<P class="docText">The most common method, known as an <span class="docEmphasis">all-pass</span> factorization, is shown as method 2 in the example below. The reason for the term <span class="docEmphasis">all-pass</span> was illustrated in <A class="docLink" HREF="0133536408_ch07.html#ch07">Chapter 7</A>, frequency-response techniques.</P>
+<A NAME="ch08lev2sec8"></A><H4 class="docSection2Title"> Example 8.3: Factorization Techniques</H4>
+<P class="docText">Consider a process model with inverse response characteristics (a RHP zero)</P>
+<P><B><A NAME="ch08equ27"></A>Equation 8.27 </B></P><p class="docText"><IMG BORDER="0" WIDTH="156" HEIGHT="55" src="FILES/08equ27.gif" ALT="graphics/08equ27.gif"></p><br>
+<P class="docText">where <IMG BORDER="0" WIDTH="10" HEIGHT="18" src="FILES/08inequ09.gif" ALT="graphics/08inequ09.gif"> is positive.</P>
+<P class="docText"><span class="docEmphasis">Method 1: Simple factorization</span></P>
+<P class="docText">The simple factorization approach is to simply place the RHP zeros in the noninvertible part of the process model <IMG BORDER="0" WIDTH="44" HEIGHT="17" src="FILES/08inequ11.gif" ALT="graphics/08inequ11.gif">.</P>
+<P><B><A NAME="ch08equ28"></A>Equation 8.28 </B></P><p class="docText"><IMG BORDER="0" WIDTH="190" HEIGHT="70" src="FILES/08equ28.gif" ALT="graphics/08equ28.gif"></p><br>
+<P class="docText"><span class="docEmphasis">Method 2: All-pass factorization</span></P>
+<P class="docText">The all-pass factorization places the RHP zero in the noninvertible part of the process model, but it also places a pole at the reflection of the RHP zero:</P>
+<P><B><A NAME="ch08equ29"></A>Equation 8.29 </B></P><p class="docText"><IMG BORDER="0" WIDTH="197" HEIGHT="70" src="FILES/08equ29.gif" ALT="graphics/08equ29.gif"></p><br>
+<P class="docText">Generally, Method 2 (<span class="docEmphasis">all-pass</span>) is used because the resulting controlled system minimizes the integral squared error (ISE).</P>
+<A NAME="ch08lev2sec9"></A><H4 class="docSection2Title"> Comparison of Output Responses for Different Controller Factorizations</H4>
+<P class="docText">Here we compare the different controlled variable responses for methods 1 and 2.</P>
+<P class="docText"><span class="docEmphasis">Method 1</span></P>
+<P><B><A NAME="ch08equ30"></A>Equation 8.30 </B></P><p class="docText"><IMG BORDER="0" WIDTH="200" HEIGHT="74" src="FILES/08equ30.gif" ALT="graphics/08equ30.gif"></p><br>
+<P class="docText">where we have used a second-order filter to make <span class="docEmphasis">q</span>(<span class="docEmphasis">s</span>) realizable.</P>
+<P class="docText">Now, since <span class="docEmphasis">y</span>(<span class="docEmphasis">s</span>) = <span class="docEmphasis">q</span>(<span class="docEmphasis">s</span>) <span class="docEmphasis">g</span><SUB>p</SUB>(<span class="docEmphasis">s</span>) <span class="docEmphasis">r</span>(<span class="docEmphasis">s</span>),</P>
+<P><B><A NAME="ch08equ31"></A>Equation 8.31 </B></P><p class="docText"><IMG BORDER="0" WIDTH="305" HEIGHT="47" src="FILES/08equ31.gif" ALT="graphics/08equ31.gif"></p><br>
+<P class="docText">Assuming a <span class="docEmphasis">perfect model</span> <IMG BORDER="0" WIDTH="83" HEIGHT="20" src="FILES/08inequ12.gif" ALT="graphics/08inequ12.gif"></P>
+<P><B><A NAME="ch08equ32"></A>Equation 8.32 </B></P><p class="docText"><IMG BORDER="0" WIDTH="119" HEIGHT="42" src="FILES/08equ32.gif" ALT="graphics/08equ32.gif"></p><br>
+<P class="docText">which is the same as the result obtained in Equation (<A class="docLink" HREF="0133536408_ch08lev1sec2.html#ch08equ19">8.19)</A>.</P>
+<P class="docText"><span class="docEmphasis">Method 2</span></P>
+<P><B><A NAME="ch08equ33"></A>Equation 8.33 </B></P><p class="docText"><IMG BORDER="0" WIDTH="193" HEIGHT="77" src="FILES/08equ33.gif" ALT="graphics/08equ33.gif"></p><br>
+<P class="docText">Again, since <span class="docEmphasis">y</span>(<span class="docEmphasis">s</span>) = <span class="docEmphasis">q</span>(<span class="docEmphasis">s</span>) <span class="docEmphasis">g</span><SUB>p</SUB>(<span class="docEmphasis">s</span>) <span class="docEmphasis">r</span>(<span class="docEmphasis">s</span>),</P>
+<P><B><A NAME="ch08equ34"></A>Equation 8.34 </B></P><p class="docText"><IMG BORDER="0" WIDTH="299" HEIGHT="53" src="FILES/08equ34.gif" ALT="graphics/08equ34.gif"></p><br>
+<P class="docText">and assuming a <span class="docEmphasis">perfect model</span> <IMG BORDER="0" WIDTH="83" HEIGHT="20" src="FILES/08inequ12.gif" ALT="graphics/08inequ12.gif"></P>
+<P><B><A NAME="ch08equ35"></A>Equation 8.35 </B></P><p class="docText"><IMG BORDER="0" WIDTH="149" HEIGHT="39" src="FILES/08equ35.gif" ALT="graphics/08equ35.gif"></p><br>
+<P class="docText">which is slightly different from the response shown in Equation (<A class="docLink" HREF="#ch08equ32">8.32)</A>. The responses will be equivalent only if we set <font face="symbol">l</font> = <font face="symbol">b</font> (and there is generally no reason to do that).</P>
+<A NAME="ch08lev3sec1"></A><H5 class="docSection3Title"> Summary of Controller Design Procedure</H5>
+<P class="docText">The controller design procedure has been generalized to the following steps.</P>
+<A NAME="ch08pr01"></A>
+
+<span style="font-weight:bold"><OL class="docList" START="1"><LI><span style="font-weight:normal" value="1"><P class="docText">Factor the process model into invertible and noninvertible portions</P>
+<p class="docText"><IMG BORDER="0" WIDTH="120" HEIGHT="20" src="FILES/08equ35a.gif" ALT="graphics/08equ35a.gif"></p><br>
+<UL><LI><P class="docList">Method 1 uses a simple factorization</P></LI><LI><P class="docList">Method 2 uses an all-pass formulation</P></LI></UL></span></LI><LI><span style="font-weight:normal" value="2"><P class="docText">Invert the invertible portion of the process model (the "good stuff") and cascade with a filter that makes the controller <span class="docEmphasis">q(s)</span> proper.</P></span></LI></OL></span>
+<p class="docText"><IMG BORDER="0" WIDTH="104" HEIGHT="25" src="FILES/08equ35b.gif" ALT="graphics/08equ35b.gif"></p><br>
+<P class="docText">The factorization is used only for control-system design. The actual model still contains the RHP zeros and time delays.</P>
+<P class="docText">Remember that the factorization was performed so that the controller would be stable. For linear systems, <span class="docEmphasis">if the controller is stable and the process is stable, then the overall controlled system is stable</span>. This is true simply because if two transfer functions are stable, then the transfer functions cascaded together (multiplied) are stable. This is a nice result because in a standard feedback control formulation, the controller and the process can each be stable, yet the feedback system may be unstable.</P>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch08lev1sec2.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch08lev1sec4.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

@@ -1,0 +1,37 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="M2.4 Developing Alternative Controller Icons"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_art02lev1sec3.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_art02lev1sec5.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="art02lev1sec4"></A><H3 class="docSection1Title">M2.4 Developing Alternative Controller Icons</H3>
+<P class="docText">It was noted earlier that the default S<span class="docEmphSmaller">IMULINK</span> PID controller block uses a form different from that used by most process engineers. It is easy to generate new PID controller blocks as shown below. The default PID controller icon is shown in <A class="docLink" HREF="#art02m2fig13">Figure M2-13a</A>. This is "unmasked" (by clicking the icon and selecting 'Look under mask' from the Edit pull-down menu) to yield the diagram shown in <A class="docLink" HREF="#art02m2fig13">Figure M2-13b</A>. Again, this has the form</P>
+<p class="docText"><IMG BORDER="0" WIDTH="105" HEIGHT="33" src="FILES/m02equ04.gif" ALT="graphics/m02equ04.gif"></p><br>
+<CENTER><H5 class="docFigureTitle"><A NAME="art02m2fig13"></A>Figure M2-13. Default ideal PID controller. (a) Block. (b) Block <span class="docEmphasis">unmasked</span>.</H5><p class="docText"><IMG BORDER="0" WIDTH="475" HEIGHT="414" src="FILES/m02fig13.gif" ALT="graphics/m02fig13.gif"></p></CENTER>
+<P class="docText">while we normally prefer the following PID structure:</P>
+<p class="docText"><IMG BORDER="0" WIDTH="145" HEIGHT="41" src="FILES/m02equ05.gif" ALT="graphics/m02equ05.gif"></p><br>
+<P class="docText">Of course, the two algorithms are related by</P>
+<p class="docText"><IMG BORDER="0" WIDTH="152" HEIGHT="16" src="FILES/m02equ06.gif" ALT="graphics/m02equ06.gif"></p>
+<br>
+<P class="docText">but it would be much less confusing to work with our standard form.</P>
+<P class="docText">We have generated a new ideal analog PID, as shown in <A class="docLink" HREF="#art02m2fig14">Figure M2-14a</A>. Notice that there are two inputs to the controller, the setpoint (<span class="docEmphasis">r</span>) and the measured output (<span class="docEmphasis">y</span>), rather than just the error signal that is the input to the default S<span class="docEmphSmaller">IMULINK</span> PID controller. Our new implementation is unmasked in <A class="docLink" HREF="#art02m2fig14">Figure M2-14b</A> to reveal that</P>
+<p class="docText"><IMG BORDER="0" WIDTH="144" HEIGHT="41" src="FILES/m02equ07.gif" ALT="graphics/m02equ07.gif"></p><br>
+<CENTER><H5 class="docFigureTitle"><A NAME="art02m2fig14"></A>Figure M2-14. Preferred implementation of ideal PID controller. (a) Block. (b) Unmasked block.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="325" src="FILES/m02fig14.gif" ALT="graphics/m02fig14.gif"></p></CENTER>
+<P class="docText">is the algorithm used.</P>
+
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_art02lev1sec3.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_art02lev1sec5.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

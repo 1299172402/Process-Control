@@ -1,0 +1,36 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="Appendix 2.2: Integrating Ordinary Differential Equations"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch02lev1sec11.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch03.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch02lev1sec12"></A><H3 class="docSection1Title" id="225793-906"> Appendix 2.2: Integrating Ordinary Differential Equations</H3>
+<P class="docText">The Euler integration method often requires very small integration step sizes to obtain a desired level of accuracy. Note that <span class="docEmphasis">x</span> is a vector of <span class="docEmphasis">n</span> state variables at each time step. For example, if there are two states (two differential equations)</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="255" HEIGHT="45" src="FILES/02equ117.gif" ALT="graphics/02equ117.gif"></p><br>
+<P class="docText">we have left the inputs and parameters out of the function variable list for convenience. An example is shown next.</P>
+<A NAME="ch02lev2sec27"></A><H4 class="docSection2Title"> Example 2.2: An Isothermal Chemical Reactor, continued</H4>
+<P class="docText">Consider the ethylene glycol reactor problem in <A class="docLink" HREF="#ch02lev2sec27">Example 2.2</A>. We use <span class="docEmphasis">k</span><SUB>1</SUB> to represent the reaction rate constant, so that it is not confused with the time-step index. The Euler integration algorithm results in the following two equations, where <span class="docEmphasis">k</span> represents the time-step index.</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="329" HEIGHT="83" src="FILES/02equ118.gif" ALT="graphics/02equ118.gif"></p><br>
+<P class="docText">For <span class="docEmphasis">C<SUB>A</SUB></span>(0) = 0.1 and <span class="docEmphasis">C<SUB>P</SUB></span>(0) = 0.4, and a space velocity (<span class="docEmphasis">F</span>/<span class="docEmphasis">V</span>) = 0.0816 min<SUP>-1</SUP> we find, for the first time step,</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="442" HEIGHT="84" src="FILES/02equ119.gif" ALT="graphics/02equ119.gif"></p><br>
+<P class="docText">Substituting the numerical values for an integration step size of 0.5 minutes, we find</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="441" HEIGHT="86" src="FILES/02equ120.gif" ALT="graphics/02equ120.gif"></p><br>
+<P class="docText">resulting in the concentration values at <span class="docEmphasis">t</span> = 0.5 minutes</P>
+<p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="220" HEIGHT="40" src="FILES/02equ120a.gif" ALT="graphics/02equ120a.gif"></p><br>
+<P class="docText">Values can be obtained at future times by continuing to march forward in time. M<span class="docEmphSmaller">ATLAB</span> has a suite of routines for integrating differential equations. These are covered in <A class="docLink" HREF="0133536408_art03.html#art03">Module 3</A>.</P>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch02lev1sec11.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch03.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

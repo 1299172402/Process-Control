@@ -1,0 +1,81 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="9.3 IMC-Based Feedback Design for Delay-Free Processes"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch09lev1sec2.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch09lev1sec4.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch09lev1sec3"></A><H3 class="docSection1Title">9.3 IMC-Based Feedback Design for Delay-Free Processes</H3>
+<P class="docText">The IMC-based PID procedure, like the IMC procedure from <A class="docLink" HREF="0133536408_ch08.html#ch08">Chapter 8</A>, can be based on either good setpoint tracking or improved disturbance rejection. Here, we first consider design for setpoint tracking.</P>
+<A NAME="ch09lev2sec2"></A><H4 class="docSection2Title"> Focus on Setpoint Tracking</H4>
+<P class="docText">The procedure outlined in <A class="docLink" HREF="0133536408_ch09lev1sec2.html#ch09lev1sec2">Section 9.2</A> is illustrated by way of two examples: a first-order process and a second-order process. For clarity we drop the (~) notation on all of the process model parameters.</P>
+<A NAME="ch09lev2sec3"></A><H4 class="docSection2Title"> Example 9.1: IMC-Based PID Design for a First-Order Process</H4>
+<P class="docText">Find the PID-equivalent to IMC for a first-order process</P>
+<p class="docText"><IMG BORDER="0" WIDTH="88" HEIGHT="39" src="FILES/09equ02a.gif" ALT="graphics/09equ02a.gif"></p><br>
+<A NAME="ch09pr02"></A>
+
+
+<DL class="docList"><DD><B>Step 1. </B>Find the IMC controller transfer function, <span class="docEmphasis">q</span>(<span class="docEmphasis">s</span>), which includes a filter to make <span class="docEmphasis">q</span>(<span class="docEmphasis">s</span>) <span class="docEmphasis">semiproper.</span><BR><BR>
+<P><B><A NAME="ch09equ04"></A>Equation 9.3 </B></P><p class="docText"><IMG BORDER="0" WIDTH="254" HEIGHT="87" src="FILES/09equ03.gif" ALT="graphics/09equ03.gif"></p><br></DD><DD><B>Step 2. </B>Find the equivalent standard feedback controller using the transformation<BR><BR>
+<P><B><A NAME="ch09equ05"></A>Equation 9.4 </B></P><p class="docText"><IMG BORDER="0" WIDTH="310" HEIGHT="81" src="FILES/09equ04.gif" ALT="graphics/09equ04.gif"></p><br>
+Recall that the transfer function for a PI controller is<BR><BR>
+<P><B><A NAME="ch09equ06"></A>Equation 9.5 </B></P><p class="docText"><IMG BORDER="0" WIDTH="102" HEIGHT="38" src="FILES/09equ05.gif" ALT="graphics/09equ05.gif"></p><br></DD><DD><B>Step 3. </B>Rearrange Equation (<A class="docLink" HREF="#ch09equ04">9.4</A>) to fit the form of Equation (<A class="docLink" HREF="#ch09equ05">9.5</A>), to find how the model parameters and <font face="symbol">l</font> are related to the PI controller parameters. Multiplying Equation (<A class="docLink" HREF="#ch09equ04">9.4</A>) by <font face="symbol">t</font><span class="docEmphasis"><SUB>p</SUB></span>/<font face="symbol">t</font><span class="docEmphasis"><SUB>p</SUB></span>, we find<BR><BR>
+<P><B><A NAME="ch09equ07"></A>Equation 9.6 </B></P><p class="docText"><IMG BORDER="0" WIDTH="126" HEIGHT="47" src="FILES/09equ06.gif" ALT="graphics/09equ06.gif"></p><br></DD></DL>
+<P class="docText">Equating terms in Equations (<A class="docLink" HREF="#ch09equ05">9.5</A>) and (<A class="docLink" HREF="#ch09equ07">9.6</A>), we find the following values for the PI tuning parameters</P>
+<P><B><A NAME="ch09equ08"></A>Equation 9.7 </B></P><p class="docText"><IMG BORDER="0" WIDTH="58" HEIGHT="63" src="FILES/09equ07.gif" ALT="graphics/09equ07.gif"></p><br>
+<P class="docText">The IMC-based PID design procedure for a first-order process has resulted in a PI control law. The major difference is that there are no longer two degrees of freedom in the tuning parameters (<span class="docEmphasis">k<SUB>c</SUB></span>, <font face="symbol">t</font><span class="docEmphasis"><SUB>I</SUB></span>)—the IMC-based procedure shows that only the proportional gain needs to be adjusted. The integral time is simply set equal to the process time constant. Notice that the proportional gain is inversely related to <font face="symbol">l</font>, which makes sense. If <font face="symbol">l</font> is small (closed loop is "fast"), the controller gain must be large. Similarly, if <font face="symbol">l</font> is large (closed loop is "slow"), the controller gain must be small. Also notice that the same results were obtained using the <span class="docEmphasis">direct synthesis method</span>—a specified first-order closed-loop response for a first-order process leads to a PI controller with the parameter values shown in Equation (<A class="docLink" HREF="#ch09equ08">9.7)</A>.</P>
+<P class="docText">This procedure can be used to develop the equivalent PID (plus lag, in some cases) controller for a number of other transfer functions, as shown in <A class="docLink" HREF="0133536408_ch09lev1sec5.html#ch09table01">Table 9-1</A>. In the next example, we derive the PID controller for a second-order process.</P>
+<A NAME="ch09lev2sec4"></A><H4 class="docSection2Title"> Example 9.2: IMC-Based PID Design for a Second-Order Process</H4>
+<P class="docText">Find the PID equivalent to IMC for a second-order process</P>
+<p class="docText"><IMG BORDER="0" WIDTH="140" HEIGHT="40" src="FILES/09equ07a.gif" ALT="graphics/09equ07a.gif"></p><br>
+<A NAME="ch09pr03"></A>
+
+
+<DL class="docList"><DD><B>Step 1. </B>Find the IMC controller transfer function, <span class="docEmphasis">q</span>(<span class="docEmphasis">s</span>)—here we allow <span class="docEmphasis">q</span>(<span class="docEmphasis">s</span>) to be <span class="docEmphasis">improper</span> because we wish to end up with an ideal PID controller.<BR><BR>
+<P><B><A NAME="ch09equ09"></A>Equation 9.8 </B></P><p class="docText"><IMG BORDER="0" WIDTH="318" HEIGHT="45" src="FILES/09equ08.gif" ALT="graphics/09equ08.gif"></p><br></DD><DD><B>Step 2. </B>Find the equivalent standard feedback controller using the transformation<BR><BR>
+<P><B><A NAME="ch09equ10"></A>Equation 9.9 </B></P><p class="docText"><IMG BORDER="0" WIDTH="344" HEIGHT="133" src="FILES/09equ09.gif" ALT="graphics/09equ09.gif"></p><br>
+Recall that the transfer function for an ideal PID controller is<BR><BR>
+<P><B><A NAME="ch09equ11"></A>Equation 9.10 </B></P><p class="docText"><IMG BORDER="0" WIDTH="163" HEIGHT="44" src="FILES/09equ10.gif" ALT="graphics/09equ10.gif"></p><br></DD><DD><B>Step 3. </B>Rearrange Equation (<A class="docLink" HREF="#ch09equ10">9.9</A>) to fit the form of Equation (<A class="docLink" HREF="#ch09equ11">9.10</A>), to find how the model parameters and <font face="symbol">l</font> are related to the PID controller parameters. Multiplying Equation (<A class="docLink" HREF="#ch09equ10">9.9</A>) by (<font face="symbol">t</font><SUB>1</SUB> + <font face="symbol">t</font><SUB>2</SUB>)/(<font face="symbol">t</font><SUB>1</SUB> + <font face="symbol">t</font><SUB>2</SUB>), we find<BR><BR>
+<P><B><A NAME="ch09equ12"></A>Equation 9.11 </B></P><p class="docText"><IMG BORDER="0" WIDTH="229" HEIGHT="46" src="FILES/09equ11.gif" ALT="graphics/09equ11.gif"></p><br>
+Equating terms in Equations (<A class="docLink" HREF="#ch09equ11">9.10)</A> and (<A class="docLink" HREF="#ch09equ12">9.11</A>), we find the following relationships:<BR><BR>
+<p class="docText"><IMG BORDER="0" WIDTH="82" HEIGHT="105" src="FILES/09equ11a.gif" ALT="graphics/09equ11a.gif"></p><br>
+which is shown as row C in <A class="docLink" HREF="0133536408_ch09lev1sec5.html#ch09table01">Table 9-1</A>.<BR><BR></DD></DL>
+<P class="docText">The IMC-based PID controllers for first- and second-order processes, as designed above, have good setpoint tracking characteristics. Although setpoint tracking may be quite good, disturbance rejection can be poor, particularly for input disturbances. Next, we apply the IMC-based PID procedure to develop good disturbance rejection.</P>
+<A NAME="ch09lev2sec5"></A><H4 class="docSection2Title"> Focus on Disturbance Rejection</H4>
+<P class="docText">For improved disturbance rejection, we use an IMC filter with the form</P>
+<p class="docText"><IMG BORDER="0" WIDTH="92" HEIGHT="37" src="FILES/09equ11b.gif" ALT="graphics/09equ11b.gif"></p><br>
+<P class="docText">where <font face="symbol">g</font> is selected to achieve good disturbance rejection. In practice, it is selected to cancel a slow disturbance time constant. Consider the closed-loop transfer function for disturbance rejection in the case of a perfect model (as developed in <A class="docLink" HREF="0133536408_ch08lev1sec10.html#ch08lev1sec10">Section 8.10</A>):</P>
+<p class="docText"><IMG BORDER="0" WIDTH="156" HEIGHT="19" src="FILES/09equ11c.gif" ALT="graphics/09equ11c.gif"></p><br>
+<P class="docText">The internal model controller, using the new filter form, is</P>
+<p class="docText"><IMG BORDER="0" WIDTH="204" HEIGHT="39" src="FILES/09equ11d.gif" ALT="graphics/09equ11d.gif"></p><br>
+<P class="docText">so the output response is</P>
+<P><B><A NAME="ch09equ13"></A>Equation 9.12 </B></P><p class="docText"><IMG BORDER="0" WIDTH="244" HEIGHT="148" src="FILES/09equ12.gif" ALT="graphics/09equ12.gif"></p><br>
+<P class="docText">For a first-order process and an input disturbance, in <A class="docLink" HREF="0133536408_ch08.html#ch08">Chapter 8</A> (<A class="docLink" HREF="0133536408_ch08lev1sec10.html#ch08lev2sec19">Example 8.8</A>), we found that the internal model controller</P>
+<p class="docText"><IMG BORDER="0" WIDTH="143" HEIGHT="43" src="FILES/09equ12a.gif" ALT="graphics/09equ12a.gif"></p><br>
+<P class="docText">Using the procedure in Equation (<A class="docLink" HREF="#ch09equ13">9.12)</A> results in a numerator filter term</P>
+<p class="docText"><IMG BORDER="0" WIDTH="86" HEIGHT="46" src="FILES/09equ12b.gif" ALT="graphics/09equ12b.gif"></p><br>
+<P class="docText">The reader should show that the IMC-based PID procedure leads to a PI controller with the parameter values</P>
+<P class="docText"><IMG BORDER="0" WIDTH="82" HEIGHT="46" src="FILES/09equ12c.gif" ALT="graphics/09equ12c.gif"> and <IMG BORDER="0" WIDTH="89" HEIGHT="47" src="FILES/09equ12d.gif" ALT="graphics/09equ12d.gif"></P>
+<P class="docText">with the requirement that <font face="symbol">l</font> &lt; 2<font face="symbol">t</font><span class="docEmphasis"><SUB>p</SUB></span>.</P>
+<A NAME="ch09lev2sec6"></A><H4 class="docSection2Title"> Integrating Processes</H4>
+<P class="docText">For integrating processes, a filter with the following form is used:</P>
+<p class="docText"><IMG BORDER="0" WIDTH="94" HEIGHT="40" src="FILES/09equ12e.gif" ALT="graphics/09equ12e.gif"></p><br>
+<P class="docText">The reader should be able to derive the controllers shown in elements I and K of <A class="docLink" HREF="0133536408_ch09lev1sec5.html#ch09table01">Table 9-1</A>.</P>
+<A NAME="ch09lev2sec7"></A><H4 class="docSection2Title"> Summary for Delay-Free Processes</H4>
+<P class="docText">The results for the previous examples are shown in <A class="docLink" HREF="0133536408_ch09lev1sec5.html#ch09table01">Table 9-1</A>. To develop a more complete understanding of this procedure, the reader should derive the parameters for some of the other relationships shown in <A class="docLink" HREF="0133536408_ch09lev1sec5.html#ch09table01">Table 9-1</A>. The reader should also note that the same results would be obtained using the direct synthesis approach if the proper desired closed-loop transfer function is specified. The proper desired closed-loop transfer function appears clearly in the IMC procedure.</P>
+<P class="docText">Notice that <A class="docLink" HREF="0133536408_ch09lev1sec5.html#ch09table01">Table 9-1</A> is for process transfer functions that do not have a time delay. The following section develops PID tuning relationships for a first-order + time-delay process.</P>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch09lev1sec2.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch09lev1sec4.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

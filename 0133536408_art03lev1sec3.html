@@ -1,0 +1,111 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="M3.3 S'IMULINK' sfun (.mdl Files)"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_art03lev1sec2.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_art03lev1sec4.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="art03lev1sec3"></A><H3 class="docSection1Title">M3.3 S<span class="docEmphSmaller">IMULINK</span> sfun (.mdl Files)</H3>
+<P class="docText">One of the powers of S<span class="docEmphSmaller">IMULINK</span> is the ability to construct block diagrams that provide an intuitive approach to simulating feedback-control systems. Often we use linear transfer functions to simulate the behavior of linear systems. A block titled "<TT>sfun</TT>" can obtained from the "<TT>nonlinear</TT>" library in S<span class="docEmphSmaller">IMULINK</span> and placed in a S<span class="docEmphSmaller">IMULINK</span> diagram. When simulations are performed, the equations in the sfun m-file are solved simultaneously with other blocks in the block diagram. The <TT>sfun</TT> file must be given a name with a '<TT>.m</TT>' extension, while the block diagram is given a '<TT>.mdl</TT>' extension.</P>
+<A NAME="art03lev2sec2"></A><H4 class="docSection2Title"> Example M3.2: Van de Vusse Reaction</H4>
+<P class="docText">The van de Vusse reactor from <A class="docLink" HREF="0133536408_art03lev1sec1.html#art03lev2sec1">Example M3.1</A> is studied here. The block diagram shown in <A class="docLink" HREF="#art03m3fig02">Figure M3-2</A> was first generated. Notice that there are two inputs and two outputs shown; <TT>mux</TT> and <TT>demux</TT> blocks are used since inputs and outputs are passed to and returned from <TT>S-Functions</TT> as vectors. Notice that the <TT>S-Function</TT> has been titled <TT>vdv_sfun.m.</TT> The S<span class="docEmphSmaller">IMULINK</span> block diagram should also be titled and given a <TT>.mdl</TT> extension.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="art03m3fig02"></A>Figure M3-2. S<span class="docEmphSmaller">IMULINK</span> diagram for an open-loop simulation of the van de Vusse reactor.</H5><p class="docText"><IMG BORDER="0" WIDTH="500" HEIGHT="244" src="FILES/m03fig02.gif" ALT="graphics/m03fig02.gif"></p></CENTER>
+<P class="docText">The <TT>vdv_sfun</TT> function file is shown below. The vectors '<TT>t</TT>', '<TT>x</TT>', and '<TT>u</TT>' contain time, states, and inputs, respectively. The '<TT>flag</TT>' parameter is passed from S<span class="docEmphSmaller">IMULINK</span>, depending on the simulation status. A value of <TT>flag</TT> = 0, for example, sets up the simulation with information about the number of states, and so forth. A value of <TT>flag</TT> = 1 solves for the derivatives of the states with respect to time and passes these derivatives in the <TT>sys</TT> vector back to S<span class="docEmphSmaller">IMULINK</span>. A value of <TT>flag</TT> = 3 passes the values of the outputs back to S<span class="docEmphSmaller">IMULINK</span> through the <TT>sys</TT> vector.</P>
+<P class="docText">Before running the simulation, double click on the <TT>S-Function</TT> block to see what parameters or initial conditions must be set before the simulation. In this case, the initial conditions must be set in the M<span class="docEmphSmaller">ATLAB</span> Workspace, using the <TT>xi</TT> variable. Also, go to the "<TT>parameters</TT>" pull-down menu in S<span class="docEmphSmaller">IMULINK</span> to set the final time for integration and the differential equation solution method.</P>
+<P class="docText">For the simulation shown, enter</P>
+<pre>
+
+</pre><pre>
+&#187; x0 = [2;1.117]
+</pre>
+<P class="docText">to obtain the same plot shown in <A class="docLink" HREF="0133536408_art03lev1sec1.html#art03m3fig01">Figure M3-1</A>.</P>
+<pre>
+
+</pre><pre>
+function [sys,x0,str,ts] = vdv_sfun(t,x,u,flag,x0)
+%
+% Solves the two differential equations modeling
+% the van de vusse reaction
+% scheme in an isothermal CSTR. The states are the concentration
+% of A and B in the reactor.
+%
+% Use this as an sfun function in a simulink diagram
+%
+% 23 Jan 99
+% b.w. bequette
+
+% process condition:
+%    dilution rate (fov) = 4/7;
+%    feed concentration of a (caf) = 10;
+%    x1s = cas = 3.0;
+%    x2s = cbs = 1.117;
+%    x0 = [x1i;x2i] = [cai;cbi] = initial conditions;
+
+  switch flag
+
+  case 0 % initialization;
+
+  sizes = simsizes;
+  sizes.NumContStates = 2;
+  sizes.NumDiscStates = 0;
+  sizes.NumOutputs    = 2;
+  sizes.NumInputs     = 2;
+  sizes.DirFeedthrough = 0;
+  sizes.NumSampleTimes = 1;
+  sys = simsizes(sizes);
+
+  str = [];
+  ts = [0 0];
+
+  case 1 % derivatives;
+
+% it is convenient to use common notation for states
+
+  ca = x(1);
+  cb = x(2);
+
+% also, the inputs are
+
+  fov = u(1);
+  caf = u(2);
+
+% parameter values
+
+  k1 = 5/6;    % rate constant for A--&gt;B (min^-1)
+  k2 = 5/3;    % rate constant for B--&gt;C (min^-1)
+  k3 = 1/6;    % rate constant for 2A--&gt;D (mol/(l min))
+
+% state derivatives
+
+  dcadt = fov*(caf-ca) - k1*ca -k3*ca*ca;
+  dcbdt = -fov*cb + k1*ca - k2*cb;
+
+  sys = [dcadt;dcbdt];
+
+  case 3 % outputs;
+
+  sys = [x(1);x(2)];
+
+  case {2, 4, 9}
+  sys = [];
+
+  otherwise
+  error(['unhandled flag = ',num2str(flag)]);
+
+  end
+</pre>
+<a href="0133536408_9971534.html"><img src="FILES/pixel.gif" width="1" height="1" border="0"></a><ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_art03lev1sec2.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_art03lev1sec4.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>

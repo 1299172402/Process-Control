@@ -1,0 +1,27 @@
+<html><head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--SafClassName="docSection1Title"--><!--SafTocEntry="8.11 Manipulated Variable Saturation"-->
+<link rel="STYLESHEET" type="text/css" href="FILES/style.css">
+<link rel="STYLESHEET" type="text/css" href="FILES/docsafari.css">
+<style type="text/css">	.tt1    {font-size: 10pt;}</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+	<a href="0133536408_ch08lev1sec10.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+	<a href="0133536408_ch08lev1sec12.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch08lev1sec11"></A><H3 class="docSection1Title" id="225793-803">8.11 Manipulated Variable Saturation</H3>
+<P class="docText">The reader should note that if the actual manipulated variable signal is used by the model, then manipulated variable <span class="docEmphasis">saturation</span> is not a problem because the system becomes open-loop and the model prediction is the same as the process output (if there are no disturbances and the model is perfect). In conventional PID controllers, special precautions must be taken to prevent <span class="docEmphasis">reset</span> or <span class="docEmphasis">integral windup</span> from occurring when manipulated variables hit constraints. This phenomenon is discussed more fully in <A class="docLink" HREF="0133536408_ch11.html#ch11">Chapter 11</A>.</P>
+<P class="docText">The IMC block diagram for the case where the actual manipulated variable value that is implemented on the process is also used by the model is shown in <A class="docLink" HREF="#ch08fig20">Figure 8-20</A>. Integral "wind-up" will not be a problem with this implementation. <A class="docLink" HREF="#ch08fig21">Figure 8-21</A> shows an IMC implementation where the manipulated variable value implemented on the process is constrained, while the process model uses the unconstrained value. Integral wind-up may be a problem in this case. It is very important when implementing IMC to use the actual manipulated input to the model in the control law.</P>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch08fig20"></A>Figure 8-20. The actual manipulated variable value is "measured" and used by the process model. (Correct implementation)</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="202" src="FILES/08fig20.gif" ALT="graphics/08fig20.gif"></p></CENTER>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch08fig21"></A>Figure 8-21. The manipulated variable value used by the process model is different from the value actually implemented on the process. (Undesirable implementation)</H5><p class="docText"><IMG BORDER="0" id="129022115118" WIDTH="500" HEIGHT="203" src="FILES/08fig21.gif" ALT="graphics/08fig21.gif"></p></CENTER>
+<ul></ul></td></tr></table>
+<td></td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<td class="tt1"><a href="NFO/lib.html">[ Team LiB ]</a></td><td valign="top" class="tt1" align="right">
+          <a href="0133536408_ch08lev1sec10.html"><img src="FILES/btn_prev.gif" width="62" height="15" border="0" align="absmiddle" alt="Previous Section"></a>
+          <a href="0133536408_ch08lev1sec12.html"><img src="FILES/btn_next.gif" width="41" height="15" border="0" align="absmiddle" alt="Next Section"></a>
+</td></table>
+</body></html>
