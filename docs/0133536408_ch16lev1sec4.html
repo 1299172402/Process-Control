@@ -21,7 +21,7 @@
 <P class="docText">which is suitable for minimum and maximum flowrates, for example. In addition, velocity constraints that limit the magnitude of the control moves at each sample time have the following form</P>
 <P><B><A NAME="ch16equ27"></A>Equation 16.26 </B></P>
 <p class="docText"><IMG BORDER="0" WIDTH="135" HEIGHT="18" src="FILES/16equ26.gif" ALT="graphics/16equ26.gif"></p><br>
-<P class="docText">where ordinarily, <font face="symbol">D</font><span class="docEmphasis">u</span><SUB>min</SUB> = –<font face="symbol">D</font><span class="docEmphasis">u</span><SUB>max</SUB>. To use a standard quadratic program (QP), the constraints in (16.25) need to be written in terms of the control moves, <font face="symbol">D</font><span class="docEmphasis">u<SUB>k+i</SUB></span>. Since the previously implemented control action (<span class="docEmphasis">u<SUB>k–1</SUB></span>) is known, we can write</P>
+<P class="docText">where ordinarily, <font face="symbol">D</font><span class="docEmphasis">u</span><SUB>min</SUB> = â€“<font face="symbol">D</font><span class="docEmphasis">u</span><SUB>max</SUB>. To use a standard quadratic program (QP), the constraints in (16.25) need to be written in terms of the control moves, <font face="symbol">D</font><span class="docEmphasis">u<SUB>k+i</SUB></span>. Since the previously implemented control action (<span class="docEmphasis">u<SUB>kâ€“1</SUB></span>) is known, we can write</P>
 <P><B><A NAME="ch16equ28"></A>Equation 16.27 </B></P><p class="docText"><IMG BORDER="0" WIDTH="151" HEIGHT="36" src="FILES/16equ27.gif" ALT="graphics/16equ27.gif"></p><br>
 <P class="docText">and so on. Since the manipulated input constraints are enforced over the control horizon of <span class="docEmphasis">M</span> steps, (16.25) and (16.27) yield</P>
 <P><B><A NAME="ch16equ29"></A>Equation 16.28 </B></P><p class="docText"><IMG BORDER="0" WIDTH="316" HEIGHT="85" src="FILES/16equ28.gif" ALT="graphics/16equ28.gif"></p><br>
@@ -54,7 +54,7 @@
 <P><B><A NAME="ch16equ41"></A>Equation 16.39 </B></P><p class="docText"><IMG BORDER="0" WIDTH="162" HEIGHT="334" src="FILES/16equ39.gif" ALT="graphics/16equ39.gif"></p><br>
 <P class="docText">Futher presentation is beyond the scope of this text. Example m-files for the study of constrained systems will be placed on the book web page.</P>
 <A NAME="ch16lev2sec7"></A><H4 class="docSection2Title"> Multivariable Systems</H4>
-<P class="docText">In this chapter we have focused on single input–single output processes. One reason that MPC has been so widely applied is that it naturally handles multivariable systems. The same basic ideas presented in this chapter hold for the multivariable case, but the formulation for step response models in a DMC framework is somewhat tedious. We recommend that you use the Model Predictive Control Toolbox to perform multivariable studies.</P>
+<P class="docText">In this chapter we have focused on single inputâ€“single output processes. One reason that MPC has been so widely applied is that it naturally handles multivariable systems. The same basic ideas presented in this chapter hold for the multivariable case, but the formulation for step response models in a DMC framework is somewhat tedious. We recommend that you use the Model Predictive Control Toolbox to perform multivariable studies.</P>
 <ul></ul></td></tr></table>
 <td></td>
 <table width="100%" border="0" cellspacing="0" cellpadding="0">

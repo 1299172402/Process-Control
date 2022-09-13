@@ -14,11 +14,11 @@
 <br>
 <table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="ch14lev1sec6"></A><H3 class="docSection1Title">14.6 Decoupling</H3>
 <P class="docText">We have seen the problems with control-loop interaction; these occur because a manipulated input affects more than one controlled output. One approach to handling this problem is known as <span class="docEmphasis">decoupling</span>. The idea is to develop "synthetic" manipulated inputs that affect only one process output each. This approach is illustrated in <A class="docLink" HREF="#ch14fig09">Figure 14-9</A>.</P>
-<CENTER><H5 class="docFigureTitle"><A NAME="ch14fig09"></A>Figure 14-9. Decoupling control strategy—synthetic inputs and process outputs.</H5><p class="docText"><IMG BORDER="0" WIDTH="450" HEIGHT="425" src="FILES/14fig09.gif" ALT="graphics/14fig09.gif"></p></CENTER>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch14fig09"></A>Figure 14-9. Decoupling control strategyâ€”synthetic inputs and process outputs.</H5><p class="docText"><IMG BORDER="0" WIDTH="450" HEIGHT="425" src="FILES/14fig09.gif" ALT="graphics/14fig09.gif"></p></CENTER>
 <P class="docText">The relationship between the synthetic input vector and the process output vector is</P>
 <P><B><A NAME="ch14equ21"></A>Equation 14.21 </B></P>
 <p class="docText"><IMG BORDER="0" WIDTH="122" HEIGHT="21" src="FILES/14equ21.gif" ALT="graphics/14equ21.gif"></p><br>
-<P class="docText">For a two input–two output process,</P>
+<P class="docText">For a two inputâ€“two output process,</P>
 <P><B><A NAME="ch14equ22"></A>Equation 14.22 </B></P><p class="docText"><IMG BORDER="0" WIDTH="154" HEIGHT="41" src="FILES/14equ22.gif" ALT="graphics/14equ22.gif"></p><br>
 <P class="docText">where <span class="docEmphasis">G</span><SUB>p</SUB>(<span class="docEmphasis">s</span>)<span class="docEmphasis">D</span>(<span class="docEmphasis">s</span>) is a 2 x 2 transfer function matrix. There are a number of possible choices for the "target" <span class="docEmphasis">G</span><SUB>p</SUB>(<span class="docEmphasis">s</span>)<span class="docEmphasis">D</span>(<span class="docEmphasis">s</span>) matrix. Two common ones lead to ideal decoupling and simplified decoupling.</P>
 <A NAME="ch14lev2sec10"></A><H4 class="docSection2Title"> Ideal Decoupling</H4>
@@ -34,7 +34,7 @@
 <A NAME="ch14lev2sec11"></A><H4 class="docSection2Title"> Simplified Decoupling</H4>
 <P class="docText">An alternative approach, known as simplified decoupling, is shown for a 2 x 2 example in <A class="docLink" HREF="#ch14fig10">Figure 14-10</A>. Here, the decoupling matrix is restricted to the form</P>
 <P><B><A NAME="ch14equ26"></A>Equation 14.26 </B></P><p class="docText"><IMG BORDER="0" WIDTH="133" HEIGHT="41" src="FILES/14equ26.gif" ALT="graphics/14equ26.gif"></p><br>
-<CENTER><H5 class="docFigureTitle"><A NAME="ch14fig10"></A>Figure 14-10. Simplified decoupling control strategy—synthetic inputs and process outputs.</H5><p class="docText"><IMG BORDER="0" WIDTH="475" HEIGHT="313" src="FILES/14fig10.gif" ALT="graphics/14fig10.gif"></p></CENTER>
+<CENTER><H5 class="docFigureTitle"><A NAME="ch14fig10"></A>Figure 14-10. Simplified decoupling control strategyâ€”synthetic inputs and process outputs.</H5><p class="docText"><IMG BORDER="0" WIDTH="475" HEIGHT="313" src="FILES/14fig10.gif" ALT="graphics/14fig10.gif"></p></CENTER>
 <P class="docText">Here, we specify a decoupled response and the decoupler with the structure in Equation (<A class="docLink" HREF="#ch14equ26">14.26</A>),</P>
 <P><B><A NAME="ch14equ27"></A>Equation 14.27 </B></P><p class="docText"><IMG BORDER="0" WIDTH="291" HEIGHT="94" src="FILES/14equ27.gif" ALT="graphics/14equ27.gif"></p><br>
 <P class="docText">and we can solve four equations in four unknowns to find</P>

@@ -13,11 +13,11 @@
 </td></table>
 <br>
 <table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td valign="top"><A NAME="art07lev1sec4"></A><H3 class="docSection1Title">M7.4 Unstable Steady-State Operating Point</H3>
-<P class="docText">Design an IMC-based PID controller to control the bioreactor at equilibrium point 2—the <span class="docEmphasis">unstable</span> nontrivial point. The steady state (also use this as the initial condition for your simulations) is</P>
+<P class="docText">Design an IMC-based PID controller to control the bioreactor at equilibrium point 2â€”the <span class="docEmphasis">unstable</span> nontrivial point. The steady state (also use this as the initial condition for your simulations) is</P>
 <p class="docText"><IMG BORDER="0" WIDTH="103" HEIGHT="39" src="FILES/m07equ10.gif" ALT="graphics/m07equ10.gif"></p><br>
 <P class="docText">At this point, the state space model is</P>
 <p class="docText"><IMG BORDER="0" WIDTH="263" HEIGHT="63" src="FILES/m07equ11.gif" ALT="graphics/m07equ11.gif"></p><br>
-<P class="docText">Use M<span class="docEmphSmaller">ATLAB</span> to find that the eigenvalues are –0.3 and 0.169836 hr<SUP>-1</SUP>, so the system is unstable and the IMC-based PID method for unstable systems must be used (<A class="docLink" HREF="0133536408_ch09lev1sec7.html#ch09table03">Table 9-3</A>). Find the transfer function relating the dilution rate to the biomass concentration and use this for controller design. You may wish to use the M<span class="docEmphSmaller">ATLAB</span> function <TT>ss2tf</TT> to find the process transfer function</P>
+<P class="docText">Use M<span class="docEmphSmaller">ATLAB</span> to find that the eigenvalues are â€“0.3 and 0.169836 hr<SUP>-1</SUP>, so the system is unstable and the IMC-based PID method for unstable systems must be used (<A class="docLink" HREF="0133536408_ch09lev1sec7.html#ch09table03">Table 9-3</A>). Find the transfer function relating the dilution rate to the biomass concentration and use this for controller design. You may wish to use the M<span class="docEmphSmaller">ATLAB</span> function <TT>ss2tf</TT> to find the process transfer function</P>
 <p class="docText"><IMG BORDER="0" WIDTH="170" HEIGHT="33" src="FILES/m07equ12.gif" ALT="graphics/m07equ12.gif"></p><br>
 <P class="docText">After placing the process model in gain and time constant form (and cancelling common poles and zeros), you should find</P>
 <p class="docText"><IMG BORDER="0" WIDTH="111" HEIGHT="32" src="FILES/m07equ13.gif" ALT="graphics/m07equ13.gif"></p><br>
